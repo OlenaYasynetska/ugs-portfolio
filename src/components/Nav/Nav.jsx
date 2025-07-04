@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Nav.module.css';
 import logo from '../../assets/logo.svg';
 import globus from '../../assets/globus.svg';
 
-const Nav = () => {
+const Nav = ({ style }) => {
   const [lang, setLang] = useState('ru');
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={style}>
       <div className={styles.headerLeft}>
-        <img src={logo} alt="Logo" className={styles.logo} />
+        <Link to="/">
+          <img src={logo} alt="Logo" className={styles.logo} />
+        </Link>
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/about">О нас</a></li>
-          <li><a href="/contact">Контакты</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contacts</a></li>
         </ul>
       </nav>
       <div className={styles.headerRight}>
