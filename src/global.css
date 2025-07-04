@@ -1,0 +1,8 @@
+@import url('./shared/fonts.css');
+
+html, body {
+  font-family: 'Libertinus Mono', monospace;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
