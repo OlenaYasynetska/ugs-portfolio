@@ -1,6 +1,6 @@
 .header {
   background: #2196f3;
-  padding: 12px 80px;
+  padding: 12px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +9,7 @@
 .headerLeft {
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 180px;
 }
 
 .logo {
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 24px;
+  margin-right: 180px;
 }
 
 .actionBtn {

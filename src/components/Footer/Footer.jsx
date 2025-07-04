@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
-const Footer = () => (
-  <footer className={styles.footer}>
+const Footer = ({ style }) => (
+  <footer className={styles.footer} style={style}>
     © 2025 Мой сайт
   </footer>
 );
