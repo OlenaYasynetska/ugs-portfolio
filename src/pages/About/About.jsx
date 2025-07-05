@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import notFoundBg from '../../assets/page_not_found.png';
 
 const About = () => {
+  const { t } = useTranslation();
+
   // Убираем скролл для About
   React.useEffect(() => {
     const prevOverflow = document.body.style.overflow;
@@ -30,6 +33,7 @@ const About = () => {
           display: 'block',
         }}
       />
+      {/* <h1>{t('aboutText')}</h1> */}
     </div>
   );
 };

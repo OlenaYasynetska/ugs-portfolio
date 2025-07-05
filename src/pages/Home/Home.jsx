@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import notFoundBg from '../../assets/background.png';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   React.useEffect(() => {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = '';
@@ -29,6 +32,7 @@ const Home = () => {
           display: 'block',
         }}
       />
+      
     </div>
   );
 };
