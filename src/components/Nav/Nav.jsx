@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import styles from './Nav.module.css';
 import logo from '../../assets/logo.svg';
 import globus from '../../assets/globus.svg';
 
 const Nav = ({ style }) => {
-  const [lang, setLang] = useState('ru');
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language || 'en');
+
+  const handleLangChange = (e) => {
+    setLang(e.target.value);
+    i18n.changeLanguage(e.target.value);
+  };
 
   return (
     <header className={styles.header} style={style}>
@@ -16,9 +23,9 @@ const Nav = ({ style }) => {
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contacts</a></li>
+          <li><Link to="/">{t('home')}</Link></li>
+          <li><Link to="/about">{t('about')}</Link></li>
+          <li><Link to="/contact">{t('contacts')}</Link></li>
         </ul>
       </nav>
       <div className={styles.headerRight}>
@@ -26,11 +33,11 @@ const Nav = ({ style }) => {
         <select
           className={styles.langSelect}
           value={lang}
-          onChange={e => setLang(e.target.value)}
+          onChange={handleLangChange}
         >
           <option value="de">DE</option>
-          <option value="ua">UA</option>
           <option value="en">EN</option>
+          <option value="ua">UA</option>
         </select>
       </div>
     </header>
