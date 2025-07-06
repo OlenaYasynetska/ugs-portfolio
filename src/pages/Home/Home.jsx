@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import notFoundBg from '../../assets/background.png';
+import background from '../../assets/background.png';
+import { news } from '../../data/db';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || 'en';
 
   React.useEffect(() => {
     const prevOverflow = document.body.style.overflow;
@@ -21,18 +23,20 @@ const Home = () => {
       maxWidth: '100vw',
       textAlign: 'center',
       height: 'auto',
+      backgroundImage: `url(${background})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
     }}>
-      <img
-        src={notFoundBg}
-        alt="Home background"
-        style={{
-          maxHeight: '90vh', // чтобы не перекрывать футер
-          width: '100%',
-          margin: '0 auto',
-          display: 'block',
-        }}
-      />
-      
+      <h1>{t('welcome')}</h1>
+      <div style={{ maxWidth: 700, margin: '32px auto 0', textAlign: 'left' }}>
+        {news.map(item => (
+          <div key={item.id} style={{ marginBottom: 24, background: 'rgba(255,255,255,0.85)', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+            <h2 style={{ margin: '0 0 8px' }}>{item.title[lang] || item.title.en}</h2>
+            <p style={{ margin: 0 }}>{item.text[lang] || item.text.en}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

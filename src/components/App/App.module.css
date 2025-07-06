@@ -1,13 +1,15 @@
 .container {
   min-height: 100vh;
-  background: #f9f9f9;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 html, body {
-  overflow-y: hidden;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .inner {
@@ -21,4 +23,5 @@ html, body {
   flex: 1;
   min-height: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }

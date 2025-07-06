@@ -35,6 +35,7 @@ const About = () => {
       />
       {/* <h1>{t('aboutText')}</h1> */}
     </div>
+    
   );
 };
 
