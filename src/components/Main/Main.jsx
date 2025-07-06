@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './Main.module.css';
 import background from '../../assets/background.png';
+
 import hero from '../../assets/hero_logo.svg';
 import philosoph from '../../assets/philosoph.png';
+
 
 const Main = ({ children }) => (
   <main
@@ -16,6 +18,7 @@ const Main = ({ children }) => (
       minHeight: 'calc(100vh - 120px)'
     }}
   >
+
     <div style={{
       display: 'flex',
       justifyContent: 'center',
@@ -43,6 +46,8 @@ const Main = ({ children }) => (
         }}
       />
     </div>
+
+
     {children}
   </main>
 );

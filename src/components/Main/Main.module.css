@@ -1,6 +1,7 @@
 .main {
   min-height: calc(100vh - 120px); /* 64px nav + 56px footer, скорректируйте при необходимости */
   flex: 1;
-  padding: 0cqmin 0px;
-  background: #f9f9f9;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
 } 
