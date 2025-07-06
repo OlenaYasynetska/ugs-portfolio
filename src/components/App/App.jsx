@@ -11,7 +11,8 @@ import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
 function FooterWithPosition() {
   const location = useLocation();
-  const isOverlayPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/contact';
+  const knownPaths = ['/', '/about', '/contact'];
+  const isOverlayPage = knownPaths.includes(location.pathname) || !knownPaths.includes(location.pathname);
   return (
     <Footer style={isOverlayPage ? {
       position: 'absolute',
