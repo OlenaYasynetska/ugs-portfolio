@@ -7,7 +7,7 @@ const Contacts = () => {
 
   return (
     <div style={{
-      minHeight: 'calc(100vh - 120px)', // Оставляем место для футера
+      minHeight: 'calc(100vh - 120px)', // Оставляем место для nav и footer
       maxWidth: '100vw',
       textAlign: 'center',
       height: 'auto',
@@ -16,7 +16,7 @@ const Contacts = () => {
         src={contactsBg}
         alt="Contacts background"
         style={{
-          maxHeight: '90vh', // чтобы не перекрывать футер
+          maxHeight: '90vh', // чтобы не перекрывать footer
           width: '100%',
           margin: '0 auto',
           display: 'block',
