@@ -43,9 +43,10 @@ const Nav = ({ style }) => {
           value={lang}
           onChange={handleLangChange}
         >
+          <option value="ua">UA</option>
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="ua">UA</option>
+          
         </select>
       </div>
     </header>

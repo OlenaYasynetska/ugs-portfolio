@@ -2,8 +2,36 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import background from '../../assets/background.png';
 import { news } from '../../data/db';
-import hero from '../../assets/hero_logo.svg';
+import logo from '../../assets/logo.svg';
+import photo from '../../assets/IMG_2131.jpg';
 import philosoph from '../../assets/philosoph.png';
+
+const oldFrameStyle = {
+  display: 'inline-block',
+  padding: 18,
+  background: '#e2c590',
+  border: '8px solid #a67c38',
+  borderRadius: 24,
+  boxShadow: '0 8px 32px rgba(80,60,20,0.25), 0 0 0 12px #e2c590 inset',
+  position: 'relative',
+  marginLeft: 112,
+};
+const oldImgStyle = {
+  display: 'block',
+  borderRadius: 12,
+  boxShadow: '0 2px 12px rgba(80,60,20,0.18)',
+  width: 720,
+  height: 'auto',
+  filter: 'sepia(0.18) contrast(1.08) brightness(0.98)',
+};
+const logoStyle = {
+  height: 300,
+  width: 'auto',
+  
+  marginRight: 0,
+  marginLeft: 0,
+  display: 'block',
+};
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -33,29 +61,23 @@ const Home = () => {
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'flex-start',
-        gap: 224,
+        alignItems: 'center',
+        gap: 4,
         marginTop: 24,
         marginBottom: 32
       }}>
         <img
-          src={hero}
-          alt="Hero"
-          style={{
-            height: 450,
-            width: 'auto',
-            objectFit: 'contain',
-          }}
+          src={logo}
+          alt="Logo"
+          style={logoStyle}
         />
-        <img
-          src={philosoph}
-          alt="Philosoph"
-          style={{
-            height: 450,
-            width: 'auto',
-            objectFit: 'contain',
-          }}
-        />
+        <span style={oldFrameStyle}>
+          <img
+            src={photo}
+            alt="Старинное фото"
+            style={oldImgStyle}
+          />
+        </span>
       </div>
       <h1>{t('welcome')}</h1>
       <div style={{ maxWidth: 700, margin: '32px auto 0', textAlign: 'left' }}>

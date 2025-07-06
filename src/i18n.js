@@ -19,7 +19,7 @@ i18n.use(initReactI18next).init({
         about: 'Über uns',
         contacts: 'Kontakte',
         welcome: 'Willkommen auf der Startseite.',
-         aboutText: 'Dies ist die Über uns Seite.',
+        //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
     },
@@ -34,8 +34,8 @@ i18n.use(initReactI18next).init({
       }
     }
   },
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: 'ua',
+  fallbackLng: 'ua',
   interpolation: { escapeValue: false }
 });
 
