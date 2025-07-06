@@ -9,8 +9,8 @@ i18n.use(initReactI18next).init({
         about: 'About Us',
         contacts: 'Contacts',
         welcome: 'Welcome to the Home page.',
-        aboutText: 'This is the About Us page.',
-        contactsText: 'This is the Contacts page.'
+        // aboutText: 'This is the About Us page.',
+        // contactsText: 'This is the Contacts page.'
       }
     },
     de: {
@@ -19,8 +19,8 @@ i18n.use(initReactI18next).init({
         about: 'Über uns',
         contacts: 'Kontakte',
         welcome: 'Willkommen auf der Startseite.',
-        aboutText: 'Dies ist die Über uns Seite.',
-        contactsText: 'Dies ist die Kontaktseite.'
+        // aboutText: 'Dies ist die Über uns Seite.',
+        // contactsText: 'Dies ist die Kontaktseite.'
       }
     },
     ua: {
@@ -29,8 +29,8 @@ i18n.use(initReactI18next).init({
         about: 'Про нас',
         contacts: 'Контакти',
         welcome: 'Ласкаво просимо на головну сторінку.',
-        aboutText: 'Це сторінка Про нас.',
-        contactsText: 'Це сторінка Контакти.'
+        // aboutText: 'Це сторінка Про нас.',
+        // contactsText: 'Це сторінка Контакти.'
       }
     }
   },
