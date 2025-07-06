@@ -15,7 +15,15 @@ const Nav = ({ style }) => {
   };
 
   return (
-    <header className={styles.header} style={style}>
+    <header className={styles.header} style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      width: '100%',
+      zIndex: 1000,
+      ...style
+    }}>
       <div className={styles.headerLeft}>
         <Link to="/">
           <img src={logo} alt="Logo" className={styles.logo} />

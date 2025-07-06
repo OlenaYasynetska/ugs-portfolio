@@ -40,21 +40,29 @@ function NavWithPosition() {
   );
 }
 
+function AppContent() {
+  return (
+    <>
+      <NavWithPosition />
+      <Main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contacts />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Main>
+      <FooterWithPosition />
+    </>
+  );
+}
+
 function App() {
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
         <Router>
-          <NavWithPosition />
-          <Main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contacts />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Main>
-          <FooterWithPosition />
+          <AppContent />
         </Router>
       </div>
     </div>

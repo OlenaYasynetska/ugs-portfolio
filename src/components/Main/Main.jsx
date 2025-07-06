@@ -11,7 +11,8 @@ const Main = ({ children }) => (
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       width: '100%',
-      minHeight: 'calc(100vh - 120px)'
+      minHeight: 'calc(100vh - 120px)',
+      overflowY: 'auto',
     }}
   >
     {children}
