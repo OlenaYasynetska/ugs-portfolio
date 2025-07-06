@@ -41,10 +41,13 @@ function NavWithPosition() {
 }
 
 function AppContent() {
+  const location = useLocation();
+  let scrollable = true;
+  if (location.pathname === '/about' || location.pathname === '/contact') scrollable = false;
   return (
     <>
       <NavWithPosition />
-      <Main>
+      <Main scrollable={scrollable}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
