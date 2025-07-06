@@ -9,6 +9,21 @@ import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
+function FooterWithPosition() {
+  const location = useLocation();
+  const isOverlayPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/contact';
+  return (
+    <Footer style={isOverlayPage ? {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      width: '100%',
+      zIndex: 2
+    } : {}} />
+  );
+}
+
 function NavWithPosition() {
   const location = useLocation();
   const isNotFound = location.pathname !== '/' && location.pathname !== '/about' && location.pathname !== '/contact';
@@ -18,21 +33,6 @@ function NavWithPosition() {
       left: 0,
       right: 0,
       top: 0,
-      width: '100%',
-      zIndex: 2
-    } : {}} />
-  );
-}
-
-function FooterWithPosition() {
-  const location = useLocation();
-  const isNotFound = location.pathname !== '/' && location.pathname !== '/about' && location.pathname !== '/contact';
-  return (
-    <Footer style={isNotFound ? {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
       width: '100%',
       zIndex: 2
     } : {}} />
