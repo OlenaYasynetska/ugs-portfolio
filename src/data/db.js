@@ -28,7 +28,7 @@ export const news = [
   {
     id: 3,
     title: {
-      en: 'AI in Web Development',
+      en: 'As in previous years, with the start of the summer holidays in Upper Austria (from Monday, July 7, 2025, to Sunday, September 7, 2025), the summer schedule for urban public transport in Steyr will once again come into effect. On public holidays, the frequency of some bus routes will be reduced from every 15 minutes to every 30 minutes, starting at 8:40 a.m. In addition, route 3 will operate instead of route 3B from 8:25 a.m. to 7:55 p.m., and route 8 will run all day in place of routes 8A and 8B. All current departure schedules can be found at bus stops, in general transport information, and in the OÖVV app. Information about the Steyr schedule is also available at www.stadtbetriebe.at.',
       de: 'Ab Montag nächster Woche: Stadtbetriebe Steyr stellen Buslinienverkehr auf Sommerferien-Fahrplan um',
       ua: 'Починаючи з наступного понеділка, влада міста Штайр змінить розклад автобусних перевезень відповідно до літнього розкладу на період канікул.'
     },
