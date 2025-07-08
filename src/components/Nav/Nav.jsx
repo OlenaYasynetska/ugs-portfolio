@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './Nav.module.css';
 import logo from '../../assets/logo.svg';
@@ -15,25 +15,23 @@ const Nav = ({ style }) => {
   };
 
   return (
-    <header className={styles.header} style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      width: '100%',
-      zIndex: 1000,
-      ...style
-    }}>
+    <header className={styles.header} style={style}>
       <div className={styles.headerLeft}>
-        <Link to="/">
+        <NavLink to="/">
           <img src={logo} alt="Logo" className={styles.logo} />
-        </Link>
+        </NavLink>
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li><Link to="/">{t('home')}</Link></li>
-          <li><Link to="/about">{t('about')}</Link></li>
-          <li><Link to="/contact">{t('contacts')}</Link></li>
+          <li>
+            <NavLink to="/" className={({ isActive }) => isActive ? styles.activeNavLink : undefined} end>{t('home')}</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('about')}</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('contacts')}</NavLink>
+          </li>
         </ul>
       </nav>
       <div className={styles.headerRight}>
@@ -43,10 +41,9 @@ const Nav = ({ style }) => {
           value={lang}
           onChange={handleLangChange}
         >
-          <option value="ua">UA</option>
           <option value="de">DE</option>
           <option value="en">EN</option>
-          
+          <option value="ua">UA</option>
         </select>
       </div>
     </header>

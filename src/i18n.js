@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
         home: 'Home',
         about: 'About Us',
         contacts: 'Contacts',
-        welcome: 'Welcome to the Home page.',
+        welcome: 'Top Stories – At the Heart of the News',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -18,7 +18,7 @@ i18n.use(initReactI18next).init({
         home: 'Startseite',
         about: 'Über uns',
         contacts: 'Kontakte',
-        welcome: 'Willkommen auf der Startseite.',
+        welcome: 'Im Mittelpunkt des Geschehens.',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -28,7 +28,7 @@ i18n.use(initReactI18next).init({
         home: 'Головна',
         about: 'Про нас',
         contacts: 'Контакти',
-        welcome: 'Ласкаво просимо на головну сторінку.',
+        welcome: 'У центрі подій.',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

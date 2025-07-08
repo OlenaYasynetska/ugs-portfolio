@@ -33,10 +33,20 @@
 }
 
 .nav a {
-  color: #333;
+  color: #7462c5;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.activeNavLink {
+  color: #06046c !important;
+  font-weight: 700;
+  font-size: 4rem;
+  background: none;
+  border-radius: 0;
 }
 
 .headerRight {

@@ -29,13 +29,13 @@ export const news = [
     id: 3,
     title: {
       en: 'AI in Web Development',
-      de: 'KI in der Webentwicklung',
-      ua: 'ШІ у веб-розробці'
+      de: 'Ab Montag nächster Woche: Stadtbetriebe Steyr stellen Buslinienverkehr auf Sommerferien-Fahrplan um',
+      ua: 'Починаючи з наступного понеділка, влада міста Штайр змінить розклад автобусних перевезень відповідно до літнього розкладу на період канікул.'
     },
     text: {
       en: 'Artificial Intelligence is transforming the web development landscape.',
-      de: 'Künstliche Intelligenz verändert die Webentwicklung.',
-      ua: 'Штучний інтелект змінює сферу веб-розробки.'
+      de: 'Wie in den vergangenen Jahren üblich, tritt mit Beginn der Sommerferien in Oberösterreich (ab Mo, 7. Juli 2025, bis So, 7. September 2025) im städtischen Linienverkehr in Steyr wieder der Sommerferien-Fahrplan in Kraft. Bei einzelnen Buslinien wird während der Ferien ab 08:40 Uhr die Taktfrequenz von 15 Minuten auf 30 Minuten gedehnt. Zudem verkehrt anstelle der Linie 3B ab 08:25 Uhr bis 19:55 Uhr die Linie 3, anstelle der Linien 8A und 8B ist ganztägig die Linie 8 unterwegs. Alle aktuellen Abfahrtszeiten sind den Fahrplänen an den Haltestellen zu entnehmen bzw. in allen Verkehrsauskünften sowie in der OÖVV-App ersichtlich. Informationen zum Steyrer Fahrplanheft findet man zudem unter www.stadtbetriebe.at. ',
+      ua: 'Як і в попередні роки, з початком літніх канікул у Верхній Австрії (з понеділка, 7 липня 2025 р., до неділі, 7 вересня 2025 р.) у Штайрі знову набирає чинності літній розклад руху міського громадського транспорту. У святкові дні інтервал руху деяких автобусних маршрутів буде збільшено з 15 до 30 хвилин, починаючи з 8:40 ранку. Крім того, маршрут №3 курсуватиме замість маршруту 3B з 8:25 ранку до 7:55 вечора, а маршрут №8 протягом усього дня замінюватиме маршрути 8A та 8B. Усі актуальні розклади відправлення можна знайти на зупинках, у загальній транспортній інформації та в додатку OÖVV. Інформацію про розклад руху в Штайрі також можна знайти на сайті www.stadtbetriebe.at.'
     }
   }
 ]; 
