@@ -1,8 +1,17 @@
 .footer {
-  background: #2196f3; /* светло-синий */
+  background: #2196f3;
   color: #234;
   text-align: center;
-  padding: 12px 40px;
+  padding: 16px 0;
   font-size: 1rem;
-  
+  width: 10vw;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    min-width: 0;
+    font-size: 0.95rem;
+  }
 } 

@@ -54,6 +54,11 @@ const Hero = () => {
     <>
       <style>{`
         @media (max-width: 900px) {
+          .hero-logo {
+            display: none !important;
+          }
+        }
+        @media (max-width: 900px) {
           .hero-flex {
             flex-direction: column !important;
             gap: 4vw !important;
@@ -80,6 +85,7 @@ const Hero = () => {
         gap: '2vw',
         marginTop: '3vw',
         marginBottom: '4vw',
+       
         width: '100%',
         boxSizing: 'border-box',
       }}>

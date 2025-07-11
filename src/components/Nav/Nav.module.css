@@ -32,6 +32,18 @@
   padding: 0;
 }
 
+@media (max-width: 1600px) {
+  .nav ul {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .nav ul {
+    gap: 32px;
+  }
+}
+
 .nav a {
   color: #7462c5;
   text-decoration: none;
@@ -53,7 +65,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 230px;
+  margin-right: 180px;
 }
 
 .actionBtn {
@@ -79,4 +91,13 @@
   height: 28px;
   margin-right: 8px;
   vertical-align: middle;
+}
+
+@media (max-width: 1000px) {
+  .headerRight {
+    margin-right: 90px;
+  }
+  .headerLeft {
+    margin-left: 90px;
+  }
 }

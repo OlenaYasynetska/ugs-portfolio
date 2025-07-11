@@ -1,130 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { news } from '../data/db';
 
-function linkifyStadtbetriebe(text) {
-  const url = 'www.stadtbetriebe.at';
-  const fullUrl = 'https://www.stadtbetriebe.at';
-  const parts = text.split(url);
-  if (parts.length === 1) return text;
-  return [
-    parts[0],
-    <a
-      key="stadtbetriebe-link"
-      href={fullUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ color: '#1565c0', textDecoration: 'underline', fontWeight: 500 }}
-    >
-      {url}
-    </a>,
-    parts[1]
-  ];
-}
+const Article = ({ title, date, children }) => {
+  const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const intervalRef = useRef(null);
+  const text = typeof children === 'string' ? children : (children?.props?.children || '');
 
-function highlightDateInTitle(title) {
-  const match = title.match(/^(\d{2}\.\d{2}\.\d{4}|\d{2}\.\d{2}\.\d{2})/);
-  if (match) {
-    return (
-      <>
-        <span style={{ color: '#1565c0', fontWeight: 600 }}>{match[0]}</span>
-        {title.slice(match[0].length)}
-      </>
-    );
-  }
-  return title;
-}
-
-const NewsBlock = () => {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language || 'en';
-  const [shownNews, setShownNews] = React.useState({});
-  const newsRefs = React.useRef({});
-  const newsContainerRef = React.useRef(null);
-
-  React.useEffect(() => {
-    setShownNews({});
-  }, [lang]);
-
-  // Анимация печати для одной новости
-  const startReveal = (id, text) => {
-    let i = 0;
-    const reveal = () => {
-      setShownNews(prev => {
-        const prevObj = prev[id] || {};
-        return { ...prev, [id]: { revealed: true, progress: i } };
-      });
-      if (i < text.length) {
-        i++;
-        setTimeout(reveal, 50);
-      }
-      if (newsContainerRef.current) {
-        newsContainerRef.current.scrollTop = newsContainerRef.current.scrollHeight;
-      }
-    };
-    reveal();
-  };
-
-  // Клик по новости
-  const handleShowNews = (id, text) => {
-    if (shownNews[id]?.revealed) {
-      setShownNews(prev => ({ ...prev, [id]: undefined }));
-      return;
+  useEffect(() => {
+    if (open) {
+      setProgress(0);
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(() => {
+        setProgress(prev => {
+          if (prev < text.length) {
+            return prev + 1;
+          } else {
+            clearInterval(intervalRef.current);
+            return prev;
+          }
+        });
+      }, 60);
+    } else {
+      setProgress(0);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     }
-    startReveal(id, text);
-  };
-
-  // При смене языка перезапускать анимацию для всех раскрытых новостей
-  React.useEffect(() => {
-    Object.keys(shownNews).forEach(id => {
-      if (shownNews[id]?.revealed) {
-        const text = news.find(n => n.id === Number(id))?.text[lang] || news.find(n => n.id === Number(id))?.text.en || '';
-        startReveal(id, text);
-      }
-    });
+    return () => intervalRef.current && clearInterval(intervalRef.current);
     // eslint-disable-next-line
-  }, [lang]);
+  }, [open, text]);
 
   return (
-    <div
-      ref={newsContainerRef}
-      style={{
-        maxWidth: 1200,
-        margin: '32px auto 0',
-        textAlign: 'left',
-        maxHeight: '70vh',
-        overflowY: 'auto',
-        paddingRight: 8,
-        marginBottom: 100,
-        background: 'rgba(255,255,255,0.85)',
-        borderRadius: 8,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-        padding: '2vw',
-      }}
-    >
-      {news.map(item => {
-        const fullText = item.text[lang] || item.text.en;
-        const progress = shownNews[item.id]?.progress ?? 0;
-        return (
-          <div
-            key={item.id}
-            ref={el => (newsRefs.current[item.id] = el)}
-            style={{ marginBottom: 24, background: 'rgba(255,255,255,0.85)', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
-          >
-            <h2
-              style={{ margin: '0 0 8px', cursor: 'pointer' }}
-              onClick={() => handleShowNews(item.id, fullText)}
-            >
-              {highlightDateInTitle(item.title[lang] || item.title.en)}
-            </h2>
-            <p style={{ margin: 0, minHeight: 24 }}>
-              {shownNews[item.id]?.revealed ? linkifyStadtbetriebe(fullText.slice(0, progress)) : ''}
-            </p>
+    <div style={{ marginBottom: 24, padding: 24, border: '1px solid #e0e0e0', borderRadius: 12, background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', transition: 'all 0.3s' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', borderRadius: 8, padding: 8, userSelect: 'none', transition: 'background 0.2s' }}
+        onClick={() => setOpen(!open)}
+        onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setOpen(!open)}
+        tabIndex={0}
+        role="button"
+        aria-expanded={open}
+      >
+        <span style={{ fontSize: 22, marginRight: 12 }}>{open ? '▼' : '➤'}</span>
+        <span style={{ fontWeight: 600, fontSize: 20 }}>{title}</span>
+      </div>
+      <div style={{
+        maxHeight: open ? 500 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 0.3s',
+        opacity: open ? 1 : 0,
+        pointerEvents: open ? 'auto' : 'none',
+      }}>
+        {open && (
+          <div style={{ marginTop: 12, color: '#222', borderTop: '1px solid #e0e0e0', paddingTop: 12, fontSize: 16, whiteSpace: 'pre-line' }}>
+            {date && <div style={{ color: '#1976d2', fontFamily: 'monospace', marginBottom: 8 }}>{date}</div>}
+            {text.slice(0, progress)}
           </div>
-        );
-      })}
+        )}
+      </div>
     </div>
   );
 };
 
-export default NewsBlock; 
+export default function NewsBlock() {
+  const { i18n } = useTranslation();
+  const lang = i18n.language || 'en';
+
+  return (
+    <div style={{ maxWidth: 1200, width: '90vw', minWidth: 320, margin: '32px auto 0', textAlign: 'left', background: 'rgba(255,255,255,0.85)', borderRadius: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2vw', boxSizing: 'border-box' }}>
+      {/* <p style={{ marginBottom: 24, color: '#666', fontSize: 15 }}>
+        ℹ️ Натисніть на заголовок, щоб прочитати новину
+      </p> */}
+      {news.map(item => (
+        <Article
+          key={item.id}
+          title={item.title[lang] || item.title.en}
+          date={item.title[lang]?.match(/\d{2}\.\d{2}\.\d{4}/)?.[0] || ''}
+        >
+          {item.text[lang] || item.text.en}
+        </Article>
+      ))}
+    </div>
+  );
+} 

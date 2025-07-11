@@ -31,10 +31,10 @@ export default function ImportantInfo() {
         padding: '0 2vw',
         height: '100%',
       }}>
-        <div className="info-flex-col" style={{ flex: '1 1 350px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+        <div className="info-flex-col" style={{ flex: '1 1 350px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 340 }}>
           <PharmacyDutyBlock />
         </div>
-        <div className="info-flex-col" style={{ flex: '1 1 300px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+        <div className="info-flex-col" style={{ flex: '1 1 300px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 340 }}>
           <EmergencyCallsBlock />
         </div>
       </div>
@@ -75,8 +75,7 @@ function PharmacyDutyBlock() {
               marginRight: '0.7em',
               border: '1px solid #888'
             }} />
-            <span style={{marginRight: '0.5em', fontSize: '1.2em'}}>🏥</span>
-            <span style={{ fontWeight: 600, fontSize: '1.1em', padding: '0.5vw 1vw 0.5vw 0' }}>{ph.name.replace(/^["“”']+|["“”']+$/g, '')}</span>
+            <span style={{ fontWeight: 600, fontSize: '1.1em', padding: '0.5vw 1vw 0.5vw 0' }}>{ph.name.replace(/^['“”']+|['“”']+$/g, '')}</span>
             <span style={{ color: '#555', fontSize: '1.1em' }}>{ph.address}</span>
           </li>
         ))}

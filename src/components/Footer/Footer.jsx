@@ -16,22 +16,30 @@ const Footer = ({ style }) => {
     <footer className={styles.footer} style={{
       position: 'fixed',
       left: 0,
-      right: 0,
+      right: 50,
       bottom: 0,
       width: '100%',
       zIndex: 1000,
       ...style
     }}>
+      <style>{`
+        @media (max-width: 900px) {
+          .footer-inner {
+            padding-left: 90px !important;
+            padding-right: 90px !important;
+          }
+        }
+      `}</style>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '100%',
+        // width: '100%',
         maxWidth: 1800,
         margin: '0 auto',
-        padding: '0 24px',
+        padding: '0 180px',
         fontSize: 14
-      }}>
+      }} className="footer-inner">
         <span style={{
           textAlign: 'left',
           opacity: 0.85,
