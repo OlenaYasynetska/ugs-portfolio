@@ -4,13 +4,14 @@
   text-align: center;
   padding: 16px 0;
   font-size: 1rem;
-  width: 10vw;
+  /* width: 10vw; */
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
   .footer {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    /* padding-left: 5vw;
+    padding-right: 5vw; */
     min-width: 0;
     font-size: 0.95rem;
   }

@@ -2,27 +2,27 @@ export const news = [
   {
     id: 1,
     title: {
-      en: 'React 19 Released!',
-      de: 'React 19 veröffentlicht!',
-      ua: 'Вийшов React 19!'
+      en: '13.07.2025 Invitation to the Ukrainian Divine Liturgy in Steyr – July 13, 2025',
+      de: '13.07.2025 Einladung zur Ukrainischen Liturgie in Steyr – am 13. Juli 2025',
+      ua: '13.07.2025 Запрошуємо на українську Літургію у Штайрі — 13 липня 2025 року'
     },
     text: {
-      en: 'The React team has announced the release of React 19 with exciting new features.',
-      de: 'Das React-Team hat die Veröffentlichung von React 19 mit spannenden neuen Funktionen angekündigt.',
-      ua: 'Команда React анонсувала вихід React 19 з новими можливостями.'
+      en: 'You are warmly invited to the Ukrainian Divine Liturgy, which will take place on July 13, 2025 at 3:30 PM in Steyr. After the service, we will have a lovely opportunity to socialize and enjoy some refreshments together in the cozy parish café Margaretenkappele (Address: Brucknerplatz 4, 4400 Steyr – opposite CityPoint). We look forward to seeing you there!',
+      de: 'Herzliche Einladung zur ukrainischen Göttlichen Liturgie, die am 13.07.2025 um 15:30 Uhr in Steyr stattfinden wird. Nach dem Gottesdienst haben wir eine schöne Gelegenheit, uns bei einem gemütlichen Beisammensein im Pfarrcafé Margaretenkappele (Adresse: Brucknerplatz 4, 4400 Steyr – gegenüber dem CityPoint) auszutauschen und gemeinsam zu genießen. Wir freuen uns auf euer Kommen!',
+      ua: 'Щиро запрошую вас на українську Божественну Літургію, яка відбудеться 13.07.2025 о 15:30 у Штайрі. Після богослужіння матимемо гарну наглоду поспілкуватися та почастуватися у затишному парафіяльному кафе Margaretenkappele(адреса: Brucknerplatz 4, 4400 Steyr — навпроти CityPoint). Будемо раді вас бачити!'
     }
   },
   {
     id: 2,
     title: {
-      en: 'Vite 5.0 Beta',
-      de: 'Vite 5.0 Beta',
-      ua: 'Vite 5.0 Beta'
+      en: '12.07.2025 📌 Health Insurance Conditions for Ukrainian Citizens in Austria',
+      de: '12.07.2025 📌 Bedingungen der Krankenversicherung für ukrainische Staatsbürger:innen in Österreich',
+      ua: '12.07.2025 📌 Умови медичного страхування громадян України в Австрії'
     },
     text: {
-      en: 'Vite 5.0 Beta is now available for testing.',
-      de: 'Vite 5.0 Beta ist jetzt zum Testen verfügbar.',
-      ua: 'Vite 5.0 Beta вже доступний для тестування.'
+      en: 'On July 12, 2025, the transitional period ends during which Ukrainian citizens with temporary protection status had privileged access to public health insurance. After this date, medical care in Austria will be provided based on: 🔹 valid health insurance (private / via inclusion in the basic social support system – Grundversorgung / through official employment), 🔹 or on a general basis, which means paying for services out of pocket. I recommend doing the following now: 🔹 check your eligibility for public insurance (through Grundversorgung or official employment), 🔹 if needed – arrange voluntary public or private insurance. 🔵 For those included in the Grundversorgung system, public insurance conditions remain unchanged. 🔗 Detailed information and FAQs from ÖGK (also available in Ukrainian): https://www.gesundheitskasse.at/cdscontent/load?contentid=10008.794389&version=1747394364',
+      de: 'Am 12. Juli 2025 endet die Übergangsfrist, während derer ukrainische Staatsbürger:innen mit vorübergehendem Schutzstatus einen vergünstigten Zugang zur staatlichen Krankenversicherung hatten. Nach diesem Datum erfolgt die medizinische Versorgung in Österreich auf Basis von: 🔹 einer bestehenden Krankenversicherung (privat / über die Grundversorgung / durch offizielle Beschäftigung) 🔹 oder auf Selbstzahlerbasis. Ich empfehle, bereits jetzt: 🔹 zu prüfen, ob ein Anspruch auf staatliche Versicherung besteht (über Grundversorgung oder offizielle Beschäftigung), 🔹 bei Bedarf eine freiwillige staatliche oder private Krankenversicherung abzuschließen. 🔵 Für Personen in der Grundversorgung bleiben die Bedingungen der staatlichen Versicherung unverändert. 🔗 Ausführliche Informationen und Antworten auf häufige Fragen von der ÖGK (auch auf Ukrainisch): https://www.gesundheitskasse.at/cdscontent/load?contentid=10008.794389&version=1747394364',
+      ua: '12 липня 2025 року закінчується перехідний період, протягом якого громадяни України зі статусом тимчасового захисту користуються пільговим доступом до державного медичного страхування. Після цієї дати медична допомога в Австрії надається на основі: 🔹 чинного медичного страхування (приватного / через включення до системи базового соціального забезпечення Grundversorgung / через офіційне працевлаштування)🔹 або на загальних умовах, що передбачає самостійну оплату послуг.Рекомендую вже зараз: 🔹 перевірити право на державне страхування (через Grundversorgung або офіційне працевлаштування),🔹 за потреби – оформити добровільне державне або приватне страхування.🔵Для осіб, включених до системи Grundversorgung, умови державного страхування залишаються без змін. 🔗 Детальна інформація та відповіді на часті запитання від ÖGK (також українською мовою): https://www.gesundheitskasse.at/cdscontent/load?contentid=10008.794389&version=1747394364.'
     }
   },
   {

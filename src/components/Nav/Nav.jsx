@@ -8,11 +8,15 @@ import globus from '../../assets/globus.svg';
 const Nav = ({ style }) => {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || 'en');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
     i18n.changeLanguage(e.target.value);
   };
+
+  // Закрывать меню при переходе по ссылке
+  const handleNavClick = () => setMobileMenuOpen(false);
 
   return (
     <header className={styles.header} style={style}>
@@ -33,6 +37,19 @@ const Nav = ({ style }) => {
             <NavLink to="/contact" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('contacts')}</NavLink>
           </li>
         </ul>
+        {/* Бургер-меню для мобильных */}
+        <button className={styles.burger} onClick={() => setMobileMenuOpen(v => !v)} aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        {mobileMenuOpen && (
+          <div className={styles.mobileMenu}>
+            <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink} end>{t('home')}</NavLink>
+            <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('about')}</NavLink>
+            <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('contacts')}</NavLink>
+          </div>
+        )}
       </nav>
       <div className={styles.headerRight}>
         <img src={globus} alt="Globus" className={styles.globusIcon} />
