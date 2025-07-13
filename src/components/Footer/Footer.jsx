@@ -115,8 +115,8 @@ const Footer = ({ style }) => {
       <style>{`
         @media (max-width: 900px) {
           .footer-inner {
-            padding-left: 30px !important;
-            padding-right: 30px !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
           }
         }
       `}</style>
