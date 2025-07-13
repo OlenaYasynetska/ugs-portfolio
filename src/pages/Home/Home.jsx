@@ -8,6 +8,12 @@ import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { t } = useTranslation();
+  const [h1FontSize, setH1FontSize] = React.useState(window.innerWidth <= 900 ? '2.8em' : '4em');
+  React.useEffect(() => {
+    const handleResize = () => setH1FontSize(window.innerWidth <= 900 ? '2.8em' : '4em');
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <div style={{
       minHeight: 'calc(100vh - 120px)',
@@ -28,7 +34,7 @@ const Home = () => {
         }
       `}</style>
       <Hero />
-      <h1 className="main-title-hero" style={{ color: '#1565c0', fontSize: '4em', marginTop: 0, marginBottom: '1.5vw' }}>{t('welcome')}</h1>
+      <h1 className="main-title-hero" style={{ color: '#1565c0', fontSize: h1FontSize, marginTop: 0, marginBottom: '1.5vw' }}>{t('welcome')}</h1>
       <MainModulesContainer>
         {/* <Hero /> */}
         <NewsBlock />

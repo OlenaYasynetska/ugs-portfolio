@@ -6,7 +6,7 @@ export default function ImportantInfo() {
   const { t } = useTranslation();
   return (
     <>
-      <h2 style={{ color: '#1565c0', fontSize: '4em', margin: '0 0 2vw 0', textAlign: 'center', maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>{t('important_info')}</h2>
+      <h2 style={{ color: '#1565c0', fontSize: '2.8em', margin: '0 0 2vw 0', textAlign: 'center', maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>{t('important_info')}</h2>
       <style>{`
         @media (max-width: 900px) {
           .info-flex-row {
