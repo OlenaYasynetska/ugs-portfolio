@@ -35,9 +35,9 @@ const WeatherBlock = () => {
   React.useEffect(() => {
     const fetchWeather = async () => {
       try {
-        // Замените на ваш город и API-ключ
-        const city = 'Steyr, AT';
-        const apiKey = '263f8532f4360c224e81f3b4d2bca082';
+        // Используем переменную окружения для API-ключа
+        const city = 'Steyr';
+        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ua`;
         const response = await axios.get(url);
         setWeather(response.data);
