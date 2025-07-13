@@ -6,7 +6,7 @@ export default function ImportantInfo() {
   const { t } = useTranslation();
   return (
     <>
-      <h2 style={{ color: '#1565c0', fontSize: '2.8em', margin: '0 0 2vw 0', textAlign: 'center', maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>{t('important_info')}</h2>
+      <h2 style={{ color: '#1565c0', fontSize: '2.2em', margin: '0 0 2vw 0', textAlign: 'center', maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>{t('important_info')}</h2>
       <style>{`
         @media (max-width: 900px) {
           .info-flex-row {
@@ -62,7 +62,7 @@ function PharmacyDutyBlock() {
 
   return (
     <div style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', boxSizing: 'border-box', minHeight: 260, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-      <h2 style={{ color: '#1565c0', fontSize: '2em', fontWeight: 700, margin: '0 0 1vw 0' }}>{t('pharmacy_duty_today', {date: `${dd}.${mm}.${yyyy}`})}</h2>
+      <h2 style={{ color: '#1565c0', fontSize: '1.5em', fontWeight: 700, margin: '0 0 1vw 0' }}>{t('pharmacy_duty_today', {date: `${dd}.${mm}.${yyyy}`})}</h2>
       <ul style={{ marginTop: '1vw', marginBottom: 0, paddingLeft: '1.5vw' }}>
         {dutyPharmacies.map(ph => (
           <li key={ph.name} style={{ marginBottom: '0.7vw', display: 'flex', alignItems: 'center' }}>
@@ -88,7 +88,7 @@ function EmergencyCallsBlock() {
   const { t } = useTranslation();
   return (
     <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minHeight: 260, width: '100%', boxSizing: 'border-box', margin: '2vw auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-      <h2 style={{ color: '#c62828', fontSize: 'clamp(1.2em,2vw,2.2em)', margin: '0 0 1vw 0' }}>{t('emergency_calls')}</h2>
+      <h2 style={{ color: '#c62828', fontSize: '1.5em', margin: '0 0 1vw 0' }}>{t('emergency_calls')}</h2>
       <table style={{ width: '100%', fontSize: '1.1em', borderCollapse: 'collapse' }}>
         <tbody>
           <tr>
