@@ -9,6 +9,12 @@ const footerPhrases = {
   en: 'This website is a non-commercial project and serves informational purposes only.'
 };
 
+const shortFooterPhrases = {
+  ua: 'Цей вебсайт є некомерційним проєктом',
+  de: 'Diese Website ist ein gemeinnütziges Projekt',
+  en: 'This website is a non-commercial project',
+};
+
 const weatherIcons = {
   Clear: '☀️',
   Clouds: '☁️',
@@ -31,6 +37,13 @@ const WeatherBlock = () => {
   const [weather, setWeather] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
+  const [isMobileWeather, setIsMobileWeather] = React.useState(false);
+  React.useEffect(() => {
+    const handleResizeWeather = () => setIsMobileWeather(window.innerWidth <= 900);
+    handleResizeWeather();
+    window.addEventListener('resize', handleResizeWeather);
+    return () => window.removeEventListener('resize', handleResizeWeather);
+  }, []);
 
   React.useEffect(() => {
     const fetchWeather = async () => {
@@ -55,6 +68,18 @@ const WeatherBlock = () => {
   const icon = weatherIcons[weather.weather[0].main] || '🌡️';
   const temp = Math.round(weather.main.temp);
   const desc = weather.weather[0].description;
+  if (isMobileWeather) {
+    return (
+      <div style={{ minWidth: 90, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 500, color: '#fff', opacity: 0.8, marginBottom: 0 }}>
+          Steyr <span style={{ fontSize: 28, marginLeft: 6 }}>{icon}</span>
+        </span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, opacity: 0.7 }}>
+          <span style={{ fontSize: 18, fontWeight: 600, marginRight: 6 }}>{temp}&deg;C</span> {desc}
+        </span>
+      </div>
+    );
+  }
   return (
     <div style={{ minWidth: 90, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
       <span style={{ fontSize: 13, fontWeight: 500, color: '#fff', opacity: 0.8, marginBottom: 2 }}>Steyr</span>
@@ -70,6 +95,13 @@ const Footer = ({ style }) => {
   const { i18n } = useTranslation();
   const lang = i18n.language || 'en';
   const phrase = footerPhrases[lang] || footerPhrases.en;
+  const [isMobileFooter, setIsMobileFooter] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => setIsMobileFooter(window.innerWidth < 1000);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <footer className={styles.footer} style={{
       position: 'fixed',
@@ -83,8 +115,8 @@ const Footer = ({ style }) => {
       <style>{`
         @media (max-width: 900px) {
           .footer-inner {
-            padding-left: 90px !important;
-            padding-right: 90px !important;
+            padding-left: 30px !important;
+            padding-right: 30px !important;
           }
         }
       `}</style>
@@ -92,7 +124,6 @@ const Footer = ({ style }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // width: '100%',
         maxWidth: 1800,
         margin: '0 auto',
         padding: '0 180px',
@@ -105,7 +136,9 @@ const Footer = ({ style }) => {
           overflow: 'hidden',
           display: 'inline-block',
         }}>
-          {phrase}
+          {isMobileFooter
+            ? (shortFooterPhrases[lang] || shortFooterPhrases.en)
+            : phrase}
           <div style={{ fontSize: 13, marginTop: 4, opacity: 0.7 }}>© 2025 Steyr</div>
         </span>
         <WeatherBlock />
