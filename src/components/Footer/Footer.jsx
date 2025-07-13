@@ -38,11 +38,18 @@ const WeatherBlock = () => {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
   const [isMobileWeather, setIsMobileWeather] = React.useState(false);
+  const [weatherBlockWidth, setWeatherBlockWidth] = React.useState(window.innerWidth <= 600 ? 180 : 90);
   React.useEffect(() => {
     const handleResizeWeather = () => setIsMobileWeather(window.innerWidth <= 900);
     handleResizeWeather();
     window.addEventListener('resize', handleResizeWeather);
     return () => window.removeEventListener('resize', handleResizeWeather);
+  }, []);
+
+  React.useEffect(() => {
+    const handleResizeWeatherWidth = () => setWeatherBlockWidth(window.innerWidth <= 600 ? 180 : 90);
+    window.addEventListener('resize', handleResizeWeatherWidth);
+    return () => window.removeEventListener('resize', handleResizeWeatherWidth);
   }, []);
 
   React.useEffect(() => {
@@ -70,13 +77,17 @@ const WeatherBlock = () => {
   const desc = weather.weather[0].description;
   if (isMobileWeather) {
     return (
-      <div style={{ minWidth: 90, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 500, color: '#fff', opacity: 0.8, marginBottom: 0 }}>
-          Steyr <span style={{ fontSize: 28, marginLeft: 6 }}>{icon}</span>
-        </span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, opacity: 0.7 }}>
-          <span style={{ fontSize: 18, fontWeight: 600, marginRight: 6 }}>{temp}&deg;C</span> {desc}
-        </span>
+      <div style={{ minWidth: weatherBlockWidth, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start' }}>
+            <span style={{ fontSize: 15, fontWeight: 500, color: '#fff', opacity: 0.8, lineHeight: 1 }}>Steyr</span>
+            <span style={{ fontSize: 18, fontWeight: 600, marginTop: 2 }}>{temp}&deg;C</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start' }}>
+            <span style={{ fontSize: 28, marginLeft: 6 }}>{icon}</span>
+            <span style={{ fontSize: 13, opacity: 0.7 }}>{desc}</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -113,7 +124,7 @@ const Footer = ({ style }) => {
       ...style
     }}>
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
           .footer-inner {
             padding-left: 10px !important;
             padding-right: 10px !important;

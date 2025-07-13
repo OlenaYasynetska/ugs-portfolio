@@ -31,10 +31,10 @@ export default function ImportantInfo() {
         padding: '0 2vw',
         height: '100%',
       }}>
-        <div className="info-flex-col" style={{ flex: '1 1 350px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 340 }}>
+        <div className="info-flex-col" style={{ flex: '1 1 350px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 0 }}>
           <PharmacyDutyBlock />
         </div>
-        <div className="info-flex-col" style={{ flex: '1 1 300px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 340 }}>
+        <div className="info-flex-col" style={{ flex: '1 1 300px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 0 }}>
           <EmergencyCallsBlock />
         </div>
       </div>

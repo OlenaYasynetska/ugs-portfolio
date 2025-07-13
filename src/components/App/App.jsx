@@ -51,7 +51,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contacts />} />
+          {/* <Route path="/contact" element={<Contacts />} /> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Main>
