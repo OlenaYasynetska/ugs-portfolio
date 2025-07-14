@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { pharmacies, dutyCalendar } from '../data/pharmacyDuty';
 
@@ -8,6 +8,9 @@ export default function ImportantInfo() {
     <>
       <h2 style={{ color: '#1565c0', fontSize: '2.2em', margin: '0 0 2vw 0', textAlign: 'center', maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>{t('important_info')}</h2>
       <style>{`
+        .info-block-inner {
+          height: 220px;
+        }
         @media (max-width: 900px) {
           .info-flex-row {
             flex-direction: column !important;
@@ -15,6 +18,11 @@ export default function ImportantInfo() {
           .info-flex-col {
             max-width: 100% !important;
             min-width: 0 !important;
+            height: auto !important;
+          }
+          .info-block-inner {
+            height: auto;
+            min-height: 160px;
           }
         }
       `}</style>
@@ -31,10 +39,10 @@ export default function ImportantInfo() {
         padding: '0 2vw',
         height: '100%',
       }}>
-        <div className="info-flex-col" style={{ flex: '1 1 350px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 0 }}>
+        <div className="info-flex-col" style={{ flex: '1 1 50px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
           <PharmacyDutyBlock />
         </div>
-        <div className="info-flex-col" style={{ flex: '1 1 300px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', minHeight: 0 }}>
+        <div className="info-flex-col" style={{ flex: '1 1 50px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
           <EmergencyCallsBlock />
         </div>
       </div>
@@ -61,7 +69,7 @@ function PharmacyDutyBlock() {
   }
 
   return (
-    <div style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', boxSizing: 'border-box', minHeight: 260, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+    <div className="info-block-inner" style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
       <h2 style={{ color: '#1565c0', fontSize: '1.5em', fontWeight: 700, margin: '0 0 1vw 0' }}>{t('pharmacy_duty_today', {date: `${dd}.${mm}.${yyyy}`})}</h2>
       <ul style={{ marginTop: '1vw', marginBottom: 0, paddingLeft: '1.5vw' }}>
         {dutyPharmacies.map(ph => (
@@ -86,8 +94,17 @@ function PharmacyDutyBlock() {
 
 function EmergencyCallsBlock() {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const blockMaxHeight = isMobile ? 120 : 260;
   return (
-    <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minHeight: 260, width: '100%', boxSizing: 'border-box', margin: '2vw auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+    <div className="info-block-inner" style={{ background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minHeight: 160, width: '100%', boxSizing: 'border-box', margin: '2vw auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
       <h2 style={{ color: '#c62828', fontSize: '1.5em', margin: '0 0 1vw 0' }}>{t('emergency_calls')}</h2>
       <table style={{ width: '100%', fontSize: '1.1em', borderCollapse: 'collapse' }}>
         <tbody>
