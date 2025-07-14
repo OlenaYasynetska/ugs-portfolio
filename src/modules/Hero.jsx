@@ -68,7 +68,7 @@ const Hero = () => {
             margin-left: 0 !important;
             margin-right: 0 !important;
             max-width: 80vw !important;
-            height: clamp(80px, 30vw, 180px) !important;
+            height: clamp(80px, 130vw, 180px) !important;
           }
           .hero-frame {
             margin-left: 0 !important;
@@ -83,7 +83,7 @@ const Hero = () => {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '2vw',
-        marginTop: '3vw',
+        marginTop: '50px',
         marginBottom: '4vw',
        
         width: '100%',
