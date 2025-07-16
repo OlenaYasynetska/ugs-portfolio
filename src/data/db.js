@@ -1,6 +1,36 @@
 export const news = [
   {
-    id: 1,
+    id: 5,
+    title: {
+      ua: '16.07.2025 Річниця Декларації про державний суверенітет України',
+      de: '16.07.2025 Jahrestag der Erklärung über die staatliche Souveränität der Ukraine',
+      en: '16.07.2025 Anniversary of the Declaration of State Sovereignty of Ukraine'
+    },
+    text: {
+      ua: '16 липня 1990 року було ухвалено Декларацію про державний суверенітет України. У Декларації проголошено верховенство, самостійність і неподільність влади України, право українського народу на самовизначення, власне громадянство, економічну та культурну незалежність, а також право на безпосередні відносини з іншими державами.\n\nЦей документ заклав правові й політичні основи для відновлення незалежності 24 серпня 1991 року.\n\nСьогодні, коли Україна вже понад 11 років чинить опір російській агресії, ми знову доводимо всьому світові, що наш суверенітет – це цінність, за яку ми готові боротися. Українці захищають не лише свою землю, а й право жити вільно, говорити своєю мовою, творити свою культуру і бути господарями у власній державі.',
+      
+      de: 'Am 16. Juli 1990 wurde die Erklärung über die staatliche Souveränität der Ukraine verabschiedet. In der Erklärung wurden die Oberhoheit, Unabhängigkeit und Unteilbarkeit der Macht der Ukraine, das Recht des ukrainischen Volkes auf Selbstbestimmung, eigene Staatsbürgerschaft, wirtschaftliche und kulturelle Unabhängigkeit sowie das Recht auf direkte Beziehungen zu anderen Staaten verkündet.\n\nDieses Dokument legte die rechtlichen und politischen Grundlagen für die Wiederherstellung der Unabhängigkeit am 24. August 1991.\n\nHeute, da sich die Ukraine seit über 11 Jahren der russischen Aggression widersetzt, beweisen wir der ganzen Welt erneut, dass unsere Souveränität ein Wert ist, für den wir bereit sind zu kämpfen. Die Ukrainer verteidigen nicht nur ihr Land, sondern auch das Recht, frei zu leben, ihre Sprache zu sprechen, ihre Kultur zu gestalten und Herren im eigenen Staat zu sein.',
+      
+      en: 'On July 16, 1990, the Declaration of State Sovereignty of Ukraine was adopted. The Declaration proclaimed the supremacy, independence, and indivisibility of Ukraine\'s power, the right of the Ukrainian people to self-determination, their own citizenship, economic and cultural independence, and the right to direct relations with other countries.\n\nThis document laid the legal and political foundations for the restoration of independence on August 24, 1991.\n\nToday, as Ukraine has been resisting Russian aggression for more than 11 years, we once again prove to the entire world that our sovereignty is a value we are ready to defend. Ukrainians are protecting not only their land but also their right to live freely, speak their own language, create their own culture, and be masters in their own state.'
+    }
+  },  
+  {
+    id: 4,
+    title: {
+      ua: '15.07.2025 День Української Державності',
+      de: '15.07.2025 Tag der ukrainischen Staatlichkeit',
+      en: '15.07.2025 Day of Ukrainian Statehood'
+    },
+    text: {
+      ua: 'Сьогодні ми відзначаємо День Української Державності. Це свято говорить не лише про сучасність. Йдеться про понад тисячолітню історію нашого державотворення — від часів Русі до сьогодення.\n\nУ цей день ми вшановуємо князя Володимира Великого, який у 988 році прийняв християнство — зробив вибір, що заклав основи нашої державності.\n\nУкраїнська державність сильніша за будь-якого загарбника. Вона втілена в тризубі, у синьо-жовтих кольорах нашого прапора, у наших піснях і віршах.\n\nНаша історія доводить: ми були, є і будемо. І сьогодні українці зі зброєю в руках захищають не лише українське сьогодення і майбутнє, а й минуле — нашу ідентичність, історію, цінності.\n\nЗ Днем Української Державності! Слава Україні!',
+      
+      de: 'Heute feiern wir den Tag der ukrainischen Staatlichkeit. Dieser Feiertag spricht nicht nur über die Gegenwart. Es geht um über tausend Jahre Geschichte unseres Staatswesens – von der Zeit der Rus bis heute.\n\nAn diesem Tag ehren wir Fürst Wolodymyr den Großen, der im Jahr 988 das Christentum annahm – eine Entscheidung, die die Grundlage unserer Staatlichkeit legte.\n\nDie ukrainische Staatlichkeit ist stärker als jeder Eroberer. Sie zeigt sich im Dreizack, in den blau-gelben Farben unserer Flagge, in unseren Liedern und Gedichten.\n\nUnsere Geschichte beweist: Wir waren, sind und werden sein. Und heute verteidigen Ukrainer mit Waffen in der Hand nicht nur die ukrainische Gegenwart und Zukunft, sondern auch die Vergangenheit – unsere Identität, Geschichte und Werte.\n\nZum Tag der ukrainischen Staatlichkeit! Ruhm der Ukraine!',
+      
+      en: 'Today we celebrate the Day of Ukrainian Statehood. This holiday speaks not only of the present. It is about more than a thousand years of our state-building history – from the times of Kyivan Rus to today.\n\nOn this day, we honor Prince Volodymyr the Great, who adopted Christianity in 988 — a choice that laid the foundation for our statehood.\n\nUkrainian statehood is stronger than any invader. It is embodied in the trident, in the blue and yellow colors of our flag, in our songs and poems.\n\nOur history proves: we were, we are, and we will be. And today, Ukrainians with weapons in hand defend not only the Ukrainian present and future, but also the past – our identity, history, and values.\n\nHappy Day of Ukrainian Statehood! Glory to Ukraine!'
+    }
+  },
+  {
+    id: 3,
     title: {
       en: '13.07.2025 Invitation to the Ukrainian Divine Liturgy in Steyr – July 13, 2025',
       de: '13.07.2025 Einladung zur Ukrainischen Liturgie in Steyr – am 13. Juli 2025',
@@ -26,7 +56,7 @@ export const news = [
     }
   },
   {
-    id: 3,
+    id: 1,
     title: {
       en: '03.07.2025 Starting next Monday, the authorities of the city of Steyr will change the bus schedule in accordance with the summer holiday timetable.',
       de: '03.07.2025 Ab Montag nächster Woche: Stadtbetriebe Steyr stellen Buslinienverkehr auf Sommerferien-Fahrplan um',
@@ -38,4 +68,11 @@ export const news = [
       ua: 'Як і в попередні роки, з початком літніх канікул у Верхній Австрії (з понеділка, 7 липня 2025 р., до неділі, 7 вересня 2025 р.) у Штайрі знову набирає чинності літній розклад руху міського громадського транспорту. У святкові дні інтервал руху деяких автобусних маршрутів буде збільшено з 15 до 30 хвилин, починаючи з 8:40 ранку. Крім того, маршрут №3 курсуватиме замість маршруту 3B з 8:25 ранку до 7:55 вечора, а маршрут №8 протягом усього дня замінюватиме маршрути 8A та 8B. Усі актуальні розклади відправлення можна знайти на зупинках, у загальній транспортній інформації та в додатку OÖVV. Інформацію про розклад руху в Штайрі також можна знайти на сайті www.stadtbetriebe.at.'
     }
   }
-]; 
+];
+
+// Функция для автоматического добавления новости с уникальным id
+export function addNews(newsArray, newNewsData) {
+  const maxId = newsArray.length > 0 ? Math.max(...newsArray.map(n => n.id)) : 0;
+  const newNews = { id: maxId + 1, ...newNewsData };
+  return [newNews, ...newsArray];
+} 

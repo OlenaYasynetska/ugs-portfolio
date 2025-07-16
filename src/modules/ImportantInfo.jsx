@@ -109,19 +109,19 @@ function EmergencyCallsBlock() {
       <table style={{ width: '100%', fontSize: '1.1em', borderCollapse: 'collapse' }}>
         <tbody>
           <tr>
-            <td style={{ fontWeight: 600, padding: '0.5vw 1vw 0.5vw 0' }}>{t('fire_service')}</td>
+            <td style={{ fontWeight: 600, padding: '0.5vw, 0' }}>{t('fire_service')}</td>
             <td style={{ color: '#c62828', fontWeight: 700 }}>122</td>
           </tr>
           <tr>
-            <td style={{ fontWeight: 600, padding: '0.5vw 1vw 0.5vw 0' }}>{t('police')}</td>
+            <td style={{ fontWeight: 600, padding: '0' }}>{t('police')}</td>
             <td style={{ color: '#1565c0', fontWeight: 700 }}>133</td>
           </tr>
           <tr>
-            <td style={{ fontWeight: 600, padding: '0.5vw 1vw 0.5vw 0' }}>{t('ambulance')}</td>
+            <td style={{ fontWeight: 600, padding: '0' }}>{t('ambulance')}</td>
             <td style={{ color: '#388e3c', fontWeight: 700 }}>144</td>
           </tr>
           <tr>
-            <td style={{ fontWeight: 600, padding: '0.5vw 1vw 0.5vw 0' }}>{t('emergency_number')}</td>
+            <td style={{ fontWeight: 600, padding: '0' }}>{t('emergency_number')}</td>
             <td style={{ color: '#fbc02d', fontWeight: 700 }}>112</td>
           </tr>
         </tbody>

@@ -2,6 +2,16 @@ import React from 'react';
 import logo from '../assets/logo.svg';
 import photo1 from '../assets/IMG_2131.jpg';
 import photo2 from '../assets/IMG_2411.jpg';
+import photo3 from '../assets/IMG_2124.jpg';
+// import photo4 from '../assets/IMG_2135.jpg';
+import photo4 from '../assets/IMG_2145.jpg';
+import photo5 from '../assets/IMG_2147.jpg';
+import photo6 from '../assets/IMG_2150.jpg';
+// import photo8 from '../assets/IMG_2156.jpg';
+import photo7 from '../assets/IMG_2158.jpg';
+import photo8 from '../assets/IMG_2160.jpg';
+import photo9 from '../assets/IMG_2162.jpg';
+
 
 const oldFrameStyle = {
   display: 'inline-block',
@@ -33,7 +43,7 @@ const logoStyle = {
   maxWidth: '40vw',
 };
 
-const photos = [photo1, photo2];
+const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
 const Hero = () => {
   const [photoIdx, setPhotoIdx] = React.useState(0);
@@ -68,7 +78,7 @@ const Hero = () => {
             margin-left: 0 !important;
             margin-right: 0 !important;
             max-width: 80vw !important;
-            height: clamp(80px, 130vw, 180px) !important;
+            height: clamp(80px, 30vw, 180px) !important;
           }
           .hero-frame {
             margin-left: 0 !important;
