@@ -9,44 +9,13 @@ import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
-function FooterWithPosition() {
-  const location = useLocation();
-  const knownPaths = ['/', '/about', '/contact'];
-  const isOverlayPage = knownPaths.includes(location.pathname) || !knownPaths.includes(location.pathname);
-  return (
-    <Footer style={isOverlayPage ? {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      width: '100%',
-      zIndex: 2
-    } : {}} />
-  );
-}
-
-function NavWithPosition() {
-  const location = useLocation();
-  const isNotFound = location.pathname !== '/' && location.pathname !== '/about' && location.pathname !== '/contact';
-  return (
-    <Nav style={isNotFound ? {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      top: 0,
-      width: '100%',
-      zIndex: 2
-    } : {}} />
-  );
-}
-
 function AppContent() {
   const location = useLocation();
   let scrollable = true;
   if (location.pathname === '/about' || location.pathname === '/contact') scrollable = false;
   return (
     <>
-      <NavWithPosition />
+      <Nav />
       <Main scrollable={scrollable}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -55,7 +24,7 @@ function AppContent() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Main>
-      <FooterWithPosition />
+      <Footer />
     </>
   );
 }
