@@ -15,7 +15,7 @@ function AppContent() {
   if (location.pathname === '/about' || location.pathname === '/contact') scrollable = false;
   return (
     <>
-      <Nav style={{ position: 'absolute', left: 0, right: 0, top: 0, width: '100%', zIndex: 2 }} />
+      <Nav />
       <Main scrollable={scrollable}>
         <Routes>
           <Route path="/" element={<Home />} />
