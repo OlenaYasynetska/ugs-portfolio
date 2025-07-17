@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './Nav.module.css';
@@ -65,6 +66,10 @@ const Nav = ({ style }) => {
       </div>
     </header>
   );
+};
+
+Nav.propTypes = {
+  style: PropTypes.object,
 };
 
 export default Nav;

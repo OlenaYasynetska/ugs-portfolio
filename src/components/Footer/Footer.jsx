@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
@@ -156,6 +157,10 @@ const Footer = ({ style }) => {
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  style: PropTypes.object,
 };
 
 export default Footer; 

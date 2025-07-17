@@ -5,15 +5,37 @@ import NewsBlock from '../../modules/NewsBlock';
 import ImportantInfo from '../../modules/ImportantInfo';
 import MainModulesContainer from '../../modules/MainModulesContainer';
 import { useTranslation } from 'react-i18next';
+import { news } from '../../data/db';
+import declImg from '../../assets/IMG-Decloration_16-07-1990.jpg';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [h1FontSize, setH1FontSize] = React.useState(window.innerWidth <= 900 ? '2.8em' : '4em');
   React.useEffect(() => {
     const handleResize = () => setH1FontSize(window.innerWidth <= 900 ? '2.8em' : '4em');
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Получаем текст для блока "Этот день в истории"
+  const lang = i18n.language || 'en';
+  const news5 = news.find(n => n.id === 5);
+  const dayText = news5?.text?.[lang] || news5?.text?.en || '';
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 900);
+  const [showFull, setShowFull] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 900);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const shortText = dayText.length > 220 ? (
+    <>
+      {dayText.slice(0, 220)}<span
+        style={{ color: '#1565c0', cursor: 'pointer', fontWeight: 700 }}
+        onClick={() => setShowFull(true)}
+      >...</span>
+    </>
+  ) : dayText;
   return (
     <div style={{
       minHeight: 'calc(100vh - 120px)',
@@ -34,10 +56,62 @@ const Home = () => {
         }
       `}</style>
       <Hero />
-      <h1 className="main-title-hero" style={{ color: '#1565c0', fontSize: h1FontSize, marginTop: 0, marginBottom: '1.5vw' }}>{t('welcome')}</h1>
+      <h1
+        className="main-title-hero"
+        style={{
+          color: '#1565c0',
+          fontSize: h1FontSize,
+          marginTop: 0,
+          marginBottom: '1.5vw',
+          letterSpacing: '0.02em',
+          fontWeight: 900,
+        }}
+      >
+        {t('welcome')}
+      </h1>
       <MainModulesContainer>
         {/* <Hero /> */}
         <NewsBlock />
+        <div style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '2vw',
+          margin: '2vw 0 1vw 0',
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '85%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          textAlign: 'left',
+          flexWrap: 'wrap',
+        }}>
+          <img src={declImg} alt="Declaration 16.07.1990" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
+          <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
+            <div style={{
+              fontWeight: 900,
+              fontSize: '2em',
+              color: '#1565c0',
+              marginBottom: 12,
+              letterSpacing: '0.02em',
+            }}>{t('this_day_in_history')}</div>
+            {isMobile && !showFull ? shortText : (
+              <>
+                {dayText}
+                {isMobile && (
+                  <span
+                    style={{ color: '#1565c0', cursor: 'pointer', fontWeight: 700, marginLeft: 8 }}
+                    onClick={() => setShowFull(false)}
+                  >
+                    {t('hide_text') || 'Скрыть'}
+                  </span>
+                )}
+              </>
+            )}
+          </div>
+        </div>
         <ImportantInfo />
       </MainModulesContainer>
     </div>

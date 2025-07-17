@@ -4,6 +4,7 @@ import contactsBg from '../../assets/contacts.png';
 import tabletBg from '../../assets/Tablet_1.png';
 import tabletBg2 from '../../assets/Tablet_2.png';
 import hendyBg from '../../assets/Hendy_1.png';
+import PropTypes from 'prop-types';
 
 const basePosts = [
   { label: 'Посольство України', top: '18%', left: '15%' },
@@ -394,5 +395,7 @@ const Contacts = () => {
     </div>
   );
 };
+
+Contacts.propTypes = {};
 
 export default Contacts; 

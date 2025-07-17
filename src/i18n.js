@@ -16,6 +16,11 @@ i18n.use(initReactI18next).init({
         police: 'Police',
         ambulance: 'Ambulance',
         emergency_number: 'Emergency Number (Europe)',
+        no_pharmacy_data: 'No data on duty pharmacies today.',
+        in_the_center: 'In the center of events',
+        this_day_in_history: 'This day in history',
+        more_ellipsis: 'more…',
+        hide_text: 'Hide',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -33,6 +38,11 @@ i18n.use(initReactI18next).init({
         police: 'Polizei',
         ambulance: 'Rettung',
         emergency_number: 'Euronotruf',
+        no_pharmacy_data: 'Heute keine Daten zu Bereitschaftsapotheken.',
+        in_the_center: 'Im Mittelpunkt des Geschehens',
+        this_day_in_history: 'Dieser Tag in der Geschichte',
+        more_ellipsis: 'mehr…',
+        hide_text: 'Verbergen',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -50,6 +60,11 @@ i18n.use(initReactI18next).init({
         police: 'Поліція',
         ambulance: 'Швидка допомога',
         emergency_number: 'Єдиний номер (Європа)',
+        no_pharmacy_data: 'Сьогодні немає даних про чергові аптеки.',
+        in_the_center: 'У центрі подій',
+        this_day_in_history: 'Цей день в історії',
+        more_ellipsis: 'далі…',
+        hide_text: 'Сховати',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

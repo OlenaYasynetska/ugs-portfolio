@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Main.module.css';
 import background from '../../assets/background.png';
 
@@ -18,5 +19,10 @@ const Main = ({ children, scrollable = true }) => (
     {children}
   </main>
 );
+
+Main.propTypes = {
+  children: PropTypes.node,
+  scrollable: PropTypes.bool,
+};
 
 export default Main; 

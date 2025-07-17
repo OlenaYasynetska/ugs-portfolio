@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { news } from '../data/db';
 
@@ -31,7 +32,7 @@ const Article = ({ title, date, children }) => {
   }, [open, text]);
 
   return (
-    <div style={{ marginBottom: 24, padding: 24, border: '1px solid #e0e0e0', borderRadius: 12, background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', transition: 'all 0.3s' }}>
+    <div style={{ marginBottom: 24, padding: 24, border: '1px solid #e0e0e0', borderRadius: 12, background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', transition: 'all 0.3s' }}>
       <div
         style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', borderRadius: 8, padding: 8, userSelect: 'none', transition: 'background 0.2s' }}
         onClick={() => setOpen(!open)}
@@ -59,6 +60,12 @@ const Article = ({ title, date, children }) => {
       </div>
     </div>
   );
+};
+
+Article.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default function NewsBlock() {

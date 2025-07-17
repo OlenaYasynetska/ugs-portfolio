@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../assets/logo.svg';
 import photo1 from '../assets/IMG_2131.jpg';
 import photo2 from '../assets/IMG_2411.jpg';
@@ -116,5 +117,7 @@ const Hero = () => {
     </>
   );
 };
+
+Hero.propTypes = {};
 
 export default Hero; 

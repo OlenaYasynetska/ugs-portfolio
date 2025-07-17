@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MainModulesContainer = ({ children }) => (
   <div
@@ -18,5 +19,9 @@ const MainModulesContainer = ({ children }) => (
     {children}
   </div>
 );
+
+MainModulesContainer.propTypes = {
+  children: PropTypes.node,
+};
 
 export default MainModulesContainer; 
