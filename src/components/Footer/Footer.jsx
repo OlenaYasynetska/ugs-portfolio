@@ -137,7 +137,7 @@ const Footer = ({ style }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         maxWidth: 1800,
-        margin: '0 auto',
+        margin: '10px auto',
         padding: '0 180px',
         fontSize: 14
       }} className="footer-inner">

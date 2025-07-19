@@ -42,7 +42,7 @@ const Article = ({ title, date, children }) => {
         aria-expanded={open}
       >
         <span style={{ fontSize: 22, marginRight: 12 }}>{open ? '▼' : '➤'}</span>
-        <span style={{ fontWeight: 600, fontSize: 20 }}>{title}</span>
+        <span className="news-title" style={{ fontWeight: 600, fontSize: 20 }}>{title}</span>
       </div>
       <div style={{
         maxHeight: open ? 600 : 0,
@@ -78,6 +78,9 @@ export default function NewsBlock() {
         @media (max-width: 600px) {
           .news-article {
             font-size: 10px !important;
+          }
+          .news-title {
+            font-size: 14px !important;
           }
         }
       `}</style>
