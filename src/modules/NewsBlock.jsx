@@ -77,10 +77,11 @@ export default function NewsBlock() {
       <style>{`
         @media (max-width: 600px) {
           .news-article {
-            font-size: 10px !important;
+            font-size: 8px !important;
           }
           .news-title {
-            font-size: 14px !important;
+            font-size: 16px !important;
+            font-weight: bold !important;
           }
         }
       `}</style>
