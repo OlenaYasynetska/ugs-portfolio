@@ -21,6 +21,7 @@ i18n.use(initReactI18next).init({
         this_day_in_history: 'This day in history',
         more_ellipsis: 'more…',
         hide_text: 'Hide',
+        back: 'Back',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -30,7 +31,7 @@ i18n.use(initReactI18next).init({
         home: 'Startseite',
         about: 'Über uns',
         contacts: 'Kontakte',
-        welcome: 'Im Mittelpunkt des Geschehens.',
+        welcome: 'Im Mittelpunkt des Geschehens',
         important_info: 'Wichtige Information',
         pharmacy_duty_today: 'Diensthabende Apotheken heute ({{date}}):',
         emergency_calls: 'Notrufe',
@@ -43,6 +44,7 @@ i18n.use(initReactI18next).init({
         this_day_in_history: 'Dieser Tag in der Geschichte',
         more_ellipsis: 'mehr…',
         hide_text: 'Verbergen',
+        back: 'Zurück',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -52,7 +54,7 @@ i18n.use(initReactI18next).init({
         home: 'Головна',
         about: 'Про нас',
         contacts: 'Контакти',
-        welcome: 'У центрі подій.',
+        welcome: 'У центрі подій',
         important_info: 'Важлива інформація',
         pharmacy_duty_today: 'Дежурні аптеки на сьогодні ({{date}}):',
         emergency_calls: 'Екстрені виклики',
@@ -65,6 +67,7 @@ i18n.use(initReactI18next).init({
         this_day_in_history: 'Цей день в історії',
         more_ellipsis: 'далі…',
         hide_text: 'Сховати',
+        back: 'Назад',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

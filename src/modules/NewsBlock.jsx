@@ -69,8 +69,17 @@ Article.propTypes = {
 };
 
 export default function NewsBlock() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const lang = i18n.language || 'en';
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + 3);
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(3);
+  };
 
   return (
     <div style={{ maxWidth: 1200, width: '90vw', minWidth: 320, margin: '32px auto 0', textAlign: 'left', background: 'rgba(255,255,255,0.85)', borderRadius: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2vw', boxSizing: 'border-box' }}>
@@ -88,7 +97,7 @@ export default function NewsBlock() {
       {/* <p style={{ marginBottom: 24, color: '#666', fontSize: 15 }}>
         ℹ️ Натисніть на заголовок, щоб прочитати новину
       </p> */}
-      {news.map(item => (
+      {news.slice(0, visibleCount).map(item => (
         <Article
           key={item.id}
           title={item.title[lang] || item.title.en}
@@ -98,6 +107,40 @@ export default function NewsBlock() {
           {item.text[lang] || item.text.en}
         </Article>
       ))}
+      <div style={{ textAlign: 'center', marginTop: 16 }}>
+        {visibleCount < news.length && (
+          <button onClick={handleShowMore} style={{
+            background: '#1976d2',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 8,
+            padding: '8px 24px',
+            fontSize: 16,
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            margin: '0 8px',
+            display: 'inline-block',
+            transition: 'background 0.2s',
+          }}>{t('more_ellipsis') || 'Далі'}</button>
+        )}
+        {visibleCount > 3 && (
+          <button onClick={handleShowLess} style={{
+            background: '#e0e0e0',
+            color: '#1976d2',
+            border: 'none',
+            borderRadius: 8,
+            padding: '8px 24px',
+            fontSize: 16,
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            margin: '0 8px',
+            display: 'inline-block',
+            transition: 'background 0.2s',
+          }}>{t('back') || 'Назад'}</button>
+        )}
+      </div>
     </div>
   );
 } 
