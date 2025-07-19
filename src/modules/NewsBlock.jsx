@@ -45,7 +45,7 @@ const Article = ({ title, date, children }) => {
         <span style={{ fontWeight: 600, fontSize: 20 }}>{title}</span>
       </div>
       <div style={{
-        maxHeight: open ? 500 : 0,
+        maxHeight: open ? 600 : 0,
         overflow: 'hidden',
         transition: 'max-height 0.3s',
         opacity: open ? 1 : 0,
@@ -74,6 +74,13 @@ export default function NewsBlock() {
 
   return (
     <div style={{ maxWidth: 1200, width: '90vw', minWidth: 320, margin: '32px auto 0', textAlign: 'left', background: 'rgba(255,255,255,0.85)', borderRadius: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2vw', boxSizing: 'border-box' }}>
+      <style>{`
+        @media (max-width: 600px) {
+          .news-article {
+            font-size: 10px !important;
+          }
+        }
+      `}</style>
       {/* <p style={{ marginBottom: 24, color: '#666', fontSize: 15 }}>
         ℹ️ Натисніть на заголовок, щоб прочитати новину
       </p> */}
@@ -82,6 +89,7 @@ export default function NewsBlock() {
           key={item.id}
           title={item.title[lang] || item.title.en}
           date={item.title[lang]?.match(/\d{2}\.\d{2}\.\d{4}/)?.[0] || ''}
+          className="news-article"
         >
           {item.text[lang] || item.text.en}
         </Article>
