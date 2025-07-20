@@ -43,23 +43,43 @@ const NotFoundPage = () => {
           }}
         />
         <div
+          className="notfound-message"
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            background: 'rgba(255,255,255,0.85)',
+            background: 'rgba(232, 210, 162, 0.92)',
             borderRadius: 16,
             boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
             padding: 32,
             textAlign: 'center',
-            minWidth: 320,
-            maxWidth: '90%',
+            minWidth: 220,
+            maxWidth: '80%',
           }}
         >
-          <h1 style={{ fontSize: '2rem', marginBottom: 24 }}>page not found</h1>
+          <style>{`
+            @media (max-width: 600px) {
+              .notfound-message {
+                font-size: 1.1rem !important;
+                padding: 10px 4vw !important;
+                min-width: 0 !important;
+                max-width: 95vw !important;
+                border-radius: 10px !important;
+              }
+              .notfound-title {
+                font-size: 1.3rem !important;
+              }
+              .notfound-btn {
+                font-size: 0.9rem !important;
+                padding: 6px 12px !important;
+              }
+            }
+          `}</style>
+          <h1 className="notfound-title" style={{ fontSize: '2rem', marginBottom: 24 }}>page not found</h1>
           <Link to="/">
             <button
+              className="notfound-btn"
               style={{
                 padding: '8px 20px',
                 fontSize: '1rem',
