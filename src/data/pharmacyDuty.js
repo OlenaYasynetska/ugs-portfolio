@@ -17,12 +17,12 @@ export const pharmacies = [
 
 // Календарь дежурств (автоматически сгенерирован на 2025-07-01 — 2025-12-31)
 const colorOrder = [
-  'yellow', 'pink', 'blue', 'green', 'orange', 'violet', 'brown', 'gray', 'purple', 'red', 'lightblue', 'lightgreen', 'black'
+  'gray', 'purple', 'red', 'lightblue', 'lightgreen', 'black', 'yellow', 'pink', 'blue', 'green', 'orange', 'violet', 'brown'
 ];
 
 function generateDutyCalendar() {
   const calendar = {};
-  let date = new Date('2025-07-01');
+  let date = new Date('2025-07-21');
   const end = new Date('2025-12-31');
   let colorIdx = 0;
   while (date <= end) {

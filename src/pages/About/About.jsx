@@ -41,7 +41,7 @@ Ukrainian Community of Steyr`,
 const getResponsiveStyle = () => {
   const isMobile = window.innerWidth < 600;
   return {
-    maxWidth: isMobile ? '75vw' : 700,
+    maxWidth: isMobile ? '85vw' : 700,
     background: 'rgba(245, 222, 179, 0.92)',
     borderRadius: 16,
     padding: isMobile ? '16px 16px' : '40px',
