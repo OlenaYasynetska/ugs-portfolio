@@ -12,17 +12,17 @@ export const pharmacies = [
   { name: '"Tabor-Apotheke"', address: 'Rooseveltstraße 12, Steyr', color: 'red' },
   { name: '"Apotheke Am Resthof"', address: 'Siemensstraße 12, Steyr', color: 'lightblue' },
   { name: '"Gründberg-Apotheke"', address: 'Sierninger Straße 174A, Steyr', color: 'lightgreen' },
-  { name: '"HAIHO Apotheke"', address: 'Haidershofen 99, Haidershofen', color: 'black' },
+  { name: '"HAIHO Apotheke"', address: 'Haidershofen 99, Haidershofen', color: 'lightgreen' },
 ];
 
-// Календарь дежурств (автоматически сгенерирован на 2025-07-01 — 2025-12-31)
+// Календарь дежурств (автоматически сгенерирован на 2025-07-21 — 2025-12-31)
 const colorOrder = [
-  'gray', 'purple', 'red', 'lightblue', 'lightgreen', 'black', 'yellow', 'pink', 'blue', 'green', 'orange', 'violet', 'brown'
+  'lightgreen', 'yellow', 'pink', 'blue', 'green', 'orange', 'violet', 'brown', 'gray', 'purple', 'red', 'lightblue'
 ];
 
 function generateDutyCalendar() {
   const calendar = {};
-  let date = new Date('2025-07-21');
+  let date = new Date('2025-07-27');
   const end = new Date('2025-12-31');
   let colorIdx = 0;
   while (date <= end) {

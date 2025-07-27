@@ -23,10 +23,23 @@ export default function PharmacyDutyBlock() {
 
   return (
     <div className="info-block-inner" style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-      <h2 style={{ color: '#1565c0', fontSize: '1.5em', fontWeight: 700, margin: '0 0 1vw 0' }}>{t('pharmacy_duty_today', {date: `${dd}.${mm}.${yyyy}`})}</h2>
-      <ul style={{ marginTop: '1vw', marginBottom: 0, paddingLeft: '1.5vw' }}>
-        {dutyPharmacies.map(ph => (
-          <li key={ph.name} style={{ marginBottom: '0.7vw', display: 'flex', alignItems: 'center' }}>
+      <h2 style={{ 
+        color: '#1565c0', 
+        fontSize: '1.5em', 
+        fontWeight: 700, 
+        margin: window.innerWidth > 1400 ? '0' : '0 0 1vw 0' 
+      }}>{t('pharmacy_duty_today', {date: `${dd}.${mm}.${yyyy}`})}</h2>
+      <ul style={{ 
+        marginTop: window.innerWidth > 1400 ? '0' : '1vw', 
+        marginBottom: 0, 
+        paddingLeft: window.innerWidth > 1400 ? '0' : (dutyPharmacies.length === 2 && window.innerWidth <= 1400 ? '0' : '1.5vw')
+      }}>
+                 {dutyPharmacies.map(ph => (
+           <li key={ph.name} style={{ 
+             marginBottom: window.innerWidth > 1400 ? '0' : '0.7vw', 
+             display: 'flex', 
+             alignItems: 'center' 
+           }}>
             <span style={{
               display: 'inline-block',
               width: '1.2em',
