@@ -136,23 +136,23 @@ export const calendarEvents = [
   //   priority: 'high',
   //   color: '#795548'
   // },
-  {
-    id: 4,
-    date: '2025-03-01',
-    title: {
-      en: 'Independence Day Celebration',
-      de: 'Unabhängigkeitstag-Feier',
-      ua: 'Святкування Дня Незалежності'
-    },
-    description: {
-      en: 'Celebration of Ukrainian Independence Day',
-      de: 'Feier des ukrainischen Unabhängigkeitstags',
-      ua: 'Святкування Дня Незалежності України'
-    },
-    type: 'celebration',
-    priority: 'high',
-    color: '#ff5722'
-  },
+  // {
+  //   id: 4,
+  //   date: '2025-03-01',
+  //   title: {
+  //     en: 'Independence Day Celebration',
+  //     de: 'Unabhängigkeitstag-Feier',
+  //     ua: 'Святкування Дня Незалежності'
+  //   },
+  //   description: {
+  //     en: 'Celebration of Ukrainian Independence Day',
+  //     de: 'Feier des ukrainischen Unabhängigkeitstags',
+  //     ua: 'Святкування Дня Незалежності України'
+  //   },
+  //   type: 'celebration',
+  //   priority: 'high',
+  //   color: '#ff5722'
+  // },
   {
     id: 3,
     date: '2025-08-22',

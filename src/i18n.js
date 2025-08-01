@@ -23,6 +23,8 @@ i18n.use(initReactI18next).init({
         hide_text: 'Hide',
         back: 'Back',
         calendar_of_events: 'Calendar of Events',
+        weekly_events: 'Events of the Week',
+        no_events_this_week: 'No events this week',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -47,6 +49,8 @@ i18n.use(initReactI18next).init({
         hide_text: 'Verbergen',
         back: 'Zurück',
         calendar_of_events: 'Ereigniskalender',
+        weekly_events: 'Ereignisse der Woche',
+        no_events_this_week: 'Keine Ereignisse diese Woche',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -71,6 +75,8 @@ i18n.use(initReactI18next).init({
         hide_text: 'Сховати',
         back: 'Назад',
         calendar_of_events: 'Календар подій',
+        weekly_events: 'Події тижня',
+        no_events_this_week: 'Немає подій цього тижня',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }
