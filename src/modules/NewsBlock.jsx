@@ -54,7 +54,7 @@ const Article = ({ title, date, children }) => {
         {open && (
           <div style={{ marginTop: 12, color: '#222', borderTop: '1px solid #e0e0e0', paddingTop: 12, fontSize: 16, whiteSpace: 'pre-line' }}>
             {date && <div style={{ color: '#1976d2', fontFamily: 'monospace', marginBottom: 8 }}>{date}</div>}
-            {text.slice(0, progress)}
+            <div dangerouslySetInnerHTML={{ __html: text.slice(0, progress) }} />
           </div>
         )}
       </div>
@@ -71,14 +71,14 @@ Article.propTypes = {
 export default function NewsBlock() {
   const { i18n, t } = useTranslation();
   const lang = i18n.language || 'en';
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(5);
 
   const handleShowMore = () => {
     setVisibleCount(prev => prev + 3);
   };
 
   const handleShowLess = () => {
-    setVisibleCount(3);
+    setVisibleCount(5);
   };
 
   return (
@@ -124,7 +124,7 @@ export default function NewsBlock() {
             transition: 'background 0.2s',
           }}>{t('more_ellipsis') || 'Далі'}</button>
         )}
-        {visibleCount > 3 && (
+                 {visibleCount > 5 && (
           <button onClick={handleShowLess} style={{
             background: '#e0e0e0',
             color: '#1976d2',

@@ -22,6 +22,7 @@ i18n.use(initReactI18next).init({
         more_ellipsis: 'more…',
         hide_text: 'Hide',
         back: 'Back',
+        calendar_of_events: 'Calendar of Events',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -45,6 +46,7 @@ i18n.use(initReactI18next).init({
         more_ellipsis: 'mehr…',
         hide_text: 'Verbergen',
         back: 'Zurück',
+        calendar_of_events: 'Ereigniskalender',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -68,6 +70,7 @@ i18n.use(initReactI18next).init({
         more_ellipsis: 'далі…',
         hide_text: 'Сховати',
         back: 'Назад',
+        calendar_of_events: 'Календар подій',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

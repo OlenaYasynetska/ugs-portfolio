@@ -4,6 +4,8 @@ import Hero from '../../modules/Hero';
 import NewsBlock from '../../modules/NewsBlock';
 import ImportantInfo from '../../modules/ImportantInfo';
 import MainModulesContainer from '../../modules/MainModulesContainer';
+import Calendar from '../../components/Calendar/Calendar';
+import AdminCalendar from '../../components/AdminCalendar/AdminCalendar';
 import { useTranslation } from 'react-i18next';
 import { news } from '../../data/db';
 import declImg from '../../assets/IMG-Decloration_16-07-1990.jpg';
@@ -146,9 +148,46 @@ const Home = () => {
               )}
             </div>
           </div>
-        )}
-        <ImportantInfo />
-      </MainModulesContainer>
+                 )}
+         
+         {/* Календарь */}
+         <div style={{
+           fontWeight: 900,
+           fontSize: '2em',
+           color: '#1565c0',
+           margin: '3vw 0 1vw 0',
+           letterSpacing: '0.02em',
+           textAlign: 'center',
+         }}>{t('calendar_of_events')}</div>
+         
+         <div style={{
+           margin: '0 auto 2vw auto',
+           width: '100%',
+         }}>
+           <Calendar />
+         </div>
+         
+         {/* Административный календарь - скрыт от отображения */}
+         {/* 
+         <div style={{
+           fontWeight: 900,
+           fontSize: '2em',
+           color: '#1565c0',
+           margin: '3vw 0 1vw 0',
+           letterSpacing: '0.02em',
+           textAlign: 'center',
+         }}>Административный календарь</div>
+         
+         <div style={{
+           margin: '0 auto 2vw auto',
+           width: '100%',
+         }}>
+           <AdminCalendar />
+         </div>
+         */}
+         
+         <ImportantInfo />
+       </MainModulesContainer>
     </div>
   );
 };
