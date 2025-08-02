@@ -136,23 +136,27 @@ export const calendarEvents = [
   //   priority: 'high',
   //   color: '#795548'
   // },
-  // {
-  //   id: 4,
-  //   date: '2025-03-01',
-  //   title: {
-  //     en: 'Independence Day Celebration',
-  //     de: 'Unabhängigkeitstag-Feier',
-  //     ua: 'Святкування Дня Незалежності'
-  //   },
-  //   description: {
-  //     en: 'Celebration of Ukrainian Independence Day',
-  //     de: 'Feier des ukrainischen Unabhängigkeitstags',
-  //     ua: 'Святкування Дня Незалежності України'
-  //   },
-  //   type: 'celebration',
-  //   priority: 'high',
-  //   color: '#ff5722'
-  // },
+           {
+      id: 4,
+      date: '2025-08-01',
+             title: {
+         en: 'AM.PM ЖИВАЯ МУЗЫКА ВСЕГДА',
+         de: 'AM.PM ЖИВАЯ МУЗЫКА ВСЕГДА',
+         ua: 'AM.PM ЖИВАЯ МУЗЫКА ВСЕГДА'
+       },
+      description: {
+        en: 'Cover band performing live music',
+        de: 'Cover-Band spielt Live-Musik',
+        ua: 'Кавер-група виконує живу музику'
+      },
+      type: 'cultural',
+      priority: 'high',
+      color: '#8f1a80',
+      image: '/src/assets/baner_ampm-music.jpg',
+      time: '18:00 - 22:00',
+      location: 'Stadtplatz',
+      weekday: 'Fr, 01.08.2025'
+    },
   {
     id: 3,
     date: '2025-08-22',
@@ -169,7 +173,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/schloss-lamberg.jpg',
+    image: '/src/assets/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 22.08.2025'
@@ -190,7 +194,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/schloss-lamberg.jpg',
+    image: '/src/assets/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 08.08.2025'
@@ -211,7 +215,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/schloss-lamberg.jpg',
+    image: '/src/assets/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 01.08.2025'
