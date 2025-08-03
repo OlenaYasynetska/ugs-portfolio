@@ -152,7 +152,7 @@ export const calendarEvents = [
       type: 'cultural',
       priority: 'high',
       color: '#8f1a80',
-      image: '/src/assets/baner_ampm-music.jpg',
+      image: '/baner_ampm-music.jpg',
       time: '18:00 - 22:00',
       location: 'Stadtplatz',
       weekday: 'Fr, 01.08.2025'
@@ -173,7 +173,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/Schlospark.jpg',
+    image: '/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 22.08.2025'
@@ -194,7 +194,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/Schlospark.jpg',
+    image: '/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 08.08.2025'
@@ -215,7 +215,7 @@ export const calendarEvents = [
     type: 'cultural',
     priority: 'high',
     color: '#607d8b',
-    image: '/src/assets/Schlospark.jpg',
+    image: '/Schlospark.jpg',
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 01.08.2025'
