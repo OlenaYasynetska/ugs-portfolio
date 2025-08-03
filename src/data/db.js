@@ -1,17 +1,31 @@
 export const news = [
-  // {
-  //   id: 10,
-  //   title: {
-  //     en: '31.08.2025 Verkhovna Rada adopted law restoring NABU powers',
-  //     de: '31.08.2025 Werchowna Rada verabschiedete Gesetz zur Wiederherstellung der NABU-Befugnisse',
-  //     ua: '31.08.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ'
-  //   },
-  //   text: {
-  //     en: '31.08.2025 The Verkhovna Rada adopted a law restoring the powers of NABU. This is an important step towards strengthening the anti-corruption infrastructure and fulfilling obligations to international partners. The independence and effectiveness of NABU are the key to justice and public trust.',
-  //     de: '31.08.2025 Die Werchowna Rada hat ein Gesetz verabschiedet, das die Befugnisse von NABU wiederherstellt. Dies ist ein wichtiger Schritt zur Stärkung der Antikorruptionsinfrastruktur und zur Erfüllung der Verpflichtungen gegenüber internationalen Partnern. Die Unabhängigkeit und Effektivität von NABU sind der Schlüssel zu Gerechtigkeit und öffentlichem Vertrauen.',
-  //     ua: '31.08.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ. Це важливий крок до посилення антикорупційної інфраструктури та виконання зобов\'язань перед міжнародними партнерами. Незалежність та ефективність НАБУ — ключ до справедливості та довіри суспільства.'
-  //   }
-  // },
+
+  {
+    id: 13,
+    title: {
+      en: '02.08.2025 📢 Austria welcomed the law on NABU and SAP and called for the appointment of a BEB head',
+      de: '02.08.2025 📢 Österreich begrüßte das Gesetz zu NABU und SAP und rief zur Ernennung eines BEB-Chefs auf',
+      ua: '02.08.2025 📢 Австрія привітала закон щодо НАБУ та САП і закликала до призначення керівника БЕБ'
+    },
+    text: {
+      en: '🗣️ "Austria welcomes the adoption of the law by the Ukrainian parliament, which should restore the institutional independence and operational powers of the National Anti-Corruption Bureau (NABU) and the Specialized Anti-Corruption Prosecutor\'s Office (SAP). The adoption of this law is an extremely necessary step," the Foreign Ministry stated.',
+      de: '🗣️ "Österreich begrüßt die Verabschiedung des Gesetzes durch das ukrainische Parlament, das die institutionelle Unabhängigkeit und operativen Befugnisse des Nationalen Antikorruptionsbüros (NABU) und der Spezialisierten Antikorruptionsstaatsanwaltschaft (SAP) wiederherstellen soll. Die Verabschiedung dieses Gesetzes ist ein äußerst notwendiger Schritt", erklärte das Außenministerium.',
+      ua: '🗣️ "Австрія вітає ухвалення закону українським парламентом, яким має бути відновлено інституційну незалежність і оперативні повноваження Національного антикорупційного бюро (НАБУ) та Спеціалізованої антикорупційної прокуратури (САП). Прийняття цього закону є вкрай необхідним кроком", - заявили у МЗС.'
+    }
+  },
+  {
+    id: 12,
+    title: {
+      en: '01.08.2025 🛴 New rules for electric scooters and e-bikes: Ban on sidewalks and mandatory helmet',
+      de: '01.08.2025 🛴 Neue Regeln für Elektroroller und E-Bikes: Verbot auf Gehwegen und Helmpflicht',
+      ua: '01.08.2025 🛴 Нові правила для електросамокатів та електровелосипедів: Заборона на тротуарах та обов\'язковий шолом'
+    },
+    text: {
+      en: '❓ Planned changes:\n▫️Electric mopeds: Will no longer be able to drive on bike paths.\n▫️E-bikes and electric scooters: Will be prohibited from driving on sidewalks.\n▫️New requirement: Mandatory helmet requirement for drivers is being considered.\n\nThese measures are aimed at improving safety and order on the roads.',
+      de: '❓ Geplante Änderungen:\n▫️Elektromopeds: Können nicht mehr auf Radwegen fahren.\n▫️E-Bikes und Elektroroller: Fahren auf Gehwegen wird verboten.\n▫️Neue Anforderung: Obligatorische Helmpflicht für Fahrer wird erwogen.\n\nDiese Maßnahmen zielen darauf ab, die Sicherheit und Ordnung auf den Straßen zu verbessern.',
+      ua: '❓ Планові зміни:\n▫️Електромопеди: Більше не зможуть рухатися по велодоріжках.\n▫️Електровелосипеди та електросамокати: Заборонять рух по тротуарах.\n▫️Нова вимога: Розглядається обов\'язкова вимога шолома для водіїв.\n\nЦі заходи спрямовані на підвищення безпеки та порядку на дорогах.'
+    }
+  },
   {
     id: 11,
     title: {
@@ -30,14 +44,14 @@ export const news = [
   {
     id: 10,
     title: {
-      en: '31.08.2025 Verkhovna Rada adopted law restoring NABU powers',
-      de: '31.08.2025 Werchowna Rada verabschiedete Gesetz zur Wiederherstellung der NABU-Befugnisse',
-      ua: '31.08.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ'
+      en: '31.07.2025 Verkhovna Rada adopted law restoring NABU powers',
+      de: '31.07.2025 Werchowna Rada verabschiedete Gesetz zur Wiederherstellung der NABU-Befugnisse',
+      ua: '31.07.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ'
     },
     text: {
-      en: '31.08.2025 The Verkhovna Rada adopted a law restoring the powers of NABU. This is an important step towards strengthening the anti-corruption infrastructure and fulfilling obligations to international partners. The independence and effectiveness of NABU are the key to justice and public trust.',
-      de: '31.08.2025 Die Werchowna Rada hat ein Gesetz verabschiedet, das die Befugnisse von NABU wiederherstellt. Dies ist ein wichtiger Schritt zur Stärkung der Antikorruptionsinfrastruktur und zur Erfüllung der Verpflichtungen gegenüber internationalen Partnern. Die Unabhängigkeit und Effektivität von NABU sind der Schlüssel zu Gerechtigkeit und öffentlichem Vertrauen.',
-      ua: '31.08.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ. Це важливий крок до посилення антикорупційної інфраструктури та виконання зобов\'язань перед міжнародними партнерами. Незалежність та ефективність НАБУ — ключ до справедливості та довіри суспільства.'
+      en: '31.07.2025 The Verkhovna Rada adopted a law restoring the powers of NABU. This is an important step towards strengthening the anti-corruption infrastructure and fulfilling obligations to international partners. The independence and effectiveness of NABU are the key to justice and public trust.',
+      de: '31.07.2025 Die Werchowna Rada hat ein Gesetz verabschiedet, das die Befugnisse von NABU wiederherstellt. Dies ist ein wichtiger Schritt zur Stärkung der Antikorruptionsinfrastruktur und zur Erfüllung der Verpflichtungen gegenüber internationalen Partnern. Die Unabhängigkeit und Effektivität von NABU sind der Schlüssel zu Gerechtigkeit und öffentlichem Vertrauen.',
+      ua: '31.07.2025 Верховна Рада прийняла закон, що відновлює повноваження НАБУ. Це важливий крок до посилення антикорупційної інфраструктури та виконання зобов\'язань перед міжнародними партнерами. Незалежність та ефективність НАБУ — ключ до справедливості та довіри суспільства.'
     }
   },
   {
