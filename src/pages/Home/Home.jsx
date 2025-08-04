@@ -8,7 +8,7 @@ import Calendar from '../../components/Calendar/Calendar';
 import AdminCalendar from '../../components/AdminCalendar/AdminCalendar';
 import { useTranslation } from 'react-i18next';
 import { news } from '../../data/db';
-import declImg from '../../assets/IMG-Decloration_16-07-1990.jpg';
+import declImg from '../../assets/PCU.png';
 import zakonImg from '../../assets/zakon.jpg';
 import riverImg1 from '../../assets/1754053971684.jpg';
 import riverImg2 from '../../assets/1754053971689.jpg';
@@ -147,7 +147,7 @@ const Home = () => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-            <img src={declImg} alt="Declaration 16.07.1990" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, margin: '0 auto 16px auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
+            <img src={declImg} alt="Ukrainian Air Force Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, margin: '0 auto 16px auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%' }}>
               {isMobile && !showFull ? shortText : (
                 <>
@@ -181,7 +181,7 @@ const Home = () => {
             textAlign: 'left',
             flexWrap: 'wrap',
           }}>
-            <img src={declImg} alt="Declaration 16.07.1990" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
+                          <img src={declImg} alt="Ukrainian Air Force Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
               {isMobile && !showFull ? shortText : (
                 <>
