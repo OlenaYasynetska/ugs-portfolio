@@ -1,6 +1,19 @@
 export const news = [
 
   {
+    id: 15,
+    title: {
+      en: '04.08.2025 EU plans phased completion of temporary protection for Ukrainians in 2027',
+      de: '04.08.2025 EU plant schrittweise Beendigung des vorübergehenden Schutzes für Ukrainer im Jahr 2027',
+      ua: '04.05.2025 ЄС планує поетапне завершення тимчасового захисту для українців у 2027 році'
+    },
+          text: {
+        en: 'The EU plans a phased completion of temporary protection for Ukrainians in 2027.\n\n▫️New residence statuses — encouragement to apply for other permits (work, study, family), including Blue Card and Single Permit.\n▫️Voluntary return — familiarization trips, relocation support, exceptions for vulnerable groups, possibility to stay until the end of the academic year.\n▫️Information support — consultations, information campaigns, support through Unity Hubs.\n▫️Coordination with Ukraine — data exchange, status updates through the Solidarity Platform.\n\nThis plan will ensure a smooth and managed transition from temporary protection to new legal statuses or return home in a clear manner.',
+        de: 'Die EU plant eine schrittweise Beendigung des vorübergehenden Schutzes für Ukrainer im Jahr 2027.\n\n▫️Neue Aufenthaltsstatus — Ermutigung zur Beantragung anderer Genehmigungen (Arbeit, Studium, Familie), einschließlich Blue Card und Single Permit.\n▫️Freiwillige Rückkehr — Informationsreisen, Unterstützung bei der Umsiedlung, Ausnahmen für gefährdete Gruppen, Möglichkeit bis zum Ende des Schuljahres zu bleiben.\n▫️Informationsunterstützung — Beratungen, Informationskampagnen, Unterstützung durch Unity Hubs.\n▫️Koordination mit der Ukraine — Datenaustausch, Statusaktualisierungen über die Solidaritätsplattform.\n\nDieser Plan wird einen reibungslosen und kontrollierten Übergang vom vorübergehenden Schutz zu neuen Rechtsstatus oder zur Rückkehr nach Hause auf klare Weise gewährleisten.',
+        ua: 'ЄС <a href="https://epthinktank.eu/2025/06/25/transitioning-out-of-temporary-protection-for-displaced-people-from-ukraine/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">планує</a> поетапне завершення тимчасового захисту для українців у 2027 році.\n\n▫️Нові статуси проживання — заохочення подаватися на інші дозволи (робота, навчання, сім\'я), включно з Blue Card та Single Permit.\n▫️Добровільне повернення — ознайомчі поїздки, підтримка переїзду, винятки для вразливих, можливість залишитися до кінця навчального року.\n▫️Інформаційна підтримка — консультації, інформаційні кампанії, підтримка через Unity Hubs.\n▫️Координація з Україною — обмін даними, оновлення статусів через Платформу солідарності.\n\nЦей план дозволить забезпечити плавний та керований перехід від тимчасового захисту до нових правових статусів або до повернення додому у зрозумілий спосіб.'
+    }
+  },
+  {
     id: 14,
     title: {
       en: '02.08.2025 🏔️ Ministry of Foreign Affairs of Ukraine, Ukrzaliznytsia and Ministry of Community Development continue registration for "Iron Squad" project',
