@@ -7,7 +7,7 @@ import styles from './App.module.css';
 import Home from '../../pages/Home/Home';
 import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
-import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import ContactFormPage from '../../pages/ContactFormPage/ContactFormPage';
 
 function AppContent() {
   const location = useLocation();
@@ -21,7 +21,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           {/* <Route path="/contact" element={<Contacts />} /> */}
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<ContactFormPage />} />
         </Routes>
       </Main>
       <Footer />

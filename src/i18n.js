@@ -25,6 +25,15 @@ i18n.use(initReactI18next).init({
         calendar_of_events: 'Calendar of Events',
         weekly_events: 'Events of the Week',
         no_events_this_week: 'No events this week',
+        notfound_message: 'We value your opinion — just write to us. UGS team is with you.',
+        contact_us: 'Contact us',
+        name: 'Name',
+        message: 'Message',
+        message_placeholder: 'Write your message here...',
+        send_message: 'Send Message',
+        sending: 'Sending...',
+        message_sent_success: 'Message sent successfully!',
+        message_sent_error: 'Failed to send message. Please try again.',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -51,6 +60,15 @@ i18n.use(initReactI18next).init({
         calendar_of_events: 'Ereigniskalender',
         weekly_events: 'Ereignisse der Woche',
         no_events_this_week: 'Keine Ereignisse diese Woche',
+        notfound_message: 'Wir schätzen Ihre Meinung — schreiben Sie uns einfach. Das UGS-Team ist bei Ihnen.',
+        contact_us: 'Kontaktieren Sie uns',
+        name: 'Name',
+        message: 'Nachricht',
+        message_placeholder: 'Schreiben Sie Ihre Nachricht hier...',
+        send_message: 'Nachricht senden',
+        sending: 'Wird gesendet...',
+        message_sent_success: 'Nachricht erfolgreich gesendet!',
+        message_sent_error: 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -77,6 +95,15 @@ i18n.use(initReactI18next).init({
         calendar_of_events: 'Календар подій',
         weekly_events: 'Події тижня',
         no_events_this_week: 'Немає подій цього тижня',
+        notfound_message: 'Ми цінуємо вашу думку — просто напишіть нам. Команда UGS з вами.',
+        contact_us: 'Зв\'язатися з нами',
+        name: 'Ім\'я',
+        message: 'Повідомлення',
+        message_placeholder: 'Напишіть ваше повідомлення тут...',
+        send_message: 'Надіслати повідомлення',
+        sending: 'Надсилається...',
+        message_sent_success: 'Повідомлення успішно надіслано!',
+        message_sent_error: 'Не вдалося надіслати повідомлення. Спробуйте ще раз.',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

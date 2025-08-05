@@ -1,6 +1,19 @@
 export const news = [
 
   {
+    id: 16,
+    title: {
+      en: '04.08.2025 💶 Naftogaz received permission to seize Russian assets in Austria',
+      de: '04.08.2025 💶 Naftogaz erhielt die Erlaubnis zur Beschlagnahme russischer Vermögenswerte in Österreich',
+      ua: '04.08.2025 💶 Нафтогаз отримав дозвіл на стягнення російських активів у Австрії'
+    },
+    text: {
+      en: 'The Vienna District Court allowed Naftogaz of Ukraine to forcibly collect more than 120 million euros from Russia through the sale of its assets in Austria. This is part of the execution of a large-scale arbitral award amounting to more than $5 billion, the company\'s press service <a href="https://www.naftogaz.com/news/avstriyskyy-sud-dozvolyv-naftohazu-styahnuty-z-rosiyi-ponad-120-mln-yevro-aktyviv" target="_blank" rel="noopener noreferrer">reported</a>.\n\nThe court decision allows the encumbrance of more than 20 real estate objects of Russia on the territory of Austria, which will be sold through auction.',
+      de: 'Das Wiener Bezirksgericht erlaubte Naftogaz der Ukraine, mehr als 120 Millionen Euro von Russland durch den Verkauf seiner Vermögenswerte in Österreich zwangsweise einzuziehen. Dies ist Teil der Vollstreckung eines groß angelegten Schiedsspruchs in Höhe von mehr als 5 Milliarden Dollar, teilte der Pressedienst des Unternehmens <a href="https://www.naftogaz.com/news/avstriyskyy-sud-dozvolyv-naftohazu-styahnuty-z-rosiyi-ponad-120-mln-yevro-aktyviv" target="_blank" rel="noopener noreferrer">mit</a>.\n\nDas Gerichtsurteil erlaubt die Belastung von mehr als 20 Immobilienobjekten Russlands auf dem Territorium Österreichs, die durch Auktion verkauft werden.',
+      ua: 'Районний суд Відня дозволив Нафтогазу України примусово стягнути з росії понад 120 мільйонів євро через продаж її активів у Австрії. Це частина виконання масштабного арбітражного рішення на суму понад $5 мільярдів, <a href="https://www.naftogaz.com/news/avstriyskyy-sud-dozvolyv-naftohazu-styahnuty-z-rosiyi-ponad-120-mln-yevro-aktyviv" target="_blank" rel="noopener noreferrer">повідомила</a> пресслужба компанії.\n\nРішення суду дозволяє обтяження понад 20 об\'єктів нерухомості росії на території Австрії, які будуть продані через аукціон.'
+    }
+  },
+  {
     id: 15,
     title: {
       en: '04.08.2025 EU plans phased completion of temporary protection for Ukrainians in 2027',
