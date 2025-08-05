@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = ({ onClose }) => {
   const { t } = useTranslation();
@@ -28,15 +28,20 @@ const ContactForm = ({ onClose }) => {
 
     // EmailJS configuration
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+      name: formData.name,
+      email: formData.email,
       message: formData.message,
-      reply_to: formData.email
+      time: new Date().toLocaleString()
     };
 
+    console.log('Отправка письма с параметрами:', templateParams);
+    console.log('Service ID:', 'service_xapqo9x');
+    console.log('Template ID:', 'template_gka9359');
+    console.log('User ID:', '6GTgM1iT4JuZOh4G_');
+
     emailjs.send(
-      'service_iota3me',
-      'template_e8ozz9d',
+      'service_xapqo9x',
+      'template_gka9359',
       templateParams,
       '6GTgM1iT4JuZOh4G_'
     )
@@ -50,6 +55,7 @@ const ContactForm = ({ onClose }) => {
       })
       .catch((err) => {
         console.log('FAILED...', err);
+        console.log('Ошибка детали:', err.text || err.message || err);
         setSubmitStatus('error');
       })
       .finally(() => {

@@ -1,7 +1,7 @@
 import './i18n';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 import './global.css'
 import App from './components/App/App.jsx'
