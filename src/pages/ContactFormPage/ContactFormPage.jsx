@@ -44,7 +44,7 @@ const ContactFormPage = () => {
               display: 'block',
               borderRadius: 16,
               boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-              marginTop: '-80px',
+              marginTop: '-60px',
             }}
           />
                  <div

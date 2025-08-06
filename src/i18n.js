@@ -34,6 +34,9 @@ i18n.use(initReactI18next).init({
         sending: 'Sending...',
         message_sent_success: 'Message sent successfully!',
         message_sent_error: 'Failed to send message. Please try again.',
+        help: 'Help',
+        culture: 'Culture',
+        blog: 'Blog',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
       }
@@ -69,6 +72,9 @@ i18n.use(initReactI18next).init({
         sending: 'Wird gesendet...',
         message_sent_success: 'Nachricht erfolgreich gesendet!',
         message_sent_error: 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.',
+        help: 'Hilfe',
+        culture: 'Kultur',
+        blog: 'Blog',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
       }
@@ -104,6 +110,9 @@ i18n.use(initReactI18next).init({
         sending: 'Надсилається...',
         message_sent_success: 'Повідомлення успішно надіслано!',
         message_sent_error: 'Не вдалося надіслати повідомлення. Спробуйте ще раз.',
+        help: 'Допомога',
+        culture: 'Культура',
+        blog: 'Блог',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
       }

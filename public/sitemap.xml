@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Главная страница -->
+  <url>
+    <loc>https://ugs-info.at/</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en" />
+  </url>
+  
+  <!-- Страница "О нас" -->
+  <url>
+    <loc>https://ugs-info.at/about</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/about" />
+  </url>
+  
+  <!-- Страница "Контакты" -->
+  <url>
+    <loc>https://ugs-info.at/contacts</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/contacts" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/contacts" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/contacts" />
+  </url>
+  
+  <!-- Новости -->
+  <url>
+    <loc>https://ugs-info.at/news</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/news" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/news" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/news" />
+  </url>
+  
+  <!-- События -->
+  <url>
+    <loc>https://ugs-info.at/events</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/events" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/events" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/events" />
+  </url>
+  
+  <!-- Важная информация -->
+  <url>
+    <loc>https://ugs-info.at/important-info</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/important-info" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/important-info" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/important-info" />
+  </url>
+  
+  <!-- Экстренные вызовы -->
+  <url>
+    <loc>https://ugs-info.at/emergency</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/emergency" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/emergency" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/emergency" />
+  </url>
+  
+  <!-- Аптеки -->
+  <url>
+    <loc>https://ugs-info.at/pharmacy</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/pharmacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/pharmacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/pharmacy" />
+  </url>
+  
+  <!-- Допомога -->
+  <url>
+    <loc>https://ugs-info.at/help</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/help" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/help" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/help" />
+  </url>
+  
+  <!-- Культура -->
+  <url>
+    <loc>https://ugs-info.at/culture</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/culture" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/culture" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/culture" />
+  </url>
+  
+  <!-- Блог -->
+  <url>
+    <loc>https://ugs-info.at/blog</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ugs-info.at/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ugs-info.at/de/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/blog" />
+  </url>
+  
+</urlset> 
