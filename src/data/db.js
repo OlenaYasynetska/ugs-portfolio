@@ -1,6 +1,32 @@
 export const news = [
 
   {
+    id: 18,
+    title: {
+      en: '🏠 What you need to know before buying real estate?',
+      de: '🏠 Was Sie vor dem Kauf von Immobilien wissen müssen?',
+      ua: '🏠 Що потрібно знати перед купівлею нерухомості?'
+    },
+    text: {
+      en: 'Key points:\n▫️Rules for foreigners — in most EU countries you can buy real estate, but in some (for example, Denmark) you need a special permit.\n▫️Taxes and fees — usually add +5-15% to the price: property transfer tax, notarial and registration costs.\n▫️Residence permit — the purchase itself does not always give permanent residence, but there are exceptions (Portugal, Greece — "Golden Visa" programs).\n▫️Mortgage for foreigners — possible, but with a larger down payment (20-40%) and higher rates than for locals.\n▫️Property inspection — technical condition, debts, rental rights and development restrictions.\n▫️Additional costs — insurance, utility bills, maintenance (especially for resort properties).',
+      de: 'Wichtige Punkte:\n▫️Regeln für Ausländer — in den meisten EU-Ländern können Sie Immobilien kaufen, aber in einigen (z.B. Dänemark) benötigen Sie eine Sondergenehmigung.\n▫️Steuern und Gebühren — fügen normalerweise +5-15% zum Preis hinzu: Grunderwerbsteuer, notarielle und Registrierungskosten.\n▫️Aufenthaltserlaubnis — der Kauf selbst gibt nicht immer eine unbefristete Aufenthaltserlaubnis, aber es gibt Ausnahmen (Portugal, Griechenland — "Golden Visa"-Programme).\n▫️Hypothek für Ausländer — möglich, aber mit einer höheren Anzahlung (20-40%) und höheren Zinssätzen als für Einheimische.\n▫️Objektprüfung — technischer Zustand, Schulden, Mietrechte und Bebauungsbeschränkungen.\n▫️Zusätzliche Kosten — Versicherung, Nebenkosten, Wartung (besonders für Ferienimmobilien).',
+      ua: 'Головні моменти:\n▫️Правила для іноземців — у більшості країн ЄС ви можете купувати нерухомість, але в деяких (наприклад, у Данії) потрібен спеціальний дозвіл.\n▫️Податки та збори — зазвичай додають +5–15% до ціни: податок на передачу власності, нотаріальні та реєстраційні витрати.\n▫️Вид на проживання — сама купівля не завжди дає ПМП, але є винятки (Португалія, Греція — програми "Golden Visa").\n▫️Іпотека для іноземців — можлива, але з більшим початковим внеском (20–40%) і вищою ставкою, ніж для місцевих.\n▫️Перевірка об\'єкта — технічний стан, борги, права оренди та обмеження забудови.\n▫️Додаткові витрати — страхування, комунальні платежі, утримання (особливо для курортних об\'єктів).'
+    }
+  },
+  {
+    id: 17,
+    title: {
+      en: '🛒 Two-thirds of Viennese support Sunday shopping',
+      de: '🛒 Zwei Drittel der Wiener unterstützen Sonntagseinkäufe',
+      ua: '🛒 Дві третини віденців підтримують недільний шопінг'
+    },
+    text: {
+      en: 'According to a survey by the Institute of Trade, Sales and Marketing (IHaM), 63% of Vienna residents are ready to make purchases on Sundays if stores are open. This is significantly higher than in other federal states of Austria (48%).\n\nYoung people are enthusiastic: 74% of Generation Z (1997-2012) and 67% of Generation Y (1981-1996) support the idea.\n\nInterest decreases with age: 56% of Generation X and 53% of baby boomers.\n\nWhat are they planning to buy? Mainly groceries (54%), hygiene products (27%), clothing (27%) and footwear (23%). But 37% are against it — due to cultural traditions, employee rest and family time.',
+      de: 'Laut einer Umfrage des Instituts für Handel, Verkauf und Marketing (IHaM) sind 63% der Wiener bereit, sonntags einzukaufen, wenn die Geschäfte geöffnet sind. Das ist deutlich höher als in anderen österreichischen Bundesländern (48%).\n\nJunge Menschen sind begeistert: 74% der Generation Z (1997-2012) und 67% der Generation Y (1981-1996) unterstützen die Idee.\n\nDas Interesse nimmt mit dem Alter ab: 56% der Generation X und 53% der Babyboomer.\n\nWas wollen sie kaufen? Hauptsächlich Lebensmittel (54%), Hygieneartikel (27%), Kleidung (27%) und Schuhe (23%). Aber 37% sind dagegen — wegen kultureller Traditionen, Ruhezeiten der Mitarbeiter und Familienzeit.',
+      ua: 'Згідно з опитуванням Інституту торгівлі, продажів і маркетингу (IHaM), 63% жителів Відня готові робити покупки по неділях, якщо магазини будуть відкриті. Це значно вище, ніж в інших федеральних землях Австрії (48%).\n\nМолодь в захваті: 74% покоління Z (1997–2012) і 67% покоління Y (1981–1996) за ідею.\n\nЗ віком інтерес падає: 56% покоління X і 53% бебі-бумерів.\n\nЩо збираються купувати? В основному продукти (54%), засоби гігієни (27%), одяг (27%) і взуття (23%). Але 37% проти — через культурні традиції, відпочинок працівників і сімейний час.'
+    }
+  },
+  {
     id: 16,
     title: {
       en: '04.08.2025 💶 Naftogaz received permission to seize Russian assets in Austria',
