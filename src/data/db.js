@@ -1,6 +1,19 @@
 export const news = [
 
   {
+    id: 19,
+    title: {
+      en: 'August 23 — Ukrainian State Flag Day',
+      de: '23. August — Tag der ukrainischen Staatsflagge',
+      ua: '23 серпня — День Державного Прапора України'
+    },
+    text: {
+      en: 'Blue sky and golden field — symbols of our freedom, dignity and indomitability.\nThis day reminds us that under these colors beats the heart of every Ukrainian, wherever they may be.\n\nThe flag is not just fabric. It is our history, our struggle and our victory.\nWith love for Ukraine and faith in its bright future! 💙💛',
+      de: 'Blauer Himmel und goldenes Feld — Symbole unserer Freiheit, Würde und Unbezwingbarkeit.\nDieser Tag erinnert uns daran, dass unter diesen Farben das Herz jedes Ukrainers schlägt, wo auch immer er sich befinden mag.\n\nDie Flagge ist nicht nur Stoff. Sie ist unsere Geschichte, unser Kampf und unser Sieg.\nMit Liebe zur Ukraine und Glauben an ihre strahlende Zukunft! 💙💛',
+      ua: 'Синє небо та золоте поле — символи нашої свободи, гідності та незламності.\nЦей день нагадує, що під цими кольорами б\'ється серце кожного українця, де б він не був.\n\nПрапор — це не просто тканина. Це наша історія, наша боротьба і наша перемога.\nЗ любов\'ю до України та вірою в її світле майбутнє! 💙💛'
+    }
+  },
+  {
     id: 18,
     title: {
       en: '🏠 What you need to know before buying real estate?',

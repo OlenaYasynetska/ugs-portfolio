@@ -8,7 +8,7 @@ import Calendar from '../../components/Calendar/Calendar';
 import AdminCalendar from '../../components/AdminCalendar/AdminCalendar';
 import { useTranslation } from 'react-i18next';
 import { news } from '../../data/db';
-import declImg from '../../assets/PCU.png';
+import fieldImg from '../../assets/field.png';
 import zakonImg from '../../assets/zakon.jpg';
 import riverImg1 from '../../assets/1754053971684.jpg';
 import riverImg2 from '../../assets/1754053971689.jpg';
@@ -78,8 +78,8 @@ const Home = () => {
   
   // Получаем текст для блока "Этот день в истории"
   const lang = i18n.language || 'en';
-  const news5 = news.find(n => n.id === 5);
-  const dayText = news5?.text?.[lang] || news5?.text?.en || '';
+  const news19 = news.find(n => n.id === 19);
+  const dayText = news19?.text?.[lang] || news19?.text?.en || '';
   const shortText = dayText.length > 220 ? (
     <>
       {dayText.slice(0, 220)}<span
@@ -147,8 +147,11 @@ const Home = () => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-            <img src={declImg} alt="Ukrainian Air Force Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, margin: '0 auto 16px auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
+            <img src={fieldImg} alt="Ukrainian State Flag Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, margin: '0 auto 16px auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%' }}>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+                🇺🇦 23 серпня — День Державного Прапора України
+              </div>
               {isMobile && !showFull ? shortText : (
                 <>
                   {dayText}
@@ -181,8 +184,11 @@ const Home = () => {
             textAlign: 'left',
             flexWrap: 'wrap',
           }}>
-                          <img src={declImg} alt="Ukrainian Air Force Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
+                          <img src={fieldImg} alt="Ukrainian State Flag Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+                🇺🇦 23 серпня — День Державного Прапора України
+              </div>
               {isMobile && !showFull ? shortText : (
                 <>
                   {dayText}
