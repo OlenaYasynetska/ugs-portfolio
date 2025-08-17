@@ -129,7 +129,7 @@ const Home = () => {
             <img src={fieldImg} alt="Ukrainian State Flag Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, margin: '0 auto 16px auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%' }}>
               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
-                🇺🇦 23 серпня — День Державного Прапора України
+                🇺🇦 {t('ukrainian_flag_day') || '23 серпня — День Державного Прапора України'}
               </div>
               {isMobile && !showFull ? shortText : (
                 <>
@@ -166,7 +166,7 @@ const Home = () => {
                           <img src={fieldImg} alt="Ukrainian State Flag Day" style={{ maxWidth: 220, width: '100%', height: 'auto', borderRadius: 12, marginRight: 24, flex: '0 0 220px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }} />
             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
-                🇺🇦 23 серпня — День Державного Прапора України
+                🇺🇦 {t('ukrainian_flag_day') || '23 серпня — День Державного Прапора України'}
               </div>
               {isMobile && !showFull ? shortText : (
                 <>
