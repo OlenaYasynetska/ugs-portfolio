@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- Синяя полоса (верхняя) -->
+  <rect x="0" y="0" width="900" height="300" fill="#0057b8"/>
+  
+  <!-- Желтая полоса (нижняя) -->
+  <rect x="0" y="300" width="900" height="300" fill="#ffdd00"/>
+  
+  <!-- Флагшток -->
+  <rect x="50" y="0" width="20" height="600" fill="#8B4513"/>
+  
+  <!-- Тень флага -->
+  <ellipse cx="60" cy="620" rx="40" ry="10" fill="rgba(0,0,0,0.3)"/>
+</svg> 

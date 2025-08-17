@@ -1,6 +1,27 @@
 // База данных календарных событий
 export const calendarEvents = [
   {
+    id: 4,
+    date: '2025-08-23',
+    title: {
+      en: 'Ukrainian State Flag Day - Ceremony in Vienna',
+      de: 'Tag der ukrainischen Staatsflagge - Zeremonie in Wien',
+      ua: 'День Державного Прапора України - Церемонія у Відні'
+    },
+    description: {
+      en: 'The Embassy of Ukraine in Austria invites the Ukrainian community to participate in the solemn ceremony of raising the State Flag of Ukraine. The event will take place at 09:00 on the territory of the diplomatic mission in Vienna. Mandatory pre-registration required.',
+      de: 'Die Botschaft der Ukraine in Österreich lädt die ukrainische Gemeinschaft zur Teilnahme an der feierlichen Zeremonie des Hissens der Staatsflagge der Ukraine ein. Die Veranstaltung findet um 09:00 Uhr auf dem Gelände der diplomatischen Mission in Wien statt. Obligatorische Voranmeldung erforderlich.',
+      ua: 'Посольство України в Австрії запрошує українську громаду взяти участь у урочистій церемонії підняття Державного Прапора України. Захід відбудеться о 09:00 на території дипломатичного представництва у Відні. Необхідна обов\'язкова попередня реєстрація.'
+    },
+    type: 'celebration',
+    priority: 'high',
+    color: '#ff5722',
+    image: '/ukrainian-flag.svg',
+    time: '09:00',
+    location: 'Naaffgasse 23, 1180 Wien',
+    weekday: 'Sa, 23.08.2025'
+  },
+  {
     id: 5,
     date: '2025-08-03',
     title: {

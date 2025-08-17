@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { news } from '../data/db';
+import kindsOchakovImg from '../assets/Kinds_Ochakov.png';
 
-const Article = ({ title, date, children }) => {
+const Article = ({ title, date, children, newsId }) => {
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
@@ -54,6 +55,22 @@ const Article = ({ title, date, children }) => {
         {open && (
           <div style={{ marginTop: 12, color: '#222', borderTop: '1px solid #e0e0e0', paddingTop: 12, fontSize: 16, whiteSpace: 'pre-line' }}>
             {date && <div style={{ color: '#1976d2', fontFamily: 'monospace', marginBottom: 8 }}>{date}</div>}
+            {/* Display image for news ID 21 (children from Ochakiv) */}
+            {newsId === 21 && (
+              <div style={{ textAlign: 'center', marginBottom: 16 }}>
+                <img 
+                  src={kindsOchakovImg} 
+                  alt="Children from Ochakiv going to the Alps" 
+                  style={{ 
+                    maxWidth: '100%', 
+                    height: 'auto', 
+                    borderRadius: 12,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    maxHeight: '300px'
+                  }} 
+                />
+              </div>
+            )}
             <div dangerouslySetInnerHTML={{ __html: text.slice(0, progress) }} />
           </div>
         )}
@@ -66,6 +83,7 @@ Article.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
   children: PropTypes.node,
+  newsId: PropTypes.number,
 };
 
 export default function NewsBlock() {
@@ -103,6 +121,7 @@ export default function NewsBlock() {
           title={item.title[lang] || item.title.en}
           date={item.title[lang]?.match(/\d{2}\.\d{2}\.\d{4}/)?.[0] || ''}
           className="news-article"
+          newsId={item.id}
         >
           {item.text[lang] || item.text.en}
         </Article>

@@ -263,7 +263,7 @@ const Home = () => {
          
          {/* Блок "Итоги недели" с новостью об итогах саммита */}
          {(() => {
-           const news21 = news.find(n => n.id === 21);
+           const news20 = news.find(n => n.id === 20);
            return (
              <div 
                style={{
@@ -280,11 +280,11 @@ const Home = () => {
                <div style={{
                  fontSize: '20px',
                  fontWeight: 700,
-                 color: '#1565c0',
+                 color: '#1566c0',
                  marginBottom: '16px',
                  textAlign: 'center'
                }}>
-                 {news21?.title?.[lang] || news21?.title?.en || 'News title not found'}
+                 {news20?.title?.[lang] || news20?.title?.en || 'News title not found'}
                </div>
                <div style={{
                  fontSize: '16px',
@@ -294,7 +294,7 @@ const Home = () => {
                  padding: '0 8px',
                  whiteSpace: 'pre-line'
                }}>
-                 {news21?.text?.[lang] || news21?.text?.en || 'News not found'}
+                 {news20?.text?.[lang] || news20?.text?.en || 'News not found'}
                </div>
              </div>
            );
