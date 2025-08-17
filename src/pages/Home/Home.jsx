@@ -251,6 +251,55 @@ const Home = () => {
            );
          })()}
          
+         {/* Итоги недели */}
+         <div style={{
+           fontWeight: 900,
+           fontSize: '2em',
+           color: '#1565c0',
+           margin: '3vw 0 1vw 0',
+           letterSpacing: '0.02em',
+           textAlign: 'center',
+         }}>{t('weekly_results')}</div>
+         
+         {/* Блок "Итоги недели" с новостью об итогах саммита */}
+         {(() => {
+           const news21 = news.find(n => n.id === 21);
+           return (
+             <div 
+               style={{
+                 background: 'rgba(255,255,255,0.85)',
+                 borderRadius: 16,
+                 boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                 padding: '2vw',
+                 maxWidth: 800,
+                 width: '90%',
+                 margin: '0 auto 2vw auto',
+                 textAlign: 'center',
+               }}
+             >
+               <div style={{
+                 fontSize: '20px',
+                 fontWeight: 700,
+                 color: '#1565c0',
+                 marginBottom: '16px',
+                 textAlign: 'center'
+               }}>
+                 {news21?.title?.[lang] || news21?.title?.en || 'News title not found'}
+               </div>
+               <div style={{
+                 fontSize: '16px',
+                 lineHeight: '1.6',
+                 color: '#234',
+                 textAlign: 'left',
+                 padding: '0 8px',
+                 whiteSpace: 'pre-line'
+               }}>
+                 {news21?.text?.[lang] || news21?.text?.en || 'News not found'}
+               </div>
+             </div>
+           );
+         })()}
+         
          {/* Календарь */}
          <div style={{
            fontWeight: 900,
