@@ -57,7 +57,7 @@ const Hero = () => {
         setPhotoIdx(idx => (idx + 1) % photos.length);
         setFade(true);
       }, 100);
-    }, 60000);
+    }, 5000); // Уменьшил с 60000 (60 сек) до 10000 (10 сек)
     return () => clearInterval(interval);
   }, []);
 
