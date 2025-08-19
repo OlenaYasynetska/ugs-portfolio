@@ -59,7 +59,16 @@ i18n.use(initReactI18next).init({
         klimaticket_cost: '💶 Cost depends on the specific region.',
         klimaticket_details: 'Additional details',
         klimaticket_details_text: 'Klimaticket Ö owners have the right to apply for compensation in case of systematic delays or cancellations. This does not apply to urban transport or lines that do not fall under the ticket\'s validity.',
-        klimaticket_more: 'More details on 👉 klimaticket.at (Fahrgastrechte section).'
+        klimaticket_more: 'More details on 👉 klimaticket.at (Fahrgastrechte section).',
+        tin_title: '📌 How to find out your Tax Identification Number (TIN) in Austria?',
+        tin_intro: 'Tax Identification Number (TIN) in Austria is an analogue of the Ukrainian individual tax code. This number is required in many cases, particularly when opening bank accounts in EU countries.',
+        tin_myth: 'Many people mistakenly believe that TIN is only assigned to working individuals, but this is not true — anyone who is a resident can obtain it.',
+        tin_how: 'How to check your TIN?',
+        tin_option1: 'Option 1. Through FinanzOnline',
+        tin_option1_steps: '• Log into your FinanzOnline personal account.\n• Select "Submit tax return" for 2024 (or another available period).\n• In the displayed personal data, you will see your TIN in the format: 00 000/0000.',
+        tin_note: 'ℹ️ This method is only available to those who have FinanzOnline. If you don\'t have Austria ID yet, it\'s worth taking care of registration in advance.',
+        tin_option2: 'Option 2. Through Finanzamt',
+        tin_option2_text: '• The tax number can be clarified by contacting the tax authority directly: by phone or in writing to Finanzamt.'
       }
     },
     de: {
@@ -118,7 +127,16 @@ i18n.use(initReactI18next).init({
         klimaticket_cost: '💶 Die Kosten hängen von der jeweiligen Region ab.',
         klimaticket_details: 'Zusätzliche Details',
         klimaticket_details_text: 'Inhaber des Klimaticket Ö haben das Recht, bei systematischen Verspätungen oder Stornierungen Anträge auf Entschädigung zu stellen. Dies gilt nicht für den Stadtverkehr oder Linien, die nicht unter die Gültigkeit des Tickets fallen.',
-        klimaticket_more: 'Mehr Details auf 👉 klimaticket.at (Abschnitt Fahrgastrechte).'
+        klimaticket_more: 'Mehr Details auf 👉 klimaticket.at (Abschnitt Fahrgastrechte).',
+        tin_title: '📌 Wie finden Sie Ihre Steueridentifikationsnummer (TIN) in Österreich?',
+        tin_intro: 'Die Steueridentifikationsnummer (TIN) in Österreich ist ein Analogon zum ukrainischen Einzelsteuerkennzeichen. Diese Nummer ist in vielen Fällen erforderlich, insbesondere bei der Eröffnung von Bankkonten in EU-Ländern.',
+        tin_myth: 'Viele Menschen glauben irrtümlich, dass die TIN nur Arbeitnehmern zugewiesen wird, aber das ist nicht wahr — jeder Einwohner kann sie erhalten.',
+        tin_how: 'Wie überprüfen Sie Ihre TIN?',
+        tin_option1: 'Option 1. Durch FinanzOnline',
+        tin_option1_steps: '• Melden Sie sich in Ihrem FinanzOnline-Persönlichen-Konto an.\n• Wählen Sie "Steueranmeldung für 2024 (oder eine andere verfügbare Periode)" aus.\n• In den angezeigten persönlichen Daten sehen Sie Ihre TIN im Format: 00 000/0000.',
+        tin_note: 'ℹ️ Diese Methode ist nur für Personen verfügbar, die FinanzOnline haben. Wenn Sie noch keine Österreichische ID haben, lohnt es sich, sich vorab zu registrieren.',
+        tin_option2: 'Option 2. Durch das Finanzamt',
+        tin_option2_text: '• Die Steueridentifikationsnummer kann durch direkte Kontaktaufnahme beim Finanzamt geklärt werden: per Telefon oder per Brief an das Finanzamt.'
       }
     },
     ua: {
@@ -177,7 +195,16 @@ i18n.use(initReactI18next).init({
         klimaticket_cost: '💶 Вартість залежить від конкретного регіону.',
         klimaticket_details: 'Додаткові нюанси',
         klimaticket_details_text: 'Власники Klimaticket Ö мають право подавати заявки на компенсацію у випадку систематичних затримок чи скасувань рейсів. Це не стосується міського транспорту або ліній, що не підпадають під дію квитка.',
-        klimaticket_more: 'Детальніше – на 👉 klimaticket.at (розділ Fahrgastrechte).'
+        klimaticket_more: 'Детальніше – на 👉 klimaticket.at (розділ Fahrgastrechte).',
+        tin_title: '📌 Як дізнатися свій податок на ідентифікаційний номер (ПІН) в Австрії?',
+        tin_intro: 'Податок на ідентифікаційний номер (ПІН) в Австрії є аналогом українського особового податкового коду. Цей номер потрібен у багатьох випадках, особливо при відкритті банківських рахунків в країнах ЄС.',
+        tin_myth: 'Багато людей помилково вважають, що ПІН призначається тільки працюючим особам, але це не так — будь-який громадянин може його отримати.',
+        tin_how: 'Як перевірити свій ПІН?',
+        tin_option1: 'Варіант 1. Через FinanzOnline',
+        tin_option1_steps: '• Увійдіть в свій особистий обліковий запис FinanzOnline.\n• Виберіть "Подати податкову декларацію" для 2024 року (або інший доступний період).\n• У відображених особистих даних ви побачите свій ПІН у форматі: 00 000/0000.',
+        tin_note: 'ℹ️ Цей метод доступний тільки для тих, хто має FinanzOnline. Якщо у вас ще немає австрійської ідентифікації, корисно заздалегідь зареєструватися.',
+        tin_option2: 'Варіант 2. Через Finanzamt',
+        tin_option2_text: '• Податковий номер можна уточнити, звернувшись безпосередньо до податкової адміністрації: за телефоном або листом до податкової адміністрації.'
       }
     }
   },

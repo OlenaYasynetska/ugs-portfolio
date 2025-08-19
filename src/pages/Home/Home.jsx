@@ -277,7 +277,44 @@ const Home = () => {
            </div>
          </div>
          
-         {/* Календарь */}
+         {/* Модуль для поста ID 24 */}
+         {(() => {
+           const news24 = news.find(n => n.id === 24);
+           return (
+             <div style={{
+               background: 'rgba(255,255,255,0.85)',
+               borderRadius: 16,
+               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+               padding: '2vw',
+               maxWidth: 800,
+               width: '90%',
+               margin: '2vw auto',
+               textAlign: 'center',
+             }}>
+               <div style={{
+                 fontSize: '20px',
+                 fontWeight: 700,
+                 color: '#1565c0',
+                 marginBottom: '16px',
+                 textAlign: 'center'
+               }}>
+                 {news24?.title?.[lang] || news24?.title?.en || 'Post title not found'}
+               </div>
+               <div style={{
+                 fontSize: '16px',
+                 lineHeight: '1.6',
+                 color: '#234',
+                 textAlign: 'left',
+                 padding: '0 8px',
+                 whiteSpace: 'pre-line'
+               }}>
+                 {news24?.text?.[lang] || news24?.text?.en || 'Post content not found'}
+               </div>
+             </div>
+           );
+         })()}
+         
+         {/* Події тижня */}
          <div style={{
            fontWeight: 900,
            fontSize: '2em',
