@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { news } from '../../data/db';
 import fieldImg from '../../assets/field.png';
 import zakonImg from '../../assets/zakon.jpg';
-import geschprechImg from '../../assets/geschprech.png';
+import KindsOchakivImg from '../../assets/Kinds_Ochakov.png';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -191,7 +191,7 @@ const Home = () => {
           </div>
                  )}
          
-         {/* Події тижня */}
+         {/* Модуль Klimaticket */}
          <div style={{
            fontWeight: 900,
            fontSize: '2em',
@@ -199,112 +199,83 @@ const Home = () => {
            margin: '3vw 0 1vw 0',
            letterSpacing: '0.02em',
            textAlign: 'center',
-         }}>{t('weekly_events')}</div>
+         }}>{t('klimaticket_title')}</div>
          
-         {/* Блок "События недели" с новостью о встрече Трампа и Путина */}
-         {(() => {
-           const news19 = news.find(n => n.id === 19);
-           console.log('News 19 found:', news19);
-           console.log('Current language:', lang);
-           console.log('News 19 title:', news19?.title?.[lang]);
-           console.log('News 19 text:', news19?.text?.[lang]);
-           
-           return (
-             <div 
-               id="weekly-events-image"
-               style={{
-                 background: 'rgba(255,255,255,0.85)',
-                 borderRadius: 16,
-                 boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                 padding: '2vw',
-                 maxWidth: 800,
-                 width: '90%',
-                 margin: '0 auto 2vw auto',
-                 textAlign: 'center',
-               }}
-             >
-               <div style={{
-                 fontSize: '20px',
-                 fontWeight: 700,
-                 color: '#1565c0',
-                 marginBottom: '16px',
-                 textAlign: 'center'
-               }}>
-                 {news19?.title?.[lang] || news19?.title?.en || 'News title not found'}
-               </div>
-               <img 
-                 src={geschprechImg} 
-                 alt="Historical meeting: Trump and Putin in Alaska" 
-                 style={{ 
-                   maxWidth: '100%', 
-                   height: 'auto', 
-                   borderRadius: 12,
-                   boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                   marginBottom: '16px'
-                 }} 
-               />
-               <div style={{
-                 fontSize: '16px',
-                 lineHeight: '1.6',
-                 color: '#234',
-                 textAlign: 'left',
-                 padding: '0 8px',
-                 whiteSpace: 'pre-line'
-               }}>
-                 {news19?.text?.[lang] || news19?.text?.en || 'News not found'}
-               </div>
-             </div>
-           );
-         })()}
-         
-         {/* Итоги недели */}
          <div style={{
-           fontWeight: 900,
-           fontSize: '2em',
-           color: '#1565c0',
-           margin: '3vw 0 1vw 0',
-           letterSpacing: '0.02em',
-           textAlign: 'center',
-         }}>{t('weekly_results')}</div>
-         
-         {/* Блок "Итоги недели" с новостью об итогах саммита */}
-         {(() => {
-           const news20 = news.find(n => n.id === 20);
-           return (
-             <div 
-               style={{
-                 background: 'rgba(255,255,255,0.85)',
-                 borderRadius: 16,
-                 boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                 padding: '2vw',
-                 maxWidth: 800,
-                 width: '90%',
-                 margin: '0 auto 2vw auto',
-                 textAlign: 'center',
-               }}
-             >
-               <div style={{
-                 fontSize: '20px',
-                 fontWeight: 700,
-                 color: '#1566c0',
-                 marginBottom: '16px',
-                 textAlign: 'center'
-               }}>
-                 {news20?.title?.[lang] || news20?.title?.en || 'News title not found'}
-               </div>
-               <div style={{
-                 fontSize: '16px',
-                 lineHeight: '1.6',
-                 color: '#234',
-                 textAlign: 'left',
-                 padding: '0 8px',
-                 whiteSpace: 'pre-line'
-               }}>
-                 {news20?.text?.[lang] || news20?.text?.en || 'News not found'}
-               </div>
+           display: 'flex',
+           alignItems: 'flex-start',
+           gap: '2vw',
+           margin: '0 0 1vw 0',
+           background: 'rgba(255,255,255,0.85)',
+           borderRadius: 16,
+           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+           padding: '2vw',
+           maxWidth: 1200,
+           width: '85%',
+           marginLeft: 'auto',
+           marginRight: 'auto',
+           textAlign: 'left',
+           flexWrap: 'wrap',
+         }}>
+           <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
+               {t('klimaticket_what')}
              </div>
-           );
-         })()}
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_description')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_exception')}
+             </div>
+             
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, marginTop: 24 }}>
+               {t('klimaticket_where')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_where_list')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_important')}
+             </div>
+             
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, marginTop: 24 }}>
+               {t('klimaticket_discounts')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_discounts_list')}
+             </div>
+             
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, marginTop: 24 }}>
+               {t('klimaticket_companies')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_companies_text')}
+             </div>
+             
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, marginTop: 24 }}>
+               {t('klimaticket_regional')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_regional_text')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_regional_list')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_cost')}
+             </div>
+             
+             <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, marginTop: 24 }}>
+               {t('klimaticket_details')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_details_text')}
+             </div>
+             <div style={{ marginBottom: 16 }}>
+               {t('klimaticket_more')}
+             </div>
+           </div>
+         </div>
          
          {/* Календарь */}
          <div style={{

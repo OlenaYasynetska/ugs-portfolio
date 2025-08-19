@@ -42,6 +42,24 @@ i18n.use(initReactI18next).init({
         blog: 'Blog',
         // aboutText: 'This is the About Us page.',
         // contactsText: 'This is the Contacts page.'
+        klimaticket_title: '🚆 Klimaticket: Unified Travel Pass for All of Austria',
+        klimaticket_what: 'What is it?',
+        klimaticket_description: 'Klimaticket Ö is an annual subscription that allows you to use almost all public transport in the country: from regional and high-speed trains to metro, buses and trams in cities.',
+        klimaticket_exception: '❗️ Exceptions are tourist routes like Schneebergbahn.',
+        klimaticket_where: 'Where to buy?',
+        klimaticket_where_list: '• through the official website 👉 klimaticket.at\n• at service offices of transport operators\n• in digital format – the ticket can be added to ÖBB, WESTbahn or Wiener Linien apps',
+        klimaticket_important: '💡 Important: if you buy online, the card becomes valid at least after 15 days. If you apply at a service center – it can be activated immediately.',
+        klimaticket_discounts: 'Who gets discounts?',
+        klimaticket_discounts_list: '• Youth (up to 25 years) and elderly people (65+)\n• Persons with disabilities or limited mobility\n• Family packages with preferential conditions\n• Military personnel and participants of social/ecological programs – receive the ticket for free',
+        klimaticket_companies: 'For companies',
+        klimaticket_companies_text: 'Employers can apply for Klimaticket for employees with tax benefits. The condition is that the employee lives or works in Austria.',
+        klimaticket_regional: '🌍 Regional options',
+        klimaticket_regional_text: 'In addition to the national subscription, there are also regional offers:',
+        klimaticket_regional_list: '• Upper Austria (OÖVV)\n• Vienna + Lower Austria + Burgenland (VOR)\n• Vorarlberg (VMOBIL)\n• Styria (Verkehrsverbund Steiermark)\n• Salzburg (Salzburger Verkehrsverbund)\n• Carinthia (Verkehrsverbund Kärnten)\n• Tyrol (VVT)',
+        klimaticket_cost: '💶 Cost depends on the specific region.',
+        klimaticket_details: 'Additional details',
+        klimaticket_details_text: 'Klimaticket Ö owners have the right to apply for compensation in case of systematic delays or cancellations. This does not apply to urban transport or lines that do not fall under the ticket\'s validity.',
+        klimaticket_more: 'More details on 👉 klimaticket.at (Fahrgastrechte section).'
       }
     },
     de: {
@@ -83,6 +101,24 @@ i18n.use(initReactI18next).init({
         blog: 'Blog',
         //aboutText: 'Dies ist die Über uns Seite.',
         // contactsText: 'Dies ist die Kontaktseite.'
+        klimaticket_title: '🚆 Klimaticket: Einheitsticket für ganz Österreich',
+        klimaticket_what: 'Was ist das?',
+        klimaticket_description: 'Klimaticket Ö ist eine Jahreskarte, die die Nutzung fast aller öffentlichen Verkehrsmittel im Land ermöglicht: von Regional- und Schnellzügen bis hin zu U-Bahnen, Bussen und Straßenbahnen in Städten.',
+        klimaticket_exception: '❗️ Ausnahmen sind touristische Strecken wie die Schneebergbahn.',
+        klimaticket_where: 'Wo kann man es kaufen?',
+        klimaticket_where_list: '• über die offizielle Website 👉 klimaticket.at\n• in den Servicebüros der Verkehrsbetriebe\n• im digitalen Format – das Ticket kann in die Apps ÖBB, WESTbahn oder Wiener Linien hinzugefügt werden',
+        klimaticket_important: '💡 Wichtig: Bei Online-Kauf beginnt die Karte frühestens nach 15 Tagen zu gelten. Bei der Beantragung im Servicecenter kann sie sofort aktiviert werden.',
+        klimaticket_discounts: 'Wer bekommt Rabatte?',
+        klimaticket_discounts_list: '• Jugendliche (bis 25 Jahre) und Senioren (65+)\n• Personen mit Behinderung oder eingeschränkter Mobilität\n• Familienpakete mit vergünstigten Bedingungen\n• Militärangehörige und Teilnehmer sozialer/ökologischer Programme – erhalten das Ticket kostenlos',
+        klimaticket_companies: 'Für Unternehmen',
+        klimaticket_companies_text: 'Arbeitgeber können Klimaticket für Mitarbeiter mit Steuervorteilen beantragen. Voraussetzung ist, dass der Mitarbeiter in Österreich wohnt oder arbeitet.',
+        klimaticket_regional: '🌍 Regionale Varianten',
+        klimaticket_regional_text: 'Neben dem nationalen Abonnement gibt es auch regionale Angebote:',
+        klimaticket_regional_list: '• Oberösterreich (OÖVV)\n• Wien + Niederösterreich + Burgenland (VOR)\n• Vorarlberg (VMOBIL)\n• Steiermark (Verkehrsverbund Steiermark)\n• Salzburg (Salzburger Verkehrsverbund)\n• Kärnten (Verkehrsverbund Kärnten)\n• Tirol (VVT)',
+        klimaticket_cost: '💶 Die Kosten hängen von der jeweiligen Region ab.',
+        klimaticket_details: 'Zusätzliche Details',
+        klimaticket_details_text: 'Inhaber des Klimaticket Ö haben das Recht, bei systematischen Verspätungen oder Stornierungen Anträge auf Entschädigung zu stellen. Dies gilt nicht für den Stadtverkehr oder Linien, die nicht unter die Gültigkeit des Tickets fallen.',
+        klimaticket_more: 'Mehr Details auf 👉 klimaticket.at (Abschnitt Fahrgastrechte).'
       }
     },
     ua: {
@@ -124,6 +160,24 @@ i18n.use(initReactI18next).init({
         blog: 'Блог',
         // aboutText: 'Це сторінка Про нас.',
         // contactsText: 'Це сторінка Контакти.'
+        klimaticket_title: '🚆 Klimaticket: єдиний проїзний для всієї Австрії',
+        klimaticket_what: 'Що це таке?',
+        klimaticket_description: 'Klimaticket Ö – це річний абонемент, який дозволяє користуватися майже всім громадським транспортом у країні: від регіональних і швидкісних поїздів до метро, автобусів і трамваїв у містах.',
+        klimaticket_exception: '❗️ Виняток становлять туристичні маршрути на кшталт Schneebergbahn.',
+        klimaticket_where: 'Де придбати?',
+        klimaticket_where_list: '• через офіційний сайт 👉 klimaticket.at\n• у сервісних офісах транспортних операторів\n• у цифровому форматі – квиток можна додати в додатки ÖBB, WESTbahn чи Wiener Linien',
+        klimaticket_important: '💡 Важливо: якщо купуєте онлайн, картка починає діяти щонайменше через 15 днів. Якщо оформляєте в сервісному центрі – її можуть активувати одразу.',
+        klimaticket_discounts: 'Хто має знижки?',
+        klimaticket_discounts_list: '• Молодь (до 25 років) та літні люди (65+)\n• Особи з інвалідністю чи обмеженою мобільністю\n• Сімейні пакети з пільговими умовами\n• Військовослужбовці та учасники соціальних/екологічних програм – отримують квиток безкоштовно',
+        klimaticket_companies: 'Для компаній',
+        klimaticket_companies_text: 'Роботодавці можуть оформлювати Klimaticket для співробітників із податковими пільгами. Умовою є проживання або робота працівника в Австрії.',
+        klimaticket_regional: '🌍 Місцеві варіанти',
+        klimaticket_regional_text: 'Окрім національного абонемента, існують і регіональні пропозиції:',
+        klimaticket_regional_list: '• Верхня Австрія (OÖVV)\n• Відень + Нижня Австрія + Бургенланд (VOR)\n• Форарльберг (VMOBIL)\n• Штирія (Verkehrsverbund Steiermark)\n• Зальцбург (Salzburger Verkehrsverbund)\n• Каринтія (Verkehrsverbund Kärnten)\n• Тіроль (VVT)',
+        klimaticket_cost: '💶 Вартість залежить від конкретного регіону.',
+        klimaticket_details: 'Додаткові нюанси',
+        klimaticket_details_text: 'Власники Klimaticket Ö мають право подавати заявки на компенсацію у випадку систематичних затримок чи скасувань рейсів. Це не стосується міського транспорту або ліній, що не підпадають під дію квитка.',
+        klimaticket_more: 'Детальніше – на 👉 klimaticket.at (розділ Fahrgastrechte).'
       }
     }
   },
