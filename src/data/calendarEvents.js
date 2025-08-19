@@ -27,14 +27,12 @@ export const calendarEvents = [
     title: {
       en: '🇺🇦✈️ Happy Air Force Day\nof the Armed Forces of Ukraine! ✈️🇺🇦',
       de: '🇺🇦✈️ Alles Gute zum Tag der Luftstreitkräfte\nder Streitkräfte der Ukraine! ✈️🇺🇦',
-      ua: '🇺🇦✈️ З Днем Повітряних Сил\nЗбройних Сил України! ✈️🇺🇦',
-      ru: '🇺🇦✈️ С Днем Воздушных Сил\nВооруженных Сил Украины! ✈️🇺🇦'
+      ua: '🇺🇦✈️ З Днем Повітряних Сил\nЗбройних Сил України! ✈️🇺🇦'
     },
     description: {
       en: 'Today we honor the courage, professionalism and dedication of the warriors who defend the sky of Ukraine! Pilots, engineers, technicians, air defense operators — you stand daily in defense of our freedom and independence. Thank you for your bravery, endurance and unbreakable faith in victory! May the sky over Ukraine always be peaceful, and the wings — strong! 💙💛 Glory to the Air Force! Glory to Ukraine! #AFU #AirForce #AirForceDay #GloryToUkraine #AFUforce #AirForceDay2025',
       de: 'Heute ehren wir den Mut, die Professionalität und Hingabe der Krieger, die den Himmel der Ukraine verteidigen! Piloten, Ingenieure, Techniker, Luftabwehr-Operatoren — ihr steht täglich in der Verteidigung unserer Freiheit und Unabhängigkeit. Danke für euren Mut, eure Ausdauer und euren unerschütterlichen Glauben an den Sieg! Möge der Himmel über der Ukraine immer friedlich sein und die Flügel — stark! 💙💛 Ruhm den Luftstreitkräften! Ruhm der Ukraine! #AFU #AirForce #AirForceDay #GloryToUkraine #AFUforce #AirForceDay2025',
-      ua: '03.08.2025 ми вшановуємо мужність, професіоналізм і відданість воїнів, які боронять небо України! Пілоти, інженери, техніки, оператори ППО — ви щодня стоїте на захисті нашої свободи та незалежності. Дякуємо за вашу сміливість, витримку та незламну віру в перемогу! Хай небо над Україною завжди буде мирним, а крила — міцними! 💙💛 Слава Повітряним Силам! Слава Україні! #ЗСУ #ПовітряніСили #ДеньПС #СлаваУкраїні #ЗСУсила #ДеньПС2025',
-      ru: 'Сегодня мы чтим мужество, профессионализм и преданность воинов, защищающих небо Украины! Летчики, инженеры, техники, операторы ПВО — вы ежедневно стоите на защите нашей свободы и независимости. Спасибо за вашу смелость, выносливость и непоколебимую веру в победу! Пусть небо над Украиной всегда будет мирным, а крылья — крепкими! 💙💛 Слава Воздушным Силам! Слава Украине! #ВСУ #ВоздушныеСилы #ДеньВС #СлаваУкраине #ВСУсила #ДеньВС2025'
+      ua: '03.08.2025 ми вшановуємо мужність, професіоналізм і відданість воїнів, які боронять небо України! Пілоти, інженери, техніки, оператори ППО — ви щодня стоїте на захисті нашої свободи та незалежності. Дякуємо за вашу сміливість, витримку та незламну віру в перемогу! Хай небо над Україною завжди буде мирним, а крила — міцними! 💙💛 Слава Повітряним Силам! Слава Україні! #ЗСУ #ПовітряніСили #ДеньПС #СлаваУкраїні #ЗСУсила #ДеньПС2025'
     },
     type: 'children',
     priority: 'high',
@@ -315,19 +313,19 @@ export function updateEvent(eventId, updatedEvent) {
 
 // Типы событий
 export const eventTypes = {
-  meeting: { label: { en: 'Meeting', de: 'Treffen', ua: 'Зустріч', ru: 'Встреча' }, color: '#1565c0' },
-  education: { label: { en: 'Education', de: 'Bildung', ua: 'Освіта', ru: 'Образование' }, color: '#4caf50' },
-  cultural: { label: { en: 'Cultural', de: 'Kultur', ua: 'Культура', ru: 'Культура' }, color: '#607d8b' },
-  legal: { label: { en: 'Legal', de: 'Recht', ua: 'Юридичне', ru: 'Юридическое' }, color: '#f44336' },
-  children: { label: { en: 'Children', de: 'Kinder', ua: 'Дитяче', ru: 'Детское' }, color: '#9c27b0' },
-  health: { label: { en: 'Health', de: 'Gesundheit', ua: 'Здоров\'я', ru: 'Здоровье' }, color: '#00bcd4' },
-  employment: { label: { en: 'Employment', de: 'Beschäftigung', ua: 'Працевлаштування', ru: 'Трудоустройство' }, color: '#795548' },
-  celebration: { label: { en: 'Celebration', de: 'Feier', ua: 'Святкування', ru: 'Празднование' }, color: '#ff5722' }
+  meeting: { label: { en: 'Meeting', de: 'Treffen', ua: 'Зустріч' }, color: '#1565c0' },
+  education: { label: { en: 'Education', de: 'Bildung', ua: 'Освіта' }, color: '#4caf50' },
+  cultural: { label: { en: 'Cultural', de: 'Kultur', ua: 'Культура' }, color: '#607d8b' },
+  legal: { label: { en: 'Legal', de: 'Recht', ua: 'Юридичне' }, color: '#f44336' },
+  children: { label: { en: 'Children', de: 'Kinder', ua: 'Дитяче' }, color: '#9c27b0' },
+  health: { label: { en: 'Health', de: 'Gesundheit', ua: 'Здоров\'я' }, color: '#00bcd4' },
+  employment: { label: { en: 'Employment', de: 'Beschäftigung', ua: 'Працевлаштування' }, color: '#795548' },
+  celebration: { label: { en: 'Celebration', de: 'Feier', ua: 'Святкування' }, color: '#ff5722' }
 };
 
 // Приоритеты событий
 export const eventPriorities = {
-  high: { label: { en: 'High', de: 'Hoch', ua: 'Високий', ru: 'Высокий' }, color: '#f44336' },
-  medium: { label: { en: 'Medium', de: 'Mittel', ua: 'Середній', ru: 'Средний' }, color: '#ff9800' },
-  low: { label: { en: 'Low', de: 'Niedrig', ua: 'Низький', ru: 'Низкий' }, color: '#4caf50' }
+  high: { label: { en: 'High', de: 'Hoch', ua: 'Високий' }, color: '#f44336' },
+  medium: { label: { en: 'Medium', de: 'Mittel', ua: 'Середній' }, color: '#ff9800' },
+  low: { label: { en: 'Low', de: 'Niedrig', ua: 'Низький' }, color: '#4caf50' }
 }; 
