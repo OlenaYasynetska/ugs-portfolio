@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { calendarEvents, getEventsByDate, eventTypes } from '../../data/calendarEvents';
 import styles from './Calendar.module.css';
@@ -8,18 +8,15 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showViewModal, setShowViewModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
-  const [hoveredEvent, setHoveredEvent] = useState(null);
 
-  // Отслеживаем изменение размера окна
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // Отслеживаем изменение размера окна больше не нужно
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth <= 480);
+  //   };
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
 
   // Многоязычные дни недели
@@ -101,44 +98,19 @@ const Calendar = () => {
           <div className={styles['day-number']}>{day}</div>
           {dateEvents.length > 0 && (
             <div className={styles['events-container']}>
-                             {dateEvents.slice(0, 2).map((event) => (
-                                           <div
-          key={event.id}
-          className={styles['event-item']}
-          style={{
-            backgroundColor: event.color,
-            color: 'white',
-            '--event-color': event.color,
-            borderRadius: isMobile ? '6px' : '4px',
-            padding: isMobile ? '4px 6px' : '2px 6px',
-            marginBottom: isMobile ? '3px' : '2px',
-            borderLeft: isMobile ? 'none' : `3px solid ${event.color}`,
-            textAlign: isMobile ? 'center' : 'left',
-            fontWeight: isMobile ? '600' : 'normal',
-            boxShadow: isMobile ?
-              (hoveredEvent === event.id ? '0 4px 8px rgba(0, 0, 0, 0.3)' : '0 2px 4px rgba(0, 0, 0, 0.2)') :
-              'none',
-            transition: isMobile ? 'all 0.3s ease' : 'all 0.2s ease',
-            transform: isMobile && hoveredEvent === event.id ? 'translateY(-2px)' : 'none'
-          }}
-                    onMouseEnter={() => isMobile && setHoveredEvent(event.id)}
-                    onMouseLeave={() => isMobile && setHoveredEvent(null)}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedEvent(event);
-                      setShowViewModal(true);
-                    }}
-                  >
-                                       {!isMobile && (
-                      <span className={styles['event-text']} style={{
-                        textAlign: 'left',
-                        fontWeight: 'normal'
-                      }}>
-                        {event.title[i18n.language] || event.title.en}
-                      </span>
-                    )}
-                 </div>
-               ))}
+              {dateEvents.slice(0, 2).map((event) => (
+                <div
+                  key={event.id}
+                  className={`${styles['event-item']} ${styles[event.type] || ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedEvent(event);
+                    setShowViewModal(true);
+                  }}
+                >
+                  {/* Только цветные полоски, без текста */}
+                </div>
+              ))}
               {dateEvents.length > 2 && (
                 <div className={styles['more-events']}>+{dateEvents.length - 2}</div>
               )}
