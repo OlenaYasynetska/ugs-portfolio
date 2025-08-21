@@ -261,6 +261,27 @@ export const calendarEvents = [
     time: '18:30 - 20:00',
     location: 'Hof Schloss Lamberg',
     weekday: 'Fr, 01.08.2025'
+  },
+  {
+    id: 6,
+    date: '2025-08-24',
+    title: {
+      en: '🇺🇦 Ukrainian Independence Day in Steyr 🇺🇦',
+      de: '🇺🇦 Unabhängigkeitstag der Ukraine in Steyr 🇺🇦',
+      ua: '🇺🇦 День Незалежності України в Штайрі 🇺🇦'
+    },
+    description: {
+      en: 'Celebration of Ukrainian Independence Day with prayer for Ukraine within the framework of the divine service of the Austrian community, short performance by children, and refreshments and conversations in the parish cafe.',
+      de: 'Feier des ukrainischen Unabhängigkeitstags mit Gebet für die Ukraine im Rahmen des Gottesdienstes der österreichischen Gemeinde, kurzer Auftritt der Kinder und Bewirtung und Gespräche im Pfarrcafé.',
+      ua: 'Святкування Дня Незалежності України з молитвою за Україну в рамках богослужіння австрійської громади, коротким виступом дітей та частуванням та бесідами в парафіяльному кафе.'
+    },
+    type: 'celebration',
+    priority: 'high',
+    color: '#ff5722',
+    image: '/Stadtpfarrkirche.jpg',
+    time: '11:00',
+    location: 'Stadtpfarrkirche, Brucknerplatz 4, 4400 Steyr',
+    weekday: 'Su, 24.08.2025'
   }
 ];
 

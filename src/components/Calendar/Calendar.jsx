@@ -9,6 +9,16 @@ const Calendar = () => {
   const [showViewModal, setShowViewModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  // Функция для получения правильного названия языка
+  const getLanguageName = (langCode) => {
+    const languageNames = {
+      'en': 'English',
+      'de': 'Deutsch', 
+      'ua': 'Українська'
+    };
+    return languageNames[langCode] || 'English';
+  };
+
   // Отслеживаем изменение размера окна больше не нужно
   // useEffect(() => {
   //   const handleResize = () => {
@@ -150,12 +160,47 @@ const Calendar = () => {
                {showViewModal && selectedEvent && (
           <div className={styles['modal-overlay']} onClick={() => setShowViewModal(false)}>
             <div className={styles['modal-content']} onClick={(e) => e.stopPropagation()}>
-              <h3>{selectedEvent.title[i18n.language] || selectedEvent.title.en}</h3>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                <h3 style={{ margin: 0 }}>{selectedEvent.title[i18n.language] || selectedEvent.title.en}</h3>
+                <span style={{ 
+                  fontSize: '12px', 
+                  color: '#666', 
+                  backgroundColor: '#f0f0f0', 
+                  padding: '4px 8px', 
+                  borderRadius: '12px' 
+                }}>
+                  {getLanguageName(i18n.language)}
+                </span>
+              </div>
               
               <div className={styles['event-display']}>
                 {selectedEvent.image && (
                   <div className={styles['event-image']}>
-                    <img src={selectedEvent.image} alt={selectedEvent.title[i18n.language] || selectedEvent.title.en} />
+                    <img 
+                      src={selectedEvent.image} 
+                      alt={selectedEvent.title[i18n.language] || selectedEvent.title.en}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        console.log('Ошибка загрузки изображения:', selectedEvent.image);
+                      }}
+                    />
+                  </div>
+                )}
+                
+                {!selectedEvent.image && (
+                  <div className={styles['event-image']}>
+                    <div style={{ 
+                      width: '100%', 
+                      height: '200px', 
+                      backgroundColor: '#f0f0f0', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      borderRadius: '8px',
+                      color: '#666'
+                    }}>
+                      📷 Изображение недоступно
+                    </div>
                   </div>
                 )}
                 
@@ -180,17 +225,17 @@ const Calendar = () => {
                   <p>{selectedEvent.description[i18n.language] || selectedEvent.description.en}</p>
                 </div>
                 
-                                 <div className={styles['event-info']}>
-                   <strong>🏷️ Тип:</strong> {eventTypes[selectedEvent.type]?.label[i18n.language] || eventTypes[selectedEvent.type]?.label.en}
-                 </div>
+                <div className={styles['event-info']}>
+                  <strong>🏷️ Тип:</strong> {eventTypes[selectedEvent.type]?.label[i18n.language] || eventTypes[selectedEvent.type]?.label.en}
+                </div>
               </div>
               
-                             <button 
-                 onClick={() => setShowViewModal(false)} 
-                 className={styles['close-button']}
-               >
-                 ×
-               </button>
+              <button 
+                onClick={() => setShowViewModal(false)} 
+                className={styles['close-button']}
+              >
+                ×
+              </button>
             </div>
           </div>
         )}

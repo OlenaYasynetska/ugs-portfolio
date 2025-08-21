@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 27, 
+    title: {
+      en: 'School allowance: 121 euros per child',
+      de: 'Schulbeihilfe: 121 Euro pro Kind',
+      ua: 'Шкільна допомога: 121 євро на дитину'
+    },
+    text: {
+      en: 'In August, Austria will once again pay the school start allowance together with the family allowance.\n This year, due to valorization, the amount of the allowance for children aged 6 to 15 is 121.40 euros. The entitlement applies automatically to all children receiving the family allowance. No separate application is required — the payment is made directly along with the family allowance. Around 900,000 school-age children across Austria receive this support. The school start allowance should not be confused with the “Schulstartklar!” (“Ready for School!”) campaign, under which low-income families receive an additional 150 euros in the form of vouchers. The necessary information letters are currently being sent out.',
+      de: 'Im August wird in Österreich erneut die Schulanfangshilfe gemeinsam mit der Familienbeihilfe ausbezahlt.\n In diesem Jahr beträgt die Höhe der Unterstützung aufgrund der Valorisierung 121,40 Euro pro Kind im Alter von 6 bis 15 Jahren. Der Anspruch auf die Beihilfe gilt automatisch für alle Kinder, die Familienbeihilfe erhalten. Ein gesonderter Antrag ist nicht erforderlich – die Auszahlung erfolgt direkt zusammen mit der Familienbeihilfe. Rund 900.000 schulpflichtige Kinder in ganz Österreich erhalten diese Unterstützung. Die Schulanfangshilfe darf nicht mit der Aktion „Schulstartklar!“ verwechselt werden, im Rahmen derer einkommensschwache Familien zusätzlich 150 Euro in Form von Gutscheinen erhalten. Derzeit werden die entsprechenden Informationsschreiben verschickt.',
+      ua: 'У серпні в Австрії знову буде виплачуватися допомога на початок навчального року разом із сімейною. Цього року,\n у зв’язку з переоцінкою, розмір допомоги на дитину віком від 6 до 15 років становить 121,40 євро. Право на допомогу автоматично поширюється на всіх дітей, які отримують сімейну допомогу. Окрема заява не потрібна — виплата здійснюється безпосередньо разом із сімейною допомогою.\nБлизько 900 000 дітей шкільного віку по всій Австрії отримують цю підтримку. Допомогу на початок навчального року не слід плутати з кампанією «Schulstartklar!» («Готові до школи!»), у межах якої малозабезпечені сім’ї отримують додатково 150 євро у вигляді ваучерів. Наразі надсилаються необхідні інформаційні листи.'
+    }
+  },
+  {
     id: 26,
     title: {
       en: '🚆 Klimaticket: Unified Travel Pass for All of Austria',
