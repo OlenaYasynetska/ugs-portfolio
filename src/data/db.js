@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 29,
+    title: {
+      en: '🇺🇦 New recruitment for an internship at the Ministry of Foreign Affairs of Ukraine',
+      de: '🇺🇦 Neuer Aufruf für ein Praktikum im Außenministerium der Ukraine',
+      ua: '🇺🇦 Оголошуємо новий набір на стажування в МЗС України'
+    },
+    text: {
+      en: 'Want to see from the inside how diplomacy works and join the foreign policy service of the state? This is your chance!\n\n💼 What does the internship offer?\n• practical experience in the field of diplomacy;\n• opportunity to work in structural units of the Ministry of Foreign Affairs;\n• real participation in processes that shape Ukraine\'s foreign policy.\n\nHow to join?\n1️⃣ Read the requirements and selection criteria\n2️⃣ Fill out the application form\n3️⃣ Wait for a response\n\n📅 Application deadline - August 31, 23:59\n🔗 Application form: https://cutt.ly/GrH3JdOH\nℹ️ Details: https://cutt.ly/vrH3Ki9G\n✉️ Questions: internship@mfa.gov.ua\n\nJoin the MFA team and become part of the new history of Ukrainian diplomacy!',
+      de: 'Möchten Sie von innen sehen, wie Diplomatie funktioniert, und dem auswärtigen Dienst des Staates beitreten? Das ist Ihre Chance!\n\n💼 Was bietet das Praktikum?\n• praktische Erfahrung im Bereich der Diplomatie;\n• Möglichkeit, in strukturellen Einheiten des Außenministeriums zu arbeiten;\n• echte Teilnahme an Prozessen, die die Außenpolitik der Ukraine gestalten.\n\nWie kann man sich beteiligen?\n1️⃣ Lesen Sie die Anforderungen und Auswahlkriterien\n2️⃣ Füllen Sie das Bewerbungsformular aus\n3️⃣ Warten Sie auf eine Antwort\n\n📅 Bewerbungsfrist - 31. August, 23:59\n🔗 Bewerbungsformular: https://cutt.ly/GrH3JdOH\nℹ️ Details: https://cutt.ly/vrH3Ki9G\n✉️ Fragen: internship@mfa.gov.ua\n\nTreten Sie dem MFA-Team bei und werden Sie Teil der neuen Geschichte der ukrainischen Diplomatie!',
+      ua: 'Хочете побачити зсередини, як працює дипломатія, та вступити до зовнішньополітичної служби держави? Це твій шанс!\n\n💼 Що пропонує стажування?\n• практичний досвід у галузі дипломатії;\n• можливість працювати в структурних підрозділах МЗС;\n• реальну участь у процесах, які формують зовнішню політику України.\n\nЯк приєднатися?\n1️⃣ Читайте вимоги та критерії відбору\n2️⃣ Заповніть анкету заявки\n3️⃣ Чекайте відповіді\n\n📅 Крайній термін прийому заявок - 31 серпня, 23:59\n🔗 Форма подачі заявки: https://cutt.ly/GrH3JdOH\nℹ️ Деталі: https://cutt.ly/vrH3Ki9G\n✉️ Питання: internship@mfa.gov.ua\n\nВступайте до команди МЗС і станьте частиною нової історії української дипломатії!'
+    }
+  },
+  {
     id: 28,
     title: {
       en: '20.08.2025 🇦🇹 Ukrainians in Austria: documents online through "e-Consul"',
