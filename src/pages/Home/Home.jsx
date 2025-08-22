@@ -11,6 +11,7 @@ import { news } from '../../data/db';
 import fieldImg from '../../assets/field.png';
 import zakonImg from '../../assets/zakon.jpg';
 import KindsOchakivImg from '../../assets/Kinds_Ochakov.png';
+import EurovisionImg from '../../assets/Eurovision.png';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -18,6 +19,7 @@ const Home = () => {
     const [isImageVisible, setIsImageVisible] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 900);
   const [showFull, setShowFull] = React.useState(false);
+  const [isEurovisionImageVisible, setIsEurovisionImageVisible] = React.useState(false);
   
   React.useEffect(() => {
     const handleResize = () => {
@@ -36,6 +38,9 @@ const Home = () => {
             if (entry.target.id === 'weekly-events-image') {
               setIsImageVisible(true);
             }
+            if (entry.target.id === 'eurovision-image') {
+              setIsEurovisionImageVisible(true);
+            }
           }
         });
       },
@@ -43,14 +48,21 @@ const Home = () => {
     );
     
     const imageElement = document.getElementById('weekly-events-image');
+    const eurovisionImageElement = document.getElementById('eurovision-image');
     
     if (imageElement) {
       observer.observe(imageElement);
+    }
+    if (eurovisionImageElement) {
+      observer.observe(eurovisionImageElement);
     }
     
     return () => {
       if (imageElement) {
         observer.unobserve(imageElement);
+      }
+      if (eurovisionImageElement) {
+        observer.unobserve(eurovisionImageElement);
       }
     };
   }, []);
@@ -190,6 +202,87 @@ const Home = () => {
             </div>
           </div>
                  )}
+         
+         {/* Модуль "Это интересно" */}
+         <div style={{
+           fontWeight: 900,
+           fontSize: '2em',
+           color: '#1565c0',
+           margin: '3vw 0 1vw 0',
+           letterSpacing: '0.02em',
+           textAlign: 'center',
+         }}>{t('this_is_interesting') || 'Это интересно'}</div>
+         
+         {isVeryMobile ? (
+           <div style={{
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 400,
+             width: '95%',
+             margin: '0 auto 1vw auto',
+             textAlign: 'center',
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
+           }}>
+             <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
+               width: '100%', 
+               height: 'auto', 
+               borderRadius: 12, 
+               margin: '0 auto 16px auto', 
+               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               transform: isEurovisionImageVisible ? 'scale(1)' : 'scale(0.3)',
+               opacity: isEurovisionImageVisible ? 1 : 0,
+               transition: 'all 0.8s ease-out',
+               transformOrigin: 'center center'
+             }} id="eurovision-image" />
+             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%' }}>
+               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+                 🎶 {t('eurovision_title') || 'Відень готується до грандіозного святкування 70-річчя Євробачення'}
+               </div>
+               <div style={{ marginBottom: 16 }}>
+                 {t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.'}
+               </div>
+             </div>
+           </div>
+         ) : (
+           <div style={{
+             display: 'flex',
+             flexDirection: 'column',
+             margin: '0 0 1vw 0',
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 1200,
+             width: '85%',
+             marginLeft: 'auto',
+             marginRight: 'auto',
+             textAlign: 'left',
+           }}>
+             <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
+               width: '100%', 
+               height: 'auto', 
+               borderRadius: 12, 
+               marginBottom: '2vw', 
+               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               transform: isEurovisionImageVisible ? 'scale(1)' : 'scale(0.3)',
+               opacity: isEurovisionImageVisible ? 1 : 0,
+               transition: 'all 0.8s ease-out',
+               transformOrigin: 'center center'
+             }} id="eurovision-image" />
+             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line' }}>
+               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
+                 🎶 {t('eurovision_title') || 'Відень готується до грандіозного святкування 70-річчя Євробачення'}
+               </div>
+               <div style={{ marginBottom: 16 }}>
+                 {t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.'}
+               </div>
+             </div>
+           </div>
+         )}
          
          {/* Модуль Klimaticket */}
          <div style={{
