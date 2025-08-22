@@ -108,7 +108,7 @@ export default function ImportantInfo() {
             </div>
           </div>
           
-          {/* Оперативная служба */}
+          {/* Оперативна служба */}
           <div style={{
             borderBottom: '2px solid #1565c0',
             paddingBottom: '2vw',
@@ -119,7 +119,7 @@ export default function ImportantInfo() {
               margin: '0 0 1.5vw 0',
               fontWeight: 700,
               textAlign: 'center',
-            }}>Оперативная служба</h3>
+            }}>Оперативна служба</h3>
             <p style={{
               color: '#d32f2f',
               fontSize: '1.2em',
@@ -127,7 +127,7 @@ export default function ImportantInfo() {
               textAlign: 'center',
               margin: '0 0 1.5vw 0',
               fontStyle: 'italic',
-            }}>Исключительно в случае угрозы жизни или гибели граждан Украины</p>
+            }}>Виключно у випадку загрози життю або загибелі громадян України</p>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -146,7 +146,7 @@ export default function ImportantInfo() {
             </div>
           </div>
           
-          {/* Контакты */}
+          {/* Контакти */}
           <div>
             <h3 style={{
               color: '#1565c0',
@@ -154,9 +154,9 @@ export default function ImportantInfo() {
               margin: '0 0 1.5vw 0',
               fontWeight: 700,
               textAlign: 'center',
-            }}>Контакты</h3>
+            }}>Контакти</h3>
             
-            {/* Адрес */}
+            {/* Адреса */}
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -164,12 +164,12 @@ export default function ImportantInfo() {
             }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Адреса:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>1180, г. Вена, ул. Нааффгассе, 23</div>
+                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>1180, м. Відень, вул. Нааффгассе, 23</div>
                 <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>1180, Wien, Naaffgasse 23</div>
               </div>
             </div>
             
-            {/* Телефоны */}
+            {/* Телефони */}
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
@@ -178,27 +178,39 @@ export default function ImportantInfo() {
             }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>телефон:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>+43 1 479 717252</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>консульские вопросы</div>
+                <div style={{ fontSize: '1.3em', fontWeight: 700, color: '#1565c0' }}>+43 1 479 717252</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>консульські питання</div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>телефон:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>+43 1 479 717222</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>консульские вопросы</div>
+                <div style={{ fontSize: '1.3em', fontWeight: 700, color: '#1565c0' }}>+43 1 479 717222</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>консульські питання</div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>телефон:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>+43 1 479 717240</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>консульские вопросы</div>
+                <div style={{ fontSize: '1.3em', fontWeight: 700, color: '#1565c0' }}>+43 1 479 717240</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>консульські питання</div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>телефон:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>+43 1 479 717255</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>консульские вопросы</div>
+                <div style={{ fontSize: '1.3em', fontWeight: 700, color: '#1565c0' }}>+43 1 479 717255</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>консульські питання</div>
               </div>
             </div>
             
-            {/* Факс и email */}
+            {/* Факс */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '2vw',
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>факс:</div>
+                <div style={{ fontSize: '1.3em', fontWeight: 700, color: '#1565c0' }}>+43 1 479 71 72 47</div>
+              </div>
+            </div>
+            
+            {/* Електронна пошта */}
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -206,31 +218,29 @@ export default function ImportantInfo() {
               marginBottom: '2vw',
             }}>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>факс:</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>+43 1 479 71 72 47</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Электронная почта:</div>
+                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Електронна пошта:</div>
                 <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>emb_at@mfa.gov.ua</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>базовый</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>базовий</div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Электронная почта:</div>
+                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Електронна пошта:</div>
                 <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>consul_at@mfa.gov.ua</div>
-                <div style={{ fontSize: '0.9em', color: '#666' }}>по консульским вопросам</div>
+                <div style={{ fontSize: '1em', color: '#666' }}>по консульських питаннях</div>
               </div>
             </div>
             
-            {/* График работы */}
+            {/* Графік роботи */}
             <div style={{
-              textAlign: 'center',
-              borderTop: '2px solid #1565c0',
-              paddingTop: '2vw',
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '2vw',
             }}>
-              <div style={{ fontWeight: 600, marginBottom: '1vw' }}>График работы:</div>
-              <div style={{ fontSize: '1.1em', marginBottom: '0.5vw' }}>Понедельник – четверг 09:00-18:00</div>
-              <div style={{ fontSize: '1.1em', marginBottom: '0.5vw' }}>Пятница 09:00-16:45</div>
-              <div style={{ fontSize: '1em', color: '#666', fontStyle: 'italic' }}>Обеденный перерыв: 13:00 – 13:45</div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontWeight: 600, marginBottom: '0.5vw' }}>Графік роботи:</div>
+                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>Понеділок – четвер 09:00-18:00</div>
+                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>П'ятниця 09:00-16:45</div>
+                <div style={{ fontSize: '1.2em', fontWeight: 600, color: '#1565c0' }}>Обідня перерва: 13:00 – 13:45</div>
+              </div>
             </div>
           </div>
         </div>
