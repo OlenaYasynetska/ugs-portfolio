@@ -13,66 +13,33 @@ import independenceImg from '../../assets/INDEPENDENCE.png';
 import zakonImg from '../../assets/zakon.jpg';
 import KindsOchakivImg from '../../assets/Kinds_Ochakov.png';
 import EurovisionImg from '../../assets/Eurovision.png';
+import WienImg from '../../assets/Wien.png';
+import { useImageDrawAnimation } from '../../hooks';
 
-const Home = () => {
+export default function Home() {
   const { t, i18n } = useTranslation();
-  const [h1FontSize, setH1FontSize] = React.useState(window.innerWidth <= 900 ? '2.8em' : '4em');
-    const [isImageVisible, setIsImageVisible] = React.useState(false);
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 900);
+  const lang = i18n.language;
   const [showFull, setShowFull] = React.useState(false);
-  const [isEurovisionImageVisible, setIsEurovisionImageVisible] = React.useState(false);
+  
+  // Используем кастомный хук для каждой картинки
+  const isEurovisionImageVisible = useImageDrawAnimation('eurovision-image');
+  const isWienImageVisible = useImageDrawAnimation('wien-image');
+  
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+  const isVeryMobile = typeof window !== 'undefined' ? window.innerWidth < 520 : false;
+  const [h1FontSize, setH1FontSize] = React.useState(window.innerWidth <= 900 ? '2.8em' : '4em');
+  const [isImageVisible, setIsImageVisible] = React.useState(false);
+  
+  // Получаем текст для блока "Этот день в истории"
+  const shortText = t('ukrainian_flag_day_description') || '🇺🇦 День Державного Прапора України — це національне свято України, яке відзначається щорічно 23 серпня. Цей день присвячений символу незалежності та суверенітету України — синьо-жовтому прапору.\n\nСиній колір символізує безхмарне небо, а жовтий — золоті пшеничні поля, що є традиційними символами України. Прапор є символом єдності народу, його свободи та незалежності.\n\nУ цей день українці в усьому світі вшановують національний прапор та відзначають важливість збереження української ідентичності та культури.';
   
   React.useEffect(() => {
     const handleResize = () => {
       setH1FontSize(window.innerWidth <= 900 ? '2.8em' : '4em');
-      setIsMobile(window.innerWidth < 900);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target.id === 'weekly-events-image') {
-              setIsImageVisible(true);
-            }
-            if (entry.target.id === 'eurovision-image') {
-              setIsEurovisionImageVisible(true);
-            }
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-    
-    const imageElement = document.getElementById('weekly-events-image');
-    const eurovisionImageElement = document.getElementById('eurovision-image');
-    
-    if (imageElement) {
-      observer.observe(imageElement);
-    }
-    if (eurovisionImageElement) {
-      observer.observe(eurovisionImageElement);
-    }
-    
-    return () => {
-      if (imageElement) {
-        observer.unobserve(imageElement);
-      }
-      if (eurovisionImageElement) {
-        observer.unobserve(eurovisionImageElement);
-      }
-    };
-  }, []);
-  
-  // Получаем текст для блока "Этот день в истории"
-  const lang = i18n.language || 'en';
-  // Убираем ссылку на новость о саммите, используем только переводы о флаге
-  const shortText = t('ukrainian_flag_day_description') || '🇺🇦 День Державного Прапора України — це національне свято України, яке відзначається щорічно 23 серпня. Цей день присвячений символу незалежності та суверенітету України — синьо-жовтому прапору.\n\nСиній колір символізує безхмарне небо, а жовтий — золоті пшеничні поля, що є традиційними символами України. Прапор є символом єдності народу, його свободи та незалежності.\n\nУ цей день українці в усьому світі вшановують національний прапор та відзначають важливість збереження української ідентичності та культури.';
-  const isVeryMobile = typeof window !== 'undefined' ? window.innerWidth < 520 : false;
   return (
     <div style={{
       minHeight: 'calc(100vh - 120px)',
@@ -84,6 +51,22 @@ const Home = () => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
     }}>
+      <style>
+        {`
+          @keyframes dance {
+            0%, 100% { transform: translateX(0px) rotate(0deg); }
+            25% { transform: translateX(5px) rotate(2deg); }
+            50% { transform: translateX(-5px) rotate(-2deg); }
+            75% { transform: translateX(3px) rotate(1deg); }
+          }
+          
+          @media (max-width: 900px) {
+            .module-heading {
+              font-size: 2.4em !important;
+            }
+          }
+        `}
+      </style>
       <style>{`
         @media (max-width: 1400px) {
           .main-title-hero {
@@ -110,9 +93,9 @@ const Home = () => {
         {/* <Hero /> */}
         <NewsBlock />
         {/* Модуль "Этот день в истории" */}
-        <div style={{
+        <div className="module-heading" style={{
           fontWeight: 900,
-          fontSize: '2em',
+          fontSize: '3.8em',
           color: '#1565c0',
           margin: '2vw 0 1vw 0',
           letterSpacing: '0.02em',
@@ -272,15 +255,16 @@ const Home = () => {
         )}
          
          {/* Модуль "Это интересно" */}
-         <div style={{
+         <div className="module-heading" style={{
            fontWeight: 900,
-           fontSize: '2em',
+           fontSize: '3.8em',
            color: '#1565c0',
            margin: '3vw 0 1vw 0',
            letterSpacing: '0.02em',
            textAlign: 'center',
          }}>{t('this_is_interesting') || 'Это интересно'}</div>
          
+         {/* Пост про Eurovision */}
          {isVeryMobile ? (
            <div style={{
              background: 'rgba(255,255,255,0.85)',
@@ -352,10 +336,178 @@ const Home = () => {
            </div>
          )}
          
+         {/* Пост про Австрию */}
+         {isVeryMobile ? (
+           <div style={{
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 400,
+             width: '95%',
+             margin: '0 auto 1vw auto',
+             textAlign: 'center',
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
+           }}>
+             <img src={WienImg} alt="Wien Austria" style={{ 
+               width: '100%', 
+               height: 'auto', 
+               borderRadius: 12, 
+               margin: '0 auto 16px auto', 
+               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               transform: isWienImageVisible ? 'scale(1)' : 'scale(0.3)',
+               opacity: isWienImageVisible ? 1 : 0,
+               transition: 'all 0.8s ease-out',
+               transformOrigin: 'center center'
+             }} id="wien-image" />
+             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
+               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+                 🇦🇹 5 фактів про Австрію, які вас здивують
+               </div>
+               <div style={{ marginBottom: 16 }}>
+                   <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite',
+                    display: 'inline-block'
+                  }}>1.</span> <strong>Тут народився ЦМОК (вальс)</strong><br /><br />
+                  Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 0.4s',
+                    display: 'inline-block'
+                  }}>2.</span> <strong>Австрія — країна замків і палаців</strong><br /><br />
+                  Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 0.8s',
+                    display: 'inline-block'
+                  }}>3.</span> <strong>Тут народилися великі генії музики</strong><br /><br />
+                  Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 1.2s',
+                    display: 'inline-block'
+                  }}>4.</span> <strong>Кава по-віденськи — це не міф</strong><br /><br />
+                  Віденські кав'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 1.6s',
+                    display: 'inline-block'
+                  }}>5.</span> <strong>Австрія — одна з найзеленіших країн Європи</strong><br /><br />
+                  Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.
+                </div>
+             </div>
+           </div>
+         ) : (
+           <div style={{
+             display: 'flex',
+             flexDirection: 'column',
+             margin: '0 0 1vw 0',
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 1200,
+             width: '85%',
+             marginLeft: 'auto',
+             marginRight: 'auto',
+             textAlign: 'left',
+           }}>
+             <img src={WienImg} alt="Wien Austria" style={{ 
+               width: '100%', 
+               height: 'auto', 
+               borderRadius: 12, 
+               marginBottom: '2vw', 
+               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               transform: isWienImageVisible ? 'scale(1)' : 'scale(0.3)',
+               opacity: isWienImageVisible ? 1 : 0,
+               transition: 'all 0.8s ease-out',
+               transformOrigin: 'center center'
+             }} id="wien-image" />
+             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', fontFamily: 'Inter, sans-serif' }}>
+               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
+                 🇦🇹 5 фактів про Австрію, які вас здивують
+               </div>
+               <div style={{ marginBottom: 16 }}>
+                   <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite',
+                    display: 'inline-block'
+                  }}>1.</span> <strong>Тут народився ЦМОК (вальс)</strong><br /><br />
+                  Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 0.4s',
+                    display: 'inline-block'
+                  }}>2.</span> <strong>Австрія — країна замків і палаців</strong><br /><br />
+                  Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 0.8s',
+                    display: 'inline-block'
+                  }}>3.</span> <strong>Тут народилися великі генії музики</strong><br /><br />
+                  Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 1.2s',
+                    display: 'inline-block'
+                  }}>4.</span> <strong>Кава по-віденськи — це не міф</strong><br /><br />
+                  Віденські кав'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!<br /><br />
+                  
+                  <span style={{ 
+                    fontSize: 24, 
+                    fontWeight: 900, 
+                    color: '#1565c0', 
+                    marginRight: 8,
+                    animation: 'dance 2s ease-in-out infinite 1.6s',
+                    display: 'inline-block'
+                  }}>5.</span> <strong>Австрія — одна з найзеленіших країн Європи</strong><br /><br />
+                  Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.
+                </div>
+             </div>
+           </div>
+         )}
+         
          {/* Модуль Klimaticket */}
-         <div style={{
+         <div className="module-heading" style={{
            fontWeight: 900,
-           fontSize: '2em',
+           fontSize: '3.8em',
            color: '#1565c0',
            margin: '3vw 0 1vw 0',
            letterSpacing: '0.02em',
@@ -471,9 +623,9 @@ const Home = () => {
          })()}
          
          {/* Події тижня */}
-         <div style={{
+         <div className="module-heading" style={{
            fontWeight: 900,
-           fontSize: '2em',
+           fontSize: '3.8em',
            color: '#1565c0',
            margin: '3vw 0 1vw 0',
            letterSpacing: '0.02em',
@@ -510,6 +662,4 @@ const Home = () => {
        </MainModulesContainer>
     </div>
   );
-};
-
-export default Home; 
+} 

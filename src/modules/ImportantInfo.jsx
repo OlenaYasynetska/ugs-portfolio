@@ -7,9 +7,9 @@ export default function ImportantInfo() {
   const { t } = useTranslation();
   return (
     <>
-      <h2 style={{
+      <h2 className="module-heading" style={{
         color: '#1565c0',
-        fontSize: '2.2em',
+        fontSize: '3.8em',
         margin: '0 0 2vw 0',
         textAlign: 'center',
         maxWidth: '90vw',
