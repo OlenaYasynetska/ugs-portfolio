@@ -147,7 +147,10 @@ export default function ImportantInfo() {
           </div>
           
           {/* Контакти */}
-          <div>
+          <div style={{
+            borderBottom: '2px solid #1565c0',
+            paddingBottom: '2vw',
+          }}>
             <h3 style={{
               color: '#1565c0',
               fontSize: '1.8em',
@@ -228,6 +231,15 @@ export default function ImportantInfo() {
                 <div style={{ fontSize: '1em', color: '#666' }}>по консульських питаннях</div>
               </div>
             </div>
+            
+            {/* Синя горизонтальна лінія між електронною поштою та графіком роботи */}
+            <div style={{
+              height: '2px',
+              background: '#1565c0',
+              width: '90%',
+              margin: '2vw auto',
+              borderRadius: '1px',
+            }}></div>
             
             {/* Графік роботи */}
             <div style={{
