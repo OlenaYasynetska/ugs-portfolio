@@ -2,25 +2,57 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- ===== FAVICON & ICONS ===== -->
+    <!-- Основной favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Apple Touch Icon для iOS устройств -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- PNG favicon для разных размеров -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- Web App Manifest для PWA -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Старый favicon для совместимости -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ===== HREFLANG - МУЛЬТИЯЗЫЧНОСТЬ ===== -->
+    <!-- Указывает Google о наличии страниц на разных языках для лучшего ранжирования -->
+    <link rel="alternate" href="https://ugs-info.at/" hreflang="uk-UA" />
+    <link rel="alternate" href="https://ugs-info.at/de/" hreflang="de-AT" />
+    <link rel="alternate" href="https://ugs-info.at/en/" hreflang="en" />
+    <link rel="alternate" href="https://ugs-info.at/" hreflang="x-default" />
+    
+    <!-- ===== PRECONNECT & PREFETCH ===== -->
+    <!-- Ускоряет загрузку внешних ресурсов - Google учитывает скорость в ранжировании -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
     <title>Українська громада в Штайєрі - Культурні події, новини та підтримка українців в Австрії</title>
     
-    <!-- Primary Meta Tags -->
+    <!-- ===== PRIMARY META TAGS ===== -->
     <meta name="title" content="Українська громада в Штайєрі - Культурні події, новини та підтримка українців в Австрії" />
     <meta name="description" content="Офіційний сайт української громади в Штайєрі, Австрія. Культурні події, новини, підтримка українців, інформація про тимчасовий захист, роботу, навчання та інтеграцію в австрійське суспільство." />
     <meta name="keywords" content="Українська громада, Штайєр, Австрія, українці в Австрії, культурні події, новини, підтримка, тимчасовий захист, інтеграція, робота, навчання, мовні курси, юридична допомога, психологічна підтримка, українська культура, спільнота, допомога біженцям" />
     <meta name="author" content="Українська громада в Штайєрі (UGS)" />
+    
+    <!-- ===== ROBOTS & INDEXING ===== -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="google" content="notranslate" />
     <meta name="language" content="uk" />
+    
+    <!-- ===== GEOGRAPHICAL META TAGS ===== -->
     <meta name="geo.region" content="AT-6" />
     <meta name="geo.placename" content="Steyr, Austria" />
     <meta name="geo.position" content="48.0425;14.4211" />
     <meta name="ICBM" content="48.0425, 14.4211" />
     
-    <!-- Open Graph / Facebook -->
+    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ugs-info.at/" />
     <meta property="og:title" content="Українська громада в Штайєрі - Культурні події, новини та підтримка українців в Австрії" />
@@ -31,24 +63,25 @@
     <meta property="og:locale" content="uk_UA" />
     <meta property="og:site_name" content="Українська громада в Штайєрі" />
     
-    <!-- Twitter -->
+    <!-- ===== TWITTER CARD ===== -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://ugs-info.at/" />
     <meta property="twitter:title" content="Українська громада в Штайєрі - Культурні події, новини та підтримка українців в Австрії" />
     <meta property="twitter:description" content="Офіційний сайт української громади в Штайєрі, Австрія. Культурні події, новини, підтримка українців." />
     <meta property="twitter:image" content="https://ugs-info.at/ogsocial.jpg" />
     
-    <!-- Additional SEO Meta Tags -->
+    <!-- ===== ADDITIONAL SEO META TAGS ===== -->
     <meta name="theme-color" content="#0057b8" />
     <meta name="msapplication-TileColor" content="#0057b8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="UGS Steyr" />
     
-    <!-- Canonical URL -->
+    <!-- ===== CANONICAL URL ===== -->
     <link rel="canonical" href="https://ugs-info.at/" />
     
-    <!-- Structured Data -->
+    <!-- ===== STRUCTURED DATA - SCHEMA.ORG ===== -->
+    <!-- Основная информация об организации -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -71,7 +104,6 @@
         "email": "contact@ugs-info.at",
         "availableLanguage": ["Ukrainian", "German", "English"]
       },
-
       "foundingDate": "2022",
       "areaServed": {
         "@type": "City",
@@ -89,7 +121,127 @@
     }
     </script>
     
-    <!-- Google Tag Manager -->
+    <!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+    <!-- Дополнительная схема для лучшего понимания Google о местном бизнесе -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Українська громада в Штайєрі",
+      "alternateName": "UGS Steyr",
+      "description": "Організація підтримки українців в Штайєрі, Австрія",
+      "url": "https://ugs-info.at/",
+      "telephone": "+43-1-479-717252",
+      "email": "contact@ugs-info.at",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Steyr",
+        "addressLocality": "Steyr",
+        "addressRegion": "Upper Austria",
+        "postalCode": "4400",
+        "addressCountry": "AT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.0425,
+        "longitude": 14.4211
+      },
+      "openingHours": "Mo-Th 09:00-18:00, Fr 09:00-16:45",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card",
+      "areaServed": "Steyr, Upper Austria"
+    }
+    </script>
+    
+    <!-- ===== NEWS ARTICLE SCHEMA ===== -->
+    <!-- Схема для новостей - поможет попасть в Google News -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Курси німецької для українців у Steyr",
+      "image": ["https://ugs-info.at/example.jpg"],
+      "datePublished": "2025-08-17T08:00:00+02:00",
+      "dateModified": "2025-08-17T08:00:00+02:00",
+      "author": {
+        "@type": "Organization",
+        "name": "Українська громада в Штайєрі"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "UGS Steyr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ugs-info.at/logo.png"
+        }
+      },
+      "description": "Огляд курсів німецької для українців у Steyr.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ugs-info.at/news"
+      }
+    }
+    </script>
+    
+    <!-- ===== EVENT SCHEMA ===== -->
+    <!-- Схема для культурных событий - поможет в Google Events -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Культурний вечір у Steyr",
+      "startDate": "2025-09-05T19:00",
+      "endDate": "2025-09-05T22:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Steyr Kulturhaus",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Steyr",
+          "addressCountry": "AT"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "UGS Steyr",
+        "url": "https://ugs-info.at/"
+      },
+      "description": "Культурний вечір української громади в Штайєрі"
+    }
+    </script>
+    
+    <!-- ===== BREADCRUMB SCHEMA ===== -->
+    <!-- Схема для навигации - сделает выдачу красивее -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Головна",
+          "item": "https://ugs-info.at/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Новини",
+          "item": "https://ugs-info.at/news"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Події",
+          "item": "https://ugs-info.at/events"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ===== GOOGLE TAG MANAGER ===== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0JC3G3Q9V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -97,6 +249,10 @@
       gtag('js', new Date());
       gtag('config', 'G-C0JC3G3Q9V');
     </script>
+    
+    <!-- ===== SEO ENHANCEMENT SCRIPT ===== -->
+    <!-- Додаткові SEO-покращення для кращого ранжування та соціальних мереж -->
+    <script src="/seo-enhancement.js"></script>
   </head>
   <body>
     <div id="root"></div>
