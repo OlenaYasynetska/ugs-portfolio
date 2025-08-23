@@ -16,7 +16,7 @@ export const news = [
       de: '📄 Herunterladen: Informationen + Anleitung für Online-Rentenbestätigungsantrag',
       ua: '📄 Завантажити: Інформація + Інструкція для онлайн-заявки на підтвердження пенсії'
     },
-            pdfUrl: '/documents/Information_+_Anleitung_Beantragung_Pensionsbestätigung_online.html'
+            pdfUrl: '/Information_+_Anleitung_Beantragung_Pensionsbestätigung_online.html'
   },
   {
     id: 30,
