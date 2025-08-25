@@ -1,11 +1,12 @@
 import React from 'react';
 
 /**
- * Кастомный хук для анимации рисования картинки из точки
- * @param {string} imageId - ID элемента картинки в DOM
- * @returns {boolean} - Состояние видимости картинки
+ * Кастомный хук для анимации появления изображения
+ * @param {string} imageId - ID элемента изображения в DOM
+ * @param {number} delay - Задержка анимации в миллисекундах (по умолчанию 0)
+ * @returns {boolean} - Состояние видимости изображения
  */
-const useImageDrawAnimation = (imageId) => {
+const useImageDrawAnimation = (imageId, delay = 0) => {
   const [isVisible, setIsVisible] = React.useState(false);
   
   React.useEffect(() => {
@@ -13,7 +14,12 @@ const useImageDrawAnimation = (imageId) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.target.id === imageId) {
-            setIsVisible(true);
+            // Добавляем задержку если она указана
+            if (delay > 0) {
+              setTimeout(() => setIsVisible(true), delay);
+            } else {
+              setIsVisible(true);
+            }
           }
         });
       },
@@ -30,7 +36,7 @@ const useImageDrawAnimation = (imageId) => {
         observer.unobserve(imageElement);
       }
     };
-  }, [imageId]);
+  }, [imageId, delay]);
 
   return isVisible;
 };
