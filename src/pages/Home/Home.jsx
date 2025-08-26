@@ -14,7 +14,7 @@ import EurovisionImg from '../../assets/Eurovision.png';
 import WienImg from '../../assets/Wien.png';
 import bergImg from '../../assets/berg.png';
 import molotovRibbentropImg from '../../assets/23_08_1939.jpg';
-import { useImageDrawAnimation, useNumberAnimation } from '../../hooks';
+import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -35,6 +35,14 @@ export default function Home() {
   // - Второй пост (Wien): медленнее (2.5s) для разнообразия
   const numberAnimations = useNumberAnimation(5, 0, 400, 'dance', 2); // Третий пост
   const oldNumberAnimations = useNumberAnimation(5, 0, 400, 'dance', 2.5); // Второй пост (немного медленнее)
+  
+  // Пример использования нового хука useCardAnimation для постов
+  const { getFullCSS: getPostAnimationsCSS } = useCardAnimation(3, {
+    baseDelay: 0,
+    delayIncrement: 300,
+    animationType: 'slideInUp',
+    duration: 0.6
+  });
   const [showFullMolotov, setShowFullMolotov] = useState(false);
   
   const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
@@ -79,6 +87,9 @@ export default function Home() {
             }
           }
         `}
+      </style>
+      <style>
+        {getPostAnimationsCSS()}
       </style>
       <style>{`
         @media (max-width: 1400px) {
@@ -371,19 +382,22 @@ export default function Home() {
          
          {/* Пост про Eurovision */}
          {isSmallScreen ? (
-           <div style={{
-             background: 'rgba(255,255,255,0.85)',
-             borderRadius: 16,
-             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-             padding: '2vw',
-             maxWidth: 400,
-             width: '95%',
-             margin: '0 auto 1vw auto',
-             textAlign: 'center',
-             display: 'flex',
-             flexDirection: 'column',
-             alignItems: 'center',
-           }}>
+           <div 
+             className="animated-card card-1"
+             style={{
+               background: 'rgba(255,255,255,0.85)',
+               borderRadius: 16,
+               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+               padding: '2vw',
+               maxWidth: 400,
+               width: '95%',
+               margin: '0 auto 1vw auto',
+               textAlign: 'center',
+               display: 'flex',
+               flexDirection: 'column',
+               alignItems: 'center',
+             }}
+           >
              <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
                width: '100%', 
                height: 'auto', 
@@ -405,20 +419,23 @@ export default function Home() {
              </div>
            </div>
          ) : (
-           <div style={{
-             display: 'flex',
-             flexDirection: 'column',
-             margin: '0 0 1vw 0',
-             background: 'rgba(255,255,255,0.85)',
-             borderRadius: 16,
-             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-             padding: '2vw',
-             maxWidth: 1200,
-             width: '85%',
-             marginLeft: 'auto',
-             marginRight: 'auto',
-             textAlign: 'left',
-           }}>
+           <div 
+             className="animated-card card-1"
+             style={{
+               display: 'flex',
+               flexDirection: 'column',
+               margin: '0 0 1vw 0',
+               background: 'rgba(255,255,255,0.85)',
+               borderRadius: 16,
+               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+               padding: '2vw',
+               maxWidth: 1200,
+               width: '85%',
+               marginLeft: 'auto',
+               marginRight: 'auto',
+               textAlign: 'left',
+             }}
+           >
              <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
                width: '100%', 
                height: 'auto', 

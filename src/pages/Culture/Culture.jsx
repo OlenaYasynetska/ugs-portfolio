@@ -1,171 +1,207 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Main from '../../components/Main/Main';
+import { useCardAnimation } from '../../hooks';
 
 const Culture = () => {
   const { t } = useTranslation();
+  
+  // Хук для анимации карточек
+  const { getFullCSS } = useCardAnimation(6, {
+    baseDelay: 100,
+    delayIncrement: 200,
+    animationType: 'slideInUp',
+    duration: 0.8
+  });
 
   return (
     <Main>
+      <style>
+        {getFullCSS()}
+      </style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-        <h1 style={{ color: '#0057b8', textAlign: 'center', marginBottom: '40px' }}>
-          🎭 {t('culture_title', 'Українська культура в Штайєрі')}
+        <h1 style={{ 
+          color: '#0057b8', 
+          textAlign: 'center', 
+          marginBottom: '40px',
+          fontSize: 'clamp(1.8em, 5vw, 2.5em)',
+          fontWeight: 'bold',
+          textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+          animation: 'fadeInDown 1s ease-out'
+        }}>
+          {t('austrian_life_features_title')}
         </h1>
-
-        <div style={{ marginBottom: '40px' }}>
-          <p style={{ fontSize: '18px', lineHeight: '1.6', textAlign: 'center', color: '#666' }}>
-            {t('culture_intro', 'Відкрийте для себе багату українську культуру через різноманітні події, фестивалі та культурні заходи в Штайєрі. Наша громада організовує регулярні заходи для збереження та популяризації української культури в Австрії.')}
-          </p>
-        </div>
-
-        <div style={{ display: 'grid', gap: '30px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
+        
+        <div style={{ 
+          display: 'grid', 
+          gap: '30px', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          padding: '0 10px'
+        }}>
           
-          {/* Регулярные события */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              📅 {t('regular_events', 'Регулярні події')}
+          {/* Work-Life Balance */}
+          <div 
+            className="animated-card card-1"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('work_life_balance_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('ukrainian_language_club', 'Український мовний клуб')}</strong> - {t('lang_club_desc', 'Щотижневі зустрічі для практики української мови')}</li>
-              <li><strong>{t('folk_dance_group', 'Група народного танцю')}</strong> - {t('dance_group_desc', 'Танцювальні заняття українськими народними танцями')}</li>
-              <li><strong>{t('choir', 'Український хор')}</strong> - {t('choir_desc', 'Спів українських народних та сучасних пісень')}</li>
-              <li><strong>{t('art_workshops', 'Мистецькі майстерні')}</strong> - {t('art_desc', 'Заняття з українського декоративно-прикладного мистецтва')}</li>
+              <li className="list-item"><strong>{t('work_life_balance_point1', 'Баланс роботи та особистого життя')}</strong> - {t('work_life_balance_desc1', 'Тут дотримуються балансу між роботою та особистим життям')}</li>
+              <li className="list-item"><strong>{t('work_life_balance_point2', 'Гнучкий графік роботи')}</strong> - {t('work_life_balance_desc2', 'Ключовим питанням для австрійців є гнучкий графік роботи. Місцеві у всьому дотримуються балансу')}</li>
+              <li className="list-item"><strong>{t('work_life_balance_point3', 'Ефективність протягом дня')}</strong> - {t('work_life_balance_desc3', 'Тут прийнято встигати виконувати завдання протягом дня, щоб увечері бути вільним для сім\'ї')}</li>
+              <li className="list-item"><strong>{t('work_life_balance_point4', 'Робочий графік')}</strong> - {t('work_life_balance_desc4', 'Зазвичай робочий день триває з 8:00 до 17:00, а по п\'ятницях – до 15:00. У вихідні робота – це табу')}</li>
             </ul>
           </div>
 
           {/* Фестивали и праздники */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              🎉 {t('festivals_holidays', 'Фестивалі та свята')}
+          <div 
+            className="animated-card card-2"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('austrian_language_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('independence_day', 'День Незалежності України')}</strong> - {t('independence_desc', 'Святкування 24 серпня з концертами та виступами')}</li>
-              <li><strong>{t('christmas_celebration', 'Різдвяні святкування')}</strong> - {t('christmas_desc', 'Традиційні українські різдвяні обряди та колядки')}</li>
-              <li><strong>{t('easter_festival', 'Великодній фестиваль')}</strong> - {t('easter_desc', 'Святкування Великодня з писанками та традиціями')}</li>
-              <li><strong>{t('cultural_festival', 'Культурний фестиваль')}</strong> - {t('cultural_fest_desc', 'Щорічний фестиваль української культури')}</li>
+              <li className="list-item"><strong>{t('austrian_language_point1', 'Складності з мовою')}</strong> - {t('austrian_language_desc1', 'Іноземців очікують складності з мовою')}</li>
+              <li className="list-item"><strong>{t('austrian_language_point2', 'Офіційна мова')}</strong> - {t('austrian_language_desc2', 'Офіційна мова – німецька, але ніхто на ній не говорить')}</li>
+              <li className="list-item"><strong>{t('austrian_language_point3', 'Регіональні діалекти')}</strong> - {t('austrian_language_desc3', 'До офіційної мови додається діалект, і в кожному регіоні він свій')}</li>
+              <li className="list-item"><strong>{t('austrian_language_point4', 'Навчання на досвіді')}</strong> - {t('austrian_language_desc4', 'Приїжджим доводиться вчити мову, яку використовують тільки в робочому листуванні. Немає курсу чи підручника – тільки досвід')}</li>
             </ul>
           </div>
 
           {/* Кулинарные события */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              🍽️ {t('culinary_events', 'Кулінарні події')}
+          <div 
+            className="animated-card card-3"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('austrian_relationships_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('cooking_masterclass', 'Кулінарні майстер-класи')}</strong> - {t('cooking_desc', 'Навчання приготування українських страв')}</li>
-              <li><strong>{t('food_festival', 'Фестиваль української кухні')}</strong> - {t('food_fest_desc', 'Дегустація традиційних українських страв')}</li>
-              <li><strong>{t('borsch_day', 'День борщу')}</strong> - {t('borsch_desc', 'Святкування найпопулярнішої української страви')}</li>
-              <li><strong>{t('vareniki_workshop', 'Майстер-клас з вареників')}</strong> - {t('vareniki_desc', 'Навчання ліплення українських вареників')}</li>
+              <li className="list-item"><strong>{t('austrian_relationships_point1', 'Перевірка почуттів')}</strong> - {t('austrian_relationships_desc1', 'Австрійці довго перевіряють почуття, перш ніж оформити стосунки')}</li>
+              <li className="list-item"><strong>{t('austrian_relationships_point2', 'Знайомство')}</strong> - {t('austrian_relationships_desc2', 'В основному стосунки зав\'язуються через друзів або через інтернет')}</li>
+              <li className="list-item"><strong>{t('austrian_relationships_point3', 'Шлюб та діти')}</strong> - {t('austrian_relationships_desc3', 'Багато одружуються, коли обом у парі вже за 30. А дітей заводять ще пізніше')}</li>
+              <li className="list-item"><strong>{t('austrian_relationships_point4', 'Романтика')}</strong> - {t('austrian_relationships_desc4', 'Найпопулярніші варіанти для зустрічей – похід у гори або в ліс, катаня на лижах, біг у парку')}</li>
             </ul>
           </div>
 
           {/* Музыкальные события */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              🎵 {t('music_events', 'Музичні події')}
+          <div 
+            className="animated-card card-4"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('austrian_architecture_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('folk_music_concert', 'Концерти народної музики')}</strong> - {t('folk_music_desc', 'Виступи з українською народною музикою')}</li>
-              <li><strong>{t('bandura_lessons', 'Уроки бандури')}</strong> - {t('bandura_desc', 'Навчання гри на традиційному українському інструменті')}</li>
-              <li><strong>{t('modern_ukrainian_music', 'Сучасна українська музика')}</strong> - {t('modern_music_desc', 'Концерти сучасних українських виконавців')}</li>
-              <li><strong>{t('karaoke_evening', 'Караоке-вечори')}</strong> - {t('karaoke_desc', 'Спів українських пісень у дружній атмосфері')}</li>
+              <li className="list-item"><strong>{t('austrian_architecture_point1', 'Сірі будівлі Відня')}</strong> - {t('austrian_architecture_desc1', 'Більшість віденських будівель – сірого кольору. Але якось раз це вирішили змінити')}</li>
+              <li className="list-item"><strong>{t('austrian_architecture_point2', 'Художник Хундертвассер')}</strong> - {t('austrian_architecture_desc2', 'Серед австрійців знайшлася людина, яку благородний сірий колір чомусь почав дратувати. Ним виявився художник Фріденсрайх Хундертвассер')}</li>
+              <li className="list-item"><strong>{t('austrian_architecture_point3', 'Унікальні квартири')}</strong> - {t('austrian_architecture_desc3', 'Він вважав, що людина не може бути щасливою в штучному середовищі будинків, що складаються з однакових повторюваних комірок')}</li>
+              <li className="list-item"><strong>{t('austrian_architecture_point4', 'Архітектура та природа')}</strong> - {t('austrian_architecture_desc4', 'Крім того, він вважав, що архітектура повинна становити єдине ціле з навколишньою її природою')}</li>
             </ul>
           </div>
 
           {/* Образовательные события */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              📚 {t('educational_events', 'Освітні події')}
+          <div 
+            className="animated-card card-5"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('austrian_healthcare_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('history_lectures', 'Лекції з історії України')}</strong> - {t('history_desc', 'Пізнавальні лекції про історію та культуру України')}</li>
-              <li><strong>{t('literature_club', 'Літературний клуб')}</strong> - {t('literature_desc', 'Обговорення української літератури та поезії')}</li>
-              <li><strong>{t('film_screenings', 'Кінопокази')}</strong> - {t('film_desc', 'Перегляд українських фільмів та документальних стрічок')}</li>
-              <li><strong>{t('art_exhibitions', 'Художні виставки')}</strong> - {t('art_exhibit_desc', 'Виставки українських художників та фотографів')}</li>
+              <li className="list-item"><strong>{t('austrian_healthcare_point1', 'Потужна система охорони здоров\'я')}</strong> - {t('austrian_healthcare_desc1', 'Тут потужна система охорони здоров\'я. Середня тривалість життя в Австрії – 81 рік, і даний факт говорить сам за себе')}</li>
+              <li className="list-item"><strong>{t('austrian_healthcare_point2', 'Страхова політика')}</strong> - {t('austrian_healthcare_desc2', 'У кожного громадянина є недешева страховка, яку повністю або частково оплачує роботодавець')}</li>
+              <li className="list-item"><strong>{t('austrian_healthcare_point3', 'Екстрена допомога')}</strong> - {t('austrian_healthcare_desc3', 'В екстрених випадках страхова компанія оплатить машину швидкої допомоги і навіть гелікоптер')}</li>
+              <li className="list-item"><strong>{t('austrian_healthcare_point4', 'Якість медичної допомоги')}</strong> - {t('austrian_healthcare_desc4', 'Медична допомога – одне з головних переваг життя тут. Якщо ви працюєте, то 100% обслуговування і лікування включено в вашу страховку')}</li>
             </ul>
           </div>
 
           {/* Детские события */}
-          <div style={{ background: '#f8f9fa', padding: '25px', borderRadius: '12px', border: '1px solid #e9ecef' }}>
-            <h2 style={{ color: '#0057b8', marginBottom: '20px' }}>
-              👶 {t('children_events', 'Події для дітей')}
+          <div 
+            className="animated-card card-6"
+            style={{ 
+              background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+              padding: '25px', 
+              borderRadius: '16px', 
+              border: '1px solid #e9ecef',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h2 style={{ 
+              color: '#0057b8', 
+              marginBottom: '20px',
+              fontSize: '1.5em',
+              fontWeight: 'bold'
+            }}>
+              {t('austrian_friendship_title')}
             </h2>
             <ul style={{ lineHeight: '1.8' }}>
-              <li><strong>{t('ukrainian_school', 'Українська школа')}</strong> - {t('school_desc', 'Заняття українською мовою та культурою для дітей')}</li>
-              <li><strong>{t('creative_workshops', 'Творчі майстерні')}</strong> - {t('creative_desc', 'Малювання, ліплення та інші творчі заняття')}</li>
-              <li><strong>{t('storytelling', 'Читання казок')}</strong> - {t('stories_desc', 'Читання українських народних казок та легенд')}</li>
-              <li><strong>{t('children_concerts', 'Дитячі концерти')}</strong> - {t('children_concerts_desc', 'Музичні виступи дітей та для дітей')}</li>
+              <li className="list-item"><strong>{t('austrian_friendship_point1', 'Складність у заведенні друзів')}</strong> - {t('austrian_friendship_desc1', 'Австрійцям потрібно багато часу для того, щоб відкритися, почати дружити')}</li>
+              <li className="list-item"><strong>{t('austrian_friendship_point2', 'Комфорт у тиші')}</strong> - {t('austrian_friendship_desc2', 'Наприклад, вони роками можуть обідати з колегами в тиші: їм так комфортно')}</li>
+              <li className="list-item"><strong>{t('austrian_friendship_point3', 'Легкість розмови')}</strong> - {t('austrian_friendship_desc3', 'Але самі австрійці запевняють, що з ними легко зав\'язати розмову')}</li>
+              <li className="list-item"><strong>{t('austrian_friendship_point4', 'Секрет спілкування')}</strong> - {t('austrian_friendship_desc4', '«Ми скаржимося на все. Ви не знаєте, про що поговорити? Просто почніть скаржитися на щось. У 99% випадків австрієць погодиться з вами»')}</li>
             </ul>
           </div>
 
         </div>
-
-        {/* Календарь событий */}
-        <div style={{ 
-          background: 'linear-gradient(135deg, #ffd700, #0057b8)', 
-          color: 'white', 
-          padding: '30px', 
-          borderRadius: '12px', 
-          marginTop: '40px',
-          textAlign: 'center'
-        }}>
-          <h2 style={{ marginBottom: '20px' }}>
-            📅 {t('events_calendar', 'Календар подій')}
-          </h2>
-          <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-            {t('calendar_info', 'Слідкуйте за нашим календарем подій, щоб не пропустити жодного важливого заходу')}
-          </p>
-          <button style={{
-            background: 'white',
-            color: '#0057b8',
-            border: 'none',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '16px',
-            fontWeight: 'bold',
-            cursor: 'pointer'
-          }}>
-            {t('view_calendar', 'Переглянути календар')}
-          </button>
-        </div>
-
-        {/* Присоединиться к сообществу */}
-        <div style={{ marginTop: '40px', padding: '25px', background: '#e3f2fd', borderRadius: '12px', border: '1px solid #bbdefb' }}>
-          <h3 style={{ color: '#1565c0', marginBottom: '15px', textAlign: 'center' }}>
-            🤝 {t('join_community', 'Приєднуйтесь до нашої культурної спільноти')}
-          </h3>
-          <p style={{ lineHeight: '1.6', color: '#1565c0', textAlign: 'center' }}>
-            {t('join_desc', 'Ми завжди раді новим учасникам! Незалежно від того, чи ви хочете виступати, організовувати події або просто відвідувати заходи - наша громада відкрита для всіх.')}
-          </p>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <button style={{
-              background: '#0057b8',
-              color: 'white',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              marginRight: '10px'
-            }}>
-              {t('become_volunteer', 'Стати волонтером')}
-            </button>
-            <button style={{
-              background: '#ffd700',
-              color: '#333',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: 'bold',
-              cursor: 'pointer'
-            }}>
-              {t('contact_us', 'Зв\'язатися з нами')}
-            </button>
-          </div>
-        </div>
-
       </div>
     </Main>
   );

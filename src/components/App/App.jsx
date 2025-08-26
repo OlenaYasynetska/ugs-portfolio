@@ -8,8 +8,8 @@ import Home from '../../pages/Home/Home';
 import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
 import ContactFormPage from '../../pages/ContactFormPage/ContactFormPage';
+import Culture from '../../pages/Culture/Culture';
 // import Help from '../../pages/Help/Help';
-// import Culture from '../../pages/Culture/Culture';
 // import Blog from '../../pages/Blog/Blog';
 
 function AppContent() {
@@ -23,8 +23,8 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/culture" element={<Culture />} />
           {/* <Route path="/help" element={<Help />} /> */}
-          {/* <Route path="/culture" element={<Culture />} /> */}
           {/* <Route path="/blog" element={<Blog />} /> */}
           {/* <Route path="/contact" element={<Contacts />} /> */}
           <Route path="*" element={<ContactFormPage />} />

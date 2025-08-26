@@ -34,11 +34,11 @@ const Nav = ({ style }) => {
           <li>
             <NavLink to="/about" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('about')}</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/help" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('help')}</NavLink>
-          </li>
           <li>
             <NavLink to="/culture" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('culture')}</NavLink>
+          </li>
+          {/* <li>
+            <NavLink to="/help" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('help')}</NavLink>
           </li>
           <li>
             <NavLink to="/blog" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('blog')}</NavLink>
@@ -57,8 +57,8 @@ const Nav = ({ style }) => {
           <div className={styles.mobileMenu}>
             <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink} end>{t('home')}</NavLink>
             <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('about')}</NavLink>
-            {/* <NavLink to="/help" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('help')}</NavLink>
             <NavLink to="/culture" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('culture')}</NavLink>
+            {/* <NavLink to="/help" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('help')}</NavLink>
             <NavLink to="/blog" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('blog')}</NavLink> */}
             <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('contacts')}</NavLink>
           </div>

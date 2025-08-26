@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 33,
+    title: {
+      en: '🚗 Car dashcams: where in Europe it\'s better not to use them',
+      de: '🚗 Autodashcams: wo in Europa man sie besser nicht benutzt',
+      ua: '🚗 Автомобільні відеореєстратори: де в Європі їх краще не використовувати'
+    },
+    text: {
+      en: 'Countries where it\'s not advisable to turn on a camera include, in particular, Austria, Belgium, Luxembourg, Portugal, Switzerland, Sweden.\n\n🇦🇹 Austria:\nThe use of dashcams is not directly prohibited, but at the same time, there is a fine (€10 thousand) if the use of a dashcam is deemed an invasion of privacy.\n\n🇨🇭 Switzerland:\nCategorical prohibition on the use of any devices that record images.\n\n🇵🇹 Portugal:\nNot only is the use of dashcams prohibited, but also their storage in the car.\n\n🇧🇪🇱🇺 Belgium and Luxembourg:\nThe use of dashcams is not recommended and may result in fines.\n\n🇭🇺 Hungary:\nVideo recordings must be of low resolution, and unnecessary data must be deleted 5 days after registration and protected from third-party access.',
+      de: 'Zu den Ländern, wo es nicht ratsam ist, eine Kamera einzuschalten, gehören insbesondere Österreich, Belgien, Luxemburg, Portugal, die Schweiz und Schweden.\n\n🇦🇹 Österreich:\nDie Verwendung von Dashcams ist nicht direkt verboten, aber gleichzeitig gibt es eine Geldstrafe (10.000 €), wenn die Verwendung einer Dashcam als Eingriff in die Privatsphäre angesehen wird.\n\n🇨🇭 Schweiz:\nKategorisches Verbot der Verwendung von Geräten, die Bilder aufzeichnen.\n\n🇵🇹 Portugal:\nNicht nur die Verwendung von Dashcams ist verboten, sondern auch deren Aufbewahrung im Auto.\n\n🇧🇪🇱🇺 Belgien und Luxemburg:\nDie Verwendung von Dashcams wird nicht empfohlen und kann zu Geldstrafen führen.\n\n🇭🇺 Ungarn:\nVideoaufnahmen müssen eine niedrige Auflösung haben, und unnötige Daten müssen 5 Tage nach der Aufnahme gelöscht und vor unbefugtem Zugriff geschützt werden.',
+      ua: 'До країн, де не варто вмикати камеру, зокрема, належать Австрія, Бельгія, Люксембург, Португалія, Швейцарія, Швеція.\n\n🇦🇹 Австрія:\nВикористання відеореєстраторів не заборонено прямо, але водночас, існує штраф (€10 тис.) якщо застосування відеореєстратора буде розцінено як вторгнення в приватне життя.\n\n🇨🇭 Швейцарія:\nКатегорична заборона на використання будь-яких пристроїв, що фіксують зображення.\n\n🇵🇹 Португалія:\nЗаборонено не тільки використання відеореєстраторів, але і їх зберігання в автомобілі.\n\n🇧🇪🇱🇺 Бельгія і Люксембург:\nВикористання відеореєстраторів не рекомендується і може спричинити за собою штрафи.\n\n🇭🇺 Угорщина:\nВідео записи повинні бути зі слабкою роздільною здатністю, а непотрібні дані мають бути видалені через 5 днів після реєстрації та захищені від доступу третіх осіб.'
+    }
+  },
+  {
     id: 32,
     title: {
       en: '📊 42% of Austrians support the country\'s participation in a peacekeeping mission in Ukraine',

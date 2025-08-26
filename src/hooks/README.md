@@ -84,6 +84,59 @@ const numberAnimations = useNumberAnimation(5, 0, 400, 'dance', 2);
 ))}
 ```
 
+## useCardAnimation
+
+Универсальный хук для анимации карточек и постов с настраиваемыми параметрами.
+
+### Параметры:
+- `count` (number) - Количество карточек для анимации
+- `options` (object, опционально) - Опции анимации:
+  - `baseDelay` (number) - Базовая задержка в миллисекундах (по умолчанию 100)
+  - `delayIncrement` (number) - Приращение задержки для каждой следующей карточки (по умолчанию 200)
+  - `animationType` (string) - Тип анимации: 'slideInUp', 'fadeIn', 'scaleIn', 'slideInLeft', 'slideInRight', 'bounceIn', 'flipIn' (по умолчанию 'slideInUp')
+  - `duration` (number) - Длительность анимации в секундах (по умолчанию 0.8)
+  - `easing` (string) - Функция плавности (по умолчанию 'ease-out')
+
+### Возвращает:
+- `Object` - Объект с методами для получения CSS анимаций и стилей:
+  - `animations` - Объект с CSS анимациями для каждой карточки
+  - `getFullCSS()` - Метод для получения полного CSS
+  - `getKeyframes()` - Метод для получения CSS keyframes
+  - `getHoverStyles()` - Метод для получения hover эффектов
+  - `getListAnimationStyles()` - Метод для получения анимаций элементов списка
+
+### Пример использования:
+```jsx
+const { getFullCSS } = useCardAnimation(6, {
+  baseDelay: 100,
+  delayIncrement: 200,
+  animationType: 'slideInUp',
+  duration: 0.8
+});
+
+// В JSX:
+<style>{getFullCSS()}</style>
+<div className="animated-card card-1">...</div>
+<div className="animated-card card-2">...</div>
+```
+
+### Поддерживаемые типы анимаций
+
+1. **slideInUp** - Появление снизу вверх
+2. **fadeIn** - Появление с изменением прозрачности
+3. **scaleIn** - Появление с масштабированием
+4. **slideInLeft** - Появление слева
+5. **slideInRight** - Появление справа
+6. **bounceIn** - Появление с отскоком
+7. **flipIn** - Появление с переворотом
+
+### Hover эффекты
+
+- **По умолчанию**: Подъем карточки с тенью
+- **zoom**: Масштабирование
+- **lift**: Увеличенный подъем
+- **rotate**: Легкий поворот с масштабированием
+
 ## CSS анимации
 
 ### dance
