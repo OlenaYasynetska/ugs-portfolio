@@ -24,7 +24,7 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
             return prev;
           }
         });
-      }, 60);
+      }, 30);
     } else {
       setProgress(0);
       if (intervalRef.current) clearInterval(intervalRef.current);
