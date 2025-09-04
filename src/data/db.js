@@ -1,4 +1,17 @@
 export const news = [
+{
+  id: 36,
+  title: {
+    en: '🇺🇦 EU must become participant in peace negotiations regarding Ukraine - Austrian Chancellor',
+    de: '🇺🇦 EU muss Teilnehmer der Friedensverhandlungen bezüglich der Ukraine werden - Kanzler Österreichs',
+    ua: '🇺🇦ЄС має стати учасником мирних перемовин щодо України - канцлер Австрії'
+  },
+  text: {
+    en: 'While Putin shows no interest in ceasing hostilities in Ukraine, the EU must continue pressure on Russia and become a participant in the peace process.\n\nThis was stated by Austrian Chancellor Christian Stocker during a joint press conference with European Council President António Costa in Vienna, which was broadcast on Costa\'s page on social network X, reports Ukrinform correspondent.\n\n🗣️ "Austria\'s position is clear solidarity with Ukraine, and the same applies to all other EU member states. Our priority must be to stop the killings and hostilities in Ukraine," said Stocker.',
+    de: 'Während Putin kein Interesse an der Einstellung der Feindseligkeiten in der Ukraine zeigt, muss die EU den Druck auf Russland fortsetzen und Teilnehmer des Friedensprozesses werden.\n\nDies erklärte der österreichische Kanzler Christian Stocker während einer gemeinsamen Pressekonferenz mit dem Präsidenten des Europäischen Rates António Costa in Wien, die auf Costas Seite im sozialen Netzwerk X übertragen wurde, berichtet der Ukrinform-Korrespondent.\n\n🗣️ „Die Position Österreichs ist eine klare Solidarität mit der Ukraine, und dasselbe gilt für alle anderen EU-Mitgliedstaaten. Unser Priorität muss die Einstellung der Morde und Kampfhandlungen in der Ukraine sein", sagte Stocker.',
+    ua: 'У той час як путін не проявляє інтересу до припинення вогню в Україні, ЄС має продовжити тиск на росію та стати учасником мирного процесу.\n\nПро це заявив канцлер Австрії Крістіан Штокер під час спільної пресконференції з президентом Європейської Ради Антоніу Коштою у Відні, яка транслювалася на сторінці Кошти в соцмережі Х, повідомляє кореспондент Укрінформу.\n\n🗣️«Позиція Австрії - це чітка солідарність з Україною, і те саме стосується всіх інших держав-членів ЄС. Нашим пріоритетом має бути припинення вбивств і бойових дій в Україні», - сказав Штокер.'
+  }
+},
   {
     id: 35,
     title: {
