@@ -1,0 +1,106 @@
+/* Анимация для страницы 404 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.errorNumber {
+  animation: bounce 2s infinite;
+}
+
+.errorNumber:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .errorNumber {
+    font-size: 6rem !important;
+  }
+  
+  .errorTitle {
+    font-size: 2rem !important;
+  }
+  
+  .errorDescription {
+    font-size: 1rem !important;
+  }
+  
+  .buttonContainer {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .button {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .errorNumber {
+    font-size: 4rem !important;
+  }
+  
+  .errorTitle {
+    font-size: 1.5rem !important;
+  }
+  
+  .errorDescription {
+    font-size: 0.9rem !important;
+  }
+}

@@ -9,13 +9,14 @@ import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
 import ContactFormPage from '../../pages/ContactFormPage/ContactFormPage';
 import Culture from '../../pages/Culture/Culture';
+import NotFound from '../../pages/NotFound/NotFound';
 // import Help from '../../pages/Help/Help';
 // import Blog from '../../pages/Blog/Blog';
 
 function AppContent() {
   const location = useLocation();
   let scrollable = true;
-  if (location.pathname === '/about' || location.pathname === '/contact') scrollable = false;
+  if (location.pathname === '/about' || location.pathname === '/contact' || location.pathname.includes('404')) scrollable = false;
   return (
     <>
       <Nav />
@@ -24,10 +25,10 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/culture" element={<Culture />} />
+          <Route path="/contact" element={<ContactFormPage />} />
           {/* <Route path="/help" element={<Help />} /> */}
           {/* <Route path="/blog" element={<Blog />} /> */}
-          {/* <Route path="/contact" element={<Contacts />} /> */}
-          <Route path="*" element={<ContactFormPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Main>
       <Footer />

@@ -136,7 +136,18 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_point3: 'Emergency assistance',
         austrian_healthcare_desc3: 'In emergency cases, the insurance company will pay for an ambulance and even a helicopter',
         austrian_healthcare_point4: 'Quality of medical care',
-        austrian_healthcare_desc4: 'Medical care is one of the main advantages of living here. If you work, then 100% of service and treatment is included in your insurance'
+        austrian_healthcare_desc4: 'Medical care is one of the main advantages of living here. If you work, then 100% of service and treatment is included in your insurance',
+        // 404 Page translations
+        page_not_found_title: 'Page Not Found',
+        page_not_found_description: 'Sorry, but the page you are looking for does not exist or has been moved.',
+        go_home: 'Go Home',
+        go_back: 'Go Back',
+        go_to_contacts: 'Contacts',
+        page_not_found_help: 'If you believe this is an error, please contact us.',
+        // Panel translations
+        work_life_balance_title: 'Work-Life Balance',
+        language_difficulties_title: 'Foreigners face language difficulties',
+        relationships_title: 'Austrians take time to check feelings before formalizing relationships'
       }
     },
     de: {
@@ -272,7 +283,18 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_point3: 'Notfallhilfe',
         austrian_healthcare_desc3: 'In Notfällen zahlt die Versicherungsgesellschaft für einen Krankenwagen und sogar einen Hubschrauber',
         austrian_healthcare_point4: 'Qualität der medizinischen Versorgung',
-        austrian_healthcare_desc4: 'Medizinische Versorgung ist einer der Hauptvorteile des Lebens hier. Wenn Sie arbeiten, sind 100% der Dienstleistungen und Behandlungen in Ihrer Versicherung enthalten'
+        austrian_healthcare_desc4: 'Medizinische Versorgung ist einer der Hauptvorteile des Lebens hier. Wenn Sie arbeiten, sind 100% der Dienstleistungen und Behandlungen in Ihrer Versicherung enthalten',
+        // 404 Page translations
+        page_not_found_title: 'Seite nicht gefunden',
+        page_not_found_description: 'Entschuldigung, aber die Seite, die Sie suchen, existiert nicht oder wurde verschoben.',
+        go_home: 'Zur Startseite',
+        go_back: 'Zurück',
+        go_to_contacts: 'Kontakte',
+        page_not_found_help: 'Wenn Sie glauben, dass dies ein Fehler ist, kontaktieren Sie uns bitte.',
+        // Panel translations
+        work_life_balance_title: 'Work-Life-Balance',
+        language_difficulties_title: 'Ausländer haben Sprachschwierigkeiten',
+        relationships_title: 'Österreicher prüfen lange ihre Gefühle, bevor sie Beziehungen formalisieren'
       }
     },
     ua: {
@@ -408,7 +430,18 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_point3: 'Екстрена допомога',
         austrian_healthcare_desc3: 'В екстрених випадках страхова компанія оплатить машину швидкої допомоги і навіть гелікоптер',
         austrian_healthcare_point4: 'Якість медичної допомоги',
-        austrian_healthcare_desc4: 'Медична допомога – одне з головних переваг життя тут. Якщо ви працюєте, то 100% обслуговування і лікування включено в вашу страховку'
+        austrian_healthcare_desc4: 'Медична допомога – одне з головних переваг життя тут. Якщо ви працюєте, то 100% обслуговування і лікування включено в вашу страховку',
+        // 404 Page translations
+        page_not_found_title: 'Сторінка не знайдена',
+        page_not_found_description: 'Вибачте, але сторінка, яку ви шукаєте, не існує або була переміщена.',
+        go_home: 'На головну',
+        go_back: 'Назад',
+        go_to_contacts: 'Контакти',
+        page_not_found_help: 'Якщо ви вважаєте, що це помилка, будь ласка, зв\'яжіться з нами.',
+        // Panel translations
+        work_life_balance_title: 'Баланс роботи та особистого життя',
+        language_difficulties_title: 'Іноземців очікують складності з мовою',
+        relationships_title: 'Австрійці довго перевіряють почуття, перш ніж оформити стосунки'
       }
     }
   },

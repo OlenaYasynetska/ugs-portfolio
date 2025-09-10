@@ -43,7 +43,11 @@ export default function Home() {
     animationType: 'slideInUp',
     duration: 0.6
   });
+  
+  // Анимации при скролле для панелей
+  
   const [showFullMolotov, setShowFullMolotov] = useState(false);
+  
   
   const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
   const isVeryMobile = typeof window !== 'undefined' ? window.innerWidth < 520 : false;
@@ -379,6 +383,8 @@ export default function Home() {
            letterSpacing: '0.02em',
            textAlign: 'center',
          }}>{t('this_is_interesting') || 'Это интересно'}</div>
+         
+         
          
          {/* Пост про Eurovision */}
          {isSmallScreen ? (
