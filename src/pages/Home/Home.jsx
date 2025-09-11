@@ -14,6 +14,7 @@ import EurovisionImg from '../../assets/Eurovision.png';
 import WienImg from '../../assets/Wien.png';
 import bergImg from '../../assets/berg.png';
 import molotovRibbentropImg from '../../assets/23_08_1939.jpg';
+import transportFestivalImg from '../../assets/Image 11 сент. 2025 г., 14_04_37.png';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
 
@@ -374,19 +375,97 @@ export default function Home() {
            </div>
          )}
          
-         {/* Модуль "Это интересно" */}
-         <div className="module-heading" style={{
-           fontWeight: 900,
-           fontSize: '3.8em',
-           color: '#1565c0',
-           margin: '3vw 0 1vw 0',
-           letterSpacing: '0.02em',
-           textAlign: 'center',
-         }}>{t('this_is_interesting') || 'Это интересно'}</div>
-         
-         
-         
-         {/* Пост про Eurovision */}
+        {/* Модуль "Это интересно" */}
+        <div className="module-heading" style={{
+          fontWeight: 900,
+          fontSize: '3.8em',
+          color: '#1565c0',
+          margin: '3vw 0 1vw 0',
+          letterSpacing: '0.02em',
+          textAlign: 'center',
+        }}>{t('this_is_interesting') || 'Это интересно'}</div>
+        
+        {/* Пост про фестиваль транспорта */}
+        <div 
+          className="animated-card card-1"
+          style={{
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
+            maxWidth: 600,
+            width: '95%',
+            margin: '0 auto 2vw auto',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <img 
+            src={transportFestivalImg} 
+            alt="Transport Festival" 
+            style={{ 
+              width: '100%', 
+              height: 'auto', 
+              borderRadius: 12, 
+              margin: '0 auto 16px auto', 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            }}
+          />
+          <h3 style={{
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            color: '#1565c0',
+            marginBottom: '1rem',
+            textAlign: 'center',
+          }}>
+            🚌 {t('transport_festival_title') || 'Фестиваль громадського транспорту та чемпіонат світу з трамваїв на Ратхаусплац'}
+          </h3>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: '1.6',
+            color: '#333',
+            marginBottom: '1.5rem',
+            textAlign: 'left',
+          }}>
+            {t('transport_festival_text') || 'Цієї суботи Wiener Linien запрошує вас на масштабний фестиваль громадського транспорту на Ратхаусплац. Окрім інтерактивних станцій та закулісних видів, у центрі уваги буде перший у світі чемпіонат світу з трамвайного транспорту.'}
+          </p>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            width: '100%',
+            textAlign: 'left',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ fontSize: '1.2rem' }}>📅</span>
+              <span style={{ fontSize: '0.9rem', color: '#666' }}>
+                {t('transport_festival_date') || 'Дата: 13 вересня 2025 р.'}
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ fontSize: '1.2rem' }}>⏰</span>
+              <span style={{ fontSize: '0.9rem', color: '#666' }}>
+                {t('transport_festival_time') || 'Час: з 9:00 до 19:00'}
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ fontSize: '1.2rem' }}>📍</span>
+              <span style={{ fontSize: '0.9rem', color: '#666' }}>
+                {t('transport_festival_location') || 'Місцезнаходження: Ратушна площа, 1010 Відень'}
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ fontSize: '1.2rem' }}>🎫</span>
+              <span style={{ fontSize: '0.9rem', color: '#666' }}>
+                {t('transport_festival_entry') || 'Вхід вільний.'}
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Пост про Eurovision */}
          {isSmallScreen ? (
            <div 
              className="animated-card card-1"

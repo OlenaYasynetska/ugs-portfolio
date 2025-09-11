@@ -137,6 +137,13 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_desc3: 'In emergency cases, the insurance company will pay for an ambulance and even a helicopter',
         austrian_healthcare_point4: 'Quality of medical care',
         austrian_healthcare_desc4: 'Medical care is one of the main advantages of living here. If you work, then 100% of service and treatment is included in your insurance',
+        // Transport Festival translations
+        transport_festival_title: 'Public Transport Festival and World Tram Championship at Rathausplatz',
+        transport_festival_text: 'This Saturday, Wiener Linien invites you to a large-scale public transport festival at Rathausplatz. In addition to interactive stations and behind-the-scenes views, the highlight will be the world\'s first tram transport world championship.',
+        transport_festival_date: 'Date: September 13, 2025',
+        transport_festival_time: 'Time: from 9:00 to 19:00',
+        transport_festival_location: 'Location: Rathausplatz, 1010 Vienna',
+        transport_festival_entry: 'Entry is free.',
         // 404 Page translations
         page_not_found_title: 'Page Not Found',
         page_not_found_description: 'Sorry, but the page you are looking for does not exist or has been moved.',
@@ -284,6 +291,13 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_desc3: 'In Notfällen zahlt die Versicherungsgesellschaft für einen Krankenwagen und sogar einen Hubschrauber',
         austrian_healthcare_point4: 'Qualität der medizinischen Versorgung',
         austrian_healthcare_desc4: 'Medizinische Versorgung ist einer der Hauptvorteile des Lebens hier. Wenn Sie arbeiten, sind 100% der Dienstleistungen und Behandlungen in Ihrer Versicherung enthalten',
+        // Transport Festival translations
+        transport_festival_title: 'Öffentliches Verkehrsfestival und Weltmeisterschaft der Straßenbahnen am Rathausplatz',
+        transport_festival_text: 'Diesen Samstag lädt Sie Wiener Linien zu einem großangelegten Festival des öffentlichen Verkehrs am Rathausplatz ein. Neben interaktiven Stationen und Einblicken hinter die Kulissen wird der Höhepunkt die erste Weltmeisterschaft im Straßenbahnverkehr der Welt sein.',
+        transport_festival_date: 'Datum: 13. September 2025',
+        transport_festival_time: 'Zeit: von 9:00 bis 19:00',
+        transport_festival_location: 'Ort: Rathausplatz, 1010 Wien',
+        transport_festival_entry: 'Der Eintritt ist frei.',
         // 404 Page translations
         page_not_found_title: 'Seite nicht gefunden',
         page_not_found_description: 'Entschuldigung, aber die Seite, die Sie suchen, existiert nicht oder wurde verschoben.',
@@ -431,6 +445,13 @@ i18n.use(initReactI18next).init({
         austrian_healthcare_desc3: 'В екстрених випадках страхова компанія оплатить машину швидкої допомоги і навіть гелікоптер',
         austrian_healthcare_point4: 'Якість медичної допомоги',
         austrian_healthcare_desc4: 'Медична допомога – одне з головних переваг життя тут. Якщо ви працюєте, то 100% обслуговування і лікування включено в вашу страховку',
+        // Transport Festival translations
+        transport_festival_title: 'Фестиваль громадського транспорту та чемпіонат світу з трамваїв на Ратхаусплац',
+        transport_festival_text: 'Цієї суботи Wiener Linien запрошує вас на масштабний фестиваль громадського транспорту на Ратхаусплац. Окрім інтерактивних станцій та закулісних видів, у центрі уваги буде перший у світі чемпіонат світу з трамвайного транспорту.',
+        transport_festival_date: 'Дата: 13 вересня 2025 р.',
+        transport_festival_time: 'Час: з 9:00 до 19:00',
+        transport_festival_location: 'Місцезнаходження: Ратушна площа, 1010 Відень',
+        transport_festival_entry: 'Вхід вільний.',
         // 404 Page translations
         page_not_found_title: 'Сторінка не знайдена',
         page_not_found_description: 'Вибачте, але сторінка, яку ви шукаєте, не існує або була переміщена.',
