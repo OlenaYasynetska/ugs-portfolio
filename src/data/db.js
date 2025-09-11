@@ -2,9 +2,9 @@ export const news = [
   {
     id: 38,
     title: {
-      en: '🌙 Lunar Eclipse Tonight',
-      de: '🌙 Mondfinsternis heute Nacht',
-      ua: '🌙 Місячне затемнення сьогодні ввечері'
+      en: '🌙 08.09.2025 Lunar Eclipse Tonight',
+      de: '🌙 08.09.2025 Mondfinsternis heute Nacht',
+      ua: '🌙 08.09.2025 Місячне затемнення сьогодні ввечері'
     },
     text: {
       en: 'The Moon will pass through the Earth\'s shadow, gradually darkening and then taking on a reddish hue.\n\nThe full eclipse phase will begin at 20:30 and last until 21:52.',
