@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 39,
+    title: {
+      en: '🇺🇦 Austrian Education Minister highlights special qualities of Ukrainian schoolchildren',
+      de: '🇺🇦 Österreichischer Bildungsminister hebt besondere Eigenschaften ukrainischer Schüler hervor',
+      ua: '🇺🇦 Австрійський міністр освіти назвав особливі риси українських школярів'
+    },
+    text: {
+      en: 'Austrian Education Minister Christoph Wiederker stated during the Summit of First Ladies and Gentlemen in Kyiv that Ukrainian schoolchildren studying in his country stand out for their resilience, diligence, and high level of critical thinking.\n\n🗣️ "Currently, 20,000 Ukrainian children are studying in Austrian schools, and we are impressed by how they cope with their studies, with their emotional state, and how hard they work," said Wiederker.\n\nHe also praised Ukraine\'s education system, which "is coping very well in very difficult times."',
+      de: 'Der österreichische Bildungsminister Christoph Wiederker erklärte während des Gipfels der First Ladies und Gentlemen in Kiew, dass ukrainische Schüler, die in seinem Land studieren, sich durch ihre Widerstandsfähigkeit, Fleiß und hohes Maß an kritischem Denken auszeichnen.\n\n🗣️ "Derzeit studieren 20.000 ukrainische Kinder in österreichischen Schulen, und wir sind beeindruckt davon, wie sie mit ihrem Studium, mit ihrem emotionalen Zustand umgehen und wie hart sie arbeiten", sagte Wiederker.\n\nEr lobte auch das ukrainische Bildungssystem, das "in sehr schwierigen Zeiten sehr gut zurechtkommt."',
+      ua: 'Міністр освіти Австрії Крістоф Відеркер під час Саміту перших леді та джентльменів у Києві заявив, що українські школярі, які навчаються в його країні, вирізняються стійкістю, працьовитістю та високим рівнем критичного мислення.\n\n🗣️«Зараз 20 тисяч українських дітей навчається в австрійських школах, і ми вражені тим, як вони справляються з навчанням, зі своїм емоційним станом, як багато вони працюють», – сказав Відеркер.\n\nВін також відзначив освітню систему України, яка «дуже добре справляєтеся у дуже складні часи».'
+    }
+  },
+  {
     id: 38,
     title: {
       en: '🌙 08.09.2025 Lunar Eclipse Tonight',
