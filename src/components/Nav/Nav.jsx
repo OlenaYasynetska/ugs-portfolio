@@ -37,6 +37,9 @@ const Nav = ({ style }) => {
           <li>
             <NavLink to="/culture" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('culture')}</NavLink>
           </li>
+          <li>
+            <NavLink to="/infocenter" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('info_center_title')}</NavLink>
+          </li>
           {/* <li>
             <NavLink to="/help" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('help')}</NavLink>
           </li>
@@ -58,6 +61,7 @@ const Nav = ({ style }) => {
             <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink} end>{t('home')}</NavLink>
             <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('about')}</NavLink>
             <NavLink to="/culture" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('culture')}</NavLink>
+            <NavLink to="/infocenter" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('info_center_title')}</NavLink>
             {/* <NavLink to="/help" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('help')}</NavLink>
             <NavLink to="/blog" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('blog')}</NavLink> */}
             <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('contacts')}</NavLink>

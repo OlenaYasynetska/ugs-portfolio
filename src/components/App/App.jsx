@@ -9,6 +9,7 @@ import About from '../../pages/About/About';
 import Contacts from '../../pages/Contacts/Contacts';
 import ContactFormPage from '../../pages/ContactFormPage/ContactFormPage';
 import Culture from '../../pages/Culture/Culture';
+import InfoCenter from '../../pages/InfoCenter/InfoCenter';
 import NotFound from '../../pages/NotFound/NotFound';
 // import Help from '../../pages/Help/Help';
 // import Blog from '../../pages/Blog/Blog';
@@ -25,6 +26,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/culture" element={<Culture />} />
+          <Route path="/infocenter" element={<InfoCenter />} />
           <Route path="/contact" element={<ContactFormPage />} />
           {/* <Route path="/help" element={<Help />} /> */}
           {/* <Route path="/blog" element={<Blog />} /> */}
