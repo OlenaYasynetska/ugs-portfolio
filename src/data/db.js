@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 40,
+    title: {
+      en: '01.10.2025📢 Mandatory change from October 1 in FinanzOnline',
+      de: '01.10.2025📢 Obligatorische Änderung ab 1. Oktober in FinanzOnline',
+      ua: '01.10.2025📢 Обов\'язкова зміна з 1 жовтня в FinanzOnline'
+    },
+    text: {
+      en: 'From October 1, two-factor authentication will be required to access FinanzOnline, including ID Austria.\n\nUntimely registration may lead to problems with the tax service.\n\n🗣️"I advise everyone to register with ID Austria as soon as possible. Those who wait until October may face problems with booking appointments at registration authorities to set up ID Austria," warns tax expert Diana Yusich, adding: "Without pre-configured two-factor authentication, your regular consultations with the tax service will be impossible."',
+      de: 'Ab dem 1. Oktober wird für den Zugang zu FinanzOnline eine Zwei-Faktor-Authentifizierung erforderlich sein, einschließlich ID Austria.\n\nEine verspätete Registrierung kann zu Problemen mit dem Finanzamt führen.\n\n🗣️"Ich rate allen, sich so schnell wie möglich bei ID Austria zu registrieren. Diejenigen, die bis Oktober warten, könnten Probleme bei der Terminbuchung bei den Registrierungsbehörden zur Einrichtung von ID Austria haben", warnt Steuerexpertin Diana Yusich und fügt hinzu: "Ohne vorkonfigurierte Zwei-Faktor-Authentifizierung werden Ihre regelmäßigen Beratungen beim Finanzamt unmöglich sein."',
+      ua: 'З 1 жовтня для доступу до FinanzOnline буде потрібна двофакторна автентифікація, включаючи ID Austria.\n\nНесвоєчасна реєстрація може призвести до проблем з податковою службою.\n\n🗣️«Я раджу всім зареєструватися в ID Austria якомога швидше. У тих, хто чекає до жовтня, можуть виникнути проблеми з записом на прийом до реєстраційних органів для налаштування ID Austria», — попереджає податковий експерт Діана Юсич, додаючи: «Без попередньо налаштованої двофакторної аутентифікації ваші звичайні консультації з податковою службою будуть неможливі».'
+    }
+  },
+  {
     id: 39,
     title: {
       en: '🇺🇦 Austrian Education Minister highlights special qualities of Ukrainian schoolchildren',

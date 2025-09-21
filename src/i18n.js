@@ -197,7 +197,10 @@ i18n.use(initReactI18next).init({
         info_social_3_desc: 'Free German language courses',
         info_social_4: 'Psychological Help',
         info_social_4_desc: 'Support for those who need psychological help',
-        info_contact_title: 'Help Contacts'
+        info_contact_title: 'Help Contacts',
+        // Austria National Day translations
+        austria_national_day_title: '🇦🇹 October 26 — Austria National Day',
+        austria_national_day_description: 'Today Austria celebrates one of its most important national holidays — National Day.\n\n📖 A bit of history:\nAfter the end of World War II, Austria was under occupation by the Allied powers (USSR, USA, Great Britain and France). Only in 1955 was the State Treaty signed, which restored the country\'s independence.\n\nHowever, one of the key conditions was Austria\'s obligation to maintain permanent neutrality. On October 26, 1955, parliament passed a law establishing this status. Since then, Austria has not joined military blocs and does not host foreign military bases on its territory.\n\n🎉 Why this day is important:\n\n• Symbol of the country\'s independence and freedom.\n• Reminder of the value of peace and neutrality.\n• Day when military parades, cultural events, and tours of government institutions take place throughout Austria.\n\n💡 Interesting fact: although the treaty itself was signed in May 1955, it was October 26 that became the national holiday — after all, that\'s when Austria officially declared to the world: "We are a neutral country."'
       }
     },
     de: {
@@ -394,7 +397,10 @@ i18n.use(initReactI18next).init({
         info_social_3_desc: 'Kostenlose Deutschkurse',
         info_social_4: 'Psychologische Hilfe',
         info_social_4_desc: 'Unterstützung für diejenigen, die psychologische Hilfe benötigen',
-        info_contact_title: 'Hilfe-Kontakte'
+        info_contact_title: 'Hilfe-Kontakte',
+        // Austria National Day translations
+        austria_national_day_title: '🇦🇹 26. Oktober — Österreichischer Nationalfeiertag',
+        austria_national_day_description: 'Heute feiert Österreich einen der wichtigsten Staatsfeiertage — den Nationalfeiertag.\n\n📖 Ein wenig Geschichte:\nNach dem Ende des Zweiten Weltkriegs stand Österreich unter der Besetzung der Alliierten Mächte (UdSSR, USA, Großbritannien und Frankreich). Erst 1955 wurde der Staatsvertrag unterzeichnet, der die Unabhängigkeit des Landes wiederherstellte.\n\nEine der Schlüsselbedingungen war jedoch Österreichs Verpflichtung zur Wahrung der ständigen Neutralität. Am 26. Oktober 1955 verabschiedete das Parlament ein Gesetz, das diesen Status festlegte. Seitdem ist Österreich keinem Militärbündnis beigetreten und beherbergt keine ausländischen Militärbasen auf seinem Territorium.\n\n🎉 Warum dieser Tag wichtig ist:\n\n• Symbol für die Unabhängigkeit und Freiheit des Landes.\n• Erinnerung an den Wert von Frieden und Neutralität.\n• Tag, an dem in ganz Österreich Militärparaden, kulturelle Veranstaltungen und Führungen durch Regierungseinrichtungen stattfinden.\n\n💡 Interessante Tatsache: Obwohl der Vertrag selbst im Mai 1955 unterzeichnet wurde, wurde der 26. Oktober zum Nationalfeiertag — schließlich erklärte Österreich an diesem Tag offiziell der Welt: "Wir sind ein neutrales Land."'
       }
     },
     ua: {
@@ -591,7 +597,10 @@ i18n.use(initReactI18next).init({
         info_social_3_desc: 'Безкоштовні курси німецької мови',
         info_social_4: 'Психологічна допомога',
         info_social_4_desc: 'Підтримка для тих, хто потребує психологічної допомоги',
-        info_contact_title: 'Контакти для допомоги'
+        info_contact_title: 'Контакти для допомоги',
+        // Austria National Day translations
+        austria_national_day_title: '🇦🇹 26 жовтня — Національний день Австрії',
+        austria_national_day_description: 'Сьогодні Австрія відзначає один з найважливіших державних свят — Національний день.\n\n📖 Трохи історії:\nПісля закінчення Другої світової війни Австрія перебувала під окупацією союзних держав (СРСР, США, Великобританії та Франції). Лише в 1955 році було підписано Державний договір, який відновив незалежність країни.\n\nОднак однією з ключових умов стало зобов\'язання Австрії зберігати постійний нейтралітет. 26 жовтня 1955 року парламент прийняв закон, який закріпив цей статус. З тих пір Австрія не вступає до військових блоків і не розміщує на своїй території іноземні військові бази.\n\n🎉 Чому цей день важливий:\n\n• Символ незалежності та свободи країни.\n• Нагадування про цінність миру та нейтралітету.\n• День, коли по всій Австрії проходять військові паради, культурні заходи, екскурсії до державних установ.\n\n💡 Цікавий факт: хоча сам договір було підписано в травні 1955 року, саме 26 жовтня стало днем національного свята — адже саме тоді Австрія офіційно заявила світу: «Ми — нейтральна країна».'
       }
     }
   },

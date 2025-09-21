@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import freeFlagsImg from '../../assets/free_flags.png';
 
 const InfoCenter = () => {
   const { t } = useTranslation();
@@ -75,6 +77,53 @@ const InfoCenter = () => {
           </p>
         </div>
 
+        {/* Пост про ЕС и защиту украинцев */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.9)',
+          borderRadius: '20px',
+          padding: '2rem',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(10px)',
+          marginBottom: '3rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '2rem',
+          flexWrap: 'wrap'
+        }}>
+          <img 
+            src={freeFlagsImg} 
+            alt="EU Protection Status" 
+            style={{ 
+              maxWidth: 300, 
+              width: '100%', 
+              height: 'auto', 
+              borderRadius: 12, 
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+              flex: '0 0 300px'
+            }} 
+          />
+          <div style={{ 
+            flex: 1, 
+            minWidth: '300px',
+            fontSize: '16px', 
+            color: '#2c3e50', 
+            lineHeight: '1.6' 
+          }}>
+            <h2 style={{
+              fontSize: '1.8rem',
+              color: '#1565c0',
+              marginBottom: '1rem',
+              fontWeight: 'bold'
+            }}>
+              🇪🇺 {t('eu_protection_title') || 'ЄС готується перейти від тимчасового захисту українців до більш стійких правових статусів'}
+            </h2>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('eu_protection_description') || 'Рада Європейського Союзу схвалила рекомендацію щодо поетапного виходу з режиму тимчасового захисту, який нині діє для українців, переміщених війною, та продовжений до 4 березня 2027 року.\n\nРекомендації включають:\n• Надання національних дозволів на проживання тим, хто працює, навчається, перебуває в сім\'ї або відповідає іншим встановленим умовам.\n• Можливість переходу до статусів за законами ЄС, особливо для висококваліфікованих фахівців.\n• Організацію добровільного повернення до України, коли це дозволяє ситуація, з підтримкою та скоординованими умовами між державами-членами.\n• Зобов\'язання інформувати переміщених осіб про їх поточні права, як зміняться пільги та що відбудеться після виходу з тимчасового захисту.\n\nУ комюніке ЄС підкреслюється, що ця ініціатива не спрямована на прискорення припинення захисту, а скоріше на підготовку інфраструктури та правової бази для забезпечення нормативно правильного, справедливого та поступового переходу від тимчасового захисту до більш постійних умов.'}
+            </div>
+          </div>
+        </div>
+
         {/* Секции информации */}
         <div style={{
           display: 'grid',
@@ -129,34 +178,70 @@ const InfoCenter = () => {
                 flexDirection: 'column',
                 gap: '1rem'
               }}>
-                {section.items.map((item, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      padding: '1rem',
-                      background: 'rgba(52, 152, 219, 0.1)',
-                      borderRadius: '8px',
-                      border: '1px solid rgba(52, 152, 219, 0.2)'
-                    }}
-                  >
-                    <h3 style={{
-                      fontSize: '1.1rem',
-                      color: '#2c3e50',
-                      margin: '0 0 0.5rem 0',
-                      fontWeight: '600'
-                    }}>
-                      {item.label}
-                    </h3>
-                    <p style={{
-                      fontSize: '0.9rem',
-                      color: '#7f8c8d',
-                      margin: 0,
-                      lineHeight: '1.5'
-                    }}>
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+                {section.items.map((item, index) => {
+                  // Если это "Тимчасовий захист", делаем его кликабельным
+                  const isClickable = item.label === 'Тимчасовий захист' || item.label.includes('Тимчасовий захист');
+                  
+                  const content = (
+                    <>
+                      <h3 style={{
+                        fontSize: '1.1rem',
+                        color: '#2c3e50',
+                        margin: '0 0 0.5rem 0',
+                        fontWeight: '600'
+                      }}>
+                        {item.label}
+                      </h3>
+                      <p style={{
+                        fontSize: '0.9rem',
+                        color: '#7f8c8d',
+                        margin: 0,
+                        lineHeight: '1.5'
+                      }}>
+                        {item.description}
+                      </p>
+                    </>
+                  );
+
+                  return isClickable ? (
+                    <Link
+                      key={index}
+                      to="/documents"
+                      style={{
+                        textDecoration: 'none',
+                        display: 'block',
+                        padding: '1rem',
+                        background: 'rgba(52, 152, 219, 0.1)',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(52, 152, 219, 0.2)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = 'rgba(52, 152, 219, 0.2)';
+                        e.target.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = 'rgba(52, 152, 219, 0.1)';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div
+                      key={index}
+                      style={{
+                        padding: '1rem',
+                        background: 'rgba(52, 152, 219, 0.1)',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(52, 152, 219, 0.2)'
+                      }}
+                    >
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
