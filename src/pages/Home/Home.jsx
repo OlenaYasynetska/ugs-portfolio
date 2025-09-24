@@ -212,6 +212,40 @@ export default function Home() {
           textAlign: 'center',
         }}>{t('this_is_interesting') || 'Это интересно'}</div>
         
+        {/* Пост про предупреждение МЗС */}
+        {(() => {
+          const news43 = news.find(n => n.id === 43);
+          return (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 1200,
+              width: '85%',
+              margin: '0 auto 1vw auto',
+              textAlign: 'left'
+            }}>
+              <div style={{ 
+                fontSize: '1.4em',
+                fontWeight: 'bold',
+                color: '#1565c0',
+                marginBottom: '1rem'
+              }}>
+                {news43?.title?.[lang] || '⚠️ МЗС України застерігає паломників-хасидів щодо ризиків безпеки в Умані'}
+              </div>
+              <div style={{ 
+                fontSize: '1em',
+                lineHeight: '1.5',
+                color: '#234',
+                whiteSpace: 'pre-line'
+              }}>
+                {news43?.text?.[lang] || 'Триваюча вже понад три роки повномасштабна агресія Росії проти України, постійні масовані ракетні обстріли українських міст і громад, цивільної й транспортної інфраструктури, постійний російський терор, диверсії та провокації становлять реальні загрози життю і безпеці людей.'}
+              </div>
+            </div>
+          );
+        })()}
+        
         {/* Пост про лося */}
          {isSmallScreen ? (
           <div 
@@ -402,7 +436,7 @@ export default function Home() {
               )}
              </div>
            </div>
-        ) : (
+        ) : window.innerWidth > 900 ? (
         <div 
           className="animated-card card-1"
           style={{
@@ -482,6 +516,86 @@ export default function Home() {
               )}
             </div>
             </div>
+        ) : (
+        <div 
+          className="animated-card card-1"
+          style={{
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
+            maxWidth: 800,
+            width: '90%',
+            margin: '0 auto 1vw auto',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1.5rem'
+          }}
+        >
+          <img 
+            src={kolschitzkyImg} 
+            alt="Kolschitzky" 
+            style={{ 
+              width: '100%', 
+              maxWidth: '100%',
+              height: 'auto', 
+              borderRadius: 12, 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+            }} 
+          />
+          <div style={{ 
+            fontSize: 18, 
+            color: '#234', 
+            whiteSpace: 'pre-line', 
+            textAlign: 'left', 
+            width: '100%',
+            flex: 1
+          }}>
+            <div style={{ 
+              fontSize: '1.3em',
+              fontWeight: 'bold',
+              color: '#1565c0',
+              marginBottom: '1rem'
+            }}>
+              {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
+            </div>
+            <div style={{ 
+              fontSize: '1em',
+              lineHeight: '1.4',
+              textAlign: 'left'
+            }}>
+              {getKolschitzkyText()}
+            </div>
+            {!showFullKolschitzkyText && (
+              <button
+                onClick={() => setShowFullKolschitzkyText(true)}
+                style={{ 
+                  marginTop: '1rem',
+                  background: '#1976d2',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '10px 20px',
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                }}
+              >
+                {t('more_ellipsis')}
+              </button>
+            )}
+          </div>
+        </div>
         )}
         
         {/* Пост про Eurovision */}
