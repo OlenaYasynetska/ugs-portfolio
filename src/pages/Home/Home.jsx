@@ -15,6 +15,7 @@ import bergImg from '../../assets/berg.png';
 import nationalTadImg from '../../assets/NationalTad.png';
 import losImg from '../../assets/Los.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
+import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
 
@@ -188,7 +189,7 @@ export default function Home() {
               textAlign: 'center' 
             }}>
               {t('austria_national_day_title') || '🇦🇹 26 жовтня — Національний день Австрії'}
-            </div>
+              </div>
           <div style={{
               fontSize: isSmallScreen ? 16 : 18, 
               lineHeight: 1.5, 
@@ -197,9 +198,9 @@ export default function Home() {
               padding: '0 10px'
             }}>
               {t('austria_national_day_description') || 'Сьогодні Австрія відзначає один з найважливіших державних свят — Національний день.\n\n📖 Трохи історії:\nПісля закінчення Другої світової війни Австрія перебувала під окупацією союзних держав (СРСР, США, Великобританії та Франції). Лише в 1955 році було підписано Державний договір, який відновив незалежність країни.\n\nОднак однією з ключових умов стало зобов\'язання Австрії зберігати постійний нейтралітет. 26 жовтня 1955 року парламент прийняв закон, який закріпив цей статус. З тих пір Австрія не вступає до військових блоків і не розміщує на своїй території іноземні військові бази.\n\n🎉 Чому цей день важливий:\n\n• Символ незалежності та свободи країни.\n• Нагадування про цінність миру та нейтралітету.\n• День, коли по всій Австрії проходять військові паради, культурні заходи, екскурсії до державних установ.\n\n💡 Цікавий факт: хоча сам договір було підписано в травні 1955 року, саме 26 жовтня стало днем національного свята — адже саме тоді Австрія офіційно заявила світу: «Ми — нейтральна країна».'}
+              </div>
+              </div>
             </div>
-             </div>
-           </div>
          
         {/* Модуль "Это интересно" */}
         <div className="module-heading" style={{
@@ -212,21 +213,21 @@ export default function Home() {
         }}>{t('this_is_interesting') || 'Это интересно'}</div>
         
         {/* Пост про лося */}
-        {isSmallScreen ? (
+         {isSmallScreen ? (
           <div 
             className="animated-card card-1"
             style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
-              maxWidth: 400,
-              width: '95%',
-              margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 400,
+             width: '95%',
+             margin: '0 auto 1vw auto',
+             textAlign: 'center',
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
             }}
           >
             <img 
@@ -254,7 +255,7 @@ export default function Home() {
                 marginBottom: '1rem'
               }}>
                 {news.find(item => item.id === 41)?.title[lang] || '🫎 Суперечки між владою та громадськістю спричинив лось'}
-              </div>
+               </div>
               <div style={{ 
                 fontSize: '1em',
                 lineHeight: '1.4',
@@ -263,18 +264,18 @@ export default function Home() {
                 __html: news.find(item => item.id === 41)?.text[lang] || 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
               }}>
               </div>
-            </div>
-          </div>
-        ) : (
+             </div>
+           </div>
+         ) : (
           <div 
             className="animated-card card-1"
             style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
-              maxWidth: 1200,
-              width: '85%',
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 1200,
+             width: '85%',
               margin: '0 auto 1vw auto',
               textAlign: 'center',
               display: 'flex',
@@ -307,7 +308,7 @@ export default function Home() {
                 marginBottom: '1rem'
               }}>
                 {news.find(item => item.id === 41)?.title[lang] || '🫎 Суперечки між владою та громадськістю спричинив лось'}
-              </div>
+               </div>
               <div style={{ 
                 fontSize: '1.1em',
                 lineHeight: '1.5',
@@ -316,26 +317,26 @@ export default function Home() {
                 __html: news.find(item => item.id === 41)?.text[lang] || 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
               }}>
               </div>
-            </div>
-          </div>
-        )}
-        
+             </div>
+           </div>
+         )}
+         
         {/* Пост про Кульчицкого */}
-        {isSmallScreen ? (
+         {isSmallScreen ? (
           <div 
             className="animated-card card-1"
             style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
-              maxWidth: 400,
-              width: '95%',
-              margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
+             background: 'rgba(255,255,255,0.85)',
+             borderRadius: 16,
+             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+             padding: '2vw',
+             maxWidth: 400,
+             width: '95%',
+             margin: '0 auto 1vw auto',
+             textAlign: 'center',
+             display: 'flex',
+              flexDirection: 'column',
+             alignItems: 'center',
               gap: '1rem'
             }}
           >
@@ -343,19 +344,19 @@ export default function Home() {
               src={kolschitzkyImg} 
               alt="Kolschitzky" 
               style={{ 
-                width: '40%', 
-                maxWidth: '40%',
+                width: '100%', 
+                maxWidth: '100%',
                 height: 'auto',
                 borderRadius: 12, 
                 boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
               }} 
             />
-            <div style={{ 
+           <div style={{
               fontSize: 16, 
               color: '#234', 
               whiteSpace: 'pre-line', 
-              textAlign: 'left', 
-              width: '60%',
+             textAlign: 'left',
+              width: '100%',
               flex: 1
             }}>
               <div style={{ 
@@ -365,7 +366,7 @@ export default function Home() {
                 marginBottom: '0.5rem'
               }}>
                 {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
-              </div>
+               </div>
               <div style={{ 
                 fontSize: '0.9em',
                 lineHeight: '1.3',
@@ -376,49 +377,57 @@ export default function Home() {
               {!showFullKolschitzkyText && (
                 <button
                   onClick={() => setShowFullKolschitzkyText(true)}
-                  style={{
-                    background: '#1565c0',
-                    color: 'white',
+                  style={{ 
+                    marginTop: '0.5rem',
+                    background: '#1976d2',
+                    color: '#fff',
                     border: 'none',
                     borderRadius: '8px',
                     padding: '8px 16px',
-                    fontSize: '0.8em',
+                    fontSize: '14px',
+                    fontWeight: '600',
                     cursor: 'pointer',
-                    marginTop: '0.5rem',
-                    fontWeight: 'bold'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#1565c0';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = '#1976d2';
                   }}
                 >
-                  {t('read_more') || 'Далее'}
+                  {t('more_ellipsis')}
                 </button>
               )}
-            </div>
-          </div>
+             </div>
+           </div>
         ) : (
-          <div 
-            className="animated-card card-1"
-            style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
+        <div 
+          className="animated-card card-1"
+          style={{
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
               maxWidth: 1200,
               width: '85%',
               margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
+            textAlign: 'center',
+            display: 'flex',
               flexDirection: 'row',
-              alignItems: 'center',
+            alignItems: 'center',
               gap: '2rem'
-            }}
-          >
-            <img 
+          }}
+        >
+          <img 
               src={kolschitzkyImg} 
               alt="Kolschitzky" 
-              style={{ 
+            style={{ 
                 width: '45%', 
                 maxWidth: '45%',
-                height: 'auto',
-                borderRadius: 12, 
+              height: 'auto', 
+              borderRadius: 12, 
                 boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
               }} 
             />
@@ -432,39 +441,47 @@ export default function Home() {
             }}>
               <div style={{ 
                 fontSize: '1.4em',
-                fontWeight: 'bold',
-                color: '#1565c0',
+            fontWeight: 'bold',
+            color: '#1565c0',
                 marginBottom: '1rem'
               }}>
                 {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
               </div>
-              <div style={{ 
+          <div style={{
                 fontSize: '1.1em',
                 lineHeight: '1.5',
                 textAlign: 'left'
               }}>
                 {getKolschitzkyText()}
-              </div>
+            </div>
               {!showFullKolschitzkyText && (
                 <button
                   onClick={() => setShowFullKolschitzkyText(true)}
-                  style={{
-                    background: '#1565c0',
-                    color: 'white',
+                  style={{ 
+                    marginTop: '1rem',
+                    background: '#1976d2',
+                    color: '#fff',
                     border: 'none',
                     borderRadius: '8px',
                     padding: '10px 20px',
-                    fontSize: '1em',
+                    fontSize: '16px',
+                    fontWeight: '600',
                     cursor: 'pointer',
-                    marginTop: '1rem',
-                    fontWeight: 'bold'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#1565c0';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = '#1976d2';
                   }}
                 >
-                  {t('read_more') || 'Далее'}
+                  {t('more_ellipsis')}
                 </button>
               )}
             </div>
-          </div>
+            </div>
         )}
         
         {/* Пост про Eurovision */}
