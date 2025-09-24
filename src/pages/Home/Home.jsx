@@ -14,6 +14,7 @@ import WienImg from '../../assets/Wien.png';
 import bergImg from '../../assets/berg.png';
 import nationalTadImg from '../../assets/NationalTad.png';
 import losImg from '../../assets/Los.png';
+import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
 
@@ -21,6 +22,20 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const [showFull, setShowFull] = useState(false);
+  const [showFullKolschitzkyText, setShowFullKolschitzkyText] = useState(false);
+  
+  // Функция для получения сокращенного текста Кульчицкого
+  const getKolschitzkyText = () => {
+    const fullText = news.find(item => item.id === 42)?.text[lang] || 'У Відні є вулиця Kolschitzky-Gasse, названа на честь українця Юрія-Франца Кульчицького. Його сміливий вчинок не лише змінив хід воєнних подій, а й започаткував у столиці Австрії традицію кавової культури.\n\nПід час облоги Відня турками у 1683 році Кульчицький проявив неабияку відвагу. Коли місто потерпало від нестачі їжі та хвороб, він добровільно погодився пробратися через турецькі позиції, аби встановити контакт із герцогом Карлом V Лотаринзьким.\n\nЦе рішення стало переломним: міська рада Відня відмовилася від капітуляції, а вже 12 вересня війська під проводом Яна III Собеського зняли облогу.\n\n☕️На знак вдячності віденці дозволили Кульчицькому відкрити першу кав\'ярню в місті. Саме з цього моменту бере початок традиція кавової культури у Відні.';
+    
+    if (showFullKolschitzkyText) {
+      return fullText;
+    }
+    
+    // Показываем только первую часть до первого переноса строки
+    const firstPart = fullText.split('\n\n')[0];
+    return firstPart + '...';
+  };
   
   // Система анимации изображений:
   // - Eurovision: появляется сразу (delay: 0)
@@ -301,6 +316,153 @@ export default function Home() {
                 __html: news.find(item => item.id === 41)?.text[lang] || 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
               }}>
               </div>
+            </div>
+          </div>
+        )}
+        
+        {/* Пост про Кульчицкого */}
+        {isSmallScreen ? (
+          <div 
+            className="animated-card card-1"
+            style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 400,
+              width: '95%',
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '1rem'
+            }}
+          >
+            <img 
+              src={kolschitzkyImg} 
+              alt="Kolschitzky" 
+              style={{ 
+                width: '40%', 
+                maxWidth: '40%',
+                height: 'auto',
+                borderRadius: 12, 
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+              }} 
+            />
+            <div style={{ 
+              fontSize: 16, 
+              color: '#234', 
+              whiteSpace: 'pre-line', 
+              textAlign: 'left', 
+              width: '60%',
+              flex: 1
+            }}>
+              <div style={{ 
+                fontSize: '1.1em',
+                fontWeight: 'bold',
+                color: '#1565c0',
+                marginBottom: '0.5rem'
+              }}>
+                {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
+              </div>
+              <div style={{ 
+                fontSize: '0.9em',
+                lineHeight: '1.3',
+                textAlign: 'left'
+              }}>
+                {getKolschitzkyText()}
+              </div>
+              {!showFullKolschitzkyText && (
+                <button
+                  onClick={() => setShowFullKolschitzkyText(true)}
+                  style={{
+                    background: '#1565c0',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '8px 16px',
+                    fontSize: '0.8em',
+                    cursor: 'pointer',
+                    marginTop: '0.5rem',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {t('read_more') || 'Далее'}
+                </button>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div 
+            className="animated-card card-1"
+            style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 1200,
+              width: '85%',
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '2rem'
+            }}
+          >
+            <img 
+              src={kolschitzkyImg} 
+              alt="Kolschitzky" 
+              style={{ 
+                width: '45%', 
+                maxWidth: '45%',
+                height: 'auto',
+                borderRadius: 12, 
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+              }} 
+            />
+            <div style={{ 
+              fontSize: 20, 
+              color: '#234', 
+              whiteSpace: 'pre-line', 
+              textAlign: 'left', 
+              width: '55%',
+              flex: 1
+            }}>
+              <div style={{ 
+                fontSize: '1.4em',
+                fontWeight: 'bold',
+                color: '#1565c0',
+                marginBottom: '1rem'
+              }}>
+                {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
+              </div>
+              <div style={{ 
+                fontSize: '1.1em',
+                lineHeight: '1.5',
+                textAlign: 'left'
+              }}>
+                {getKolschitzkyText()}
+              </div>
+              {!showFullKolschitzkyText && (
+                <button
+                  onClick={() => setShowFullKolschitzkyText(true)}
+                  style={{
+                    background: '#1565c0',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    fontSize: '1em',
+                    cursor: 'pointer',
+                    marginTop: '1rem',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {t('read_more') || 'Далее'}
+                </button>
+              )}
             </div>
           </div>
         )}

@@ -1,5 +1,19 @@
 export const news = [
   {
+    id: 42,
+    title: {
+      en: '🇺🇦 In the capital of Austria there is a street named after a famous Ukrainian',
+      de: '🇺🇦 In der Hauptstadt Österreichs gibt es eine Straße, die nach einem berühmten Ukrainer benannt ist',
+      ua: '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'
+    },
+    text: {
+      en: 'In Vienna there is Kolschitzky-Gasse street, named after Ukrainian Yuri-Franz Kulchitsky. His brave deed not only changed the course of military events, but also initiated the coffee culture tradition in the Austrian capital.\n\nDuring the Turkish siege of Vienna in 1683, Kulchitsky showed remarkable courage. When the city was suffering from food shortages and diseases, he voluntarily agreed to break through Turkish positions to establish contact with Duke Charles V of Lorraine.\n\nThis decision became a turning point: the Vienna city council refused to capitulate, and on September 12, troops under the command of Jan III Sobieski lifted the siege.\n\n☕️As a sign of gratitude, the Viennese allowed Kulchitsky to open the first coffee house in the city. It was from this moment that the tradition of coffee culture in Vienna began.',
+      de: 'In Wien gibt es die Kolschitzky-Gasse, benannt nach dem Ukrainer Yuri-Franz Kulchitsky. Seine mutige Tat änderte nicht nur den Verlauf der militärischen Ereignisse, sondern begründete auch die Tradition der Kaffeekultur in der österreichischen Hauptstadt.\n\nWährend der türkischen Belagerung Wiens im Jahr 1683 zeigte Kulchitsky bemerkenswerten Mut. Als die Stadt unter Nahrungsmittelknappheit und Krankheiten litt, erklärte er sich freiwillig bereit, durch die türkischen Stellungen zu brechen, um Kontakt mit Herzog Karl V. von Lothringen aufzunehmen.\n\nDiese Entscheidung wurde zum Wendepunkt: Der Wiener Stadtrat lehnte die Kapitulation ab, und am 12. September hoben Truppen unter dem Kommando von Jan III. Sobieski die Belagerung auf.\n\n☕️Als Zeichen der Dankbarkeit erlaubten die Wiener Kulchitsky, das erste Kaffeehaus der Stadt zu eröffnen. Von diesem Moment an begann die Tradition der Kaffeekultur in Wien.',
+      ua: 'У Відні є вулиця Kolschitzky-Gasse, названа на честь українця Юрія-Франца Кульчицького. Його сміливий вчинок не лише змінив хід воєнних подій, а й започаткував у столиці Австрії традицію кавової культури.\n\nПід час облоги Відня турками у 1683 році Кульчицький проявив неабияку відвагу. Коли місто потерпало від нестачі їжі та хвороб, він добровільно погодився пробратися через турецькі позиції, аби встановити контакт із герцогом Карлом V Лотаринзьким.\n\nЦе рішення стало переломним: міська рада Відня відмовилася від капітуляції, а вже 12 вересня війська під проводом Яна III Собеського зняли облогу.\n\n☕️На знак вдячності віденці дозволили Кульчицькому відкрити першу кав\'ярню в місті. Саме з цього моменту бере початок традиція кавової культури у Відні.'
+    },
+    image: 'Kolschitzky.png'
+  },
+  {
     id: 41,
     title: {
       en: '🫎 Disputes between authorities and public caused by moose',
