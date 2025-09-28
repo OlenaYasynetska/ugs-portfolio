@@ -1,5 +1,32 @@
 export const news = [
   {
+    id: 48,
+    title: {
+      en: '🇦🇹 Austria sets tourism record with 116 million overnight stays',
+      de: '🇦🇹 Österreich stellt Tourismusrekord mit 116 Millionen Übernachtungen auf',
+      ua: '🇦🇹Австрія встановила туристичний рекорд, забронювавши 116 мільйонів ночівель'
+    },
+    text: {
+      en: 'The growth was mainly driven by foreign visitors, who accounted for 87 million overnight stays. Domestic tourism provided approximately 29 million overnight stays.\n\nIn August, traditionally the busiest month of the summer season, over 21 million overnight stays were recorded, which is 0.7% more than last year.\n\n🗣️"Tourism in Austria continues to grow rapidly," said (<a href="https://famagusta-gazette.com/14381-2/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">https://famagusta-gazette.com/14381-2/</a>) Austrian Statistics Director General Manuela Lenk, adding that foreign guests accounted for almost three-quarters of all stays.',
+      de: 'Das Wachstum wurde hauptsächlich von ausländischen Besuchern getrieben, die 87 Millionen Übernachtungen ausmachten. Der Inlandstourismus sorgte für etwa 29 Millionen Übernachtungen.\n\nIm August, traditionell dem geschäftigsten Monat der Sommersaison, wurden über 21 Millionen Übernachtungen verzeichnet, was 0,7% mehr als im Vorjahr ist.\n\n🗣️"Der Tourismus in Österreich wächst weiterhin rasant", sagte (<a href="https://famagusta-gazette.com/14381-2/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">https://famagusta-gazette.com/14381-2/</a>) die Generaldirektorin der Österreichischen Statistik Manuela Lenk und fügte hinzu, dass ausländische Gäste fast drei Viertel aller Aufenthalte ausmachten.',
+      ua: 'Зростання було зумовлене головним чином іноземними відвідувачами, на яких припадало 87 мільйонів ночівель. Внутрішній туризм забезпечив приблизно 29 мільйонів ночівель.\n\nУ серпні, традиційно найжвавішому місяці літнього сезону, було зафіксовано понад 21 мільйон ночівель, що на 0,7% більше, ніж минулого року.\n\n🗣️«Туризм в Австрії продовжує стрімко зростати», – сказала (<a href="https://famagusta-gazette.com/14381-2/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">https://famagusta-gazette.com/14381-2/</a>) генеральний директор Австрійської статистики Мануела Ленк, додавши, що іноземні гості становили майже три чверті всіх перебувань.'
+    },
+    image: 'Turism.png'
+  },
+  {
+    id: 47,
+    title: {
+      en: '🎃 Autumn Festival at Erdbeer- und Kürbishof Wunderlich Farm in Stockerau',
+      de: '🎃 Herbstfestival auf der Erdbeer- und Kürbishof Wunderlich Farm in Stockerau',
+      ua: '🎃Осінній фестиваль на фермі Erdbeer- und Kürbishof Wunderlich у Stockerau'
+    },
+    text: {
+      en: '📅 Until November 2;\n🕘 Daily 09:00–18:00;\n📍 Ahragartensiedlung bei Hausleiten, 2000 Stockerau.\n\n💶 Admission prices:\n▫️Mon-Fri: Children 4-14 years – 4 €, From 14 years – 6 €;\n▫️Weekends and holidays: Children – 5 €, From 14 years – 10 €.\n\n🍲 What delicious things can you eat?:\n▫️Pumpkin soup, pumpkin vegetable pasta;\n▫️Hot dogs, goulash, baked potatoes;\n▫️Desserts: Pumpkin Pie, muffins, Donuts, Erdbeerkuchen, Pumpkin Spice Latte.\n\n❓How to get there:\n▫️Car: A22 → B4, free parking;\n▫️Public transport: bus 841 from Stockerau.',
+      de: '📅 Bis 2. November;\n🕘 Täglich 09:00–18:00;\n📍 Ahragartensiedlung bei Hausleiten, 2000 Stockerau.\n\n💶 Eintrittspreise:\n▫️Mo-Fr: Kinder 4-14 Jahre – 4 €, Ab 14 Jahren – 6 €;\n▫️Wochenenden und Feiertage: Kinder – 5 €, Ab 14 Jahren – 10 €.\n\n🍲 Was Köstliches kann man essen?:\n▫️Kürbissuppe, Kürbis-Gemüse-Pasta;\n▫️Hot Dogs, Gulasch, Ofenkartoffeln;\n▫️Desserts: Pumpkin Pie, Muffins, Donuts, Erdbeerkuchen, Pumpkin Spice Latte.\n\n❓Wie man dahin kommt:\n▫️Auto: A22 → B4, kostenloser Parkplatz;\n▫️Öffentlicher Verkehr: Bus 841 von Stockerau.',
+      ua: '📅 До 2 листопада;\n🕘 Щодня 09:00–18:00;\n📍 Ahragartensiedlung bei Hausleiten, 2000 Stockerau.\n\n💶 Ціни на вхід:\n▫️Пн–Пт: Діти 4–14 років – 4 €, Від 14 років – 6 €;\n▫️Вихідні та свята: Діти – 5 €, Від 14 років – 10 €.\n\n🍲 Що смачного можна поїсти?:\n▫️Гарбузовий суп, гарбузово-овочева паста;\n▫️Хот-доги, гюляш, запечена картопля;\n▫️Десерти: Pumpkin Pie, мафіни, Donuts, Erdbeerkuchen, Pumpkin Spice Latte.\n\n❓Як дістатися:\n▫️Авто: A22 → B4, безкоштовна парковка;\n▫️Громадський транспорт: автобус 841 зі Stockerau.'
+    }
+  },
+  {
     id: 42,
     title: {
       en: '🇺🇦 In the capital of Austria there is a street named after a famous Ukrainian',

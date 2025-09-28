@@ -17,6 +17,7 @@ import losImg from '../../assets/Los.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import museenImg from '../../assets/Museen.png';
+import turismImg from '../../assets/Turism.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
@@ -372,6 +373,62 @@ export default function Home() {
           letterSpacing: '0.02em',
           textAlign: 'center',
         }}>{t('this_is_interesting') || 'Це цікаво'}</div>
+        
+        {/* Пост про туристический рекорд Австрии */}
+        {(() => {
+          const news48 = news.find(n => n.id === 48);
+          return (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: isSmallScreen ? 400 : 1200,
+              width: isSmallScreen ? '95%' : '85%',
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+              <img 
+                src={turismImg} 
+                alt="Austria Tourism Record" 
+                style={{ 
+                  width: isSmallScreen ? '80%' : '60%', 
+                  maxWidth: isSmallScreen ? '80%' : '60%',
+                  height: 'auto', 
+                  borderRadius: 12, 
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+                }} 
+              />
+              <div style={{ 
+                fontSize: isSmallScreen ? 18 : 20, 
+                color: '#234', 
+                whiteSpace: 'pre-line', 
+                textAlign: 'center', 
+                width: '100%' 
+              }}>
+                <div style={{ 
+                  fontSize: '1.2em',
+                  fontWeight: 'bold',
+                  color: '#1565c0',
+                  marginBottom: '1rem'
+                }}>
+                  {news48?.title[lang] || '🇦🇹Австрія встановила туристичний рекорд, забронювавши 116 мільйонів ночівель'}
+                </div>
+                <div 
+                  style={{ 
+                    fontSize: '1em',
+                    lineHeight: '1.4',
+                    textAlign: 'left'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: news48?.text[lang] || 'Зростання було зумовлене головним чином іноземними відвідувачами, на яких припадало 87 мільйонів ночівель. Внутрішній туризм забезпечив приблизно 29 мільйонів ночівель.\n\nУ серпні, традиційно найжвавішому місяці літнього сезону, було зафіксовано понад 21 мільйон ночівель, що на 0,7% більше, ніж минулого року.\n\n🗣️«Туризм в Австрії продовжує стрімко зростати», – сказала (<a href="https://famagusta-gazette.com/14381-2/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">https://famagusta-gazette.com/14381-2/</a>) генеральний директор Австрійської статистики Мануела Ленк, додавши, що іноземні гості становили майже три чверті всіх перебувань.' }}
+                />
+              </div>
+            </div>
+          );
+        })()}
         
         {/* Пост про Довгу ніч музеїв */}
         {(() => {
@@ -1217,6 +1274,50 @@ export default function Home() {
            letterSpacing: '0.02em',
            textAlign: 'center',
          }}>{t('calendar_of_events')}</div>
+         
+         {/* Пост про Осінній фестиваль на фермі */}
+         {(() => {
+           const news47 = news.find(n => n.id === 47);
+           return (
+             <div style={{
+               background: 'rgba(255,255,255,0.85)',
+               borderRadius: 16,
+               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+               padding: '2vw',
+               maxWidth: isSmallScreen ? 400 : 1200,
+               width: isSmallScreen ? '95%' : '85%',
+               margin: '0 auto 1vw auto',
+               textAlign: 'center',
+               display: 'flex',
+               flexDirection: 'column',
+               alignItems: 'center',
+             }}>
+               <div style={{ 
+                 fontSize: isSmallScreen ? 18 : 20, 
+                 color: '#234', 
+                 whiteSpace: 'pre-line', 
+                 textAlign: 'center', 
+                 width: '100%' 
+               }}>
+                 <div style={{ 
+                   fontSize: '1.2em',
+                   fontWeight: 'bold',
+                   color: '#1565c0',
+                   marginBottom: '1rem'
+                 }}>
+                   {news47?.title[lang] || '🎃Осінній фестиваль на фермі Erdbeer- und Kürbishof Wunderlich у Stockerau'}
+                 </div>
+                 <div style={{ 
+                   fontSize: '1em',
+                   lineHeight: '1.4',
+                   textAlign: 'left'
+                 }}>
+                   {news47?.text[lang] || '📅 До 2 листопада;\n🕘 Щодня 09:00–18:00;\n📍 Ahragartensiedlung bei Hausleiten, 2000 Stockerau.\n\n💶 Ціни на вхід:\n▫️Пн–Пт: Діти 4–14 років – 4 €, Від 14 років – 6 €;\n▫️Вихідні та свята: Діти – 5 €, Від 14 років – 10 €.\n\n🍲 Що смачного можна поїсти?:\n▫️Гарбузовий суп, гарбузово-овочева паста;\n▫️Хот-доги, гюляш, запечена картопля;\n▫️Десерти: Pumpkin Pie, мафіни, Donuts, Erdbeerkuchen, Pumpkin Spice Latte.\n\n❓Як дістатися:\n▫️Авто: A22 → B4, безкоштовна парковка;\n▫️Громадський транспорт: автобус 841 зі Stockerau.'}
+                 </div>
+               </div>
+             </div>
+           );
+         })()}
          
          <div style={{
            margin: '0 auto 2vw auto',
