@@ -1,5 +1,19 @@
 export const news = [
   {
+    id: 49,
+    title: {
+      en: '🇺🇦 Happy Defenders of Ukraine Day!',
+      de: '🇺🇦 Frohen Tag der Verteidiger der Ukraine!',
+      ua: '🇺🇦 З Днем захисників і захисниць України!'
+    },
+    text: {
+      en: 'Today we honor the courage, bravery and self-sacrifice of all who defend our state.\nWe thank every soldier, veteran, volunteer and all who defend Ukraine every day at the front and in the rear.\n\nThis day symbolizes the strength of our people, the invincible spirit and love for the Motherland.\nWe wish you peace, good health and victory! 💙💛\n\nGlory to Ukraine! Glory to the heroes!',
+      de: 'Heute ehren wir den Mut, die Tapferkeit und die Selbstaufopferung aller, die unseren Staat verteidigen.\nWir danken jedem Soldaten, Veteranen, Freiwilligen und allen, die jeden Tag die Ukraine an der Front und im Hinterland verteidigen.\n\nDieser Tag symbolisiert die Stärke unseres Volkes, den unbezwingbaren Geist und die Liebe zum Vaterland.\nWir wünschen Ihnen Frieden, gute Gesundheit und Sieg! 💙💛\n\nRuhm der Ukraine! Ruhm den Helden!',
+      ua: 'Сьогодні ми вшановуємо мужність, відвагу та самопожертву всіх, хто захищає нашу державу.\nДякуємо кожному воїну, ветерану, волонтеру та всім, хто щодня боронить Україну на фронті та в тилу.\n\nЦей день символізує силу нашого народу, непереможний дух і любов до Батьківщини.\nБажаємо миру, міцного здоров\'я та перемоги! 💙💛\n\nСлава Україні! Героям слава!'
+    },
+    image: 'Tags.png'
+  },
+  {
     id: 48,
     title: {
       en: '🇦🇹 Austria sets tourism record with 116 million overnight stays',

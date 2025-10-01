@@ -18,6 +18,7 @@ import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import museenImg from '../../assets/Museen.png';
 import turismImg from '../../assets/Turism.png';
+import defendersDayImg from '../../assets/Tags.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
@@ -160,6 +161,63 @@ export default function Home() {
           textAlign: 'center',
         }}>{t('this_day_in_history') || 'Цей день в історії'}</div>
         
+        {/* Пост про День захисників і захисниць України */}
+        {(() => {
+          const news49 = news.find(n => n.id === 49);
+          return (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: isSmallScreen ? 350 : 1200,
+              width: isSmallScreen ? '95%' : '85%',
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+              <img 
+                src={defendersDayImg} 
+                alt="Defenders of Ukraine Day" 
+                style={{ 
+                  width: '80%', 
+                  maxWidth: '80%',
+                  height: 'auto', 
+                  borderRadius: 12, 
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+                }} 
+              />
+              <div style={{ 
+                fontSize: isSmallScreen ? 18 : 20, 
+                color: '#234', 
+                whiteSpace: 'pre-line', 
+                textAlign: 'center', 
+                width: '100%' 
+              }}>
+                <div style={{ 
+                  fontSize: isSmallScreen ? 20 : 24, 
+                  fontWeight: 700, 
+                  color: '#1565c0', 
+                  marginBottom: 16, 
+                  textAlign: 'center' 
+                }}>
+                  {news49?.title[lang] || '🇺🇦 З Днем захисників і захисниць України!'}
+                </div>
+                <div style={{
+                  fontSize: isSmallScreen ? 16 : 18, 
+                  lineHeight: 1.5, 
+                  color: '#333',
+                  textAlign: 'center',
+                  padding: '0 10px'
+                }}>
+                  {news49?.text[lang] || 'Сьогодні ми вшановуємо мужність, відвагу та самопожертву всіх, хто захищає нашу державу.\nДякуємо кожному воїну, ветерану, волонтеру та всім, хто щодня боронить Україну на фронті та в тилу.\n\nЦей день символізує силу нашого народу, непереможний дух і любов до Батьківщини.\nБажаємо миру, міцного здоров\'я та перемоги! 💙💛\n\nСлава Україні! Героям слава!'}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Пост про Национальный день Австрии */}
           <div style={{
