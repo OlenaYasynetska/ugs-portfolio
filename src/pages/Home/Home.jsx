@@ -165,28 +165,28 @@ export default function Home() {
         {(() => {
           const news49 = news.find(n => n.id === 49);
           return (
-            <div style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
+          <div style={{
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
               maxWidth: isSmallScreen ? 350 : 1200,
               width: isSmallScreen ? '95%' : '85%',
-              margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}>
+            margin: '0 auto 1vw auto',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
               <img 
                 src={defendersDayImg} 
                 alt="Defenders of Ukraine Day" 
                 style={{ 
                   width: '80%', 
                   maxWidth: '80%',
-                  height: 'auto', 
-                  borderRadius: 12, 
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+              height: 'auto', 
+              borderRadius: 12, 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
                 }} 
               />
               <div style={{ 
@@ -204,7 +204,7 @@ export default function Home() {
                   textAlign: 'center' 
                 }}>
                   {news49?.title[lang] || '🇺🇦 З Днем захисників і захисниць України!'}
-                </div>
+              </div>
                 <div style={{
                   fontSize: isSmallScreen ? 16 : 18, 
                   lineHeight: 1.5, 
@@ -213,9 +213,9 @@ export default function Home() {
                   padding: '0 10px'
                 }}>
                   {news49?.text[lang] || 'Сьогодні ми вшановуємо мужність, відвагу та самопожертву всіх, хто захищає нашу державу.\nДякуємо кожному воїну, ветерану, волонтеру та всім, хто щодня боронить Україну на фронті та в тилу.\n\nЦей день символізує силу нашого народу, непереможний дух і любов до Батьківщини.\nБажаємо миру, міцного здоров\'я та перемоги! 💙💛\n\nСлава Україні! Героям слава!'}
-                </div>
               </div>
             </div>
+          </div>
           );
         })()}
 
@@ -310,7 +310,7 @@ export default function Home() {
                   boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
                   marginBottom: '1rem',
                   display: 'block',
-                  marginLeft: 'auto',
+            marginLeft: 'auto',
                   marginRight: 'auto'
                 }}
               />
@@ -455,9 +455,9 @@ export default function Home() {
                 style={{ 
                   width: isSmallScreen ? '80%' : '60%', 
                   maxWidth: isSmallScreen ? '80%' : '60%',
-                  height: 'auto', 
-                  borderRadius: 12, 
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
+              height: 'auto', 
+              borderRadius: 12, 
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
                 }} 
               />
               <div style={{ 
@@ -474,7 +474,7 @@ export default function Home() {
                   marginBottom: '1rem'
                 }}>
                   {news48?.title[lang] || '🇦🇹Австрія встановила туристичний рекорд, забронювавши 116 мільйонів ночівель'}
-                </div>
+              </div>
                 <div 
                   style={{ 
                     fontSize: '1em',
@@ -530,7 +530,7 @@ export default function Home() {
                   marginBottom: '1rem'
                 }}>
                   {news46?.title[lang] || '✨ Довга ніч музеїв в Австрії'}
-                </div>
+          </div>
                 <div 
                   style={{ 
                     fontSize: '1em',
@@ -545,7 +545,7 @@ export default function Home() {
         })()}
 
         {/* Пост про лося */}
-        {isSmallScreen ? (
+         {isSmallScreen ? (
           <div 
             className="animated-card card-1"
             style={{
@@ -859,7 +859,7 @@ export default function Home() {
             }}>
               {news.find(item => item.id === 42)?.title[lang] || '🇺🇦В столиці Австрії є вулиця, що носить прізвище відомого українця'}
             </div>
-            <div style={{
+          <div style={{
               fontSize: '1em',
               lineHeight: '1.4',
               textAlign: 'left'
@@ -892,11 +892,11 @@ export default function Home() {
                 {t('more_ellipsis')}
               </button>
             )}
-          </div>
-        </div>
+            </div>
+            </div>
         )}
         
-        {isSmallScreen ? (
+         {isSmallScreen ? (
            <div 
              className="animated-card card-1"
              style={{

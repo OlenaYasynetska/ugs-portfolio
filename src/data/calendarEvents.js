@@ -282,6 +282,238 @@ export const calendarEvents = [
     time: '11:00',
     location: 'Stadtpfarrkirche, Brucknerplatz 4, 4400 Steyr',
     weekday: 'Su, 24.08.2025'
+  },
+  // Праздники октября 2025
+  {
+    id: 7,
+    date: '2025-10-01',
+    title: {
+      en: '🎵 International Music Day',
+      de: '🎵 Internationaler Tag der Musik',
+      ua: '🎵 Міжнародний день музики'
+    },
+    description: {
+      en: 'A day dedicated to celebrating music as a universal language that brings people together across cultures and nations.',
+      de: 'Ein Tag, der der Feier der Musik als universeller Sprache gewidmet ist, die Menschen über Kulturen und Nationen hinweg zusammenbringt.',
+      ua: 'День, присвячений святкуванню музики як універсальної мови, яка об\'єднує людей різних культур і націй.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'We, 01.10.2025'
+  },
+  {
+    id: 8,
+    date: '2025-10-01',
+    title: {
+      en: '👴 International Day of Older Persons',
+      de: '👴 Internationaler Tag der älteren Menschen',
+      ua: '👴 Міжнародний день людей похилого віку'
+    },
+    description: {
+      en: 'A day to recognize and celebrate the contributions of older persons to society and to raise awareness about aging issues.',
+      de: 'Ein Tag zur Anerkennung und Feier der Beiträge älterer Menschen zur Gesellschaft und zur Sensibilisierung für Altersfragen.',
+      ua: 'День визнання та святкування внеску людей похилого віку в суспільство та підвищення обізнаності про проблеми старіння.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'We, 01.10.2025'
+  },
+  {
+    id: 9,
+    date: '2025-10-04',
+    title: {
+      en: '🐾 World Animal Day',
+      de: '🐾 Welttierschutztag',
+      ua: '🐾 Всесвітній день тварин'
+    },
+    description: {
+      en: 'A day to celebrate animal life in all its forms and to raise awareness about animal welfare and protection.',
+      de: 'Ein Tag zur Feier des Tierlebens in all seinen Formen und zur Sensibilisierung für Tierschutz und -wohl.',
+      ua: 'День святкування життя тварин у всіх його формах та підвищення обізнаності про добробут і захист тварин.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Sa, 04.10.2025'
+  },
+  {
+    id: 10,
+    date: '2025-10-05',
+    title: {
+      en: '👩‍🏫 World Teachers\' Day',
+      de: '👩‍🏫 Welttag der Lehrer',
+      ua: '👩‍🏫 Всесвітній день учителя'
+    },
+    description: {
+      en: 'A day to celebrate teachers and their vital role in education and society development.',
+      de: 'Ein Tag zur Feier der Lehrer und ihrer wichtigen Rolle in der Bildung und gesellschaftlichen Entwicklung.',
+      ua: 'День святкування вчителів та їхньої важливої ролі в освіті та розвитку суспільства.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Su, 05.10.2025'
+  },
+  {
+    id: 11,
+    date: '2025-10-09',
+    title: {
+      en: '📮 World Post Day',
+      de: '📮 Weltposttag',
+      ua: '📮 Всесвітній день пошти'
+    },
+    description: {
+      en: 'A day to celebrate the importance of postal services in connecting people and businesses worldwide.',
+      de: 'Ein Tag zur Feier der Bedeutung der Postdienste bei der Verbindung von Menschen und Unternehmen weltweit.',
+      ua: 'День святкування важливості поштових послуг у з\'єднанні людей та бізнесу по всьому світу.'
+    },
+    type: 'holiday',
+    priority: 'low',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Th, 09.10.2025'
+  },
+  {
+    id: 12,
+    date: '2025-10-14',
+    title: {
+      en: '⚔️ Day of Ukrainian Cossacks',
+      de: '⚔️ Tag der ukrainischen Kosaken',
+      ua: '⚔️ День українського козацтва'
+    },
+    description: {
+      en: 'A traditional Ukrainian holiday celebrating the heritage and traditions of Ukrainian Cossacks, celebrated alongside Defenders\' Day.',
+      de: 'Ein traditioneller ukrainischer Feiertag zur Feier des Erbes und der Traditionen der ukrainischen Kosaken, gefeiert neben dem Tag der Verteidiger.',
+      ua: 'Традиційне українське свято, що святкує спадщину та традиції українського козацтва, відзначається поруч з Днем захисників.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Mo, 14.10.2025'
+  },
+  {
+    id: 13,
+    date: '2025-10-20',
+    title: {
+      en: '📊 World Statistics Day',
+      de: '📊 Welttag der Statistik',
+      ua: '📊 Всесвітній день статистики'
+    },
+    description: {
+      en: 'A day to celebrate the importance of statistics in decision-making and development (celebrated once every 5 years).',
+      de: 'Ein Tag zur Feier der Bedeutung der Statistik bei Entscheidungsfindung und Entwicklung (alle 5 Jahre gefeiert).',
+      ua: 'День святкування важливості статистики в прийнятті рішень та розвитку (відзначається раз на 5 років).'
+    },
+    type: 'holiday',
+    priority: 'low',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Su, 20.10.2025'
+  },
+  {
+    id: 14,
+    date: '2025-10-24',
+    title: {
+      en: '🌍 United Nations Day',
+      de: '🌍 Tag der Vereinten Nationen',
+      ua: '🌍 День Організації Об\'єднаних Націй (День ООН)'
+    },
+    description: {
+      en: 'A day to celebrate the founding of the United Nations and its mission to promote peace, security, and cooperation among nations.',
+      de: 'Ein Tag zur Feier der Gründung der Vereinten Nationen und ihrer Mission zur Förderung von Frieden, Sicherheit und Zusammenarbeit zwischen Nationen.',
+      ua: 'День святкування заснування Організації Об\'єднаних Націй та її місії сприяння миру, безпеці та співпраці між націями.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Fr, 24.10.2025'
+  },
+  {
+    id: 15,
+    date: '2025-10-27',
+    title: {
+      en: '📝 Day of Ukrainian Language and Writing',
+      de: '📝 Tag der ukrainischen Sprache und Schrift',
+      ua: '📝 День української мови та писемності'
+    },
+    description: {
+      en: 'A Ukrainian national holiday celebrating the Ukrainian language, its history, and cultural significance.',
+      de: 'Ein ukrainischer Nationalfeiertag zur Feier der ukrainischen Sprache, ihrer Geschichte und kulturellen Bedeutung.',
+      ua: 'Українське національне свято, що святкує українську мову, її історію та культурне значення.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Mo, 27.10.2025'
+  },
+  {
+    id: 16,
+    date: '2025-10-28',
+    title: {
+      en: '🏆 Day of Liberation of Ukraine from Fascist Invaders',
+      de: '🏆 Tag der Befreiung der Ukraine von faschistischen Invasoren',
+      ua: '🏆 День визволення України від фашистських загарбників'
+    },
+    description: {
+      en: 'An important Ukrainian holiday commemorating the liberation of Ukraine from fascist occupation (not a public holiday).',
+      de: 'Ein wichtiger ukrainischer Feiertag zur Erinnerung an die Befreiung der Ukraine von der faschistischen Besetzung (kein Feiertag).',
+      ua: 'Важливе українське свято на честь визволення України від фашистської окупації (важливе, але не вихідний).'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Tu, 28.10.2025'
+  },
+  {
+    id: 17,
+    date: '2025-10-31',
+    title: {
+      en: '🎃 Halloween',
+      de: '🎃 Halloween',
+      ua: '🎃 Хелловін'
+    },
+    description: {
+      en: 'An unofficial youth holiday celebrated with costumes, decorations, and festivities (unofficial, youth celebration).',
+      de: 'Ein inoffizieller Jugendfeiertag mit Kostümen, Dekorationen und Festlichkeiten gefeiert (inoffiziell, Jugendfeier).',
+      ua: 'Неофіційне молодіжне свято, що відзначається костюмами, прикрасами та святкуваннями (неофіційний, молодіжний).'
+    },
+    type: 'holiday',
+    priority: 'low',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Worldwide',
+    weekday: 'Fr, 31.10.2025'
   }
 ];
 
@@ -341,7 +573,8 @@ export const eventTypes = {
   children: { label: { en: 'Children', de: 'Kinder', ua: 'Дитяче' }, color: '#9c27b0' },
   health: { label: { en: 'Health', de: 'Gesundheit', ua: 'Здоров\'я' }, color: '#00bcd4' },
   employment: { label: { en: 'Employment', de: 'Beschäftigung', ua: 'Працевлаштування' }, color: '#795548' },
-  celebration: { label: { en: 'Celebration', de: 'Feier', ua: 'Святкування' }, color: '#ff5722' }
+  celebration: { label: { en: 'Celebration', de: 'Feier', ua: 'Святкування' }, color: '#ff5722' },
+  holiday: { label: { en: 'Holiday', de: 'Feiertag', ua: 'Свято' }, color: '#e91e63' }
 };
 
 // Приоритеты событий

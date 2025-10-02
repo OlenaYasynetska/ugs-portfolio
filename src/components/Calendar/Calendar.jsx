@@ -191,13 +191,14 @@ const Calendar = () => {
                   <div className={styles['event-image']}>
                     <div style={{ 
                       width: '100%', 
-                      height: '200px', 
-                      backgroundColor: '#f0f0f0', 
+                      height: '150px', 
+                      background: 'linear-gradient(135deg, #1565c0, #ffd700)', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center',
                       borderRadius: '8px',
-                      color: '#666'
+                      color: 'white',
+                      fontWeight: 'bold'
                     }}>
                       📷 Изображение недоступно
                     </div>
