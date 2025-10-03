@@ -2,12 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Main from '../../components/Main/Main';
 import { useCardAnimation } from '../../hooks';
+import parksImg from '../../assets/Parks.png';
 
 const Culture = () => {
   const { t } = useTranslation();
   
   // Хук для анимации карточек
-  const { getFullCSS } = useCardAnimation(6, {
+  const { getFullCSS } = useCardAnimation(7, {
     baseDelay: 100,
     delayIncrement: 200,
     animationType: 'slideInUp',
@@ -20,6 +21,98 @@ const Culture = () => {
         {getFullCSS()}
       </style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
+        {/* Парки та зелені зони Відня */}
+        <div 
+          style={{ 
+            background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+            padding: '25px', 
+            borderRadius: '16px', 
+            border: '1px solid #e9ecef',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+            marginBottom: '40px',
+            maxWidth: '1200px',
+            margin: '0 auto 40px auto'
+          }}
+        >
+          <h2 style={{ 
+            color: '#0057b8', 
+            marginBottom: '20px',
+            fontSize: '1.8em',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px'
+          }}>
+            🍃 {t('vienna_parks_title', 'Парки та зелені зони Відня')}
+          </h2>
+
+          <div style={{ 
+            textAlign: 'center', 
+            marginBottom: '25px' 
+          }}>
+            <img 
+              src={parksImg} 
+              alt="Парки та зелені зони Відня" 
+              style={{ 
+                maxWidth: '100%', 
+                height: 'auto', 
+                borderRadius: '12px', 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
+              }} 
+            />
+          </div>
+          
+          <p style={{ 
+            fontSize: '1.1em', 
+            lineHeight: '1.6', 
+            color: '#333',
+            textAlign: 'center',
+            marginBottom: '25px',
+            fontStyle: 'italic'
+          }}>
+            {t('vienna_parks_intro', 'Осінь вже відчувається у повітрі, але сонце все ще дарує нам теплі промінці. Найкращий час, щоб прогулятися парками та зеленими зонами Відня - відчути затишок природи, насолодитися кольорами листя й упіймати останнє тепло.')}
+          </p>
+
+          <h3 style={{ 
+            color: '#0057b8', 
+            marginBottom: '15px',
+            fontSize: '1.3em',
+            fontWeight: 'bold',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            🏛️ {t('vienna_parks_popular', 'Популярні місця:')}
+          </h3>
+
+          <ul style={{ 
+            lineHeight: '1.8',
+            fontSize: '1em',
+            color: '#333'
+          }}>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Stadtpark</strong> - {t('vienna_parks_stadtpark', 'перший публічний парк Відня, де живе дух Йоганна Штрауса')}
+            </li>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Burggarten</strong> - {t('vienna_parks_burggarten', 'зелені галявини з видом на імператорську архітектуру')}
+            </li>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Volksgarten</strong> - {t('vienna_parks_volksgarten', 'чарівний сад троянд і храм Тесея')}
+            </li>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Augarten</strong> - {t('vienna_parks_augarten', 'старовинний бароковий парк для спорту та відпочинку')}
+            </li>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Prater</strong> - {t('vienna_parks_prater', 'зелена зона для людей і тварин')}
+            </li>
+            <li className="list-item" style={{ marginBottom: '12px' }}>
+              <strong>📍 Сади Шенбрунн</strong> - {t('vienna_parks_schoenbrunn', 'барокові алеї та вид на Глорієтту')}
+            </li>
+          </ul>
+        </div>
+
         <h1 style={{ 
           color: '#0057b8', 
           textAlign: 'center', 

@@ -400,8 +400,16 @@ i18n.use(initReactI18next).init({
         info_social_4: 'Psychologische Hilfe',
         info_social_4_desc: 'Unterstützung für diejenigen, die psychologische Hilfe benötigen',
         info_contact_title: 'Hilfe-Kontakte',
-        // Austria National Day translations
-        austria_national_day_title: '🇦🇹 26. Oktober — Österreichischer Nationalfeiertag',
+        // Vienna Parks translations
+        vienna_parks_title: 'Parks und Grünzonen von Wien',
+        vienna_parks_intro: 'Der Herbst ist bereits in der Luft zu spüren, aber die Sonne schenkt uns noch warme Strahlen. Es ist die beste Zeit, durch die Parks und Grünzonen Wiens zu spazieren - die Gemütlichkeit der Natur zu spüren, die Farben der Blätter zu genießen und die letzte Wärme einzufangen.',
+        vienna_parks_popular: 'Beliebte Orte:',
+        vienna_parks_stadtpark: 'Wiens erster öffentlicher Park, in dem der Geist von Johann Strauss lebt',
+        vienna_parks_burggarten: 'grüne Wiesen mit Blick auf die kaiserliche Architektur',
+        vienna_parks_volksgarten: 'ein magischer Rosengarten und der Theseustempel',
+        vienna_parks_augarten: 'ein alter barocker Park für Sport und Erholung',
+        vienna_parks_prater: 'eine Grünzone für Menschen und Tiere',
+        vienna_parks_schoenbrunn: 'barocke Alleen und Blick auf die Gloriette',
         austria_national_day_description: 'Heute feiert Österreich einen der wichtigsten Staatsfeiertage — den Nationalfeiertag.\n\n📖 Ein wenig Geschichte:\nNach dem Ende des Zweiten Weltkriegs stand Österreich unter der Besetzung der Alliierten Mächte (UdSSR, USA, Großbritannien und Frankreich). Erst 1955 wurde der Staatsvertrag unterzeichnet, der die Unabhängigkeit des Landes wiederherstellte.\n\nEine der Schlüsselbedingungen war jedoch Österreichs Verpflichtung zur Wahrung der ständigen Neutralität. Am 26. Oktober 1955 verabschiedete das Parlament ein Gesetz, das diesen Status festlegte. Seitdem ist Österreich keinem Militärbündnis beigetreten und beherbergt keine ausländischen Militärbasen auf seinem Territorium.\n\n🎉 Warum dieser Tag wichtig ist:\n\n• Symbol für die Unabhängigkeit und Freiheit des Landes.\n• Erinnerung an den Wert von Frieden und Neutralität.\n• Tag, an dem in ganz Österreich Militärparaden, kulturelle Veranstaltungen und Führungen durch Regierungseinrichtungen stattfinden.\n\n💡 Interessante Tatsache: Obwohl der Vertrag selbst im Mai 1955 unterzeichnet wurde, wurde der 26. Oktober zum Nationalfeiertag — schließlich erklärte Österreich an diesem Tag offiziell der Welt: "Wir sind ein neutrales Land."'
       }
     },
@@ -558,8 +566,16 @@ i18n.use(initReactI18next).init({
         work_life_balance_title: 'Баланс роботи та особистого життя',
         language_difficulties_title: 'Іноземців очікують складності з мовою',
         relationships_title: 'Австрійці довго перевіряють почуття, перш ніж оформити стосунки',
-        // EU Protection Status translations
-        eu_protection_title: 'ЄС готується перейти від тимчасового захисту українців до більш стійких правових статусів',
+        // Vienna Parks translations
+        vienna_parks_title: 'Parks and Green Zones of Vienna',
+        vienna_parks_intro: 'Autumn is already in the air, but the sun still gives us warm rays. It\'s the best time to walk through the parks and green zones of Vienna - to feel the comfort of nature, enjoy the colors of the leaves, and catch the last warmth.',
+        vienna_parks_popular: 'Popular places:',
+        vienna_parks_stadtpark: 'Vienna\'s first public park, where the spirit of Johann Strauss lives',
+        vienna_parks_burggarten: 'green lawns with a view of imperial architecture',
+        vienna_parks_volksgarten: 'a magical rose garden and the Temple of Theseus',
+        vienna_parks_augarten: 'an ancient baroque park for sports and recreation',
+        vienna_parks_prater: 'a green zone for people and animals',
+        vienna_parks_schoenbrunn: 'baroque alleys and a view of the Gloriette',
         eu_protection_description: 'Рада Європейського Союзу схвалила рекомендацію щодо поетапного виходу з режиму тимчасового захисту, який нині діє для українців, переміщених війною, та продовжений до 4 березня 2027 року.\n\nРекомендації включають:\n• Надання національних дозволів на проживання тим, хто працює, навчається, перебуває в сім\'ї або відповідає іншим встановленим умовам.\n• Можливість переходу до статусів за законами ЄС, особливо для висококваліфікованих фахівців.\n• Організацію добровільного повернення до України, коли це дозволяє ситуація, з підтримкою та скоординованими умовами між державами-членами.\n• Зобов\'язання інформувати переміщених осіб про їх поточні права, як зміняться пільги та що відбудеться після виходу з тимчасового захисту.\n\nУ комюніке ЄС підкреслюється, що ця ініціатива не спрямована на прискорення припинення захисту, а скоріше на підготовку інфраструктури та правової бази для забезпечення нормативно правильного, справедливого та поступового переходу від тимчасового захисту до більш постійних умов.',
         // InfoCenter translations
         info_center_title: 'Інфоцентр',
@@ -600,7 +616,16 @@ i18n.use(initReactI18next).init({
         info_social_3_desc: 'Безкоштовні курси німецької мови',
         info_social_4: 'Психологічна допомога',
         info_social_4_desc: 'Підтримка для тих, хто потребує психологічної допомоги',
-        info_contact_title: 'Контакти для допомоги',
+        // Vienna Parks translations
+        vienna_parks_title: 'Парки та зелені зони Відня',
+        vienna_parks_intro: 'Осінь вже відчувається у повітрі, але сонце все ще дарує нам теплі промінці. Найкращий час, щоб прогулятися парками та зеленими зонами Відня - відчути затишок природи, насолодитися кольорами листя й упіймати останнє тепло.',
+        vienna_parks_popular: 'Популярні місця:',
+        vienna_parks_stadtpark: 'перший публічний парк Відня, де живе дух Йоганна Штрауса',
+        vienna_parks_burggarten: 'зелені галявини з видом на імператорську архітектуру',
+        vienna_parks_volksgarten: 'чарівний сад троянд і храм Тесея',
+        vienna_parks_augarten: 'старовинний бароковий парк для спорту та відпочинку',
+        vienna_parks_prater: 'зелена зона для людей і тварин',
+        vienna_parks_schoenbrunn: 'барокові алеї та вид на Глорієтту',
         // Austria National Day translations
         austria_national_day_title: '🇦🇹 26 жовтня — Національний день Австрії',
         austria_national_day_description: 'Сьогодні Австрія відзначає один з найважливіших державних свят — Національний день.\n\n📖 Трохи історії:\nПісля закінчення Другої світової війни Австрія перебувала під окупацією союзних держав (СРСР, США, Великобританії та Франції). Лише в 1955 році було підписано Державний договір, який відновив незалежність країни.\n\nОднак однією з ключових умов стало зобов\'язання Австрії зберігати постійний нейтралітет. 26 жовтня 1955 року парламент прийняв закон, який закріпив цей статус. З тих пір Австрія не вступає до військових блоків і не розміщує на своїй території іноземні військові бази.\n\n🎉 Чому цей день важливий:\n\n• Символ незалежності та свободи країни.\n• Нагадування про цінність миру та нейтралітету.\n• День, коли по всій Австрії проходять військові паради, культурні заходи, екскурсії до державних установ.\n\n💡 Цікавий факт: хоча сам договір було підписано в травні 1955 року, саме 26 жовтня стало днем національного свята — адже саме тоді Австрія офіційно заявила світу: «Ми — нейтральна країна».'
