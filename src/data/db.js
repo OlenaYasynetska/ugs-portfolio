@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 51,
+    title: {
+      en: '🚨Attention. Civil Protection System Test',
+      de: '🚨Achtung. Zivilschutz-Systemprüfung',
+      ua: '🚨Увага. Перевірка системи цивільного захисту'
+    },
+    text: {
+      en: 'On Saturday, October 4, 2025, the annual civil protection system test will take place throughout Austria.\n\nBetween 12:00 and 12:45, more than 8,000 sirens will be activated, as well as the AT-Alert warning system. The goal is to test the functionality of alarm signals and remind the population what each one means.\n\n📢Signal schedule:\n▫️12:00 — short siren test (15 seconds);\n▫️12:15 — "Warning" signal (3 minutes continuous sound — possible danger);\n▫️12:30 — "Alert" signal (1 minute alternating tone — immediate danger);\n▫️12:45 — "All clear" signal.',
+      de: 'Am Samstag, den 4. Oktober 2025, findet österreichweit die jährliche Zivilschutz-Systemprüfung statt.\n\nIm Zeitraum von 12:00 bis 12:45 werden mehr als 8.000 Sirenen sowie das AT-Alert-Warnsystem aktiviert. Das Ziel ist es, die Funktionalität der Alarmsignale zu testen und die Bevölkerung daran zu erinnern, was jedes von ihnen bedeutet.\n\n📢Signalplan:\n▫️12:00 — kurzer Sirenentest (15 Sekunden);\n▫️12:15 — "Warnung"-Signal (3 Minuten kontinuierlicher Ton — mögliche Gefahr);\n▫️12:30 — "Alarm"-Signal (1 Minute wechselnder Ton — unmittelbare Gefahr);\n▫️12:45 — "Entwarnung"-Signal.',
+      ua: 'У суботу, 4 жовтня 2025 року, по всій території Австрії відбудеться щорічна перевірка системи цивільного захисту.\n\nУ проміжку з 12:00 до 12:45 буде задіяно понад 8 000 сирен, а також система оповіщення AT-Alert. Мета — перевірити працездатність сигналів тривоги і нагадати населенню, що означає кожен з них.\n\n📢Графік сигналів:\n▫️12:00 — короткий тест сирени (15 секунд);\n▫️12:15 — сигнал «Попередження» (3 хвилини безперервний звук — можлива небезпека);\n▫️12:30 — сигнал «Тривога» (1 хвилина змінний тон — безпосередня небезпека);\n▫️12:45 — сигнал «Відбій».'
+    }
+  },
+  {
     id: 50,
     title: {
       en: '📢 Scandal at language exam in Vienna: nine men fled during document verification',
