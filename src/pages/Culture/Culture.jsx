@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import Main from '../../components/Main/Main';
 import { useCardAnimation } from '../../hooks';
 import parksImg from '../../assets/Parks.png';
+import pensionImg from '../../assets/Pension.png';
 
 const Culture = () => {
   const { t } = useTranslation();
   
   // Хук для анимации карточек
-  const { getFullCSS } = useCardAnimation(7, {
+  const { getFullCSS } = useCardAnimation(8, {
     baseDelay: 100,
     delayIncrement: 200,
     animationType: 'slideInUp',
@@ -111,6 +112,92 @@ const Culture = () => {
               <strong>📍 Сади Шенбрунн</strong> - {t('vienna_parks_schoenbrunn', 'барокові алеї та вид на Глорієтту')}
             </li>
           </ul>
+        </div>
+
+        {/* Картинка Pension */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: '1200px',
+          width: '85%',
+          margin: '0 auto 1vw auto',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}>
+          <img 
+            src={pensionImg} 
+            alt="Pension" 
+            style={{ 
+              width: '100%',
+              maxWidth: '100%',
+              height: 'auto', 
+              borderRadius: 12, 
+              boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px' 
+            }} 
+          />
+        </div>
+
+        {/* Пост о лучших странах для пенсионеров */}
+        <div 
+          style={{ 
+            background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+            padding: '25px', 
+            borderRadius: '16px', 
+            border: '1px solid #e9ecef',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+            marginBottom: '40px',
+            maxWidth: '1200px',
+            margin: '0 auto 40px auto'
+          }}
+        >
+          <h2 style={{ 
+            color: '#0057b8', 
+            marginBottom: '20px',
+            fontSize: '1.8em',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px'
+          }}>
+            🧓 {t('best_countries_pensioners_title', '5 найкращих країн для життя пенсіонерів')}
+          </h2>
+          
+          <div style={{
+            fontSize: '16px',
+            lineHeight: '1.6',
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            {t('best_countries_pensioners_text', 'Дослідження Global Citizen Solutions охопило 44 країни на різних континентах. Експерти оцінювали їх за якістю життя, доступністю медицини, рівнем безпеки, легкістю переїзду та податковими умовами.')}
+            
+            <p style={{ marginTop: '15px', fontStyle: 'italic', color: '#555' }}>
+              {t('best_countries_pensioners_quote', '"Все більше людей шукають не лише спокій, а й якість життя, стабільність та доступність" — докторка Лаура Мадрид')}
+            </p>
+
+            <ul style={{ marginTop: '20px', paddingLeft: '20px' }}>
+              <li style={{ marginBottom: '12px' }}>
+                <strong>🇦🇹 Австрія — 87,92 бала</strong> - {t('austria_pensioners', 'стабільна європейська держава з високими стандартами медицини, чистим довкіллям і надійною інфраструктурою')}
+              </li>
+              <li style={{ marginBottom: '12px' }}>
+                <strong>🇺🇾 Уругвай — 88,05 бала</strong> - {t('uruguay_pensioners', 'низька вартість життя, щедрі податкові пільги та можливість швидко отримати постійне місце проживання')}
+              </li>
+              <li style={{ marginBottom: '12px' }}>
+                <strong>🇪🇸 Іспанія — 88,52 бала</strong> - {t('spain_pensioners', 'чудова медицина, високий рівень безпеки та дружнє суспільство')}
+              </li>
+              <li style={{ marginBottom: '12px' }}>
+                <strong>🇲🇺 Маврикій — 89,7 бала</strong> - {t('mauritius_pensioners', 'чисті пляжі, м\'який клімат і можливість швидко отримати резидентство')}
+              </li>
+              <li style={{ marginBottom: '12px' }}>
+                <strong>🇵🇹 Португалія — 92,6 бала</strong> - {t('portugal_pensioners', 'висока якість життя, доступні ціни, теплий клімат та доброзичливе ставлення до іноземців')}
+              </li>
+            </ul>
+          </div>
         </div>
 
         <h1 style={{ 
