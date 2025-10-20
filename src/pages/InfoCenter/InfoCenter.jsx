@@ -165,7 +165,7 @@ const InfoCenter = () => {
               marginBottom: '1rem',
               fontWeight: 'bold'
             }}>
-              🇪🇺 {t('eu_protection_title') || 'ЄС готується перейти від тимчасового захисту українців до більш стійких правових статусів'}
+              🇪🇺 {t('eu_protection_title')}
             </h2>
                    <div style={{ whiteSpace: 'pre-line' }}>
                      {getEuText()}
