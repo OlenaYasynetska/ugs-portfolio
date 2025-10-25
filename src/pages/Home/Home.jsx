@@ -18,6 +18,7 @@ import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
 import halloweenImg from '../../assets/Halloween.png';
+import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
 import { useState, useEffect } from 'react';
@@ -914,7 +915,9 @@ export default function Home() {
              }} id="wien-image" />
              <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
                <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
-                 🇦🇹 5 фактів про Австрію, які вас здивують
+                 {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують' :
+                  lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden' :
+                  '🇦🇹 5 facts about Austria that will surprise you'}
                </div>
                <div style={{ marginBottom: 16 }}>
                  {oldNumberAnimations.map((anim, index) => (
@@ -927,16 +930,46 @@ export default function Home() {
                        animation: anim.animation,
                        display: 'inline-block'
                      }}>{anim.id}.</span>
-                     {index === 0 && <><strong>Тут народився ЦМОК (вальс)</strong><br /><br />
-                     Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.</>}
-                     {index === 1 && <><strong>Австрія — країна замків і палаців</strong><br /><br />
-                     Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.</>}
-                     {index === 2 && <><strong>Тут народилися великі генії музики</strong><br /><br />
-                     Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».</>}
-                     {index === 3 && <><strong>Кава по-віденськи — це не міф</strong><br /><br />
-                     Віденські кав'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!</>}
-                     {index === 4 && <><strong>Австрія — одна з найзеленіших країн Європи</strong><br /><br />
-                     Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.</>}
+                     {index === 0 && <>
+                       <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
+                                lang === 'de' ? 'Hier wurde der Walzer geboren' :
+                                'The Waltz was born here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
+                        lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
+                        'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
+                     </>}
+                     {index === 1 && <>
+                       <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
+                                lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
+                                'Austria is a country of castles and palaces'}</strong><br /><br />
+                       {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
+                        lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
+                        'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
+                     </>}
+                     {index === 2 && <>
+                       <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
+                                lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
+                                'Great musical geniuses were born here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
+                        lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
+                        'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
+                     </>}
+                     {index === 3 && <>
+                       <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
+                                lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
+                                'Viennese coffee is not a myth'}</strong><br /><br />
+                       {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
+                        lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
+                        'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
+                     </>}
+                     {index === 4 && <>
+                       <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
+                                lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
+                                'Austria is one of the greenest countries in Europe'}</strong><br /><br />
+                       {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
+                        lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
+                        'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
+                     </>}
                      <br /><br />
                    </React.Fragment>
                  ))}
@@ -971,7 +1004,9 @@ export default function Home() {
              }} id="wien-image" />
              <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', fontFamily: 'Inter, sans-serif' }}>
                <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
-                 🇦🇹 5 фактів про Австрію, які вас здивують
+                 {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують' :
+                  lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden' :
+                  '🇦🇹 5 facts about Austria that will surprise you'}
                </div>
                <div style={{ marginBottom: 16 }}>
                  {oldNumberAnimations.map((anim, index) => (
@@ -984,16 +1019,46 @@ export default function Home() {
                        animation: anim.animation,
                        display: 'inline-block'
                      }}>{anim.id}.</span>
-                     {index === 0 && <><strong>Тут народився ЦМОК (вальс)</strong><br /><br />
-                     Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.</>}
-                     {index === 1 && <><strong>Австрія — країна замків і палаців</strong><br /><br />
-                     Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.</>}
-                     {index === 2 && <><strong>Тут народилися великі генії музики</strong><br /><br />
-                     Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».</>}
-                     {index === 3 && <><strong>Кава по-віденськи — це не міф</strong><br /><br />
-                     Віденські кав'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!</>}
-                     {index === 4 && <><strong>Австрія — одна з найзеленіших країн Європи</strong><br /><br />
-                     Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.</>}
+                     {index === 0 && <>
+                       <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
+                                lang === 'de' ? 'Hier wurde der Walzer geboren' :
+                                'The Waltz was born here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
+                        lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
+                        'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
+                     </>}
+                     {index === 1 && <>
+                       <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
+                                lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
+                                'Austria is a country of castles and palaces'}</strong><br /><br />
+                       {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
+                        lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
+                        'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
+                     </>}
+                     {index === 2 && <>
+                       <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
+                                lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
+                                'Great musical geniuses were born here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
+                        lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
+                        'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
+                     </>}
+                     {index === 3 && <>
+                       <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
+                                lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
+                                'Viennese coffee is not a myth'}</strong><br /><br />
+                       {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
+                        lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
+                        'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
+                     </>}
+                     {index === 4 && <>
+                       <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
+                                lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
+                                'Austria is one of the greenest countries in Europe'}</strong><br /><br />
+                       {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
+                        lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
+                        'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
+                     </>}
                      <br /><br />
                    </React.Fragment>
                  ))}
@@ -1030,7 +1095,9 @@ export default function Home() {
              }} id="berg-image" />
              <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
                <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
-                 {t('austria_facts_title') || '🇦🇹 5 фактів про Австрію, які вас здивують (2 частина)'}
+                 {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують (2 частина)' :
+                  lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden (Teil 2)' :
+                  '🇦🇹 5 facts about Austria that will surprise you (Part 2)'}
                </div>
                <div style={{ marginBottom: 16 }}>
                  {numberAnimations.map((anim, index) => (
@@ -1043,16 +1110,46 @@ export default function Home() {
                        animation: anim.animation,
                        display: 'inline-block'
                      }}>{anim.id}.</span>
-                     {index === 0 && <><strong>Австрія має власний «морський» пейзаж</strong><br /><br />
-                     Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.</>}
-                     {index === 1 && <><strong>Найстаріший зоопарк у світі</strong><br /><br />
-                     Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.</>}
-                     {index === 2 && <><strong>Ліфти без дверей? Це реальність!</strong><br /><br />
-                     У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!</>}
-                     {index === 3 && <><strong>Тут виробляють один із найкращих шоколадів у світі</strong><br /><br />
-                     Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.</>}
-                     {index === 4 && <><strong>Найбільший льодовик у Східних Альпах</strong><br /><br />
-                     Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!</>}
+                     {index === 0 && <>
+                       <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
+                                lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
+                                'Austria has its own "sea" landscape'}</strong><br /><br />
+                       {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
+                        lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
+                        'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
+                     </>}
+                     {index === 1 && <>
+                       <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
+                                lang === 'de' ? 'Der älteste Zoo der Welt' :
+                                'The oldest zoo in the world'}</strong><br /><br />
+                       {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
+                        lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
+                        'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
+                     </>}
+                     {index === 2 && <>
+                       <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
+                                lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
+                                'Lifts without doors? It\'s a reality!'}</strong><br /><br />
+                       {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
+                        lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
+                        'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
+                     </>}
+                     {index === 3 && <>
+                       <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
+                                lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
+                                'One of the best chocolates in the world is produced here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
+                        lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
+                        '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
+                     </>}
+                     {index === 4 && <>
+                       <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
+                                lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
+                                'The largest glacier in the Eastern Alps'}</strong><br /><br />
+                       {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
+                        lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
+                        'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
+                     </>}
                      <br /><br />
                    </React.Fragment>
                  ))}
@@ -1100,16 +1197,46 @@ export default function Home() {
                        animation: anim.animation,
                        display: 'inline-block'
                      }}>{anim.id}.</span>
-                     {index === 0 && <><strong>Австрія має власний «морський» пейзаж</strong><br /><br />
-                     Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.</>}
-                     {index === 1 && <><strong>Найстаріший зоопарк у світі</strong><br /><br />
-                     Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.</>}
-                     {index === 2 && <><strong>Ліфти без дверей? Це реальність!</strong><br /><br />
-                     У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!</>}
-                     {index === 3 && <><strong>Тут виробляють один із найкращих шоколадів у світі</strong><br /><br />
-                     Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.</>}
-                     {index === 4 && <><strong>Найбільший льодовик у Східних Альпах</strong><br /><br />
-                     Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!</>}
+                     {index === 0 && <>
+                       <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
+                                lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
+                                'Austria has its own "sea" landscape'}</strong><br /><br />
+                       {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
+                        lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
+                        'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
+                     </>}
+                     {index === 1 && <>
+                       <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
+                                lang === 'de' ? 'Der älteste Zoo der Welt' :
+                                'The oldest zoo in the world'}</strong><br /><br />
+                       {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
+                        lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
+                        'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
+                     </>}
+                     {index === 2 && <>
+                       <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
+                                lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
+                                'Lifts without doors? It\'s a reality!'}</strong><br /><br />
+                       {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
+                        lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
+                        'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
+                     </>}
+                     {index === 3 && <>
+                       <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
+                                lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
+                                'One of the best chocolates in the world is produced here'}</strong><br /><br />
+                       {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
+                        lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
+                        '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
+                     </>}
+                     {index === 4 && <>
+                       <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
+                                lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
+                                'The largest glacier in the Eastern Alps'}</strong><br /><br />
+                       {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
+                        lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
+                        'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
+                     </>}
                      <br /><br />
                    </React.Fragment>
                  ))}
@@ -1117,6 +1244,73 @@ export default function Home() {
              </div>
            </div>
          )}
+         
+         {/* Пост про григорианский календарь */}
+         <div style={{
+           background: 'rgba(255,255,255,0.85)',
+           borderRadius: 16,
+           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+           padding: '2vw',
+           maxWidth: isSmallScreen ? 400 : 1200,
+           width: isSmallScreen ? '95%' : '85%',
+           margin: '0 auto 1vw auto',
+           textAlign: 'left',
+         }}>
+           <div style={{
+             display: 'flex',
+             flexDirection: isSmallScreen ? 'column' : 'row',
+             alignItems: 'flex-start',
+             gap: '2vw'
+           }}>
+             {/* Изображение григорианского календаря */}
+             <div style={{
+               flex: isSmallScreen ? 'none' : '0 0 300px',
+               textAlign: 'center'
+             }}>
+               <img 
+                 src={gregoryCalendarImg} 
+                 alt="Gregorian Calendar" 
+                 style={{ 
+                   width: isSmallScreen ? '100%' : '300px',
+                   maxWidth: '300px',
+                   height: 'auto', 
+                   borderRadius: 12, 
+                   boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px' 
+                 }} 
+               />
+             </div>
+             
+             {/* Текст поста */}
+             <div style={{ 
+               flex: '1',
+               fontSize: isSmallScreen ? 18 : 20, 
+               color: '#234', 
+               whiteSpace: 'pre-line', 
+               textAlign: 'left'
+             }}>
+             <div style={{ 
+               fontSize: '1.2em',
+               fontWeight: 'bold',
+               color: '#1565c0',
+               marginBottom: '1rem'
+             }}>
+               🌍 {lang === 'ua' ? 'В мире:' : lang === 'de' ? 'In der Welt:' : 'In the world:'}
+             </div>
+             <div style={{ 
+               fontSize: '1em',
+               lineHeight: '1.4',
+               textAlign: 'left'
+             }}>
+               {lang === 'ua' ? 
+                 '1582 рік — Папа Римський Григорій XIII запровадив григоріанський календар (звідси й назва).\nЙого одразу прийняли католицькі країни: Італія, Іспанія, Португалія, Польща.\nПісля 4 жовтня 1582 року одразу настав 15 жовтня 1582 року — пропущено 10 днів.\n\nПротестантські країни (Німеччина, Великобританія та ін.) перейшли пізніше — у XVII–XVIII століттях.\nНаприклад, Великобританія та її колонії — у 1752 році, пропустивши 11 днів.\n\nРосія (і, відповідно, Україна, Білорусь, Грузія та ін. у складі Російської імперії) —\nперейшла лише після Жовтневої революції, за декретом Ради народних комісарів від 24 січня 1918 року.\nПісля 31 січня 1918 року одразу настав 14 лютого 1918 року — пропущено 13 днів.\n\n🇺🇦 Україна:\n\nУкраїна перейшла на григоріанський календар разом із Радянською Росією —\n📅 у лютому 1918 року.\nДо цього на території України (у складі Російської імперії) діяв юліанський календар.\n\n⛪ Церковне використання:\n\nПравославна церква в Україні довго залишалася на юліанському календарі (старому стилі).\n\nПерехід ПЦУ (Православної Церкви України) на новоюліанський календар (сумісний з григоріанським до 2800 року) відбувся 1 вересня 2023 року.\nТепер більшість церковних свят відзначається за новим стилем, але Великдень все ще обчислюється за старим (юліанським) календарем.' :
+               lang === 'de' ?
+                 '1582 — Papst Gregor XIII. führte den Gregorianischen Kalender ein (daher der Name).\nKatholische Länder nahmen ihn sofort an: Italien, Spanien, Portugal, Polen.\nNach dem 4. Oktober 1582 folgte sofort der 15. Oktober 1582 — 10 Tage wurden übersprungen.\n\nProtestantische Länder (Deutschland, Großbritannien usw.) wechselten später — im 17.–18. Jahrhundert.\nZum Beispiel Großbritannien und seine Kolonien — 1752, wobei 11 Tage übersprungen wurden.\n\nRussland (und entsprechend die Ukraine, Belarus, Georgien usw. als Teil des Russischen Reiches) —\nwechselte erst nach der Oktoberrevolution, durch Dekret des Rates der Volkskommissare vom 24. Januar 1918.\nNach dem 31. Januar 1918 folgte sofort der 14. Februar 1918 — 13 Tage wurden übersprungen.\n\n🇺🇦 Ukraine:\n\nDie Ukraine wechselte zusammen mit Sowjetrussland zum Gregorianischen Kalender —\n📅 im Februar 1918.\nDavor galt auf dem Gebiet der Ukraine (als Teil des Russischen Reiches) der Julianische Kalender.\n\n⛪ Kirchliche Nutzung:\n\nDie Orthodoxe Kirche in der Ukraine blieb lange beim Julianischen Kalender (alten Stil).\n\nDer Übergang der OKU (Orthodoxen Kirche der Ukraine) zum Neujulianischen Kalender (kompatibel mit dem Gregorianischen bis 2800) erfolgte am 1. September 2023.\nJetzt werden die meisten Kirchenfeiertage nach dem neuen Stil gefeiert, aber Ostern wird immer noch nach dem alten (Julianischen) Kalender berechnet.' :
+                 '1582 — Pope Gregory XIII introduced the Gregorian calendar (hence the name).\nCatholic countries adopted it immediately: Italy, Spain, Portugal, Poland.\nAfter October 4, 1582, October 15, 1582 came immediately — 10 days were skipped.\n\nProtestant countries (Germany, Great Britain, etc.) switched later — in the 17th–18th centuries.\nFor example, Great Britain and its colonies — in 1752, skipping 11 days.\n\nRussia (and accordingly Ukraine, Belarus, Georgia, etc. as part of the Russian Empire) —\nswitched only after the October Revolution, by decree of the Council of People\'s Commissars of January 24, 1918.\nAfter January 31, 1918, February 14, 1918 came immediately — 13 days were skipped.\n\n🇺🇦 Ukraine:\n\nUkraine switched to the Gregorian calendar together with Soviet Russia —\n📅 in February 1918.\nBefore that, the Julian calendar was in effect on the territory of Ukraine (as part of the Russian Empire).\n\n⛪ Church use:\n\nThe Orthodox Church in Ukraine remained on the Julian calendar (old style) for a long time.\n\nThe transition of the OCU (Orthodox Church of Ukraine) to the New Julian calendar (compatible with the Gregorian until 2800) took place on September 1, 2023.\nNow most church holidays are celebrated according to the new style, but Easter is still calculated according to the old (Julian) calendar.'
+               }
+             </div>
+           </div>
+         </div>
+         </div>
          
          {/* Модуль Klimaticket */}
          <div className="module-heading" style={{
@@ -1245,50 +1439,6 @@ export default function Home() {
            letterSpacing: '0.02em',
            textAlign: 'center',
          }}>{t('calendar_of_events')}</div>
-         
-         {/* Пост про Осінній фестиваль на фермі */}
-         {(() => {
-           const news47 = news.find(n => n.id === 47);
-           return (
-             <div style={{
-               background: 'rgba(255,255,255,0.85)',
-               borderRadius: 16,
-               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-               padding: '2vw',
-               maxWidth: isSmallScreen ? 400 : 1200,
-               width: isSmallScreen ? '95%' : '85%',
-               margin: '0 auto 1vw auto',
-               textAlign: 'center',
-               display: 'flex',
-               flexDirection: 'column',
-               alignItems: 'center',
-             }}>
-               <div style={{ 
-                 fontSize: isSmallScreen ? 18 : 20, 
-                 color: '#234', 
-                 whiteSpace: 'pre-line', 
-                 textAlign: 'center', 
-                 width: '100%' 
-               }}>
-                 <div style={{ 
-                   fontSize: '1.2em',
-                   fontWeight: 'bold',
-                   color: '#1565c0',
-                   marginBottom: '1rem'
-                 }}>
-                   {news47?.title[lang] || '🎃Осінній фестиваль на фермі Erdbeer- und Kürbishof Wunderlich у Stockerau'}
-                 </div>
-                 <div style={{ 
-                   fontSize: '1em',
-                   lineHeight: '1.4',
-                   textAlign: 'left'
-                 }}>
-                   {news47?.text[lang] || '📅 До 2 листопада;\n🕘 Щодня 09:00–18:00;\n📍 Ahragartensiedlung bei Hausleiten, 2000 Stockerau.\n\n💶 Ціни на вхід:\n▫️Пн–Пт: Діти 4–14 років – 4 €, Від 14 років – 6 €;\n▫️Вихідні та свята: Діти – 5 €, Від 14 років – 10 €.\n\n🍲 Що смачного можна поїсти?:\n▫️Гарбузовий суп, гарбузово-овочева паста;\n▫️Хот-доги, гюляш, запечена картопля;\n▫️Десерти: Pumpkin Pie, мафіни, Donuts, Erdbeerkuchen, Pumpkin Spice Latte.\n\n❓Як дістатися:\n▫️Авто: A22 → B4, безкоштовна парковка;\n▫️Громадський транспорт: автобус 841 зі Stockerau.'}
-                 </div>
-               </div>
-             </div>
-           );
-         })()}
          
          <div style={{
            margin: '0 auto 2vw auto',

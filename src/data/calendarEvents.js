@@ -514,6 +514,258 @@ export const calendarEvents = [
     time: 'All day',
     location: 'Worldwide',
     weekday: 'Fr, 31.10.2025'
+  },
+  {
+    id: 25,
+    date: '2025-11-01',
+    title: {
+      en: '🕯️ All Saints\' Day in Austria',
+      de: '🕯️ Allerheiligen in Österreich',
+      ua: '🕯️ День Всіх Святих в Австрії'
+    },
+    description: {
+      en: 'November 1 in Austria is a public holiday and an important religious day. Many Austrians visit churches, remember the deceased, and honor traditions.\n\n📅 How it is celebrated:\n▫️November 1 — church visits, prayers for the saints.\n▫️November 2 — All Souls\' Day: trips to the cemetery, cleaning graves, lighting candles and lamps.\n\n🏘️ Local customs:\n▫️In some towns, pieces of bread are distributed to strangers.\n▫️On the shores, wreaths are floated for the drowned.\n▫️In Upper Austria, families gather to share traditional pastries and light candles in memory of their ancestors.',
+      de: 'Der 1. November ist in Österreich ein gesetzlicher Feiertag und ein wichtiger religiöser Tag. Viele Österreicher besuchen Kirchen, gedenken der Verstorbenen und pflegen Traditionen.\n\n📅 Wie wird gefeiert:\n▫️1. November — Kirchenbesuche, Gebete für die Heiligen.\n▫️2. November — Allerseelen: Friedhofsbesuche, Gräberpflege, Anzünden von Kerzen und Lampen.\n\n🏘️ Lokale Bräuche:\n▫️In manchen Ortschaften werden Brotstücke an Fremde verteilt.\n▫️An Ufern werden Kränze für Ertrunkene ins Wasser gelegt.\n▫️In Oberösterreich versammeln sich Familien, um traditionelle Gebäck zu teilen und Kerzen zum Gedenken an ihre Vorfahren anzuzünden.',
+      ua: '1 листопада в Австрії — держаний вихідний і важливий релігійний день. Багато австрійців відвідують церкви, пам\'ятають померлих і вшановують традиції.\n\n📅 Як відзначають:\n▫️1 листопада — відвідини храмів, молитви за святих.\n▫️2 листопада — День поминання мертвих: поїздки на кладовище, прибирання могил, запалювання свічок і лампадок.\n\n🏘️ Місцеві звичаї:\n▫️У деяких містечках роздають шматочки хліба незнайомцям.\n▫️На узбережжях пускають вінки за утоплених.\n▫️У Верхній Австрії сім\'ї збираються, щоб поділитися традиційними випічками та запалити свічки на згадку про предків.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Austria',
+    weekday: 'Sa, 01.11.2025'
+  },
+  {
+    id: 26,
+    date: '2025-11-02',
+    title: {
+      en: '🕯️ All Souls\' Day',
+      de: '🕯️ Allerseelen',
+      ua: '🕯️ День поминання мертвих'
+    },
+    description: {
+      en: 'All Souls\' Day is a day of remembrance for the deceased. People visit cemeteries, clean graves, light candles and lamps in memory of their loved ones.',
+      de: 'Allerseelen ist ein Tag des Gedenkens an die Verstorbenen. Menschen besuchen Friedhöfe, pflegen Gräber, zünden Kerzen und Lampen zum Gedenken an ihre Liebsten an.',
+      ua: 'День поминання мертвих — це день пам\'яті про померлих. Люди відвідують кладовища, прибирають могили, запалюють свічки і лампадки на згадку про близьких.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#e91e63',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Austria',
+    weekday: 'Su, 02.11.2025'
+  },
+  {
+    id: 28,
+    date: '2025-11-03',
+    title: {
+      en: '🔧 Day of Engineer Troops of Ukraine',
+      de: '🔧 Tag der Ingenieurtruppen der Ukraine',
+      ua: '🔧 День інженерних військ України'
+    },
+    description: {
+      en: 'Professional holiday honoring the engineer troops of the Armed Forces of Ukraine. These troops play a crucial role in military engineering, construction, and technical support.',
+      de: 'Berufsfeiertag zu Ehren der Ingenieurtruppen der Streitkräfte der Ukraine. Diese Truppen spielen eine entscheidende Rolle bei militärischem Ingenieurwesen, Bau und technischer Unterstützung.',
+      ua: 'Професійне свято на честь інженерних військ Збройних Сил України. Ці війська відіграють вирішальну роль у військово-інженерній справі, будівництві та технічній підтримці.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#1565c0',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Mo, 03.11.2025'
+  },
+  {
+    id: 29,
+    date: '2025-11-03',
+    title: {
+      en: '🚀 Day of Missile Forces and Artillery of Ukraine',
+      de: '🚀 Tag der Raketentruppen und Artillerie der Ukraine',
+      ua: '🚀 День ракетних військ і артилерії України'
+    },
+    description: {
+      en: 'Professional holiday celebrating the missile forces and artillery units of the Armed Forces of Ukraine. These forces provide crucial firepower and strategic capabilities.',
+      de: 'Berufsfeiertag zu Ehren der Raketentruppen und Artillerieeinheiten der Streitkräfte der Ukraine. Diese Kräfte bieten entscheidende Feuerkraft und strategische Fähigkeiten.',
+      ua: 'Професійне свято на честь ракетних військ і артилерійських підрозділів Збройних Сил України. Ці сили забезпечують вирішальну вогневу міць і стратегічні можливості.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#1565c0',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Mo, 03.11.2025'
+  },
+  {
+    id: 30,
+    date: '2025-11-04',
+    title: {
+      en: '🚂 Day of Railway Worker of Ukraine',
+      de: '🚂 Tag der Eisenbahnarbeiter der Ukraine',
+      ua: '🚂 День залізничника України'
+    },
+    description: {
+      en: 'Professional holiday honoring railway workers in Ukraine. This day recognizes the important role of railway transportation in the country\'s infrastructure and economy.',
+      de: 'Berufsfeiertag zu Ehren der Eisenbahnarbeiter in der Ukraine. Dieser Tag würdigt die wichtige Rolle des Eisenbahnverkehrs in der Infrastruktur und Wirtschaft des Landes.',
+      ua: 'Професійне свято на честь залізничників України. Цей день визнає важливу роль залізничного транспорту в інфраструктурі та економіці країни.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#4caf50',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Tu, 04.11.2025'
+  },
+  {
+    id: 31,
+    date: '2025-11-06',
+    title: {
+      en: '🏛️ Day of Liberation of Kyiv from Nazi Invaders',
+      de: '🏛️ Tag der Befreiung Kiews von den Nazi-Invasoren',
+      ua: '🏛️ День звільнення Києва від німецько-фашистських загарбників'
+    },
+    description: {
+      en: 'Commemorative day marking the liberation of Kyiv from Nazi occupation during World War II. This day honors the courage and sacrifice of those who fought for freedom.',
+      de: 'Gedenktag zur Befreiung Kiews von der Nazi-Besetzung während des Zweiten Weltkriegs. Dieser Tag ehrt den Mut und das Opfer derer, die für die Freiheit kämpften.',
+      ua: 'Пам\'ятний день, що відзначає звільнення Києва від нацистської окупації під час Другої світової війни. Цей день вшановує мужність і жертву тих, хто боровся за свободу.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#1565c0',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Th, 06.11.2025'
+  },
+  {
+    id: 32,
+    date: '2025-11-09',
+    title: {
+      en: '🎭 All-Ukrainian Day of Culture Workers and Folk Art Masters',
+      de: '🎭 Allukrainischer Tag der Kulturschaffenden und Volkskunstmeister',
+      ua: '🎭 Всеукраїнський день працівників культури та майстрів народного мистецтва'
+    },
+    description: {
+      en: 'Professional holiday celebrating culture workers and folk art masters in Ukraine. This day honors those who preserve and promote Ukrainian cultural heritage.',
+      de: 'Berufsfeiertag zu Ehren der Kulturschaffenden und Volkskunstmeister in der Ukraine. Dieser Tag würdigt diejenigen, die das ukrainische Kulturerbe bewahren und fördern.',
+      ua: 'Професійне свято на честь працівників культури та майстрів народного мистецтва в Україні. Цей день вшановує тих, хто зберігає та популяризує українську культурну спадщину.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#607d8b',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Su, 09.11.2025'
+  },
+  {
+    id: 33,
+    date: '2025-11-16',
+    title: {
+      en: '📻 Day of Radio, Television and Communication Workers of Ukraine',
+      de: '📻 Tag der Radio-, Fernseh- und Kommunikationsarbeiter der Ukraine',
+      ua: '📻 День працівників радіо, телебачення та зв\'язку України'
+    },
+    description: {
+      en: 'Professional holiday honoring workers in radio, television, and communication sectors in Ukraine. This day recognizes their role in information dissemination and connectivity.',
+      de: 'Berufsfeiertag zu Ehren der Arbeiter in den Bereichen Radio, Fernsehen und Kommunikation in der Ukraine. Dieser Tag würdigt ihre Rolle bei der Informationsverbreitung und Konnektivität.',
+      ua: 'Професійне свято на честь працівників радіо, телебачення та зв\'язку в Україні. Цей день визнає їхню роль у поширенні інформації та забезпеченні зв\'язку.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#4caf50',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Su, 16.11.2025'
+  },
+  {
+    id: 34,
+    date: '2025-11-18',
+    title: {
+      en: '🎖️ Day of Sergeant of the Armed Forces of Ukraine',
+      de: '🎖️ Tag der Sergeanten der Streitkräfte der Ukraine',
+      ua: '🎖️ День сержанта Збройних Сил України'
+    },
+    description: {
+      en: 'Professional holiday honoring sergeants of the Armed Forces of Ukraine. Sergeants play a crucial leadership role in military units and operations.',
+      de: 'Berufsfeiertag zu Ehren der Sergeanten der Streitkräfte der Ukraine. Sergeanten spielen eine entscheidende Führungsrolle in militärischen Einheiten und Operationen.',
+      ua: 'Професійне свято на честь сержантів Збройних Сил України. Сержанти відіграють вирішальну роль у керівництві військовими підрозділами та операціями.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#1565c0',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Tu, 18.11.2025'
+  },
+  {
+    id: 35,
+    date: '2025-11-21',
+    title: {
+      en: '🕊️ Day of Dignity and Freedom',
+      de: '🕊️ Tag der Würde und Freiheit',
+      ua: '🕊️ День гідності та свободи'
+    },
+    description: {
+      en: 'National holiday commemorating the Euromaidan Revolution of 2013-2014. This day honors the courage and sacrifice of those who fought for dignity, freedom, and European values.',
+      de: 'Nationalfeiertag zur Erinnerung an die Euromaidan-Revolution von 2013-2014. Dieser Tag ehrt den Mut und das Opfer derer, die für Würde, Freiheit und europäische Werte kämpften.',
+      ua: 'Національне свято на згадку про Революцію гідності 2013-2014 років. Цей день вшановує мужність і жертву тих, хто боровся за гідність, свободу та європейські цінності.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#1565c0',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Fr, 21.11.2025'
+  },
+  {
+    id: 36,
+    date: '2025-11-23',
+    title: {
+      en: '🕯️ Day of Remembrance for Holodomor Victims',
+      de: '🕯️ Tag des Gedenkens an die Opfer des Holodomor',
+      ua: '🕯️ День пам\'яті жертв Голодомору'
+    },
+    description: {
+      en: 'Memorial day honoring the victims of the Holodomor (Great Famine) of 1932-1933. This day commemorates one of the greatest tragedies in Ukrainian history.',
+      de: 'Gedenktag zu Ehren der Opfer des Holodomor (Große Hungersnot) von 1932-1933. Dieser Tag gedenkt einer der größten Tragödien der ukrainischen Geschichte.',
+      ua: 'День пам\'яті на честь жертв Голодомору 1932-1933 років. Цей день вшановує одну з найбільших трагедій в історії України.'
+    },
+    type: 'holiday',
+    priority: 'high',
+    color: '#e91e63',
+    image: '/PCU.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Su, 23.11.2025'
+  },
+  {
+    id: 37,
+    date: '2025-11-27',
+    title: {
+      en: '🔬 Day of Foundation of the National Academy of Sciences of Ukraine',
+      de: '🔬 Tag der Gründung der Nationalen Akademie der Wissenschaften der Ukraine',
+      ua: '🔬 День заснування Національної академії наук України'
+    },
+    description: {
+      en: 'Commemorative day marking the foundation of the National Academy of Sciences of Ukraine. This day honors the contributions of Ukrainian scientists to world knowledge.',
+      de: 'Gedenktag zur Gründung der Nationalen Akademie der Wissenschaften der Ukraine. Dieser Tag würdigt die Beiträge ukrainischer Wissenschaftler zum Weltwissen.',
+      ua: 'Пам\'ятний день заснування Національної академії наук України. Цей день вшановує внесок українських вчених у світові знання.'
+    },
+    type: 'holiday',
+    priority: 'medium',
+    color: '#4caf50',
+    image: '/TagsKalendar.png',
+    time: 'All day',
+    location: 'Ukraine',
+    weekday: 'Th, 27.11.2025'
   }
 ];
 
