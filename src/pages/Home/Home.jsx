@@ -1272,7 +1272,8 @@ export default function Home() {
                  alt="Gregorian Calendar" 
                  style={{ 
                    width: isSmallScreen ? '100%' : '300px',
-                   maxWidth: '300px',
+                  //  maxWidth: '300px',
+
                    height: 'auto', 
                    borderRadius: 12, 
                    boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px' 
