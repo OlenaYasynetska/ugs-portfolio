@@ -16,7 +16,6 @@ import nationalTadImg from '../../assets/NationalTad.png';
 import losImg from '../../assets/Los.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
-import museenImg from '../../assets/Museen.png';
 import turismImg from '../../assets/Turism.png';
 import halloweenImg from '../../assets/Halloween.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
@@ -392,7 +391,7 @@ export default function Home() {
             src={halloweenImg} 
             alt="Halloween" 
             style={{ 
-              width: '100%',
+              width: '100%', 
               maxWidth: '100%',
               height: 'auto', 
               borderRadius: 12, 
@@ -457,61 +456,6 @@ export default function Home() {
           );
         })()}
         
-        {/* Пост про Довгу ніч музеїв */}
-        {(() => {
-          const news46 = news.find(n => n.id === 46);
-          return (
-            <div style={{
-              background: 'rgba(255,255,255,0.85)',
-              borderRadius: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              padding: '2vw',
-              maxWidth: isSmallScreen ? 400 : 1200,
-              width: isSmallScreen ? '95%' : '85%',
-              margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}>
-              <img 
-                src={museenImg} 
-                alt="Museen Langenacht" 
-                style={{ 
-                  width: isSmallScreen ? '80%' : '60%', 
-                  maxWidth: isSmallScreen ? '80%' : '60%',
-                  height: 'auto', 
-                  borderRadius: 12, 
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
-                }} 
-              />
-              <div style={{ 
-                fontSize: isSmallScreen ? 18 : 20, 
-                color: '#234', 
-                whiteSpace: 'pre-line', 
-                textAlign: 'center', 
-                width: '100%' 
-              }}>
-                <div style={{ 
-                  fontSize: '1.2em',
-                  fontWeight: 'bold',
-                  color: '#1565c0',
-                  marginBottom: '1rem'
-                }}>
-                  {news46?.title[lang] || '✨ Довга ніч музеїв в Австрії'}
-          </div>
-                <div 
-                  style={{ 
-                    fontSize: '1em',
-                    lineHeight: '1.4',
-                    textAlign: 'left'
-                  }}
-                  dangerouslySetInnerHTML={{ __html: news46?.text[lang] || '📅 4 жовтня 2025 року\n🕕 18:00 – 00:00\n📍 Австрія, різні міста (Відень, Дорнбірн, Кремс та ін.)\n\nЗа один квиток можна відвідати близько 650 музеїв та культурних просторів по всій країні.\n\n🎟 Ціни:\n💶 19 € — звичайний квиток;\n💶 16 € — пільговий (студенти, пенсіонери, люди з інвалідністю, військові, члени клубу Ö1);\n💶 7 € — регіональний;\n🧒 Діти до 12 років — безкоштовно.\n\n📌 Що подивитися:\n▫️Шедеври Kunsthistorisches Museum Wien\n▫️Незвичні експонати у Музеї контрацепції та абортів\n▫️290 музеїв з особливими програмами для дітей\n▫️«Місця зустрічі музеїв» допоможуть спланувати маршрут і купити квитки\n\n🛜 Деталі та квитки: <a href="https://langenacht.orf.at" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">langenacht.orf.at</a>' }}
-                />
-              </div>
-            </div>
-          );
-        })()}
 
         {/* Пост про лося */}
          {isSmallScreen ? (

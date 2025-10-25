@@ -133,20 +133,6 @@ export const news = [
     }
   },
   {
-    id: 46,
-    title: {
-      en: '✨ Long Night of Museums in Austria',
-      de: '✨ Lange Nacht der Museen in Österreich',
-      ua: '✨ Довга ніч музеїв в Австрії'
-    },
-    text: {
-      en: '📅 October 4, 2025\n🕕 18:00 – 00:00\n📍 Austria, various cities (Vienna, Dornbirn, Krems and others)\n\nWith one ticket you can visit about 650 museums and cultural spaces across the country.\n\n🎟 Prices:\n💶 19 € — regular ticket;\n💶 16 € — discounted (students, pensioners, people with disabilities, military, Ö1 club members);\n💶 7 € — regional;\n🧒 Children under 12 — free.\n\n📌 What to see:\n▫️Masterpieces of the Kunsthistorisches Museum Wien\n▫️Unusual exhibits at the Museum of Contraception and Abortion\n▫️290 museums with special programs for children\n▫️"Meeting Places of Museums" will help you plan your route and buy tickets\n\n🛜 Details and tickets: <a href="https://langenacht.orf.at" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">langenacht.orf.at</a>',
-      de: '📅 4. Oktober 2025\n🕕 18:00 – 00:00\n📍 Österreich, verschiedene Städte (Wien, Dornbirn, Krems und andere)\n\nMit einer Karte können Sie etwa 650 Museen und kulturelle Räume im ganzen Land besuchen.\n\n🎟 Preise:\n💶 19 € — normale Karte;\n💶 16 € — vergünstigt (Studenten, Pensionisten, Menschen mit Behinderungen, Militär, Ö1-Vereinsmitglieder);\n💶 7 € — regional;\n🧒 Kinder unter 12 — kostenlos.\n\n📌 Was zu sehen ist:\n▫️Meisterwerke des Kunsthistorischen Museums Wien\n▫️Ungewöhnliche Exponate im Museum für Verhütung und Schwangerschaftsabbruch\n▫️290 Museen mit besonderen Programmen für Kinder\n▫️"Begegnungsorte der Museen" helfen bei der Routenplanung und beim Ticketkauf\n\n🛜 Details und Tickets: <a href="https://langenacht.orf.at" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">langenacht.orf.at</a>',
-      ua: '📅 4 жовтня 2025 року\n🕕 18:00 – 00:00\n📍 Австрія, різні міста (Відень, Дорнбірн, Кремс та ін.)\n\nЗа один квиток можна відвідати близько 650 музеїв та культурних просторів по всій країні.\n\n🎟 Ціни:\n💶 19 € — звичайний квиток;\n💶 16 € — пільговий (студенти, пенсіонери, люди з інвалідністю, військові, члени клубу Ö1);\n💶 7 € — регіональний;\n🧒 Діти до 12 років — безкоштовно.\n\n📌 Що подивитися:\n▫️Шедеври Kunsthistorisches Museum Wien\n▫️Незвичні експонати у Музеї контрацепції та абортів\n▫️290 музеїв з особливими програмами для дітей\n▫️«Місця зустрічі музеїв» допоможуть спланувати маршрут і купити квитки\n\n🛜 Деталі та квитки: <a href="https://langenacht.orf.at" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: none;">langenacht.orf.at</a>'
-    },
-    image: 'Museen.png'
-  },
-  {
     id: 45,
     title: {
       en: '🎓 How to obtain a duplicate diploma in Ukraine: step-by-step guide',
