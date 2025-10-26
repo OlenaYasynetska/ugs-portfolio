@@ -81,9 +81,10 @@ const Calendar = () => {
     const days = [];
     
     // Отладочная информация - выводим сегодняшнюю дату в консоль
-    const today = new Date();
-    console.log('Сегодняшняя дата:', today.getDate(), today.getMonth() + 1, today.getFullYear());
-    console.log('Текущий месяц календаря:', currentDate.getMonth() + 1, currentDate.getFullYear());
+    // Раскомментируйте для отладки, если нужно
+    // const today = new Date();
+    // console.log('Сегодняшняя дата:', today.getDate(), today.getMonth() + 1, today.getFullYear());
+    // console.log('Текущий месяц календаря:', currentDate.getMonth() + 1, currentDate.getFullYear());
     
     // Добавляем пустые ячейки для дней до первого дня месяца
     for (let i = 1; i < firstDayWeekday; i++) {

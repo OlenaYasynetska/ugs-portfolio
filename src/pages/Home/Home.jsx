@@ -20,40 +20,20 @@ import turismImg from '../../assets/Turism.png';
 import halloweenImg from '../../assets/Halloween.png';
 import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import { useImageDrawAnimation, useNumberAnimation, useCardAnimation } from '../../hooks';
-import { useState, useEffect } from 'react';
+import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useResponsiveStyles, usePostState, usePostTexts } from '../../hooks';
+import { HOME_STYLES } from '../../constants/homeStyles';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
-  const [showFull, setShowFull] = useState(false);
-  const [showFullKolschitzkyText, setShowFullKolschitzkyText] = useState(false);
-  const [showFullDiplomaText, setShowFullDiplomaText] = useState(false);
+  // Используем созданные хуки
+  const postState = usePostState();
+  const texts = usePostTexts(lang);
+  const styles = useResponsiveStyles();
   
-  // Функция для получения сокращенного текста Кульчицкого
-  const getKolschitzkyText = () => {
-    const fullText = news.find(item => item.id === 42)?.text[lang] || 'У Відні є вулиця Kolschitzky-Gasse, названа на честь українця Юрія-Франца Кульчицького. Його сміливий вчинок не лише змінив хід воєнних подій, а й започаткував у столиці Австрії традицію кавової культури.\n\nПід час облоги Відня турками у 1683 році Кульчицький проявив неабияку відвагу. Коли місто потерпало від нестачі їжі та хвороб, він добровільно погодився пробратися через турецькі позиції, аби встановити контакт із герцогом Карлом V Лотаринзьким.\n\nЦе рішення стало переломним: міська рада Відня відмовилася від капітуляції, а вже 12 вересня війська під проводом Яна III Собеського зняли облогу.\n\n☕️На знак вдячності віденці дозволили Кульчицькому відкрити першу кав\'ярню в місті. Саме з цього моменту бере початок традиція кавової культури у Відні.';
-    
-    if (showFullKolschitzkyText) {
-      return fullText;
-    }
-    
-    // Показываем только первую часть до первого переноса строки
-    const firstPart = fullText.split('\n\n')[0];
-    return firstPart + '...';
-  };
-
-  // Функция для получения сокращенного текста диплома
-  const getDiplomaText = () => {
-    const fullText = news.find(item => item.id === 45)?.text[lang] || 'Щоб отримати дублікат диплому в Україні, необхідно подати письмову заяву до закладу вищої освіти, що видав документ, або його правонаступника, вказавши причину втрати та особисті дані. Якщо виш реорганізовано чи ліквідовано, звертатися слід до його правонаступника. У разі відсутності правонаступника, або якщо заклад не здійснює діяльність, заяву подають до МОН. Також існує можливість отримати електронну копію диплома через портал Єдиної державної електронної бази з питань освіти (ЄДЕБО).\n\nВажливі кроки для отримання дубліката документу про освіту:\n\n1. Зверніться до закладу вищої освіти:\nПодайте письмову заяву до університету, який видав вам диплом.\n\n2. Перевірте правонаступника:\nЯкщо ваш виш реорганізували, дізнайтеся про його правонаступника та зверніться до нього.\n\n3. Подайте заяву:\nУ заяві вкажіть свої ПІБ, дату народження, місце проживання, контактний телефон, назву ЗВО, дату закінчення, назву документа, дублікат якого замовляєте, причину замовлення, а також надайте згоду на обробку персональних даних.\n\n4. Отримайте архівну довідку (за потреби):\nЯкщо виш не має даних у ЄДЕБО, зверніться до архіву університету.\n\n5. Зверніться до МОН (за потреби):\nЯкщо немає правонаступника, або якщо інформація про диплом відсутня в ЄДЕБО, зверніться до Міністерства освіти і науки України.\n\nОтримання електронної копії через портал ЄДЕБО:\n\n1. Зайдіть на портал ЄДЕБО:\nВідкрийте сторінку ЄДИНА ДЕРЖАВНА ЕЛЕКТРОННА БАЗА з питань ОСВІТИ.\n\n2. Оберіть сервіс підпису:\nВиберіть функцію "Загальний доступ до персональних даних" або відповідний розділ, якщо він існує.\n\n3. Пройдіть ідентифікацію:\nАвторизуйтеся через "Дія.Підпис" або іншу систему ідентифікації.\n\n4. Отримайте документ:\nНакладіть електронний підпис на електронну копію документа та отримайте її.\n\nКорисні поради щодо отримання документу про освіту:\n\n• Документи, видані до 2000 року:\nЯкщо диплом виданий до 2000 року, інформація про нього може бути відсутня в ЄДЕБО. У такому разі вам знадобиться звернутися до архіву вишу або подати заяву до суду.\n\n• Плата за послугу:\nВартість виготовлення дубліката встановлюється відповідним навчальним закладом або Міністерством освіти і науки України.\n\nЩоб отримати дублікат документа про вищу освіту та/або додатка до нього, треба подати письмову заяву до вишу, який видав документ. Це можна зробити особисто або через уповноваженого представника. Відповідне роз\'яснення надає МОН у зв\'язку з численними зверненнями громадян про те, як отримати дублікат диплома.\n\nЯкщо заклад, де Ви навчалися, реорганізували, то звернутися треба до його правонаступника. Йдеться про випадки приєднання, злиття чи ліквідації ЗВО.\n\nЯкщо немає правонаступника або ЗВО не здійснює освітню діяльність (анульовано ліцензію, не було переміщено з непідконтрольної території), то заяву треба подавати до МОН. Міністерство визначить заклад, який видасть дублікат.\n\nУ заяві прохання зазначити:\n• ПІБ, дату народження;\n• серію та номер документа, що посвідчує особу і громадянство;\n• місце проживання, телефон;\n• найменування ЗВО та дату його закінчення;\n• назву документа, дублікат якого замовляється;\n• причину замовлення дубліката;\n• інші відомості, які вважаєте важливими;\n• згоду на обробку персональних даних.\n\nЗаяви до МОН подаються на адресу 01135, м. Київ, пр. Перемоги, 10 або на скриньку ez@mon.gov.ua\n\nІнформація в дублікаті відтворюється на основі тих даних, що містяться в Єдиній державній електронній базі з питань освіти (ЄДЕБО). Інформація про документи почала вноситися ЗВО в базу з 2000 року.\n\nЯкщо інформації про факт видачі диплома немає в ЄДЕБО, то виш може використати для підтвердження цього копії документа, а також архівну довідку про навчання та виписку з журналу видачі документів про вищу освіту чи акт знищення первинного документа про вищу освіту.\n\nЯкщо інформації про факт видачі диплома немає в ЄДЕБО, а також недоступні архіви ЗВО, то можна:\n• звернутися до суду – він має встановити юридичний факт здобуття відповідного ступеня чи рівня вищої освіти;\n• підтвердити отримання диплома офіційним листом відповідного компетентного органу, у якому підтверджено факт проставлення штампа «Apostille» МОН України або вчинення консульської легалізації.\n\nВідтак необхідно подати заяву до МОН для визначення закладу, який видасть дублікат. До заяви треба додати копію рішення суду чи офіційного листа щодо підтвердження апостилю.\n\nВАЖЛИВО! Якщо необхідно відновити диплом, отриманий на тимчасово окупованій ворогом та непідконтрольній Україні території АР Крим чи Донецької/Луганської областей до 2000 року, то процедура є такою ж, як описано вище. Якщо ж йдеться про виготовлення дубліката документа, виданого з 2000-го до 2014 року і внесеного в ЄДЕБО, то:\n• здобувачам з Криму – треба звернутися з письмовою заявою до МОН для визначення закладу, що видасть дублікат;\n• здобувачам з Донбасу – треба звернутися з письмовою заявою до правонаступника або ЗВО, переміщеного з непідконтрольної території. В іншому разі – подати письмову заяву до МОН для визначення закладу, що видасть дублікат.\n\nДо заяви необхідно додати копію первинного документа (диплом та додаток до нього).\n\nДокладну інформацію про процедуру виготовлення дублікатів також можна дізнатися у відповідному порядку.\n\nНагадуємо, що раніше на сайті МОН були розміщені відповіді на поширені запитання про вищу освіту. Переглянути їх можна за посиланням.';
-    
-    if (showFullDiplomaText) {
-      return fullText;
-    }
-    
-    // Показываем только первые 500 символов
-    return fullText.substring(0, 500) + '...';
-  };
+  // Получаем тексты из хуков
+  const getKolschitzkyText = () => texts.getKolschitzkyText(postState.showFullKolschitzkyText);
+  const getDiplomaText = () => texts.getDiplomaText(postState.showFullDiplomaText);
   
   // Система анимации изображений:
   // - Eurovision: появляется сразу (delay: 0)
@@ -80,21 +60,11 @@ export default function Home() {
   // Анимации при скролле для панелей
   
   
-  
-  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
-  const isVeryMobile = typeof window !== 'undefined' ? window.innerWidth < 520 : false;
-  const isSmallScreen = typeof window !== 'undefined' ? window.innerWidth < 700 : false;
-  const [h1FontSize, setH1FontSize] = useState(window.innerWidth <= 900 ? '2.8em' : '4em');
-  const [isImageVisible, setIsImageVisible] = useState(false);
-  
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setH1FontSize(window.innerWidth <= 900 ? '2.8em' : '4em');
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // Все размеры экрана и стили теперь из хука useResponsiveStyles
+  const isMobile = styles.isMobile;
+  const isVeryMobile = styles.isVeryMobile;
+  const isSmallScreen = styles.isSmallScreen;
+  const h1FontSize = styles.h1FontSize;
   return (
     <div style={{
       minHeight: 'calc(100vh - 120px)',
@@ -272,9 +242,9 @@ export default function Home() {
                 <div style={{ whiteSpace: 'pre-line' }}>
                   {getDiplomaText()}
               </div>
-                {!showFullDiplomaText ? (
+                {!postState.showFullDiplomaText ? (
                   <button
-                    onClick={() => setShowFullDiplomaText(true)}
+                    onClick={() => postState.setShowFullDiplomaText(true)}
                     style={{
                       background: '#1976d2',
                       color: '#fff',
@@ -299,7 +269,7 @@ export default function Home() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => setShowFullDiplomaText(false)}
+                    onClick={() => postState.setShowFullDiplomaText(false)}
                     style={{
                       background: '#1976d2',
                       color: '#fff',
@@ -620,9 +590,9 @@ export default function Home() {
               }}>
                 {getKolschitzkyText()}
               </div>
-              {!showFullKolschitzkyText && (
+              {!postState.showFullKolschitzkyText && (
                 <button
-                  onClick={() => setShowFullKolschitzkyText(true)}
+                  onClick={() => postState.setShowFullKolschitzkyText(true)}
                   style={{ 
                     marginTop: '0.5rem',
                     background: '#1976d2',
@@ -700,9 +670,9 @@ export default function Home() {
               }}>
                 {getKolschitzkyText()}
             </div>
-              {!showFullKolschitzkyText && (
+              {!postState.showFullKolschitzkyText && (
                 <button
-                  onClick={() => setShowFullKolschitzkyText(true)}
+                  onClick={() => postState.setShowFullKolschitzkyText(true)}
                   style={{ 
                     marginTop: '1rem',
                     background: '#1976d2',
@@ -780,9 +750,9 @@ export default function Home() {
             }}>
               {getKolschitzkyText()}
             </div>
-            {!showFullKolschitzkyText && (
+            {!postState.showFullKolschitzkyText && (
               <button
-                onClick={() => setShowFullKolschitzkyText(true)}
+                onClick={() => postState.setShowFullKolschitzkyText(true)}
                 style={{ 
                   marginTop: '1rem',
                   background: '#1976d2',

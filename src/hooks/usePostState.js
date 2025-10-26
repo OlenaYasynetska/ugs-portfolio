@@ -1,0 +1,16 @@
+import { useState } from 'react';
+
+export function usePostState() {
+  const [showFull, setShowFull] = useState(false);
+  const [showFullKolschitzkyText, setShowFullKolschitzkyText] = useState(false);
+  const [showFullDiplomaText, setShowFullDiplomaText] = useState(false);
+  
+  return {
+    showFull,
+    setShowFull,
+    showFullKolschitzkyText,
+    setShowFullKolschitzkyText,
+    showFullDiplomaText,
+    setShowFullDiplomaText
+  };
+}
