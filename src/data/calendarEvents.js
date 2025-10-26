@@ -960,63 +960,84 @@ export const calendarEvents = [
     id: 47,
     date: '2025-11-06',
     title: {
-      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
-      de: '🧵 Handarbeitswerkstatt - Stricken',
-      ua: '🧵 Майстерня рукоділля - В`язання'
+      en: '🧵 Knitting against social coldness - A small contribution to joy',
+      de: '🧵 Stricken gegen soziale Kälte - Ein kleiner Beitrag zur Freude',
+      ua: '🧵 В`язання проти соціальної холодності - Невеликий внесок у радість'
     },
     description: {
-      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
-      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
-      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+      en: 'As in previous years, we will again knit together gloves, hats, scarves, socks, etc. for people in difficult life situations. Everyone who enjoys knitting and wants to bring joy to others is cordially invited. You can also bring knitted items or yarn. Free participation. All dates: 6.11; 20.11; 27.11; 4.12 - can be attended individually.',
+      de: 'Wie in den vergangenen Jahren stricken wir wieder gemeinsam Handschuhe, Mützen, Schals, Socken usw. für Menschen in schwierigen Lebenssituationen. Alle, die gerne stricken und anderen Freude bereiten möchten, sind herzlich eingeladen. Gerne können Sie auch bereits Gestricktes oder Wolle mitbringen. Kostenlos.',
+      ua: 'Як і в попередні роки, ми знову в`яжемо разом рукавички, шапки, шарфи, шкарпетки тощо для людей, які опинилися у складній життєвій ситуації. Всі, хто отримує задоволення від в`язання і хоче подарувати радість іншим, щиро запрошуються взяти участь. Можна також принести зв`язані речі або пряжу. Безкоштовно. Всі дати: 6.11; 20.11; 27.11; 4.12 — можна відвідувати окремо.'
     },
-    type: 'cultural',
+    type: 'hobby',
     priority: 'medium',
     color: '#ff6b6b',
     image: '/Stricken.png',
-    time: 'TBA',
-    location: 'TBA',
+    time: '14:00 - 15:00',
+    location: 'Dominikanerhaus',
     weekday: 'Th, 06.11.2025'
   },
   {
     id: 48,
     date: '2025-11-20',
     title: {
-      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
-      de: '🧵 Handarbeitswerkstatt - Stricken',
-      ua: '🧵 Майстерня рукоділля - В`язання'
+      en: '🧵 Knitting against social coldness - A small contribution to joy',
+      de: '🧵 Stricken gegen soziale Kälte - Ein kleiner Beitrag zur Freude',
+      ua: '🧵 В`язання проти соціальної холодності - Невеликий внесок у радість'
     },
     description: {
-      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
-      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
-      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+      en: 'As in previous years, we will again knit together gloves, hats, scarves, socks, etc. for people in difficult life situations. Everyone who enjoys knitting and wants to bring joy to others is cordially invited. You can also bring knitted items or yarn. Free participation.',
+      de: 'Wie in den vergangenen Jahren stricken wir wieder gemeinsam Handschuhe, Mützen, Schals, Socken usw. für Menschen in schwierigen Lebenssituationen. Alle, die gerne stricken und anderen Freude bereiten möchten, sind herzlich eingeladen. Gerne können Sie auch bereits Gestricktes oder Wolle mitbringen. Kostenlos.',
+      ua: 'Як і в попередні роки, ми знову в`яжемо разом рукавички, шапки, шарфи, шкарпетки тощо для людей, які опинилися у складній життєвій ситуації. Всі, хто отримує задоволення від в`язання і хоче подарувати радість іншим, щиро запрошуються взяти участь. Можна також принести зв`язані речі або пряжу. Безкоштовно.'
     },
-    type: 'cultural',
+    type: 'hobby',
     priority: 'medium',
     color: '#ff6b6b',
     image: '/Stricken.png',
-    time: 'TBA',
-    location: 'TBA',
+    time: '14:00 - 15:00',
+    location: 'Dominikanerhaus',
     weekday: 'Th, 20.11.2025'
   },
   {
     id: 49,
-    date: '2025-12-04',
+    date: '2025-11-27',
     title: {
-      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
-      de: '🧵 Handarbeitswerkstatt - Stricken',
-      ua: '🧵 Майстерня рукоділля - В`язання'
+      en: '🧵 Knitting against social coldness - A small contribution to joy',
+      de: '🧵 Stricken gegen soziale Kälte - Ein kleiner Beitrag zur Freude',
+      ua: '🧵 В`язання проти соціальної холодності - Невеликий внесок у радість'
     },
     description: {
-      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
-      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
-      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+      en: 'As in previous years, we will again knit together gloves, hats, scarves, socks, etc. for people in difficult life situations. Everyone who enjoys knitting and wants to bring joy to others is cordially invited. You can also bring knitted items or yarn. Free participation.',
+      de: 'Wie in den vergangenen Jahren stricken wir wieder gemeinsam Handschuhe, Mützen, Schals, Socken usw. für Menschen in schwierigen Lebenssituationen. Alle, die gerne stricken und anderen Freude bereiten möchten, sind herzlich eingeladen. Gerne können Sie auch bereits Gestricktes oder Wolle mitbringen. Kostenlos.',
+      ua: 'Як і в попередні роки, ми знову в`яжемо разом рукавички, шапки, шарфи, шкарпетки тощо для людей, які опинилися у складній життєвій ситуації. Всі, хто отримує задоволення від в`язання і хоче подарувати радість іншим, щиро запрошуються взяти участь. Можна також принести зв`язані речі або пряжу. Безкоштовно.'
     },
-    type: 'cultural',
+    type: 'hobby',
     priority: 'medium',
     color: '#ff6b6b',
     image: '/Stricken.png',
-    time: 'TBA',
-    location: 'TBA',
+    time: '14:00 - 15:00',
+    location: 'Dominikanerhaus',
+    weekday: 'Th, 27.11.2025'
+  },
+  {
+    id: 50,
+    date: '2025-12-04',
+    title: {
+      en: '🧵 Knitting against social coldness - A small contribution to joy',
+      de: '🧵 Stricken gegen soziale Kälte - Ein kleiner Beitrag zur Freude',
+      ua: '🧵 В`язання проти соціальної холодності - Невеликий внесок у радість'
+    },
+    description: {
+      en: 'As in previous years, we will again knit together gloves, hats, scarves, socks, etc. for people in difficult life situations. Everyone who enjoys knitting and wants to bring joy to others is cordially invited. You can also bring knitted items or yarn. Free participation.',
+      de: 'Wie in den vergangenen Jahren stricken wir wieder gemeinsam Handschuhe, Mützen, Schals, Socken usw. für Menschen in schwierigen Lebenssituationen. Alle, die gerne stricken und anderen Freude bereiten möchten, sind herzlich eingeladen. Gerne können Sie auch bereits Gestricktes oder Wolle mitbringen. Kostenlos.',
+      ua: 'Як і в попередні роки, ми знову в`яжемо разом рукавички, шапки, шарфи, шкарпетки тощо для людей, які опинилися у складній життєвій ситуації. Всі, хто отримує задоволення від в`язання і хоче подарувати радість іншим, щиро запрошуються взяти участь. Можна також принести зв`язані речі або пряжу. Безкоштовно.'
+    },
+    type: 'hobby',
+    priority: 'medium',
+    color: '#ff6b6b',
+    image: '/Stricken.png',
+    time: '14:00 - 15:00',
+    location: 'Dominikanerhaus',
     weekday: 'Th, 04.12.2025'
   }
 ];
