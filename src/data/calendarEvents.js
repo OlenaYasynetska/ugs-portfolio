@@ -766,6 +766,258 @@ export const calendarEvents = [
     time: 'All day',
     location: 'Ukraine',
     weekday: 'Th, 27.11.2025'
+  },
+  {
+    id: 38,
+    date: '2025-10-30',
+    title: {
+      en: '🎭 The Addams Family - Das Musical',
+      de: '🎭 The Addams Family - Das Musical',
+      ua: '🎭 Сімʼя Аддамсів - Мюзикл'
+    },
+    description: {
+      en: 'Join us for an unforgettable musical evening with "The Addams Family - Das Musical" at Altes Theater Steyr. A spectacular production featuring iconic characters: Morticia, Gomez, Wednesday, Pugsley, Uncle Fester, and Lurch. Book your tickets now through oeticket.',
+      de: 'Erleben Sie einen unvergesslichen Musical-Abend mit "The Addams Family - Das Musical" im Alten Theater Steyr. Eine spektakuläre Produktion mit ikonischen Charakteren: Morticia, Gomez, Wednesday, Pugsley, Onkel Fester und Lurch. Buchen Sie jetzt Ihre Tickets über oeticket.',
+      ua: 'Приєднуйтеся до незабутнього музичного вечора "Сімʼя Аддамсів - Мюзикл" у Старому театрі Штайєр. Вражаюча постановка з культовими персонажами: Мортісія, Гомес, Венздей, Пугслі, дядько Фестер і Лурч. Замовте квитки зараз через oeticket.'
+    },
+    type: 'cultural',
+    priority: 'high',
+    color: '#9c27b0',
+    image: '/Addams_Family.png',
+    time: '19:00',
+    location: 'Altes Theater Steyr',
+    weekday: 'Th, 30.10.2025'
+  },
+  {
+    id: 39,
+    date: '2025-10-31',
+    title: {
+      en: '🎭 The Addams Family - Das Musical',
+      de: '🎭 The Addams Family - Das Musical',
+      ua: '🎭 Сімʼя Аддамсів - Мюзикл'
+    },
+    description: {
+      en: 'Join us for an unforgettable musical evening with "The Addams Family - Das Musical" at Altes Theater Steyr. A spectacular production featuring iconic characters: Morticia, Gomez, Wednesday, Pugsley, Uncle Fester, and Lurch. Book your tickets now through oeticket.',
+      de: 'Erleben Sie einen unvergesslichen Musical-Abend mit "The Addams Family - Das Musical" im Alten Theater Steyr. Eine spektakuläre Produktion mit ikonischen Charakteren: Morticia, Gomez, Wednesday, Pugsley, Onkel Fester und Lurch. Buchen Sie jetzt Ihre Tickets über oeticket.',
+      ua: 'Приєднуйтеся до незабутнього музичного вечора "Сімʼя Аддамсів - Мюзикл" у Старому театрі Штайєр. Вражаюча постановка з культовими персонажами: Мортісія, Гомес, Венздей, Пугслі, дядько Фестер і Лурч. Замовте квитки зараз через oeticket.'
+    },
+    type: 'cultural',
+    priority: 'high',
+    color: '#9c27b0',
+    image: '/Addams_Family.png',
+    time: '19:00',
+    location: 'Altes Theater Steyr',
+    weekday: 'Fr, 31.10.2025'
+  },
+  {
+    id: 40,
+    date: '2025-09-10',
+    title: {
+      en: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      de: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      ua: '🧘 Духовність: Залишитись у спокої та набратися сил'
+    },
+    description: {
+      en: 'Meditation, Impulses, Silence with Heidi Staltner-Kix. An evening of meditation and spiritual impulses to find peace and recharge. Join us for a moment of silence and reflection.',
+      de: 'Meditation, Impulse, Stille mit Heidi Staltner-Kix. Ein Abend der Meditation und spirituellen Impulse, um zur Ruhe zu kommen und aufzutanken. Kommen Sie zu einem Moment der Stille und Besinnung.',
+      ua: 'Медитація, Імпульси, Тиша з Гайді Штальтнер-Кікс. Вечір медитації та духовних імпульсів для знаходження миру та наповнення енергією. Приєднуйтеся до моменту тиші та рефлексії.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#673ab7',
+    image: '/Spiritualitat.png',
+    time: '18:15 - 19:30',
+    location: 'Marienkirche Sakristei',
+    weekday: 'We, 10.09.2025'
+  },
+  {
+    id: 41,
+    date: '2025-10-08',
+    title: {
+      en: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      de: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      ua: '🧘 Духовність: Залишитись у спокої та набратися сил'
+    },
+    description: {
+      en: 'Meditation, Impulses, Silence with Heidi Staltner-Kix. An evening of meditation and spiritual impulses to find peace and recharge. Join us for a moment of silence and reflection.',
+      de: 'Meditation, Impulse, Stille mit Heidi Staltner-Kix. Ein Abend der Meditation und spirituellen Impulse, um zur Ruhe zu kommen und aufzutanken. Kommen Sie zu einem Moment der Stille und Besinnung.',
+      ua: 'Медитація, Імпульси, Тиша з Гайді Штальтнер-Кікс. Вечір медитації та духовних імпульсів для знаходження миру та наповнення енергією. Приєднуйтеся до моменту тиші та рефлексії.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#673ab7',
+    image: '/Spiritualitat.png',
+    time: '18:15 - 19:30',
+    location: 'Marienkirche Sakristei',
+    weekday: 'We, 08.10.2025'
+  },
+  {
+    id: 42,
+    date: '2025-11-08',
+    title: {
+      en: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      de: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      ua: '🧘 Духовність: Залишитись у спокої та набратися сил'
+    },
+    description: {
+      en: 'Meditation, Impulses, Silence with Heidi Staltner-Kix. An evening of meditation and spiritual impulses to find peace and recharge. Join us for a moment of silence and reflection.',
+      de: 'Meditation, Impulse, Stille mit Heidi Staltner-Kix. Ein Abend der Meditation und spirituellen Impulse, um zur Ruhe zu kommen und aufzutanken. Kommen Sie zu einem Moment der Stille und Besinnung.',
+      ua: 'Медитація, Імпульси, Тиша з Гайді Штальтнер-Кікс. Вечір медитації та духовних імпульсів для знаходження миру та наповнення енергією. Приєднуйтеся до моменту тиші та рефлексії.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#673ab7',
+    image: '/Spiritualitat.png',
+    time: '18:15 - 19:30',
+    location: 'Marienkirche Sakristei',
+    weekday: 'Sa, 08.11.2025'
+  },
+  {
+    id: 43,
+    date: '2026-02-11',
+    title: {
+      en: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      de: '🧘 Spiritualität: Zur Ruhe kommen & auftanken',
+      ua: '🧘 Духовність: Залишитись у спокої та набратися сил'
+    },
+    description: {
+      en: 'Meditation, Impulses, Silence with Heidi Staltner-Kix. An evening of meditation and spiritual impulses to find peace and recharge. Join us for a moment of silence and reflection.',
+      de: 'Meditation, Impulse, Stille mit Heidi Staltner-Kix. Ein Abend der Meditation und spirituellen Impulse, um zur Ruhe zu kommen und aufzutanken. Kommen Sie zu einem Moment der Stille und Besinnung.',
+      ua: 'Медитація, Імпульси, Тиша з Гайді Штальтнер-Кікс. Вечір медитації та духовних імпульсів для знаходження миру та наповнення енергією. Приєднуйтеся до моменту тиші та рефлексії.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#673ab7',
+    image: '/Spiritualitat.png',
+    time: '18:15 - 19:30',
+    location: 'Marienkirche Sakristei',
+    weekday: 'We, 11.02.2026'
+  },
+  {
+    id: 44,
+    date: '2025-10-09',
+    title: {
+      en: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      de: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      ua: '🤝 MEHRsamkeit - Ми тут - Кавʼярня спільноти'
+    },
+    description: {
+      en: 'Joyful moments lurk everywhere, it is especially beautiful to experience community. Bring your friends or acquaintances or get to know new people in a relaxed get-together. Every Thursday from 9:30 - 11:00 AM. In cooperation with Caritas, BEZIEHUNGleben, Projekt EULE.',
+      de: 'Beglückende Momente lauern überall, besonders schön ist es Gemeinschaft zu erleben. Nehmen Sie Freund*innen oder Ihre Bekannten mit oder lernen Sie neue Menschen kennen beim ungezwungenen Beisammensein. Jeden Donnerstag von 9:30 - 11:00 Uhr. Kooperation mit Caritas, BEZIEHUNGleben, Projekt EULE.',
+      ua: 'Щасливі моменти чекають всюди, особливо прекрасно переживати спільноту. Візьміть з собою друзів або знайомих або познайомтесь з новими людьми в розслабленій атмосфері. Кожний четвер з 9:30 - 11:00. У співпраці з Caritas, BEZIEHUNGleben, Projekt EULE.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff9800',
+    image: '/Lebensorierung.png',
+    time: '9:30 - 11:00',
+    location: 'Dominikanerhaus',
+    weekday: 'Th, 09.10.2025'
+  },
+  {
+    id: 45,
+    date: '2025-11-06',
+    title: {
+      en: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      de: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      ua: '🤝 MEHRsamkeit - Ми тут - Кавʼярня спільноти'
+    },
+    description: {
+      en: 'Joyful moments lurk everywhere, it is especially beautiful to experience community. Bring your friends or acquaintances or get to know new people in a relaxed get-together. Every Thursday from 9:30 - 11:00 AM. In cooperation with Caritas, BEZIEHUNGleben, Projekt EULE.',
+      de: 'Beglückende Momente lauern überall, besonders schön ist es Gemeinschaft zu erleben. Nehmen Sie Freund*innen oder Ihre Bekannten mit oder lernen Sie neue Menschen kennen beim ungezwungenen Beisammensein. Jeden Donnerstag von 9:30 - 11:00 Uhr. Kooperation mit Caritas, BEZIEHUNGleben, Projekt EULE.',
+      ua: 'Щасливі моменти чекають всюди, особливо прекрасно переживати спільноту. Візьміть з собою друзів або знайомих або познайомтесь з новими людьми в розслабленій атмосфері. Кожний четвер з 9:30 - 11:00. У співпраці з Caritas, BEZIEHUNGleben, Projekt EULE.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff9800',
+    image: '/Lebensorierung.png',
+    time: '9:30 - 11:00',
+    location: 'Dominikanerhaus',
+    weekday: 'Th, 06.11.2025'
+  },
+  {
+    id: 46,
+    date: '2025-12-04',
+    title: {
+      en: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      de: '🤝 MEHRsamkeit - Wir sind da - Gemeinschaftscafé',
+      ua: '🤝 MEHRsamkeit - Ми тут - Кавʼярня спільноти'
+    },
+    description: {
+      en: 'Joyful moments lurk everywhere, it is especially beautiful to experience community. Bring your friends or acquaintances or get to know new people in a relaxed get-together. Every Thursday from 9:30 - 11:00 AM. In cooperation with Caritas, BEZIEHUNGleben, Projekt EULE.',
+      de: 'Beglückende Momente lauern überall, besonders schön ist es Gemeinschaft zu erleben. Nehmen Sie Freund*innen oder Ihre Bekannten mit oder lernen Sie neue Menschen kennen beim ungezwungenen Beisammensein. Jeden Donnerstag von 9:30 - 11:00 Uhr. Kooperation mit Caritas, BEZIEHUNGleben, Projekt EULE.',
+      ua: 'Щасливі моменти чекають всюди, особливо прекрасно переживати спільноту. Візьміть з собою друзів або знайомих або познайомтесь з новими людьми в розслабленій атмосфері. Кожний четвер з 9:30 - 11:00. У співпраці з Caritas, BEZIEHUNGleben, Projekt EULE.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff9800',
+    image: '/Lebensorierung.png',
+    time: '9:30 - 11:00',
+    location: 'Dominikanerhaus',
+    weekday: 'Th, 04.12.2025'
+  },
+  {
+    id: 47,
+    date: '2025-11-06',
+    title: {
+      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
+      de: '🧵 Handarbeitswerkstatt - Stricken',
+      ua: '🧵 Майстерня рукоділля - В`язання'
+    },
+    description: {
+      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
+      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
+      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff6b6b',
+    image: '/Stricken.png',
+    time: 'TBA',
+    location: 'TBA',
+    weekday: 'Th, 06.11.2025'
+  },
+  {
+    id: 48,
+    date: '2025-11-20',
+    title: {
+      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
+      de: '🧵 Handarbeitswerkstatt - Stricken',
+      ua: '🧵 Майстерня рукоділля - В`язання'
+    },
+    description: {
+      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
+      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
+      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff6b6b',
+    image: '/Stricken.png',
+    time: 'TBA',
+    location: 'TBA',
+    weekday: 'Th, 20.11.2025'
+  },
+  {
+    id: 49,
+    date: '2025-12-04',
+    title: {
+      en: '🧵 Handicraft Workshop - Stricken (Knitting)',
+      de: '🧵 Handarbeitswerkstatt - Stricken',
+      ua: '🧵 Майстерня рукоділля - В`язання'
+    },
+    description: {
+      en: 'Join us for a handicraft workshop where you can learn knitting or work on your own projects. A welcoming atmosphere for creativity and community.',
+      de: 'Kommen Sie zu unserer Handarbeitswerkstatt, wo Sie stricken lernen oder an Ihren eigenen Projekten arbeiten können. Eine einladende Atmosphäre für Kreativität und Gemeinschaft.',
+      ua: 'Приєднуйтеся до нашої майстерні рукоділля, де ви можете навчитися в`язати або працювати над своїми проєктами. Затишна атмосфера для творчості та спільноти.'
+    },
+    type: 'cultural',
+    priority: 'medium',
+    color: '#ff6b6b',
+    image: '/Stricken.png',
+    time: 'TBA',
+    location: 'TBA',
+    weekday: 'Th, 04.12.2025'
   }
 ];
 
