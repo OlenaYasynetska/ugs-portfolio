@@ -173,20 +173,6 @@ export const news = [
     image: 'diolom.png'
   },
   {
-    id: 41,
-    title: {
-      en: '🫎 Disputes between authorities and public caused by moose',
-      de: '🫎 Streitigkeiten zwischen Behörden und Öffentlichkeit durch Elch verursacht',
-      ua: '🫎 Суперечки між владою та громадськістю спричинив лось'
-    },
-    text: {
-      en: 'As <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a> writes, when it approached the borders of Upper Austria, local authorities initially planned to temporarily sedate it and transport it to the Czech border so it could reunite with the local moose population.\n\nHowever, the Austrian non-governmental organization Tierschutz Austria, which deals with animal protection, criticized these plans and threatened legal action.',
-      de: 'Wie <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a> schreibt, plante die örtliche Behörde zunächst, es vorübergehend zu sedieren und zur tschechischen Grenze zu transportieren, als es sich den Grenzen von Oberösterreich näherte, damit es sich mit der örtlichen Elchpopulation wiedervereinigen könnte.\n\nDie österreichische Nichtregierungsorganisation Tierschutz Austria, die sich mit Tierschutz beschäftigt, kritisierte jedoch diese Pläne und drohte mit rechtlichen Schritten.',
-      ua: 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
-    },
-    image: 'Los.png'
-  },
-  {
     id: 40,
     title: {
       en: '01.10.2025📢 Mandatory change from October 1 in FinanzOnline',

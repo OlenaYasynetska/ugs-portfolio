@@ -13,7 +13,6 @@ import EurovisionImg from '../../assets/Eurovision.png';
 import WienImg from '../../assets/Wien.png';
 import bergImg from '../../assets/berg.png';
 import nationalTadImg from '../../assets/NationalTad.png';
-import losImg from '../../assets/Los.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
@@ -428,115 +427,6 @@ export default function Home() {
         })()}
         
 
-        {/* Пост про лося */}
-         {isSmallScreen ? (
-          <div 
-            className="animated-card card-1"
-            style={{
-             background: 'rgba(255,255,255,0.85)',
-             borderRadius: 16,
-             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-             padding: '2vw',
-             maxWidth: 400,
-             width: '95%',
-             margin: '0 auto 1vw auto',
-             textAlign: 'center',
-             display: 'flex',
-             flexDirection: 'column',
-             alignItems: 'center',
-            }}
-          >
-            <img 
-              src={losImg} 
-              alt="Moose" 
-              style={{ 
-                width: '80%', 
-                maxWidth: '80%',
-                height: 'auto', 
-                borderRadius: 12, 
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
-              }} 
-            />
-            <div style={{ 
-              fontSize: 18, 
-              color: '#234', 
-              whiteSpace: 'pre-line', 
-              textAlign: 'center', 
-              width: '100%' 
-            }}>
-              <div style={{ 
-                fontSize: '1.2em',
-                fontWeight: 'bold',
-                color: '#1565c0',
-                marginBottom: '1rem'
-              }}>
-                {news.find(item => item.id === 41)?.title[lang] || '🫎 Суперечки між владою та громадськістю спричинив лось'}
-               </div>
-              <div style={{ 
-                fontSize: '1em',
-                lineHeight: '1.4',
-                textAlign: 'left'
-              }} dangerouslySetInnerHTML={{
-                __html: news.find(item => item.id === 41)?.text[lang] || 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
-              }}>
-              </div>
-             </div>
-           </div>
-         ) : (
-          <div 
-            className="animated-card card-1"
-            style={{
-             background: 'rgba(255,255,255,0.85)',
-             borderRadius: 16,
-             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-             padding: '2vw',
-             maxWidth: 1200,
-             width: '85%',
-              margin: '0 auto 1vw auto',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <img 
-              src={losImg} 
-              alt="Moose" 
-              style={{ 
-                width: '60%', 
-                maxWidth: '60%',
-                height: 'auto', 
-                borderRadius: 12, 
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
-              }} 
-            />
-            <div style={{ 
-              fontSize: 20, 
-              color: '#234', 
-              whiteSpace: 'pre-line', 
-              textAlign: 'center', 
-              width: '100%' 
-            }}>
-              <div style={{ 
-                fontSize: '1.4em',
-                fontWeight: 'bold',
-                color: '#1565c0',
-                marginBottom: '1rem'
-              }}>
-                {news.find(item => item.id === 41)?.title[lang] || '🫎 Суперечки між владою та громадськістю спричинив лось'}
-               </div>
-              <div style={{ 
-                fontSize: '1.1em',
-                lineHeight: '1.5',
-                textAlign: 'left'
-              }} dangerouslySetInnerHTML={{
-                __html: news.find(item => item.id === 41)?.text[lang] || 'Як пише <a href="https://www.derstandard.at/" target="_blank" rel="noopener noreferrer" style="color: #1565c0; text-decoration: underline;">Der Standard</a>, коли він наближався до кордонів Верхньої Австрії, місцева влада спершу планувала його тимчасово приспати і транспортувати до чеського кордону, аби він міг возз\'єднатись із місцевою популяцією лосів.\n\nПроте австрійська неурядова організація Tierschutz Austria, яка займається захистом тварин, розкритикувала ці плани й пригрозила судовим позовом.'
-              }}>
-              </div>
-             </div>
-           </div>
-         )}
-         
         {/* Пост про Кульчицкого */}
          {isSmallScreen ? (
           <div 
