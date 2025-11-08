@@ -17,6 +17,8 @@ import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
 import halloweenImg from '../../assets/Halloween.png';
+import marketImg from '../../assets/market.png';
+import marketSteyrImg from '../../assets/market_steyr.png';
 import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useResponsiveStyles, usePostState, usePostTexts } from '../../hooks';
@@ -64,6 +66,105 @@ export default function Home() {
   const isVeryMobile = styles.isVeryMobile;
   const isSmallScreen = styles.isSmallScreen;
   const h1FontSize = styles.h1FontSize;
+  const christmasMarketTitle = t('christmas_market_card_title', { defaultValue: '🎄 CNN назвав найкрасивіший різдвяний ярмарок' });
+  const christmasMarketImageAlt = t('christmas_market_card_image_alt', { defaultValue: 'Vienna Christmas Market at Rathausplatz' });
+  const christmasMarketDefaults = {
+    ua: {
+      label: t('christmas_market_card_ua_label', { defaultValue: 'Українською' }),
+      text: t('christmas_market_card_text_ua', {
+        defaultValue: `CNN назвав різдвяний ярмарок на Ратушній площі у Відні найкрасивішим у рейтингу 2025 року за атмосферу, традиції та святковий шарм. Серед родзинок — дитяча ковзанка, міні-залізниця з "оленями", колесо огляду та аромат глінтвейну біля знаменитого Baum der Herzen, що сяє сотнями червоних вогників. Повний рейтинг: https://www.cnn.com/travel/best-christmas-markets-world
+
+Що варто знати:
+• У Відні 2025 року заплановано 14 офіційних ярмарків і 911 палаток, 180 з них — з їжею та напоями.
+• На Rathausplatz працюватимуть 96 палаток — це найбільший ярмарок міста.
+• Маркс-Халле стане найбільшим ринком із 186 палатками.
+
+У топі рейтингу також Базель (Швейцарія) та Страсбург (Франція). Першу п’ятірку доповнюють Брюссель, Прага й Барселона.`
+      })
+    },
+    de: {
+      label: t('christmas_market_card_de_label', { defaultValue: 'Deutsch' }),
+      text: t('christmas_market_card_text_de', {
+        defaultValue: `CNN kürte den Wiener Rathausplatz (Christkindlmarkt am Rathausplatz) zum schönsten Weihnachtsmarkt im Ranking 2025 für Atmosphäre, Traditionen und festlichen Charme. Zu den Highlights zählen eine Eislaufbahn für Kinder, eine Mini-Eisenbahn mit "Rentieren", ein Riesenrad und der Duft von Glühwein rund um den berühmten Baum der Herzen mit Hunderten roten Lichtern. Mehr dazu bei CNN: https://www.cnn.com/travel/best-christmas-markets-world
+
+Zahlen, die man kennen sollte:
+• Wien zählt 2025 vierzehn offizielle Märkte und 911 Stände, davon 180 mit Speisen und Getränken.
+• Am Rathausplatz stehen 96 Stände und damit die meisten in der Stadt.
+• Die Marx Halle wird mit 186 Ständen der größte Markt.
+
+Weitere Spitzenplätze im Ranking gehen an Basel (Schweiz) und Straßburg (Frankreich). Brüssel, Prag und Barcelona komplettieren die Top 5.`
+      })
+    },
+    en: {
+      label: t('christmas_market_card_en_label', { defaultValue: 'English' }),
+      text: t('christmas_market_card_text_en', {
+        defaultValue: `CNN named Vienna's Rathausplatz (the Christkindlmarkt on Rathausplatz) the most beautiful Christmas market in its 2025 ranking thanks to its atmosphere, traditions, and festive charm. Highlights include a children's ice rink, a mini railway with "reindeer", a Ferris wheel, and the aroma of mulled wine around the famous Baum der Herzen glowing with hundreds of red lights. Read more on CNN: https://www.cnn.com/travel/best-christmas-markets-world
+
+Need-to-know figures:
+• Vienna counts fourteen official markets and 911 stalls in 2025, including 180 serving food and drinks.
+• Rathausplatz hosts 96 stalls, keeping the top spot.
+• Marx Halle is set to become the largest market with 186 stalls.
+
+Basel (Switzerland) and Strasbourg (France) also feature near the top of the ranking, with Brussels, Prague, and Barcelona completing the top five.`
+      })
+    }
+  };
+  const christmasMarketSection = christmasMarketDefaults[lang] || christmasMarketDefaults.ua;
+  const shouldShowChristmasMarketLabel = lang !== 'ua';
+  const adventProgramSections = [
+    {
+      id: 'advent-1',
+      summary: {
+        ua: '14 – 23 листопада',
+        de: '14. – 23. November',
+        en: '14 – 23 November'
+      },
+      description: {
+        ua: '• Урочисте відкриття ярмарку з вечірнім запаленням вогнів\n• Чудовий ярмарок ремесел на головній площі міста\n• Майстер-класи з виготовлення адвентових вінків та свічок для родин',
+        de: '• Feierliche Eröffnung mit Abend-Illumination\n• Kunsthandwerksmarkt am Stadtplatz\n• Workshops für Adventkränze und Kerzen für Familien',
+        en: '• Festive opening with evening illumination\n• Artisan fair on the main square\n• Workshops on Advent wreaths and candles for families'
+      }
+    },
+    {
+      id: 'advent-2',
+      summary: {
+        ua: '26 – 30 листопада',
+        de: '26. – 30. November',
+        en: '26 – 30 November'
+      },
+      description: {
+        ua: '• Щоденні концерти хорів у замковому дворі старого замка\n• Лекторії про різдвяні традиції Верхньої Австрії\n• Дегустації регіональних смаколиків та теплого пуншу',
+        de: '• Tägliche Chorkonzerte im Schlosshof der Altstadt\n• Vorträge über Weihnachtsbräuche in Oberösterreich\n• Verkostungen regionaler Spezialitäten und Punsch',
+        en: '• Daily choir concerts in the castle courtyard of the old town\n• Talks about Upper Austrian Christmas traditions\n• Tastings of regional delicacies and hot punch'
+      }
+    },
+    {
+      id: 'advent-3',
+      summary: {
+        ua: '2 – 14 грудня',
+        de: '2. – 14. Dezember',
+        en: '2 – 14 December'
+      },
+      description: {
+        ua: '• Новорічні театральні вистави для дітей у міському театрі\n• Святкова хода з ліхтариками уздовж річки Штайр\n• Вечори камерної музики у парафіяльній церкві',
+        de: '• Neujahrs-Theateraufführungen für Kinder im Stadttheater\n• Festlicher Laternenumzug entlang der Steyr\n• Abende mit Kammermusik in der Pfarrkirche',
+        en: '• New Year-themed theatre shows for children at the city theatre\n• Lantern parade along the River Steyr\n• Evenings of chamber music in the parish church'
+      }
+    },
+    {
+      id: 'advent-4',
+      summary: {
+        ua: '16 – 31 грудня',
+        de: '16. – 31. Dezember',
+        en: '16 – 31 December'
+      },
+      description: {
+        ua: '• Виступи мідних оркестрів та студентських ансамблів\n• Нічне катання на ковзанці біля собору Святого Михаїла\n• Новорічна віншлаґ-процесія та салют на центральній площі',
+        de: '• Auftritte von Blasorchestern und Studierendenensembles\n• Nacht-Eislaufen beim Michaelerdom\n• Neujahrsprozession „Winterschlag“ und Feuerwerk am Stadtplatz',
+        en: '• Performances by brass bands and student ensembles\n• Night skating by St. Michael’s Cathedral\n• New Year’s Winterschlag procession and fireworks on the main square'
+      }
+    }
+  ];
   return (
     <div style={{
       minHeight: 'calc(100vh - 120px)',
@@ -82,6 +183,279 @@ export default function Home() {
             25% { transform: translateX(5px) rotate(2deg) scale(1.05); }
             50% { transform: translateX(-5px) rotate(-2deg) scale(0.95); }
             75% { transform: translateX(3px) rotate(1deg) scale(1.02); }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          .advent-program-card {
+            background: rgba(255,255,255,0.92);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            padding: clamp(20px, 3vw, 36px);
+            width: min(1200px, 85vw);
+            box-sizing: border-box;
+            text-align: left;
+          }
+
+          .advent-program-card h2 {
+            margin: 0 0 24px;
+            font-weight: 800;
+            font-size: clamp(28px, 3vw, 40px);
+            color: #1565c0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+
+          .advent-program-card h2 span {
+            font-size: clamp(32px, 4vw, 46px);
+          }
+
+          @keyframes treeGlow {
+            0%, 100% {
+              transform: rotate(-3deg) scale(1);
+              filter: drop-shadow(0 0 6px rgba(255,215,0,0.55));
+            }
+            50% {
+              transform: rotate(3deg) scale(1.08);
+              filter: drop-shadow(0 0 14px rgba(255,233,128,0.85));
+            }
+          }
+
+          @keyframes fireworkBurst {
+            0% {
+              opacity: 0;
+              transform: scale(0.2);
+            }
+            30% {
+              opacity: 1;
+              transform: scale(1);
+            }
+            100% {
+              opacity: 0;
+              transform: scale(1.6);
+            }
+          }
+
+          .advent-tree-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .advent-tree {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            animation: treeGlow 2.8s ease-in-out infinite;
+            z-index: 2;
+          }
+
+          .advent-tree-fireworks {
+            position: absolute;
+            inset: -12px;
+            z-index: 1;
+            pointer-events: none;
+          }
+
+          .advent-tree-fireworks::before,
+          .advent-tree-fireworks::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background:
+              radial-gradient(circle at 20% 80%, rgba(255, 223, 128, 0.95) 0, transparent 55%),
+              radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.5) 0, transparent 60%),
+              radial-gradient(circle at 50% 50%, rgba(135, 206, 235, 0.65) 0, transparent 70%),
+              radial-gradient(circle at 30% 30%, rgba(74, 217, 255, 0.55) 0, transparent 65%);
+            opacity: 0;
+            animation: fireworkBurst 2.4s ease-out infinite;
+          }
+
+          .advent-tree-fireworks::after {
+            animation-delay: 1.2s;
+            background:
+              radial-gradient(circle at 75% 80%, rgba(255, 180, 80, 0.9) 0, transparent 60%),
+              radial-gradient(circle at 25% 20%, rgba(186, 104, 200, 0.55) 0, transparent 65%),
+              radial-gradient(circle at 45% 55%, rgba(84, 255, 138, 0.5) 0, transparent 75%);
+          }
+
+          .advent-program-card details {
+            background: rgba(255,255,255,0.9);
+            border-radius: 18px;
+            margin-bottom: 18px;
+            padding: clamp(14px, 1.8vw, 22px) clamp(18px, 2.4vw, 26px);
+            border: 1px solid rgba(224,224,224,0.85);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.36);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+          }
+
+          .advent-program-card details[open] {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.42);
+            transform: translateY(-2px);
+          }
+
+          .advent-program-card summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: clamp(18px, 2.2vw, 22px);
+            display: flex;
+            align-items: center;
+            color: #234;
+            gap: clamp(12px, 1.6vw, 18px);
+            transition: transform 0.25s ease;
+          }
+
+          .advent-program-card summary::marker,
+          .advent-program-card summary::-webkit-details-marker {
+            display: none;
+          }
+
+          .advent-arrow {
+            font-size: clamp(18px, 2.5vw, 24px);
+            margin-right: clamp(10px, 1.5vw, 16px);
+            color: #0d47a1;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+            line-height: 1;
+            flex-shrink: 0;
+          }
+
+          .advent-arrow::before {
+            content: '➤';
+            transition: transform 0.25s ease;
+            display: inline-block;
+          }
+
+          .advent-program-card details[open] .advent-arrow::before {
+            content: '▼';
+          }
+
+          .advent-program-card summary .advent-summary-text {
+            color: #1565c0;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 600;
+            flex: 1;
+          }
+
+          .advent-program-card details p {
+            margin: 16px 0 0;
+            white-space: pre-line;
+            font-size: clamp(15px, 1.9vw, 18px);
+            color: #2c3e50;
+          }
+
+          @media (max-width: 768px) {
+            .advent-program-card details summary {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 10px;
+            }
+
+            .advent-arrow {
+              margin-right: 0;
+            }
+          }
+
+          .christmas-market-card {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 2rem;
+          }
+
+          .christmas-market-image {
+            width: 40%;
+            max-width: 40%;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          }
+
+          .christmas-market-content {
+            flex: 1;
+            font-size: 18px;
+            color: #234;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+          }
+
+          @media (max-width: 900px) {
+            .christmas-market-card {
+              flex-direction: column;
+              align-items: center;
+              gap: 1.5rem;
+            }
+
+            .christmas-market-image {
+              width: 100%;
+              max-width: 100%;
+            }
+
+            .christmas-market-content {
+              width: 100%;
+              font-size: 16px;
+              text-align: center;
+            }
+
+            .christmas-market-content > div {
+              text-align: center;
+            }
           }
           
           @media (max-width: 900px) {
@@ -116,6 +490,68 @@ export default function Home() {
       >
         {t('welcome')}
       </h1>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: isSmallScreen ? '4vw' : '2.5vw'
+        }}
+      >
+        <div
+          className="market-steyr-frame"
+          style={{
+            display: 'inline-block',
+            padding: isSmallScreen ? '3vw' : '2vw',
+            background: 'rgb(226, 197, 144)',
+            border: '0.6vw solid rgb(166, 124, 56)',
+            borderRadius: '2vw',
+            boxShadow: 'rgba(80, 60, 20, 0.25) 0px 8px 32px, rgb(226, 197, 144) 0px 0px 0px 1.2vw inset',
+            maxWidth: 1200,
+            width: '85%',
+            boxSizing: 'border-box'
+          }}
+        >
+          <img
+            src={marketSteyrImg}
+            alt={t('central_market_image_alt') || 'Віденський різдвяний ярмарок у центрі подій'}
+            style={{
+              width: '100%',
+              height: 'auto',
+              borderRadius: '1.4vw'
+            }}
+          />
+          <div className="market-steyr-snow" aria-hidden="true" />
+        </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: isSmallScreen ? '4vw' : '3.5vw'
+        }}
+      >
+        <div className="advent-program-card">
+          <h2>
+            <span className="advent-tree-wrapper">
+              <span className="advent-tree-fireworks" aria-hidden="true"></span>
+              <span className="advent-tree" role="img" aria-hidden="true">🎄</span>
+            </span>
+            {t('advent_program_title', { defaultValue: 'Advent у Штаєрі: програма' })}
+          </h2>
+          {adventProgramSections.map(section => (
+            <details key={section.id}>
+              <summary>
+                <span className="advent-arrow" aria-hidden="true"></span>
+                <span className="advent-summary-text">{section.summary[lang] || section.summary.ua}</span>
+              </summary>
+              <p>{section.description[lang] || section.description.ua}</p>
+            </details>
+          ))}
+          <div style={{ fontSize: 14, color: '#6d6d6d', marginTop: 12 }}>
+            {t('advent_program_hint', { defaultValue: 'Розклад може змінюватися через погодні умови. Актуальні оновлення дивіться на офіційному сайті міста Штаєр.' })}
+          </div>
+        </div>
+      </div>
       <MainModulesContainer>
         {/* <Hero /> */}
         <NewsBlock />
@@ -343,6 +779,52 @@ export default function Home() {
           textAlign: 'center',
         }}>{t('this_is_interesting') || 'Це цікаво'}</div>
         
+        {/* Пост про лучший рождественский ярмарок */}
+        <div
+          className="christmas-market-card"
+          style={{
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
+            maxWidth: 1200,
+            width: '85%',
+            margin: '0 auto 1vw auto'
+          }}
+        >
+          <img
+            className="christmas-market-image"
+            src={marketImg}
+            alt={christmasMarketImageAlt}
+            style={{
+              height: 'auto'
+            }}
+          />
+          <div
+            className="christmas-market-content"
+          >
+            <div
+              style={{
+                fontSize: isSmallScreen ? 20 : 24,
+                fontWeight: 700,
+                color: '#1565c0'
+              }}
+            >
+              {christmasMarketTitle}
+            </div>
+            <div>
+              {shouldShowChristmasMarketLabel && christmasMarketSection.label && (
+                <div style={{ fontSize: isSmallScreen ? 18 : 20, fontWeight: 700, color: '#1565c0', marginBottom: '0.5rem' }}>
+                  {christmasMarketSection.label}
+                </div>
+              )}
+              <div style={{ whiteSpace: 'pre-line', lineHeight: 1.5 }}>
+                {christmasMarketSection.text}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Картинка Halloween */}
         <div style={{
           background: 'rgba(255,255,255,0.85)',
