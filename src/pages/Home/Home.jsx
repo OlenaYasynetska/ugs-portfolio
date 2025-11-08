@@ -79,7 +79,7 @@ export default function Home() {
 • На Rathausplatz працюватимуть 96 палаток — це найбільший ярмарок міста.
 • Маркс-Халле стане найбільшим ринком із 186 палатками.
 
-У топі рейтингу також Базель (Швейцарія) та Страсбург (Франція). Першу п’ятірку доповнюють Брюссель, Прага й Барселона.`
+У топі рейтингу також Базель (Швейцарія) та Страсбург (Франція). Першу п'ятірку доповнюють Брюссель, Прага й Барселона.`
       })
     },
     de: {
@@ -160,8 +160,8 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
       },
       description: {
         ua: '• Виступи мідних оркестрів та студентських ансамблів\n• Нічне катання на ковзанці біля собору Святого Михаїла\n• Новорічна віншлаґ-процесія та салют на центральній площі',
-        de: '• Auftritte von Blasorchestern und Studierendenensembles\n• Nacht-Eislaufen beim Michaelerdom\n• Neujahrsprozession „Winterschlag“ und Feuerwerk am Stadtplatz',
-        en: '• Performances by brass bands and student ensembles\n• Night skating by St. Michael’s Cathedral\n• New Year’s Winterschlag procession and fireworks on the main square'
+        de: '• Auftritte von Blasorchestern und Studierendenensembles\n• Nacht-Eislaufen beim Michaelerdom\n• Neujahrsprozession „Winterschlag" und Feuerwerk am Stadtplatz',
+        en: '• Performances by brass bands and student ensembles\n• Night skating by St. Michaels Cathedral\n• New Year s Winterschlag procession and fireworks on the main square'
       }
     }
   ];
@@ -237,6 +237,204 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
             background-size: 20% 180px, 28% 260px;
             animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+                radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+                radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+              background-size: 9% 140px, 14% 180px, 20% 220px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+                radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+              background-size: 18% 160px, 24% 220px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
           }
 
           .advent-program-card {
@@ -408,6 +606,14 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
 
             .advent-arrow {
               margin-right: 0;
+            }
+
+            .advent-program-card h2 {
+              font-size: clamp(22px, 3vw, 40px);
+            }
+
+            .advent-program-card h2 span {
+              font-size: clamp(28px, 4vw, 42px);
             }
           }
 
@@ -1648,9 +1854,8 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                  '1582 рік — Папа Римський Григорій XIII запровадив григоріанський календар (звідси й назва).\nЙого одразу прийняли католицькі країни: Італія, Іспанія, Португалія, Польща.\nПісля 4 жовтня 1582 року одразу настав 15 жовтня 1582 року — пропущено 10 днів.\n\nПротестантські країни (Німеччина, Великобританія та ін.) перейшли пізніше — у XVII–XVIII століттях.\nНаприклад, Великобританія та її колонії — у 1752 році, пропустивши 11 днів.\n\nРосія (і, відповідно, Україна, Білорусь, Грузія та ін. у складі Російської імперії) —\nперейшла лише після Жовтневої революції, за декретом Ради народних комісарів від 24 січня 1918 року.\nПісля 31 січня 1918 року одразу настав 14 лютого 1918 року — пропущено 13 днів.\n\n🇺🇦 Україна:\n\nУкраїна перейшла на григоріанський календар разом із Радянською Росією —\n📅 у лютому 1918 року.\nДо цього на території України (у складі Російської імперії) діяв юліанський календар.\n\n⛪ Церковне використання:\n\nПравославна церква в Україні довго залишалася на юліанському календарі (старому стилі).\n\nПерехід ПЦУ (Православної Церкви України) на новоюліанський календар (сумісний з григоріанським до 2800 року) відбувся 1 вересня 2023 року.\nТепер більшість церковних свят відзначається за новим стилем, але Великдень все ще обчислюється за старим (юліанським) календарем.' :
                lang === 'de' ?
                  '1582 — Papst Gregor XIII. führte den Gregorianischen Kalender ein (daher der Name).\nKatholische Länder nahmen ihn sofort an: Italien, Spanien, Portugal, Polen.\nNach dem 4. Oktober 1582 folgte sofort der 15. Oktober 1582 — 10 Tage wurden übersprungen.\n\nProtestantische Länder (Deutschland, Großbritannien usw.) wechselten später — im 17.–18. Jahrhundert.\nZum Beispiel Großbritannien und seine Kolonien — 1752, wobei 11 Tage übersprungen wurden.\n\nRussland (und entsprechend die Ukraine, Belarus, Georgien usw. als Teil des Russischen Reiches) —\nwechselte erst nach der Oktoberrevolution, durch Dekret des Rates der Volkskommissare vom 24. Januar 1918.\nNach dem 31. Januar 1918 folgte sofort der 14. Februar 1918 — 13 Tage wurden übersprungen.\n\n🇺🇦 Ukraine:\n\nDie Ukraine wechselte zusammen mit Sowjetrussland zum Gregorianischen Kalender —\n📅 im Februar 1918.\nDavor galt auf dem Gebiet der Ukraine (als Teil des Russischen Reiches) der Julianische Kalender.\n\n⛪ Kirchliche Nutzung:\n\nDie Orthodoxe Kirche in der Ukraine blieb lange beim Julianischen Kalender (alten Stil).\n\nDer Übergang der OKU (Orthodoxen Kirche der Ukraine) zum Neujulianischen Kalender (kompatibel mit dem Gregorianischen bis 2800) erfolgte am 1. September 2023.\nJetzt werden die meisten Kirchenfeiertage nach dem neuen Stil gefeiert, aber Ostern wird immer noch nach dem alten (Julianischen) Kalender berechnet.' :
-                 '1582 — Pope Gregory XIII introduced the Gregorian calendar (hence the name).\nCatholic countries adopted it immediately: Italy, Spain, Portugal, Poland.\nAfter October 4, 1582, October 15, 1582 came immediately — 10 days were skipped.\n\nProtestant countries (Germany, Great Britain, etc.) switched later — in the 17th–18th centuries.\nFor example, Great Britain and its colonies — in 1752, skipping 11 days.\n\nRussia (and accordingly Ukraine, Belarus, Georgia, etc. as part of the Russian Empire) —\nswitched only after the October Revolution, by decree of the Council of People\'s Commissars of January 24, 1918.\nAfter January 31, 1918, February 14, 1918 came immediately — 13 days were skipped.\n\n🇺🇦 Ukraine:\n\nUkraine switched to the Gregorian calendar together with Soviet Russia —\n📅 in February 1918.\nBefore that, the Julian calendar was in effect on the territory of Ukraine (as part of the Russian Empire).\n\n⛪ Church use:\n\nThe Orthodox Church in Ukraine remained on the Julian calendar (old style) for a long time.\n\nThe transition of the OCU (Orthodox Church of Ukraine) to the New Julian calendar (compatible with the Gregorian until 2800) took place on September 1, 2023.\nNow most church holidays are celebrated according to the new style, but Easter is still calculated according to the old (Julian) calendar.'
-               }
-             </div>
+                 '1582 — Pope Gregory XIII introduced the Gregorian calendar (hence the name).\nCatholic countries adopted it immediately: Italy, Spain, Portugal, Poland.\nAfter October 4, 1582, October 15, 1582 came immediately — 10 days were skipped.\n\nProtestant countries (Germany, Great Britain, etc.) switched later — in the 17th–18th centuries.\nFor example, Great Britain and its colonies — in 1752, skipping 11 days.\n\nRussia (and accordingly Ukraine, Belarus, Georgia, etc. as part of the Russian Empire) —\nswitched only after the October Revolution, by decree of the Council of People\'s Commissars of January 24, 1918.\nAfter January 31, 1918, February 14, 1918 came immediately — 13 days were skipped.\n\n🇺🇦 Ukraine:\n\nUkraine switched to the Gregorian calendar together with Soviet Russia —\n📅 in February 1918.\nBefore that, the Julian calendar was in effect on the territory of Ukraine (as part of the Russian Empire).\n\n⛪ Church use:\n\nThe Orthodox Church in Ukraine remained on the Julian calendar (old style) for a long time.\n\nThe transition of the OCU (Orthodox Church of Ukraine) to the New Julian calendar (compatible with the Gregorian until 2800) took place on September 1, 2023.\nNow most church holidays are celebrated according to the new style, but Easter is still calculated according to the old (Julian) calendar.'}
+               </div>
            </div>
          </div>
          </div>
