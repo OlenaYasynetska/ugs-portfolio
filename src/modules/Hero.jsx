@@ -86,6 +86,9 @@ const Hero = () => {
             max-width: 90vw !important;
             padding: 4vw !important;
           }
+          .hero-transport-banner {
+            margin-top: 3vw !important;
+          }
         }
       `}</style>
       <div className="hero-flex" style={{

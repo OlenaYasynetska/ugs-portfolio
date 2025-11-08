@@ -16,13 +16,13 @@ import nationalTadImg from '../../assets/NationalTad.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
-import halloweenImg from '../../assets/Halloween.png';
 import marketImg from '../../assets/market.png';
 import marketSteyrImg from '../../assets/market_steyr.png';
 import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useResponsiveStyles, usePostState, usePostTexts } from '../../hooks';
 import { HOME_STYLES } from '../../constants/homeStyles';
+import busImg from '../../assets/bus.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -239,6 +239,57 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             animation: snowDrift 26s linear infinite;
           }
 
+          .transport-marquee {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255,255,255,0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            border: 1px solid rgba(21,101,192,0.18);
+            width: min(90%, 1200px);
+            margin: clamp(24px, 4vw, 48px) auto clamp(16px, 3vw, 32px);
+            padding: clamp(10px, 1.5vw, 16px) 0;
+          }
+
+          .transport-marquee-track {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            gap: clamp(32px, 6vw, 80px);
+            animation: transportMarquee 16s linear infinite;
+          }
+
+          .transport-marquee-track > * {
+            flex-shrink: 0;
+          }
+
+          .transport-marquee:hover .transport-marquee-track {
+            animation-play-state: paused;
+          }
+
+          .transport-marquee-link {
+            color: #1565c0;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: clamp(18px, 2.6vw, 28px);
+            letter-spacing: 0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0 clamp(12px, 2.4vw, 32px);
+          }
+
+          .transport-marquee-link::before {
+            content: '🚛';
+            font-size: 1.2em;
+          }
+
+          .transport-marquee-link:focus-visible {
+            outline: 2px solid rgba(21,101,192,0.35);
+            outline-offset: 4px;
+            border-radius: 999px;
+          }
+
           @keyframes starSparkle {
             0%, 100% {
               opacity: 0;
@@ -253,18 +304,270 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           @media (max-width: 700px) {
             .market-steyr-snow {
               background-image:
-                radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
-                radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
-                radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
-              background-size: 9% 140px, 14% 180px, 20% 220px;
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
               animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
             }
 
             .market-steyr-snow::after {
               background-image:
-                radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
-                radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
-              background-size: 18% 160px, 24% 220px;
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
+              animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
+            }
+          }
+
+          @keyframes snowFall {
+            0% {
+              background-position: 0 -200px, 50% -250px, 100% -180px;
+            }
+            100% {
+              background-position: 0 220px, 50% 280px, 100% 260px;
+            }
+          }
+
+          @keyframes snowDrift {
+            0% {
+              background-position: 0 -220px, 50% -180px;
+            }
+            50% {
+              background-position: 30px 40px, 20px 120px;
+            }
+            100% {
+              background-position: -30px 260px, -20px 320px;
+            }
+          }
+
+          .market-steyr-frame {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .market-steyr-snow,
+          .market-steyr-snow::after {
+            content: '';
+            position: absolute;
+            inset: -20% 0 -10%;
+            pointer-events: none;
+            background-repeat: repeat;
+            mix-blend-mode: screen;
+          }
+
+          .market-steyr-snow {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.75) 0, rgba(255,255,255,0.75) 1.5px, transparent 2.5px),
+              radial-gradient(rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1.2px, transparent 2.4px);
+            background-size: 12% 160px, 18% 200px, 25% 240px;
+            animation: snowFall 18s linear infinite;
+            opacity: 0.85;
+          }
+
+          .market-steyr-snow::after {
+            background-image:
+              radial-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1.5px, transparent 3px),
+              radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
+            background-size: 20% 180px, 28% 260px;
+            animation: snowDrift 26s linear infinite;
+          }
+
+          @keyframes starSparkle {
+            0%, 100% {
+              opacity: 0;
+              filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+            }
+            50% {
+              opacity: 0.45;
+              filter: drop-shadow(0 0 5px rgba(255,255,255,0.75));
+            }
+          }
+
+          @media (max-width: 700px) {
+            .market-steyr-snow {
+              background-image:
+                radial-gradient(circle at center, rgba(230,230,230,0.82) 0, rgba(230,230,230,0.82) 30%, transparent 55%),
+                radial-gradient(circle at center, rgba(210,210,210,0.65) 0, rgba(210,210,210,0.65) 26%, transparent 50%),
+                radial-gradient(circle at center, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.78) 22%, transparent 46%);
+              background-size: 4% 150px, 3% 140px, 5% 150px;
+              animation: snowFall 18s linear infinite, starSparkle 3.5s ease-in-out infinite;
+            }
+
+            .market-steyr-snow::after {
+              background-image:
+                radial-gradient(circle at center, rgba(200,200,200,0.7) 0, rgba(200,200,200,0.7) 24%, transparent 50%),
+                radial-gradient(circle at center, rgba(245,245,245,0.65) 0, rgba(245,245,245,0.65) 20%, transparent 46%);
+              background-size: 3% 150px, 2.5% 140px;
               animation: snowDrift 26s linear infinite, starSparkle 4.2s ease-in-out infinite;
             }
           }
@@ -1031,33 +1334,6 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           </div>
         </div>
 
-        {/* Картинка Halloween */}
-        <div style={{
-          background: 'rgba(255,255,255,0.85)',
-          borderRadius: 16,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-          padding: '2vw',
-          maxWidth: isSmallScreen ? 400 : 1200,
-          width: isSmallScreen ? '95%' : '85%',
-          margin: '0 auto 1vw auto',
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}>
-          <img 
-            src={halloweenImg} 
-            alt="Halloween" 
-            style={{ 
-              width: '100%', 
-              maxWidth: '100%',
-              height: 'auto', 
-              borderRadius: 12, 
-              boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px' 
-            }} 
-          />
-        </div>
-        
         {/* Пост про туристический рекорд Австрии */}
         {(() => {
           const news48 = news.find(n => n.id === 48);
