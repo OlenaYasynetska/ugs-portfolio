@@ -22,7 +22,7 @@ import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useResponsiveStyles, usePostState, usePostTexts } from '../../hooks';
 import { HOME_STYLES } from '../../constants/homeStyles';
-import busImg from '../../assets/bus.png';
+import busImg from '../../assets/bus_sonne.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -111,6 +111,12 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
   };
   const christmasMarketSection = christmasMarketDefaults[lang] || christmasMarketDefaults.ua;
   const shouldShowChristmasMarketLabel = lang !== 'ua';
+  const transportMarqueePhrases = [
+    'Перевезення меблів — деталі',
+    'Möbeltransport — Details',
+    'Furniture Transport — Details',
+  ];
+  const transportMarqueeHref = '/infocenter#transport-service';
   const adventProgramSections = [
     {
       id: 'advent-1',
@@ -237,6 +243,65 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               radial-gradient(rgba(255,255,255,0.55) 0, rgba(255,255,255,0.55) 1px, transparent 2.2px);
             background-size: 20% 180px, 28% 260px;
             animation: snowDrift 26s linear infinite;
+          }
+
+          .transport-marquee {
+            position: relative;
+            overflow: hidden;
+            background: rgba(21,101,192,0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(21,101,192,0.18);
+            width: min(90%, 1200px);
+            margin: clamp(16px, 3vw, 32px) auto 0;
+            padding: clamp(8px, 1.4vw, 14px) 0;
+          }
+
+          .transport-marquee-track {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            gap: clamp(32px, 6vw, 80px);
+            animation: transportMarquee 18s linear infinite;
+          }
+
+          .transport-marquee-track > * {
+            flex-shrink: 0;
+          }
+
+          .transport-marquee:hover .transport-marquee-track {
+            animation-play-state: paused;
+          }
+
+          .transport-marquee-link {
+            color: #1565c0;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: clamp(18px, 2.6vw, 28px);
+            letter-spacing: 0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0 clamp(12px, 2.4vw, 32px);
+          }
+
+          .transport-marquee-link::before {
+            content: '🚛';
+            font-size: 1.2em;
+          }
+
+          .transport-marquee-link:focus-visible {
+            outline: 2px solid rgba(21,101,192,0.35);
+            outline-offset: 4px;
+            border-radius: 999px;
+          }
+
+          @keyframes transportMarquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
 
           .transport-marquee {
@@ -1059,6 +1124,21 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           <div style={{ fontSize: 14, color: '#6d6d6d', marginTop: 12 }}>
             {t('advent_program_hint', { defaultValue: 'Розклад може змінюватися через погодні умови. Актуальні оновлення дивіться на офіційному сайті міста Штаєр.' })}
           </div>
+        </div>
+      </div>
+      <div className="transport-marquee">
+        <div className="transport-marquee-track">
+          {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => (
+            <a
+              key={`transport-marquee-${index}`}
+              className="transport-marquee-link"
+              href={transportMarqueeHref}
+              aria-hidden={index >= transportMarqueePhrases.length}
+              tabIndex={index >= transportMarqueePhrases.length ? -1 : undefined}
+            >
+              {phrase}
+            </a>
+          ))}
         </div>
       </div>
       <MainModulesContainer>

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import freeFlagsImg from '../../assets/free_flags.png';
 import diolomImg from '../../assets/diolom.png';
+import busImg from '../../assets/bus_sonne.png';
 import { useModalContent } from '../../hooks';
 import { news } from '../../data/db';
 
@@ -90,12 +91,21 @@ const InfoCenter = () => {
   ];
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-      padding: '2rem 1rem',
-      fontFamily: 'Arial, sans-serif'
-    }}>
+    <div
+      ref={(el) => {
+        if (el && window.location.hash === '#transport-service') {
+          el
+            .querySelector('#transport-service')
+            ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }}
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+        padding: '2rem 1rem',
+        fontFamily: 'Arial, sans-serif'
+      }}
+    >
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto'
@@ -328,6 +338,68 @@ const InfoCenter = () => {
             </div>
           );
         })()}
+
+        {/* Jaroslav Pupovych Transport */}
+        <div
+          id="transport-service"
+          style={{
+            background: 'rgba(255, 255, 255, 0.9)',
+            borderRadius: '20px',
+            padding: '2rem',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            backdropFilter: 'blur(10px)',
+            marginBottom: '3rem',
+            display: 'flex',
+            alignItems: isMobile ? 'center' : 'stretch',
+            gap: '2rem',
+            flexWrap: 'wrap',
+            flexDirection: isMobile ? 'column' : 'row'
+          }}
+        >
+          <img
+            src={busImg}
+            alt={t('transport_service_image_alt', { defaultValue: 'Jaroslav Pupovych Transport' })}
+            style={{
+              width: '100%',
+              maxWidth: 650,
+              height: 'auto',
+              borderRadius: 12,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)'
+            }}
+          />
+          <div
+            style={{
+              flex: 1,
+              minWidth: '300px',
+              fontSize: '16px',
+              color: '#2c3e50',
+              lineHeight: '1.6',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem'
+            }}
+          >
+            <h2
+              style={{
+                fontSize: '1.8rem',
+                color: '#1565c0',
+                margin: 0,
+                fontWeight: 'bold'
+              }}
+            >
+              {t('transport_service_title', { defaultValue: 'Переїзд? Перевезення меблів? Немає проблем! 🚛' })}
+            </h2>
+            <div
+              style={{ lineHeight: '1.6' }}
+              dangerouslySetInnerHTML={{
+                __html: t('transport_service_text', {
+                  defaultValue: `Jaroslav Pupovych Transport – ваш партнер для перевезень до 3,5 т<br/>4400 Штайр<br/><br/>Наші послуги:<br/>- Побутові переїзди<br/>- Перевезення меблів<br/>- Гнучкий підбір часу ⏰<br/>- Допомога з завантаженням та розвантаженням за бажанням 📦<br/>- Чесні ціни та швидке виконання<br/><br/>Зв’яжіться з нами зараз і сплануйте свій переїзд без стресу!<br/>Тел.:<br/>+4368181799539<br/>E-mail:<br/>popovych.transport@gmail.com`
+                })
+              }}
+            />
+          </div>
+        </div>
 
         {/* Секции информации */}
         <div style={{

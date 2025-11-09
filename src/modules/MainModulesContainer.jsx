@@ -8,7 +8,7 @@ const MainModulesContainer = ({ children }) => (
       width: '95vw',
       minWidth: 320,
       margin: '0 auto',
-      padding: '2vw 0',
+      padding: 0,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
