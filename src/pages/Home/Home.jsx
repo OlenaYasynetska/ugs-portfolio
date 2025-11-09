@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import background from '../../assets/background.png';
 import Hero from '../../modules/Hero';
 import NewsBlock from '../../modules/NewsBlock';
@@ -1128,17 +1129,20 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
       </div>
       <div className="transport-marquee">
         <div className="transport-marquee-track">
-          {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => (
-            <a
-              key={`transport-marquee-${index}`}
-              className="transport-marquee-link"
-              href={transportMarqueeHref}
-              aria-hidden={index >= transportMarqueePhrases.length}
-              tabIndex={index >= transportMarqueePhrases.length ? -1 : undefined}
-            >
-              {phrase}
-            </a>
-          ))}
+          {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => {
+            const isClone = index >= transportMarqueePhrases.length;
+            return (
+              <Link
+                key={`transport-marquee-${index}`}
+                className="transport-marquee-link"
+                to={transportMarqueeHref}
+                aria-hidden={isClone}
+                tabIndex={isClone ? -1 : undefined}
+              >
+                {phrase}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <MainModulesContainer>
