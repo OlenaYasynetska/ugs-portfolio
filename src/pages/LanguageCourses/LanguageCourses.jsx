@@ -16,7 +16,7 @@ const LanguageCourses = () => {
     // Обновление title
     const titles = {
       uk: 'Курси німецької мови в Штайрі | Мовні курси | UGS Steyr',
-      de: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
+      at: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
       en: 'German Language Courses in Steyr | Language Courses | UGS Steyr'
     };
     document.title = titles[currentLang] || titles.uk;
