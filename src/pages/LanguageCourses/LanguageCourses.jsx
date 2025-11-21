@@ -16,7 +16,7 @@ const LanguageCourses = () => {
     // Обновление title
     const titles = {
       uk: 'Курси німецької мови в Штайрі | Мовні курси | UGS Steyr',
-      at: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
+      a: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
       en: 'German Language Courses in Steyr | Language Courses | UGS Steyr'
     };
     document.title = titles[currentLang] || titles.uk;
@@ -200,7 +200,7 @@ const LanguageCourses = () => {
             justifyContent: 'center',
             gap: '10px'
           }}>
-            🇩🇪 {t('german_courses_title', 'Курси німецької мови в Штайрі - реєструйся прямо зараз!')}
+            🇦🇹 {t('german_courses_title', 'Курси німецької мови в Штайрі - реєструйся прямо зараз!')}
           </h2>
 
           <p style={{ 
