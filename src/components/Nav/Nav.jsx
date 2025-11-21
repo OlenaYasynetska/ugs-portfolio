@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +10,7 @@ const Nav = ({ style }) => {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || 'en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const timeoutRef = useRef(null);
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
@@ -17,7 +18,43 @@ const Nav = ({ style }) => {
   };
 
   // Закрывать меню при переходе по ссылке
-  const handleNavClick = () => setMobileMenuOpen(false);
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+    // Очищаем таймер при закрытии меню
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  // Автоматическое закрытие меню через 20 секунд
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      // Очищаем предыдущий таймер, если он существует
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      
+      // Устанавливаем новый таймер на 5 секунд
+      timeoutRef.current = setTimeout(() => {
+        setMobileMenuOpen(false);
+        timeoutRef.current = null;
+      }, 5000); // 5 секунд = 5000 миллисекунд
+    } else {
+      // Если меню закрыто, очищаем таймер
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    }
+
+    // Очистка таймера при размонтировании компонента
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className={styles.header} style={style}>
@@ -33,6 +70,9 @@ const Nav = ({ style }) => {
           </li>
           <li>
             <NavLink to="/about" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('about')}</NavLink>
+          </li>
+          <li>
+            <NavLink to="/language-courses" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('language_courses')}</NavLink>
           </li>
           <li>
             <NavLink to="/culture" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('culture')}</NavLink>
@@ -51,7 +91,18 @@ const Nav = ({ style }) => {
           </li>
         </ul>
         {/* Бургер-меню для мобильных */}
-        <button className={styles.burger} onClick={() => setMobileMenuOpen(v => !v)} aria-label="Открыть меню">
+        <button 
+          className={styles.burger} 
+          onClick={() => {
+            // Очищаем таймер при переключении меню
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+              timeoutRef.current = null;
+            }
+            setMobileMenuOpen(v => !v);
+          }} 
+          aria-label="Открыть меню"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -60,6 +111,7 @@ const Nav = ({ style }) => {
           <div className={styles.mobileMenu}>
             <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink} end>{t('home')}</NavLink>
             <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('about')}</NavLink>
+            <NavLink to="/language-courses" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('language_courses')}</NavLink>
             <NavLink to="/culture" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('culture')}</NavLink>
             <NavLink to="/infocenter" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('info_center_title')}</NavLink>
             {/* <NavLink to="/help" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('help')}</NavLink>

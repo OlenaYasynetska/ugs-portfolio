@@ -165,7 +165,7 @@
   border-radius: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1300px) {
   .nav ul {
     display: none !important;
   }
