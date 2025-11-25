@@ -35,10 +35,17 @@ export const modalContentData = {
         ]
       },
       {
-        type: 'tip',
-        title: 'Порада',
-        content: 'Зберігайте всі документи в безпечному місці та робіть їх копії.',
-        style: 'info'
+        type: 'info',
+        title: 'Реєстрація в Вельсі',
+        content: 'Тільки Wels, картку чекати місяць-2, як пощастить:',
+        style: 'warning'
+      },
+      {
+        type: 'link',
+        title: 'Сайт поліції Австрії (Верхня Австрія)',
+        url: 'https://www.polizei.gv.at/ooe/start.aspx?nwid=513178673854566E6C594D3D&ctrl=3734335266674D385951343D&nwo=0',
+        description: 'Berichte aus der LPD Oberösterreich - Landespolizeidirektion Oberösterreich',
+        linkText: 'www.polizei.gv.at'
       }
     ]
   },

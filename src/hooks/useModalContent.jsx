@@ -37,6 +37,7 @@ export const useModalContent = () => {
           {section.type === 'contacts' && renderContacts(section)}
           {section.type === 'security' && renderSecurity(section)}
           {section.type === 'emergency' && renderEmergency(section)}
+          {section.type === 'link' && renderLink(section)}
         </div>
       ))}
     </div>
@@ -206,6 +207,46 @@ export const useModalContent = () => {
           </li>
         ))}
       </ul>
+    </div>
+  );
+
+  const renderLink = (section) => (
+    <div style={{
+      backgroundColor: '#e3f2fd',
+      padding: '1rem',
+      borderRadius: '8px',
+      border: '1px solid #bbdefb',
+      marginTop: '1rem'
+    }}>
+      <h3 style={{ fontSize: '1.1rem', color: '#1565c0', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+        🔗 {section.title}:
+      </h3>
+      {section.description && (
+        <p style={{ margin: '0 0 0.5rem 0', color: '#2c3e50', lineHeight: '1.5', fontSize: '0.9rem' }}>
+          {section.description}
+        </p>
+      )}
+      <a
+        href={section.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: '#1565c0',
+          textDecoration: 'none',
+          fontWeight: '600',
+          fontSize: '1rem',
+          display: 'inline-block',
+          marginTop: '0.5rem'
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.textDecoration = 'underline';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.textDecoration = 'none';
+        }}
+      >
+        {section.linkText || section.url}
+      </a>
     </div>
   );
 
