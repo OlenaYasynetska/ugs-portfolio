@@ -512,7 +512,17 @@ i18n.use(initReactI18next).init({
         uruguay_pensioners: 'low cost of living, generous tax benefits and the possibility of quickly obtaining permanent residence',
         spain_pensioners: 'excellent medicine, high level of safety and friendly society',
         mauritius_pensioners: 'clean beaches, mild climate and the possibility of quickly obtaining residency',
-        portugal_pensioners: 'high quality of life, affordable prices, warm climate and friendly attitude towards foreigners'
+        portugal_pensioners: 'high quality of life, affordable prices, warm climate and friendly attitude towards foreigners',
+        // Library reading week translations
+        library_reading_week_title: 'Reading Week at Steyr Library',
+        library_image_alt: 'Steyr Library',
+        library_greeting: 'Good day, dear compatriots and friends!',
+        library_intro: 'The city library Bücherei der Stadt Steyr has launched a wonderful multilingual reading week. This is a great opportunity to experience the power of stories and unite through reading.',
+        library_free_entry: 'Entry is completely free, and the program is rich and informative!',
+        library_ukrainian_reading: 'I will read in Ukrainian on Wednesday, November 12, at 17:00.',
+        library_children_book: 'For our youngest listeners, I have selected an interesting and good book designed for children aged 5-8 years.',
+        library_invitation: 'Come with children, family and friends — let\'s create a warm Ukrainian atmosphere among the pages of books and children\'s laughter 💛💙',
+        library_closing: 'I will be sincerely happy to meet you! 😊'
       }
     },
     ua: {
@@ -725,6 +735,16 @@ i18n.use(initReactI18next).init({
         vienna_parks_augarten: 'старовинний бароковий парк для спорту та відпочинку',
         vienna_parks_prater: 'зелена зона для людей і тварин',
         vienna_parks_schoenbrunn: 'барокові алеї та вид на Глорієтту',
+        // Library reading week translations
+        library_reading_week_title: 'Читацький тиждень у бібліотеці Steyr',
+        library_image_alt: 'Бібліотека Steyr',
+        library_greeting: 'Доброго дня, дорогі земляки та друзі!',
+        library_intro: 'У міській бібліотеці Bücherei der Stadt Steyr стартував чудовий читацький тиждень багатьма мовами світу. Це прекрасна нагода відчути силу історій та об\'єднатися через читання.',
+        library_free_entry: 'Вхід абсолютно вільний, а програма — насичена й пізнавальна!',
+        library_ukrainian_reading: 'Я буду читати українською у середу, 12 листопада, о 17:00.',
+        library_children_book: 'Для наших найменших слухачів я підібрала цікаву й добру книжку, розраховану на дітей віком 5–8 років.',
+        library_invitation: 'Приходьте з дітками, родиною та друзями — давайте створимо теплу українську атмосферу серед сторінок книжок і дитячого сміху 💛💙',
+        library_closing: 'Буду щиро рада зустрічі! 😊',
         // EU Protection Status translations
         eu_protection_title: 'ЄС готується перейти від тимчасового захисту українців до більш стійких правових статусів',
         eu_protection_description: 'Рада Європейського Союзу схвалила рекомендацію щодо поетапного виходу з режиму тимчасового захисту, який нині діє для українців, переміщених війною, та продовжений до 4 березня 2027 року.\n\nРекомендації включають:\n• Надання національних дозволів на проживання тим, хто працює, навчається, перебуває в сім\'ї або відповідає іншим встановленим умовам.\n• Можливість переходу до статусів за законами ЄС, особливо для висококваліфікованих фахівців.\n• Організацію добровільного повернення до України, коли це дозволяє ситуація, з підтримкою та скоординованими умовами між державами-членами.\n• Зобов\'язання інформувати переміщених осіб про їх поточні права, як зміняться пільги та що відбудеться після виходу з тимчасового захисту.\n\nУ комюніке ЄС підкреслюється, що ця ініціатива не спрямована на прискорення припинення захисту, а скоріше на підготовку інфраструктури та правової бази для забезпечення нормативно правильного, справедливого та поступового переходу від тимчасового захисту до більш постійних умов.',
@@ -788,7 +808,17 @@ i18n.use(initReactI18next).init({
         uruguay_pensioners: 'niedrige Lebenshaltungskosten, großzügige Steuervorteile und die Möglichkeit, schnell eine dauerhafte Aufenthaltserlaubnis zu erhalten',
         spain_pensioners: 'ausgezeichnete Medizin, hohes Sicherheitsniveau und freundliche Gesellschaft',
         mauritius_pensioners: 'saubere Strände, mildes Klima und die Möglichkeit, schnell eine Aufenthaltserlaubnis zu erhalten',
-        portugal_pensioners: 'hohe Lebensqualität, erschwingliche Preise, warmes Klima und freundliche Haltung gegenüber Ausländern'
+        portugal_pensioners: 'hohe Lebensqualität, erschwingliche Preise, warmes Klima und freundliche Haltung gegenüber Ausländern',
+        // Library reading week translations
+        library_reading_week_title: 'Lese-Woche in der Steyrer Bibliothek',
+        library_image_alt: 'Steyrer Bibliothek',
+        library_greeting: 'Guten Tag, liebe Landsleute und Freunde!',
+        library_intro: 'In der Stadtbibliothek Bücherei der Stadt Steyr hat eine wunderbare mehrsprachige Lese-Woche begonnen. Dies ist eine großartige Gelegenheit, die Kraft der Geschichten zu erleben und sich durch das Lesen zu vereinen.',
+        library_free_entry: 'Der Eintritt ist völlig kostenlos, und das Programm ist reichhaltig und informativ!',
+        library_ukrainian_reading: 'Ich werde am Mittwoch, dem 12. November, um 17:00 Uhr auf Ukrainisch lesen.',
+        library_children_book: 'Für unsere jüngsten Zuhörer habe ich ein interessantes und gutes Buch ausgewählt, das für Kinder im Alter von 5-8 Jahren konzipiert ist.',
+        library_invitation: 'Kommt mit Kindern, Familie und Freunden — lasst uns eine warme ukrainische Atmosphäre zwischen den Buchseiten und dem Lachen der Kinder schaffen 💛💙',
+        library_closing: 'Ich freue mich sehr auf das Treffen! 😊'
       }
     }
   },

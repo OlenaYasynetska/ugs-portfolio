@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Main from '../../components/Main/Main';
 import { useCardAnimation } from '../../hooks';
-import parksImg from '../../assets/Parks.png';
 import pensionImg from '../../assets/Pension.png';
+import buechereiImg from '../../assets/Bücherei.png';
 
 const Culture = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   // Хук для анимации карточек
   const { getFullCSS } = useCardAnimation(8, {
@@ -22,7 +22,7 @@ const Culture = () => {
         {getFullCSS()}
       </style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-        {/* Парки та зелені зони Відня */}
+        {/* Читацький тиждень у бібліотеці Steyr */}
         <div 
           style={{ 
             background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
@@ -32,86 +32,68 @@ const Culture = () => {
             boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
             marginBottom: '40px',
             maxWidth: '1200px',
-            margin: '0 auto 40px auto'
+            margin: '0 auto 40px auto',
+            display: 'flex',
+            gap: '25px',
+            alignItems: 'flex-start'
           }}
         >
-          <h2 style={{ 
-            color: '#0057b8', 
-            marginBottom: '20px',
-            fontSize: '1.8em',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '10px'
-          }}>
-            🍃 {t('vienna_parks_title', 'Парки та зелені зони Відня')}
-          </h2>
-
+          {/* Картинка слева */}
           <div style={{ 
-            textAlign: 'center', 
-            marginBottom: '25px' 
+            flex: '0 0 auto',
+            minWidth: '300px',
+            maxWidth: '400px'
           }}>
             <img 
-              src={parksImg} 
-              alt="Парки та зелені зони Відня" 
+              src={buechereiImg} 
+              alt={t('library_image_alt', 'Бібліотека Steyr')} 
               style={{ 
-                maxWidth: '100%', 
+                width: '100%',
                 height: 'auto', 
                 borderRadius: '12px', 
                 boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
               }} 
             />
           </div>
-          
-          <p style={{ 
-            fontSize: '1.1em', 
-            lineHeight: '1.6', 
-            color: '#333',
-            textAlign: 'center',
-            marginBottom: '25px',
-            fontStyle: 'italic'
-          }}>
-            {t('vienna_parks_intro', 'Осінь вже відчувається у повітрі, але сонце все ще дарує нам теплі промінці. Найкращий час, щоб прогулятися парками та зеленими зонами Відня - відчути затишок природи, насолодитися кольорами листя й упіймати останнє тепло.')}
-          </p>
 
-          <h3 style={{ 
-            color: '#0057b8', 
-            marginBottom: '15px',
-            fontSize: '1.3em',
-            fontWeight: 'bold',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}>
-            🏛️ {t('vienna_parks_popular', 'Популярні місця:')}
-          </h3>
+          {/* Текст справа */}
+          <div 
+            style={{ 
+              flex: '1 1 auto',
+              fontSize: '1.1em', 
+              lineHeight: '1.8', 
+              color: '#333',
+              textAlign: 'left'
+            }}
+          >
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600' }}>
+              🌟 Доброго дня, дорогі земляки та друзі! 🌟
+            </p>
+            
+            <p style={{ marginBottom: '15px' }}>
+              У міській бібліотеці Bücherei der Stadt Steyr стартував чудовий читацький тиждень багатьма мовами світу. Це прекрасна нагода відчути силу історій та об'єднатися через читання.
+            </p>
 
-          <ul style={{ 
-            lineHeight: '1.8',
-            fontSize: '1em',
-            color: '#333'
-          }}>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Stadtpark</strong> - {t('vienna_parks_stadtpark', 'перший публічний парк Відня, де живе дух Йоганна Штрауса')}
-            </li>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Burggarten</strong> - {t('vienna_parks_burggarten', 'зелені галявини з видом на імператорську архітектуру')}
-            </li>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Volksgarten</strong> - {t('vienna_parks_volksgarten', 'чарівний сад троянд і храм Тесея')}
-            </li>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Augarten</strong> - {t('vienna_parks_augarten', 'старовинний бароковий парк для спорту та відпочинку')}
-            </li>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Prater</strong> - {t('vienna_parks_prater', 'зелена зона для людей і тварин')}
-            </li>
-            <li className="list-item" style={{ marginBottom: '12px' }}>
-              <strong>📍 Сади Шенбрунн</strong> - {t('vienna_parks_schoenbrunn', 'барокові алеї та вид на Глорієтту')}
-            </li>
-          </ul>
+            <p style={{ marginBottom: '15px', fontWeight: '500' }}>
+              📚 Вхід абсолютно вільний, а програма — насичена й пізнавальна!
+            </p>
+
+            <p style={{ marginBottom: '15px', fontWeight: '500' }}>
+              👩‍🏫 Я буду читати українською у середу, 12 листопада, о 17:00.
+            </p>
+
+            <p style={{ marginBottom: '15px' }}>
+              Для наших найменших слухачів я підібрала цікаву й добру книжку, розраховану на дітей віком 5–8 років.
+            </p>
+
+            <p style={{ marginBottom: '15px' }}>
+              Приходьте з дітками, родиною та друзями — давайте створимо теплу українську атмосферу серед сторінок книжок і дитячого сміху 💛💙
+            </p>
+
+            <p style={{ marginBottom: '0', fontStyle: 'italic' }}>
+              Буду щиро рада зустрічі! 😊
+            </p>
+          </div>
         </div>
 
         {/* Картинка Pension */}
