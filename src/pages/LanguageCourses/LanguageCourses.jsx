@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import Main from '../../components/Main/Main';
+import bfiImg from '../../assets/BFI.png';
 
 const LanguageCourses = () => {
   const { t, i18n } = useTranslation();
@@ -161,6 +162,37 @@ const LanguageCourses = () => {
     }
   };
 
+  const defaultBfiText =
+    'Чудова новина — BFI продовжує набір на online-курси з вивчення німецької!\nХочете вивчити німецьку мову та отримати перспективи працевлаштування в Австрії?\nВи втомились від бюрократії і потребуєте допомоги з записом на курс?\nМи раді повідомити, що набір на онлайн-курси німецької мови від лідера освітнього ринку Австрії BFI для тимчасово переміщених осіб з України продовжується. Якщо ви або ваші знайомі перебуваєте в Австрії та зацікавлені у швидкому й ефективному вивченні німецької онлайн — звертайтеся до нас для запису.\nКурси є повністю безкоштовними, оскільки фінансуються Австрійським інтеграційним фондом ÖIF.';
+
+  const bfiParagraphs = t('bfi_section_text', defaultBfiText)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  const bfiContacts = [
+    {
+      label: t('bfi_contact_email_label', 'E-mail'),
+      value: 'online-courses@workconsult.ua',
+      href: 'mailto:online-courses@workconsult.ua',
+    },
+    {
+      label: t('bfi_contact_telegram_label', 'Telegram-бот'),
+      value: '@deutschkurs_bfi_bot',
+      href: 'https://t.me/deutschkurs_bfi_bot',
+    },
+    {
+      label: t('bfi_contact_phone_label', 'Телефон'),
+      value: '+380(67)586-74-89',
+      href: 'tel:+380675867489',
+    },
+    {
+      label: t('bfi_contact_website_label', 'Веб-сторінка'),
+      value: 'https://de4ua.workconsult.ua',
+      href: 'https://de4ua.workconsult.ua',
+    },
+  ];
+
   return (
     <Main>
       {/* JSON-LD структурированные данные для поисковых роботов */}
@@ -179,6 +211,101 @@ const LanguageCourses = () => {
         }}>
           {t('language_courses', 'Мовні курси')}
         </h1>
+
+        {/* BFI Online Courses Section */}
+        <section
+          style={{
+            background: '#fff',
+            padding: '30px',
+            borderRadius: '16px',
+            border: '1px solid #e5e7eb',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            marginBottom: '40px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src={bfiImg}
+            alt={t('bfi_image_alt', 'BFI online courses')}
+            style={{
+              flex: '1 1 280px',
+              maxWidth: '420px',
+              width: '100%',
+              borderRadius: '12px',
+              boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
+            }}
+          />
+          <div style={{ flex: '1 1 320px' }}>
+            <h2
+              style={{
+                color: '#0057b8',
+                marginBottom: '20px',
+                fontSize: '1.8em',
+                fontWeight: 'bold',
+              }}
+            >
+              {t('bfi_section_title', 'Online-курси BFI з німецької')}
+            </h2>
+
+            <div style={{ color: '#314155', lineHeight: '1.6', marginBottom: '20px' }}>
+              {bfiParagraphs.map((paragraph, index) => (
+                <p key={`bfi-top-paragraph-${index}`} style={{ marginBottom: '12px' }}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <div
+              style={{
+                background: '#f8fbff',
+                borderRadius: '12px',
+                padding: '16px 20px',
+                border: '1px solid #e0e7ff',
+                marginBottom: '20px',
+              }}
+            >
+              <h3 style={{ margin: '0 0 12px 0', color: '#0369a1', fontSize: '1.1rem' }}>
+                {t('bfi_contacts_title', 'Контакти')}
+              </h3>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                {bfiContacts.map((contact) => (
+                  <li key={`bfi-top-contact-${contact.label}`} style={{ marginBottom: '8px', fontSize: '0.95rem' }}>
+                    <strong>{contact.label}:</strong>{' '}
+                    <a
+                      href={contact.href}
+                      target={contact.href.startsWith('http') ? '_blank' : undefined}
+                      rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      style={{ color: '#0d6efd', textDecoration: 'none' }}
+                    >
+                      {contact.value}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href="https://de4ua.workconsult.ua"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                background: '#1d4ed8',
+                color: '#fff',
+                padding: '12px 20px',
+                borderRadius: '8px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                boxShadow: '0 4px 10px rgba(37, 99, 235, 0.3)',
+              }}
+            >
+              {t('bfi_button_label', 'Зареєструватися на сайті')}
+            </a>
+          </div>
+        </section>
         
         {/* Основная карточка с информацией о курсах */}
         <section itemScope itemType="https://schema.org/Service" style={{ 
@@ -386,9 +513,6 @@ const LanguageCourses = () => {
               border: '1px solid #ddd',
               boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
             }}>
-              <p style={{ marginBottom: '12px', color: '#333' }}>
-                {t('registration_options', 'Через сайт або безпосередньо від мене')}
-              </p>
               <p style={{ marginBottom: '8px', color: '#333' }}>
                 <strong>{t('phone', 'Телефон')}:</strong>{' '}
                 <a href="tel:+4367687347277" style={{ color: '#0057b8', textDecoration: 'none', fontWeight: 'bold' }}>
@@ -408,6 +532,7 @@ const LanguageCourses = () => {
               </p>
             </div>
           </div>
+
         </section>
       </article>
     </Main>

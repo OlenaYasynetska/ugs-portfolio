@@ -35,17 +35,18 @@ export const modalContentData = {
         ]
       },
       {
-        type: 'info',
-        title: 'Реєстрація в Вельсі',
-        content: 'Тільки Wels, картку чекати місяць-2, як пощастить:',
-        style: 'warning'
-      },
-      {
         type: 'link',
         title: 'Сайт поліції Австрії (Верхня Австрія)',
         url: 'https://www.polizei.gv.at/ooe/start.aspx?nwid=513178673854566E6C594D3D&ctrl=3734335266674D385951343D&nwo=0',
         description: 'Berichte aus der LPD Oberösterreich - Landespolizeidirektion Oberösterreich',
         linkText: 'www.polizei.gv.at'
+      },
+      {
+        type: 'link',
+        title: 'Локація реєстрації на карті',
+        url: 'https://maps.app.goo.gl/QHDLs27LBpUyRcoa9?g_st=aw',
+        description: 'Google Maps — приймальний пункт у Вельсі для новоприбулих українців (щопонеділка 08:00–13:00). Адреса: 4600 Wels, Dragonerstraße 29',
+        linkText: 'Відкрити на Google Maps'
       }
     ]
   },
