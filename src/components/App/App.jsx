@@ -9,6 +9,8 @@ import About from '../../pages/About/About.tsx';
 import Contacts from '../../pages/Contacts/Contacts';
 import ContactFormPage from '../../pages/ContactFormPage/ContactFormPage';
 import LanguageCourses from '../../pages/LanguageCourses/LanguageCourses';
+import LessonA1 from '../../pages/LanguageCourses/LessonA1.jsx';
+import LessonA1Part2 from '../../pages/LanguageCourses/LessonA1Part2.jsx';
 import Culture from '../../pages/Culture/Culture';
 import InfoCenter from '../../pages/InfoCenter/InfoCenter';
 import NotFound from '../../pages/NotFound/NotFound';
@@ -43,6 +45,8 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/language-courses" element={<LanguageCourses />} />
+          <Route path="/language-courses/a1" element={<LessonA1 />} />
+          <Route path="/language-courses/a1/part2" element={<LessonA1Part2 />} />
           <Route path="/culture" element={<Culture />} />
           <Route path="/infocenter" element={<InfoCenter />} />
           <Route path="/contact" element={<ContactFormPage />} />

@@ -1,166 +1,41 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Main from '../../components/Main/Main';
 import bfiImg from '../../assets/BFI.png';
+import { useSEO } from '../../hooks/useSEO';
+import { getStructuredData, GRAMMAR_HEADINGS, GRAMMAR_LEVELS } from '../../data/languageCoursesData';
 
 const LanguageCourses = () => {
   const { t, i18n } = useTranslation();
-  const location = useLocation();
+  const navigate = useNavigate();
   const currentLang = i18n.language?.split('-')[0] || 'uk';
+  const grammarHeading = GRAMMAR_HEADINGS[currentLang] || GRAMMAR_HEADINGS.uk;
+  const grammarLevels = GRAMMAR_LEVELS[currentLang] || GRAMMAR_LEVELS.uk;
 
-  // Обновление мета-тегов для SEO
-  useEffect(() => {
-    const baseUrl = 'https://ugs-info.at';
-    const pageUrl = `${baseUrl}${location.pathname}`;
-    
-    // Обновление title
-    const titles = {
+  // SEO настройки
+  useSEO({
+    titles: {
       uk: 'Курси німецької мови в Штайрі | Мовні курси | UGS Steyr',
-      a: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
+      de: 'Deutschkurse in Steyr | Sprachkurse | UGS Steyr',
       en: 'German Language Courses in Steyr | Language Courses | UGS Steyr'
-    };
-    document.title = titles[currentLang] || titles.uk;
-
-    // Обновление description
-    const descriptions = {
+    },
+    descriptions: {
       uk: 'Курси німецької мови в Штайрі для українців. Рівні A1, A2, B1. Практичні заняття, невеликі групи, досвідчені тренери. Реєстрація: 0676 8734 7277',
       de: 'Deutschkurse in Steyr für Ukrainer. Niveaus A1, A2, B1. Praktische Unterrichtsstunden, kleine Gruppen, erfahrene Trainer. Anmeldung: 0676 8734 7277',
       en: 'German language courses in Steyr for Ukrainians. Levels A1, A2, B1. Practical lessons, small groups, experienced trainers. Registration: 0676 8734 7277'
-    };
-    updateMetaTag('name', 'description', descriptions[currentLang] || descriptions.uk);
-    updateMetaTag('property', 'og:description', descriptions[currentLang] || descriptions.uk);
-    updateMetaTag('property', 'twitter:description', descriptions[currentLang] || descriptions.uk);
-
-    // Обновление og:title
-    updateMetaTag('property', 'og:title', titles[currentLang] || titles.uk);
-    updateMetaTag('property', 'twitter:title', titles[currentLang] || titles.uk);
-
-    // Обновление URL
-    updateMetaTag('property', 'og:url', pageUrl);
-    updateMetaTag('property', 'twitter:url', pageUrl);
-
-    // Обновление keywords
-    const keywords = {
+    },
+    keywords: {
       uk: 'курси німецької мови, мовні курси Штайр, німецька мова для українців, курси A1 A2 B1, навчання німецької, інтеграція Австрія, UGS Steyr',
       de: 'Deutschkurse, Sprachkurse Steyr, Deutsch für Ukrainer, Kurse A1 A2 B1, Deutsch lernen, Integration Österreich, UGS Steyr',
       en: 'German language courses, language courses Steyr, German for Ukrainians, courses A1 A2 B1, learn German, integration Austria, UGS Steyr'
-    };
-    updateMetaTag('name', 'keywords', keywords[currentLang] || keywords.uk);
-
-    // Canonical URL
-    updateCanonical(pageUrl);
-  }, [currentLang, location.pathname]);
-
-  // Функции для обновления мета-тегов
-  const updateMetaTag = (attribute, value, content) => {
-    const selector = attribute === 'name' 
-      ? `meta[name="${value}"]` 
-      : `meta[property="${value}"]`;
-    let meta = document.querySelector(selector);
-    
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute(attribute, value);
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', content);
-  };
-
-  const updateCanonical = (url) => {
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', url);
-  };
+    },
+    baseUrl: 'https://ugs-info.at',
+    currentLang
+  });
 
   // JSON-LD структурированные данные для SEO
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: 'UGS Steyr - German Language Courses',
-    description: t('german_courses_description', 'Наші курси німецької мови в Штайрі пропонують вам практичні заняття, невеликі групи та досвідчених тренерів.'),
-    url: 'https://ugs-info.at/language-courses',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Steyr',
-      addressRegion: 'Upper Austria',
-      addressCountry: 'AT',
-      postalCode: '4400'
-    },
-    telephone: '+4367687347277',
-    email: 'contact@ugs-info.at',
-    offers: [
-      {
-        '@type': 'Course',
-        name: 'A1 German Course Part 1',
-        description: 'A1 level German language course for beginners',
-        provider: {
-          '@type': 'Organization',
-          name: 'UGS Steyr'
-        },
-        courseCode: 'A1-P1',
-        startDate: '2025-01-19',
-        schedule: 'Monday and Wednesday 12:00-15:00, Friday 9:00-12:00',
-        price: '185',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock'
-      },
-      {
-        '@type': 'Course',
-        name: 'A2 German Course Part 1',
-        description: 'A2 level German language course',
-        provider: {
-          '@type': 'Organization',
-          name: 'UGS Steyr'
-        },
-        courseCode: 'A2-P1',
-        startDate: '2025-12-10',
-        schedule: 'Monday, Wednesday and Thursday 9:00-12:00',
-        price: '185',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock'
-      },
-      {
-        '@type': 'Course',
-        name: 'A2 German Course Part 1 (Day)',
-        description: 'A2 level German language course - day schedule',
-        provider: {
-          '@type': 'Organization',
-          name: 'UGS Steyr'
-        },
-        courseCode: 'A2-P1-DAY',
-        startDate: '2026-01-13',
-        schedule: 'Tuesday and Thursday 14:00-17:00',
-        price: '185',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock'
-      },
-      {
-        '@type': 'Course',
-        name: 'B1 German Course Part 1',
-        description: 'B1 level German language course',
-        provider: {
-          '@type': 'Organization',
-          name: 'UGS Steyr'
-        },
-        courseCode: 'B1-P1',
-        startDate: '2026-01-13',
-        schedule: 'Tuesday and Thursday 17:00-20:00',
-        price: '185',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock'
-      }
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127'
-    }
-  };
+  const structuredData = getStructuredData(t);
 
   const defaultBfiText =
     'Чудова новина — BFI продовжує набір на online-курси з вивчення німецької!\nХочете вивчити німецьку мову та отримати перспективи працевлаштування в Австрії?\nВи втомились від бюрократії і потребуєте допомоги з записом на курс?\nМи раді повідомити, що набір на онлайн-курси німецької мови від лідера освітнього ринку Австрії BFI для тимчасово переміщених осіб з України продовжується. Якщо ви або ваші знайомі перебуваєте в Австрії та зацікавлені у швидкому й ефективному вивченні німецької онлайн — звертайтеся до нас для запису.\nКурси є повністю безкоштовними, оскільки фінансуються Австрійським інтеграційним фондом ÖIF.';
@@ -534,6 +409,87 @@ const LanguageCourses = () => {
           </div>
 
         </section>
+
+        <div
+          style={{
+            margin: '40px 0 60px',
+            width: '100%',
+            background: '#eef2f5',
+            borderRadius: '18px',
+            border: '1px solid rgba(15, 23, 42, 0.08)',
+            boxShadow: '0 15px 35px rgba(15, 23, 42, 0.12)',
+            padding: '35px 25px',
+            color: '#0f172a',
+            fontFamily: '"Playfair Display", "Times New Roman", serif',
+            lineHeight: 1.4
+          }}
+        >
+          <p
+            style={{
+              fontSize: 'clamp(1.6em, 4vw, 2.4em)',
+              letterSpacing: '0.04em',
+              textAlign: 'center',
+              marginBottom: '25px'
+            }}
+          >
+            {grammarHeading}
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '20px',
+              fontSize: '1em'
+            }}
+          >
+            {['A1', 'A2', 'B1'].map((level) => {
+              const isA1 = level === 'A1';
+              return (
+                <div
+                  key={level}
+                  style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(15, 23, 42, 0.1)',
+                    boxShadow: '0 10px 25px rgba(15, 23, 42, 0.08)',
+                    padding: '25px',
+                    textAlign: 'center',
+                    cursor: isA1 ? 'pointer' : 'default',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onClick={isA1 ? () => navigate('/language-courses/a1') : undefined}
+                  onKeyDown={
+                    isA1
+                      ? (e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            navigate('/language-courses/a1');
+                          }
+                        }
+                      : undefined
+                  }
+                  role={isA1 ? 'button' : undefined}
+                  tabIndex={isA1 ? 0 : undefined}
+                >
+                  <div
+                    style={{
+                      fontSize: '2.2em',
+                      fontWeight: '700',
+                      color: '#0f172a',
+                      marginBottom: '10px'
+                    }}
+                  >
+                    {level}
+                  </div>
+                  <div style={{ color: '#475569', fontSize: '0.95em' }}>
+                    {grammarLevels[level]}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </article>
     </Main>
   );

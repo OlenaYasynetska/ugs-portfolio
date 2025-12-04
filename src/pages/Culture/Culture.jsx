@@ -19,11 +19,31 @@ const Culture = () => {
   return (
     <Main>
       <style>
-        {getFullCSS()}
+        {`
+          ${getFullCSS()}
+
+          @media (max-width: 768px) {
+            .library-card {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .library-card__image {
+              min-width: 0;
+              max-width: 100%;
+              margin-bottom: 18px;
+            }
+
+            .library-card__text {
+              font-size: 1em;
+            }
+          }
+        `}
       </style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
         {/* Читацький тиждень у бібліотеці Steyr */}
         <div 
+          className="library-card"
           style={{ 
             background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
             padding: '25px', 
@@ -39,11 +59,14 @@ const Culture = () => {
           }}
         >
           {/* Картинка слева */}
-          <div style={{ 
-            flex: '0 0 auto',
-            minWidth: '300px',
-            maxWidth: '400px'
-          }}>
+          <div 
+            className="library-card__image"
+            style={{ 
+              flex: '0 0 auto',
+              minWidth: '300px',
+              maxWidth: '400px'
+            }}
+          >
             <img 
               src={buechereiImg} 
               alt={t('library_image_alt', 'Бібліотека Steyr')} 
@@ -58,6 +81,7 @@ const Culture = () => {
 
           {/* Текст справа */}
           <div 
+            className="library-card__text"
             style={{ 
               flex: '1 1 auto',
               fontSize: '1.1em', 
