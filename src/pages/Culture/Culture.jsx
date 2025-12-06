@@ -4,9 +4,10 @@ import Main from '../../components/Main/Main';
 import { useCardAnimation } from '../../hooks';
 import pensionImg from '../../assets/Pension.png';
 import buechereiImg from '../../assets/Bücherei.png';
+import privatSchileImg from '../../assets/Privat_schile.png';
 
 const Culture = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   // Хук для анимации карточек
   const { getFullCSS } = useCardAnimation(8, {
@@ -23,24 +24,125 @@ const Culture = () => {
           ${getFullCSS()}
 
           @media (max-width: 768px) {
-            .library-card {
+            .library-card,
+            .athens-school-card {
               flex-direction: column;
               align-items: center;
             }
 
-            .library-card__image {
+            .library-card__image,
+            .athens-school-card__image {
               min-width: 0;
               max-width: 100%;
               margin-bottom: 18px;
             }
 
-            .library-card__text {
+            .library-card__text,
+            .athens-school-card__text {
               font-size: 1em;
             }
           }
         `}
       </style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
+        {/* Приватна школа АФІНИ */}
+        <div 
+          className="athens-school-card"
+          style={{ 
+            background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', 
+            padding: '25px', 
+            borderRadius: '16px', 
+            border: '1px solid #e9ecef',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+            marginBottom: '40px',
+            maxWidth: '1200px',
+            margin: '0 auto 40px auto',
+            display: 'flex',
+            gap: '25px',
+            alignItems: 'flex-start'
+          }}
+        >
+          {/* Картинка слева */}
+          <div 
+            className="athens-school-card__image"
+            style={{ 
+              flex: '0 0 auto',
+              minWidth: '300px',
+              maxWidth: '400px'
+            }}
+          >
+            <img 
+              src={privatSchileImg} 
+              alt="Приватна школа АФІНИ" 
+              style={{ 
+                width: '100%',
+                height: 'auto', 
+                borderRadius: '12px', 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
+              }} 
+            />
+          </div>
+
+          {/* Текст справа */}
+          <div 
+            className="athens-school-card__text"
+            style={{ 
+              flex: '1 1 auto',
+              fontSize: '1.1em', 
+              lineHeight: '1.8', 
+              color: '#333',
+              textAlign: 'left'
+            }}
+          >
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600' }}>
+              ✨ Триває набір учнів на 2025–2026 навчальний рік!
+            </p>
+            
+            <p style={{ marginBottom: '15px' }}>
+              Приватна школа «АФІНИ» запрошує дітей з 1 по 11 клас, а також на підготовчі курси.
+            </p>
+
+            <p style={{ marginBottom: '15px' }}>
+              Ми пропонуємо комфортне навчальне середовище, сучасний підхід до освіти та зручний розклад.
+            </p>
+
+            <p style={{ marginBottom: '10px' }}>
+              📚 Офіційне зарахування
+            </p>
+
+            <p style={{ marginBottom: '10px' }}>
+              💻 Дистанційна форма навчання
+            </p>
+
+            <p style={{ marginBottom: '15px' }}>
+              🕒 Зручний графік занять
+            </p>
+
+            <p style={{ marginBottom: '15px', fontWeight: '500' }}>
+              Долучайтесь до нашої шкільної родини!
+            </p>
+
+            <p style={{ marginBottom: '10px' }}>
+              Контакти: +380667791944 — Viber, Telegram, WhatsApp
+            </p>
+
+            <p style={{ marginBottom: '0' }}>
+              <a 
+                href="https://cdna.com.ua/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  color: '#1976d2',
+                  textDecoration: 'none',
+                  fontWeight: '500'
+                }}
+              >
+                🌐 https://cdna.com.ua/
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* Читацький тиждень у бібліотеці Steyr */}
         <div 
           className="library-card"

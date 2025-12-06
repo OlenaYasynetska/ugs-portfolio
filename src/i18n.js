@@ -526,7 +526,17 @@ i18n.use(initReactI18next).init({
         german_grammar_heading: 'Easy German Grammar — Learn Online with Fun & Flow',
         a1_grammar_desc: 'Start with the essentials in a friendly pace',
         a2_grammar_desc: 'Strengthen grammar for confident everyday conversation',
-        b1_grammar_desc: 'Move to the next level and express complex ideas'
+        b1_grammar_desc: 'Move to the next level and express complex ideas',
+        athens_school_title: '✨ Enrollment for the 2025–2026 academic year is ongoing!',
+        athens_school_intro: 'Private school "ATHENS" invites children from grades 1 to 11, as well as preparatory courses.',
+        athens_school_offer: 'We offer a comfortable learning environment, modern approach to education and convenient schedule.',
+        athens_school_official: '📚 Official enrollment',
+        athens_school_remote: '💻 Distance learning',
+        athens_school_schedule: '🕒 Convenient class schedule',
+        athens_school_invitation: 'Join our school family!',
+        athens_school_contacts: 'Contacts: +380667791944 — Viber, Telegram, WhatsApp',
+        athens_school_website: '🌐 https://cdna.com.ua/',
+        athens_school_image_alt: 'Private School Athens'
       }
     },
     ua: {
@@ -753,6 +763,16 @@ i18n.use(initReactI18next).init({
         a1_grammar_desc: 'Починай з базових правил у дружньому темпі',
         a2_grammar_desc: 'Закріплюй граматику для впевненого щоденного спілкування',
         b1_grammar_desc: 'Виходь на новий рівень та говори комплексно',
+        athens_school_title: '✨ Триває набір учнів на 2025–2026 навчальний рік!',
+        athens_school_intro: 'Приватна школа «АФІНИ» запрошує дітей з 1 по 11 клас, а також на підготовчі курси.',
+        athens_school_offer: 'Ми пропонуємо комфортне навчальне середовище, сучасний підхід до освіти та зручний розклад.',
+        athens_school_official: '📚 Офіційне зарахування',
+        athens_school_remote: '💻 Дистанційна форма навчання',
+        athens_school_schedule: '🕒 Зручний графік занять',
+        athens_school_invitation: 'Долучайтесь до нашої шкільної родини!',
+        athens_school_contacts: 'Контакти: +380667791944 — Viber, Telegram, WhatsApp',
+        athens_school_website: '🌐 https://cdna.com.ua/',
+        athens_school_image_alt: 'Приватна школа АФІНИ',
         // EU Protection Status translations
         eu_protection_title: 'ЄС готується перейти від тимчасового захисту українців до більш стійких правових статусів',
         eu_protection_description: 'Рада Європейського Союзу схвалила рекомендацію щодо поетапного виходу з режиму тимчасового захисту, який нині діє для українців, переміщених війною, та продовжений до 4 березня 2027 року.\n\nРекомендації включають:\n• Надання національних дозволів на проживання тим, хто працює, навчається, перебуває в сім\'ї або відповідає іншим встановленим умовам.\n• Можливість переходу до статусів за законами ЄС, особливо для висококваліфікованих фахівців.\n• Організацію добровільного повернення до України, коли це дозволяє ситуація, з підтримкою та скоординованими умовами між державами-членами.\n• Зобов\'язання інформувати переміщених осіб про їх поточні права, як зміняться пільги та що відбудеться після виходу з тимчасового захисту.\n\nУ комюніке ЄС підкреслюється, що ця ініціатива не спрямована на прискорення припинення захисту, а скоріше на підготовку інфраструктури та правової бази для забезпечення нормативно правильного, справедливого та поступового переходу від тимчасового захисту до більш постійних умов.',
@@ -830,7 +850,17 @@ i18n.use(initReactI18next).init({
         german_grammar_heading: 'Leichte deutsche Grammatik — online lernen und Spaß haben',
         a1_grammar_desc: 'Starte mit den Grundlagen in angenehmem Tempo',
         a2_grammar_desc: 'Festige die Grammatik für sichere Gespräche im Alltag',
-        b1_grammar_desc: 'Gehe aufs nächste Level und sprich komplexe Gedanken aus'
+        b1_grammar_desc: 'Gehe aufs nächste Level und sprich komplexe Gedanken aus',
+        athens_school_title: '✨ Die Anmeldung für das Schuljahr 2025–2026 läuft!',
+        athens_school_intro: 'Die Privatschule "ATHEN" lädt Kinder von der 1. bis zur 11. Klasse sowie zu Vorbereitungskursen ein.',
+        athens_school_offer: 'Wir bieten eine komfortable Lernumgebung, einen modernen Bildungsansatz und einen günstigen Stundenplan.',
+        athens_school_official: '📚 Offizielle Einschreibung',
+        athens_school_remote: '💻 Fernunterricht',
+        athens_school_schedule: '🕒 Günstiger Stundenplan',
+        athens_school_invitation: 'Werden Sie Teil unserer Schulfamilie!',
+        athens_school_contacts: 'Kontakte: +380667791944 — Viber, Telegram, WhatsApp',
+        athens_school_website: '🌐 https://cdna.com.ua/',
+        athens_school_image_alt: 'Privatschule Athen'
       }
     }
   },
