@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 56,
+    title: {
+      en: '🇺🇦 Peace in Ukraine is only possible with guarantees of sovereignty, - Austrian Foreign Minister Meinel-Reisinger',
+      de: '🇺🇦 Frieden in der Ukraine ist nur mit Garantien für die Souveränität möglich, - österreichische Außenministerin Meinel-Reisinger',
+      ua: '🇺🇦Мир в Україні можливий лише за гарантій суверенітету, - глава МЗС Австрії Майнль-Райзінгер'
+    },
+    text: {
+      en: 'Austrian Foreign Minister Beate Meinel-Reisinger stated that sustainable peace in Ukraine is only possible with full respect for sovereignty and territorial integrity, as well as the principles of the UN and OSCE.\n\n🗣️"Peace only holds when it is just and lasting. And, of course, when the sovereignty and full territorial integrity of Ukraine, its ability to defend itself, as well as all opportunities for the restoration of destroyed cities and villages and prospects for people in Ukraine for a peaceful life and life in prosperity are guaranteed," she said.',
+      de: 'Die österreichische Außenministerin Beate Meinel-Reisinger erklärte, dass ein nachhaltiger Frieden in der Ukraine nur bei vollständiger Achtung der Souveränität und territorialen Integrität sowie der Prinzipien der UNO und OSZE möglich ist.\n\n🗣️"Frieden hält nur dann, wenn er gerecht und dauerhaft ist. Und natürlich, wenn die Souveränität und vollständige territoriale Integrität der Ukraine, ihre Fähigkeit zur Selbstverteidigung sowie alle Möglichkeiten für die Wiederherstellung zerstörter Städte und Dörfer und Perspektiven für die Menschen in der Ukraine für ein friedliches Leben und ein Leben im Wohlstand garantiert sind", sagte sie.',
+      ua: 'Глава МЗС Австрії Беате Майнль-Райзінгер заявила, що стійкий мир в Україні можливий лише за повного дотримання суверенітету та територіальної цілісності, а також принципів ООН і ОБСЄ.\n\n🗣️«Мир тримається тільки тоді, коли він справедливий і довготривалий. І, звісно, коли гарантовано суверенітет і повну територіальну цілісність України, її здатність до самооборони, а також усі можливості для відновлення зруйнованих міст і сіл та перспективи для людей в Україні на мирне життя та життя в добробуті», - сказала вона.'
+    }
+  },
+  {
     id: 55,
     title: {
       en: '1.11.2025🕯️All Saints\' Day in Austria — November 1',
