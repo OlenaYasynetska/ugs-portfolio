@@ -53,7 +53,7 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
           <span className="news-title" style={{ fontWeight: 600, fontSize: 20 }}>{title}</span>
         </div>
         <div style={{
-          maxHeight: open ? 600 : 0,
+          maxHeight: open ? 800 : 0,
           overflow: 'hidden',
           transition: 'max-height 0.3s',
           opacity: open ? 1 : 0,
