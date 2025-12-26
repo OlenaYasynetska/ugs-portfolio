@@ -1344,41 +1344,6 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           );
         })()}
 
-        {/* Пост про TIN */}
-        {(() => {
-          const news25 = news.find(n => n.id === 25);
-          return (
-          <div style={{
-            background: 'rgba(255,255,255,0.85)',
-            borderRadius: 16,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-            padding: '2vw',
-            maxWidth: 1200,
-            width: '85%',
-              margin: '0 auto 1vw auto',
-            textAlign: 'left'
-            }}>
-              <div style={{
-                fontSize: '16px',
-                color: '#2c3e50',
-                lineHeight: '1.6'
-              }}>
-                <h2 style={{
-                  fontSize: '1.8rem',
-                  color: '#1565c0',
-                  marginBottom: '1rem',
-                  fontWeight: 'bold'
-                }}>
-                  📌 {news25?.title[lang] || 'Як дізнатися свій податковий номер (TIN) в Австрії?'}
-                </h2>
-                <div style={{ whiteSpace: 'pre-line' }}>
-                  {news25?.text[lang] || 'Податковий ідентифікаційний номер (TIN) в Австрії є аналогом українського індивідуального податкового коду. Цей номер необхідний у багатьох випадках, зокрема при відкритті банківських рахунків у країнах ЄС.\n\nБагато хто помилково вважає, що TIN присвоюють лише працюючим особам, однак це не відповідає дійсності — отримати його може кожен резидент.\n\nЯк перевірити свій TIN?\n\nВаріант 1. Через FinanzOnline\n• Увійдіть до особистого кабінету FinanzOnline.\n• Оберіть пункт «Подати податкову декларацію» за 2024 рік (або інший доступний період).\n• У відображених персональних даних ви побачите свій TIN у форматі: 00 000/0000.\n\nℹ️ Цей спосіб доступний лише тим, у кого є FinanzOnline. Якщо ви ще не маєте Austria ID, варто подбати про реєстрацію заздалегідь.\n\nВаріант 2. Через Finanzamt\n• Податковий номер можна уточнити, звернувшись безпосередньо до податкового органу: телефоном або письмовим запитом у Finanzamt.'}
-          </div>
-              </div>
-            </div>
-          );
-        })()}
-
          
         {/* Модуль "Это интересно" */}
         <div className="module-heading" style={{
@@ -2370,42 +2335,10 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              <div style={{ marginBottom: 16 }}>
                {t('klimaticket_more')}
              </div>
-           </div>
-         </div>
+          </div>
+        </div>
          
-         {/* Модуль для поста ID 24 */}
-         {(() => {
-           const news24 = news.find(n => n.id === 24);
-           return (
-             <div style={{
-               display: 'flex',
-               alignItems: 'flex-start',
-               gap: '2vw',
-               margin: '0 0 1vw 0',
-               background: 'rgba(255,255,255,0.85)',
-               borderRadius: 16,
-               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-               padding: '2vw',
-               maxWidth: 1200,
-               width: '85%',
-               marginLeft: 'auto',
-               marginRight: 'auto',
-               textAlign: 'left',
-               flexWrap: 'wrap',
-             }}>
-               <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', flex: 1 }}>
-                 <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
-                   {news24?.title?.[lang] || news24?.title?.en || 'Post title not found'}
-                 </div>
-                 <div style={{ marginBottom: 16 }}>
-                   {news24?.text?.[lang] || news24?.text?.en || 'Post content not found'}
-                 </div>
-               </div>
-             </div>
-           );
-         })()}
-         
-         {/* Події тижня */}
+        {/* Події тижня */}
          <div className="module-heading" style={{
            fontWeight: 900,
            fontSize: '3.8em',
