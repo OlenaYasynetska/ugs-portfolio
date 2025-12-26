@@ -25,6 +25,8 @@ import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useRespons
 import { HOME_STYLES } from '../../constants/homeStyles';
 import busImg from '../../assets/bus_sonne.png';
 import regenbogenImg from '../../assets/regenbogen.jpg';
+import weinachtsleiderImg from '../../assets/Weinachtsleider.png';
+import banduraImg from '../../assets/Bandura.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -1145,6 +1147,46 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           </div>
         </div>
       </div>
+      
+      {/* Две картинки на одной горизонтали */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '2vw',
+          marginBottom: isSmallScreen ? '4vw' : '3.5vw',
+          flexWrap: 'wrap',
+          maxWidth: 1200,
+          width: '90%',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+      >
+        <img
+          src={weinachtsleiderImg}
+          alt="Weinachtsleider"
+          style={{
+            maxWidth: '45%',
+            width: '100%',
+            height: 'auto',
+            borderRadius: '12px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        />
+        <img
+          src={banduraImg}
+          alt="Bandura"
+          style={{
+            maxWidth: '45%',
+            width: '100%',
+            height: 'auto',
+            borderRadius: '12px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        />
+      </div>
+      
       <div className="transport-marquee">
         <div className="transport-marquee-track">
           {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => {
