@@ -25,6 +25,7 @@ import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useRespons
 import { HOME_STYLES } from '../../constants/homeStyles';
 import busImg from '../../assets/bus_sonne.png';
 import regenbogenImg from '../../assets/regenbogen.jpg';
+import christmasImg from '../../assets/Christmas.png';
 import weinachtsleiderImg from '../../assets/Weinachtsleider.png';
 import banduraImg from '../../assets/Bandura.png';
 
@@ -1037,18 +1038,21 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           }
 
           @media (max-width: 768px) {
-            .rainbow-post-card {
+            .rainbow-post-card,
+            .christmas-sweets-card {
               flex-direction: column;
               align-items: center;
             }
 
-            .rainbow-post-image {
+            .rainbow-post-image,
+            .christmas-sweets-image {
               min-width: 0;
               max-width: 100%;
               margin-bottom: 18px;
             }
 
-            .rainbow-post-text {
+            .rainbow-post-text,
+            .christmas-sweets-text {
               font-size: 1em;
             }
           }
@@ -1396,9 +1400,59 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           letterSpacing: '0.02em',
           textAlign: 'center',
         }}>{t('this_is_interesting') || 'Це цікаво'}</div>
-        
-        {/* Пост про радугу */}
-        <div className="rainbow-post-card" style={{
+      
+       
+        {/* Пост про різдвяні частування */}
+        <div className="christmas-sweets-card" style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '85%',
+          margin: '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start'
+        }}>
+          {/* Картинка слева */}
+          <div className="christmas-sweets-image" style={{
+            flex: '0 0 auto',
+            minWidth: '300px',
+            maxWidth: '400px'
+          }}>
+            <img
+              src={christmasImg}
+              alt={t('christmas_sweets_image_alt')}
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '12px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+            />
+          </div>
+
+          {/* Текст справа */}
+          <div className="christmas-sweets-text" style={{
+            flex: '1 1 auto',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('christmas_sweets_title')}
+            </p>
+
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('christmas_sweets_text')}
+            </div>
+          </div>
+        </div>
+
+             {/* Пост про радугу */}
+             <div className="rainbow-post-card" style={{
           background: 'rgba(255,255,255,0.85)',
           borderRadius: 16,
           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
