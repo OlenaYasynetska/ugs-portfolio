@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 59,
+    title: {
+      en: '🇦🇹 Austria extends the freeze on family reunification for refugees',
+      de: '🇦🇹 Österreich verlängert den Stopp der Familienzusammenführung für Flüchtlinge',
+      ua: '🇦🇹 Австрія продовжує заморозку возз’єднання сімей для біженців'
+    },
+    text: {
+      en: 'The Austrian Parliament has decided to extend the freeze on the right to family reunification for refugees until July 2026.This political decision has sparked wide public debate and strong reactions among organizations working with migrants.\n\n 📢 As a result:▫️ Refugees will not be able to officially bring their family members to Austria until the specified date.\n\n▫️ Discussions are ongoing in political and civil society circles.',
+      de: 'Das österreichische Parlament hat beschlossen, den Stopp des Rechts auf Familienzusammenführung für Flüchtlinge bis Juli 2026 zu verlängern.Diese politische Entscheidung hat in der Gesellschaft sowie unter Organisationen, die mit Migranten arbeiten, breite Resonanz ausgelöst.\n\n📢 Als Ergebnis:▫️ Flüchtlinge werden bis zu diesem Zeitpunkt ihre Familienangehörigen nicht offiziell nach Österreich holen können.\n\n▫️ Die Diskussionen dauern in politischen und zivilgesellschaftlichen Kreisen an.',
+      ua: 'Австрійський парламент ухвалив рішення продовжити заморозку права на возз’єднання сімей для біженців до липня 2026 року. Це політичне рішення викликало широкий резонанс у суспільстві та серед організацій, що працюють із мігрантами.\n\n 📢Як результат: ▫️Біженці не зможуть офіційно приводити до Австрії членів своїх родин до зазначеного терміну. \n\n▫️Обговорення тривають у політичних та громадських колах.'
+    }
+  },
+  {
     id: 58,
     title: {
       en: 'Roaming Ukraine — EU from 2026',
