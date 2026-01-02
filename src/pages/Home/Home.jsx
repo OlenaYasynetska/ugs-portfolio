@@ -1151,7 +1151,7 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           </div>
         </div>
       </div>
-      
+
       {/* Две картинки на одной горизонтали */}
       <div
         style={{

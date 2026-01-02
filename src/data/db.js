@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 60,
+    title: {
+      en: '📊 Interesting statistics: Nearly 40% of newborns in Vienna are not Austrian citizens',
+      de: '📊 Interessante Statistik: Fast 40 % der Neugeborenen in Wien sind keine österreichischen Staatsbürger',
+      ua: '📊Цікава статистика: майже 40% новонароджених у Відні не є громадянами Австрії'
+    },
+    text: {
+      en: 'In Vienna, the share of children born without Austrian citizenship is rising sharply. According to data from 2024, about 40.5% of newborns did not have an Austrian passport, compared to around 20% twenty years ago. \n\n In some districts of the capital — Favoriten, Ottakring, and Rudolfsheim-Fünfhaus — the share of such children exceeds 50%. Despite being born in Austria, they are not legally considered citizens of the country. \n\n ▫️ The lack of citizenship also means the absence of voting rights. The naturalization process remains complex and is usually only possible after many years.',
+      de: 'In Wien wächst der Anteil der Kinder, die ohne österreichische Staatsbürgerschaft geboren werden, deutlich. Laut aktuellen Daten hatten im Jahr 2024 rund 40,5 % der Neugeborenen keinen österreichischen Pass, während dieser Anteil vor 20 Jahren noch bei etwa 20 % lag. \n\n In einigen Bezirken der Hauptstadt – Favoriten, Ottakring und Rudolfsheim-Fünfhaus – liegt der Anteil solcher Kinder bereits bei über 50 %. Trotz ihrer Geburt in Österreich gelten sie rechtlich nicht als Staatsbürger des Landes. \n\n ▫️ Das Fehlen der Staatsbürgerschaft bedeutet auch den Ausschluss vom Wahlrecht. Das Einbürgerungsverfahren bleibt komplex und ist oft erst nach vielen Jahren möglich.',
+      ua: 'У Відні різко зростає частка дітей, народжених без австрійського громадянства. \n\n За даними, у 2024 році 40,5% новонароджених не мали австрійського паспорта, тоді як 20 років тому цей показник становив близько 20%. \n\n У окремих районах столиці — Фаворитен, Оттакринг, Рудольфсхайм-Фюнфхаус — частка таких дітей перевищує 50%. Незважаючи на народження в Австрії, юридично вони не вважаються громадянами країни. \n\n ▫️Відсутність громадянства означає і відсутність виборчих прав. Процедура натуралізації залишається складною і можлива лише через роки.'
+    }
+  },
+  {
     id: 59,
     title: {
       en: '🇦🇹 Austria extends the freeze on family reunification for refugees',
