@@ -23,7 +23,7 @@ const colorOrder = [
 function generateDutyCalendar() {
   const calendar = {};
   let date = new Date('2025-07-27');
-  const end = new Date('2025-12-31');
+  const end = new Date('2026-12-31');
   let colorIdx = 0;
   while (date <= end) {
     const yyyy = date.getFullYear();
