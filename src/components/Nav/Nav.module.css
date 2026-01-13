@@ -1,5 +1,5 @@
 .header {
-  background: #2196f3;
+  background: rgb(236, 197, 133);
   padding: 0px 0px;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   padding: 4px 8px;
   border-radius: 4px;
   border: 1px solid #000;
-  background-color: #2196f3;
+  background-color: rgb(236, 197, 133);
 }
 
 
@@ -133,7 +133,7 @@
   position: absolute;
   top: 60px;
   right: 10px;
-  background: #2196f3;
+  background: rgb(236, 197, 133);
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   padding: 16px 24px;

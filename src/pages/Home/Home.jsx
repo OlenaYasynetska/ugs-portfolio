@@ -866,7 +866,7 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             display: 'inline-block',
             padding: isSmallScreen ? '3vw' : '2vw',
             background: 'rgb(226, 197, 144)',
-            border: '0.6vw solid rgb(166, 124, 56)',
+            border: '0.6vw solid rgb(100, 75, 35)',
             borderRadius: '2vw',
             boxShadow: 'rgba(80, 60, 20, 0.25) 0px 8px 32px, rgb(226, 197, 144) 0px 0px 0px 1.2vw inset',
             maxWidth: 1200,
