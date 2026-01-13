@@ -82,7 +82,7 @@ const Hero = () => {
             height: clamp(80px, 30vw, 180px) !important;
           }
           .hero-frame {
-            margin-left: 0 !important;
+            margin-left: auto !important;
             margin-right: auto !important;
             max-width: 1200px !important;
             width: 90vw !important;
