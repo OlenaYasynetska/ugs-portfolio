@@ -98,7 +98,7 @@
     margin-right: 70px;
   }
   .headerLeft {
-    margin-left: 10px;
+    margin-left: 25px;
   }
 }
 
@@ -121,7 +121,7 @@
 .burger span {
   display: block;
   width: 28px;
-  height: 4px;
+  height: 1.5px;
   margin: 4px 0;
   background: #06046c;
   border-radius: 2px;
