@@ -175,4 +175,10 @@
   .mobileMenu {
     display: flex;
   }
+  .header {
+    height: 50px;
+  }
+  .logo {
+    height: 50px;
+  }
 }
