@@ -17,23 +17,23 @@ import photo9 from '../assets/IMG_2162.jpg';
 const oldFrameStyle = {
   display: 'inline-block',
   padding: '2vw',
-  background: '#e2c590',
-  border: '0.6vw solid #a67c38',
+  background: 'rgb(226, 197, 144)',
+  border: '0.6vw solid rgb(100, 75, 35)',
   borderRadius: '2vw',
-  boxShadow: '0 8px 32px rgba(80,60,20,0.25), 0 0 0 1.2vw #e2c590 inset',
+  boxShadow: 'rgba(80, 60, 20, 0.25) 0px 8px 32px, rgb(226, 197, 144) 0px 0px 0px 1.2vw inset',
   position: 'relative',
-  marginLeft: '6vw',
-  maxWidth: '90vw',
+  maxWidth: 800,
+  width: '50vw',
+  boxSizing: 'border-box',
 };
 const oldImgStyle = {
   display: 'block',
-  borderRadius: '1vw',
+  borderRadius: '1.4vw',
   boxShadow: '0 2px 12px rgba(80,60,20,0.18)',
-  width: 'clamp(220px, 40vw, 720px)',
+  width: '100%',
   height: 'auto',
   filter: 'sepia(0.18) contrast(1.08) brightness(0.98)',
   transition: 'opacity 0.5s',
-  maxWidth: '80vw',
 };
 const logoStyle = {
   height: 'clamp(100px, 20vw, 300px)',
@@ -83,8 +83,11 @@ const Hero = () => {
           }
           .hero-frame {
             margin-left: 0 !important;
-            max-width: 90vw !important;
-            padding: 4vw !important;
+            margin-right: auto !important;
+            max-width: 1200px !important;
+            width: 90vw !important;
+            padding: 3vw !important;
+            box-sizing: border-box !important;
           }
           .hero-transport-banner {
             margin-top: 3vw !important;
@@ -93,29 +96,27 @@ const Hero = () => {
       `}</style>
       <div className="hero-flex" style={{
         display: 'flex',
-        flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '2vw',
+        gap: '4vw',
         marginTop: '50px',
         marginBottom: '4vw',
-       
         width: '100%',
         boxSizing: 'border-box',
       }}>
-        <img
-          src={logo}
-          alt="Logo"
+        <img 
+          src={logo} 
+          alt="UGS Logo" 
           className="hero-logo"
           style={logoStyle}
         />
-        <span className="hero-frame" style={oldFrameStyle}>
+        <div className="hero-frame" style={oldFrameStyle}>
           <img
             src={photos[photoIdx]}
             alt="Старинное фото"
             style={{ ...oldImgStyle, opacity: fade ? 1 : 0 }}
           />
-        </span>
+        </div>
       </div>
     </>
   );
