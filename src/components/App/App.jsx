@@ -105,10 +105,10 @@ function AppContent() {
           
           <Route path="*" element={<NotFound />} />
         </Routes>
+        
+        {/* Footer показываем только на публичных страницах */}
+        {!isSnapVersePage && <Footer />}
       </Main>
-      
-      {/* Footer показываем только на публичных страницах */}
-      {!isSnapVersePage && <Footer />}
     </>
   );
 }

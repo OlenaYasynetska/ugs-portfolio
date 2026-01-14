@@ -116,12 +116,8 @@ const Footer = ({ style }) => {
   }, []);
   return (
     <footer className={styles.footer} style={{
-      position: 'fixed',
-      left: 0,
-      right: 50,
-      bottom: 0,
+      position: 'relative',
       width: '100%',
-      zIndex: 1000,
       ...style
     }}>
       <style>{`
@@ -137,8 +133,8 @@ const Footer = ({ style }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         maxWidth: 1800,
-        // margin: '10px auto',
-        padding: '0 180px',
+        margin: '0 auto',
+        padding: '5px 180px',
         fontSize: 14
       }} className="footer-inner">
         <span style={{
@@ -151,7 +147,7 @@ const Footer = ({ style }) => {
           {isMobileFooter
             ? (shortFooterPhrases[lang] || shortFooterPhrases.en)
             : phrase}
-          <div style={{ fontSize: 13, marginTop: 4, opacity: 0.7 }}>© 2025 Steyr</div>
+          <div style={{ fontSize: 13, marginTop: 2, opacity: 0.7 }}>© 2025 Steyr</div>
         </span>
         <WeatherBlock />
       </div>
