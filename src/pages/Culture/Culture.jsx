@@ -82,15 +82,15 @@ const Culture = () => {
               }} 
             />
           </div>
-
+          
           {/* Текст справа */}
           <div 
             className="athens-school-card__text"
             style={{ 
               flex: '1 1 auto',
-              fontSize: '1.1em', 
+            fontSize: '1.1em', 
               lineHeight: '1.8', 
-              color: '#333',
+            color: '#333',
               textAlign: 'left'
             }}
           >
@@ -120,7 +120,7 @@ const Culture = () => {
 
             <p style={{ marginBottom: '15px', fontWeight: '500' }}>
               Долучайтесь до нашої шкільної родини!
-            </p>
+          </p>
 
             <p style={{ marginBottom: '10px' }}>
               Контакти: +380667791944 — Viber, Telegram, WhatsApp
@@ -187,7 +187,7 @@ const Culture = () => {
             style={{ 
               flex: '1 1 auto',
               fontSize: '1.1em', 
-              lineHeight: '1.8', 
+            lineHeight: '1.8',
               color: '#333',
               textAlign: 'left'
             }}

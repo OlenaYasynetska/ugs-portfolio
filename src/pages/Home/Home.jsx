@@ -1099,17 +1099,17 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
         
         {/* Пост про радугу */}
         <div className="rainbow-post-card" style={{
-          background: 'rgba(255,255,255,0.85)',
-          borderRadius: 16,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-          padding: '2vw',
-          maxWidth: 1200,
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: 16,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            padding: '2vw',
+            maxWidth: 1200,
           width: '90vw',
-          margin: '0 auto 1vw auto',
+              margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
           alignItems: 'flex-start'
-        }}>
+            }}>
           {/* Картинка слева */}
           <div className="rainbow-post-image" style={{ 
             flex: '0 0 auto',
@@ -1140,12 +1140,12 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               {t('rainbow_post_title')}
             </p>
             
-            <div style={{ whiteSpace: 'pre-line' }}>
+                <div style={{ whiteSpace: 'pre-line' }}>
               {t('rainbow_post_text')}
-            </div>
           </div>
-        </div>
-
+              </div>
+            </div>
+         
         {/* Пост про різдвяні частування */}
         <div className="christmas-sweets-card" style={{
           background: 'rgba(255,255,255,0.85)',
@@ -2126,10 +2126,10 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              <div style={{ marginBottom: 16 }}>
                {t('klimaticket_more')}
              </div>
-          </div>
-        </div>
+           </div>
+         </div>
          
-        {/* Події тижня */}
+         {/* Події тижня */}
          <div className="module-heading" style={{
            fontWeight: 900,
            fontSize: '3.8em',
