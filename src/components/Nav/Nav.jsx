@@ -5,12 +5,90 @@ import { useTranslation } from 'react-i18next';
 import styles from './Nav.module.css';
 import logo from '../../assets/logo.svg';
 import globus from '../../assets/globus.svg';
+import axios from 'axios';
+
+const weatherIcons = {
+  Clear: '☀️',
+  Clouds: '☁️',
+  Rain: '🌧️',
+  Drizzle: '🌦️',
+  Thunderstorm: '⛈️',
+  Snow: '❄️',
+  Mist: '🌫️',
+  Fog: '🌫️',
+  Haze: '🌫️',
+  Smoke: '🌫️',
+  Dust: '🌫️',
+  Sand: '🌫️',
+  Ash: '🌫️',
+  Squall: '🌫️',
+  Tornado: '🌪️',
+};
+
+const WeatherBlock = () => {
+  const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [weatherBlockWidth, setWeatherBlockWidth] = useState(window.innerWidth <= 600 ? 180 : 90);
+
+  useEffect(() => {
+    const handleResizeWeatherWidth = () => setWeatherBlockWidth(window.innerWidth <= 600 ? 180 : 90);
+    window.addEventListener('resize', handleResizeWeatherWidth);
+    return () => window.removeEventListener('resize', handleResizeWeatherWidth);
+  }, []);
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const city = 'Steyr';
+        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ua`;
+        const response = await axios.get(url);
+        setWeather(response.data);
+      } catch (e) {
+        setError('Ошибка загрузки погоды');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchWeather();
+  }, []);
+
+  if (loading) return <div style={{ minWidth: 90, textAlign: 'right' }}>...</div>;
+  if (error || !weather) return <div style={{ minWidth: 90, textAlign: 'right', color: 'red' }}>{error || 'Нет данных'}</div>;
+  const icon = weatherIcons[weather.weather[0].main] || '🌡️';
+  const temp = Math.round(weather.main.temp);
+  const desc = weather.weather[0].description;
+  
+  return (
+    <div style={{ minWidth: weatherBlockWidth, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 4 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start' }}>
+          <span style={{ fontSize: 12, fontWeight: 500, color: '#06046c', opacity: 0.8, lineHeight: 1 }}>Steyr</span>
+          <span style={{ fontSize: 14, fontWeight: 600, marginTop: 2, color: '#06046c' }}>{temp}&deg;C</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start' }}>
+          <span style={{ fontSize: 20, marginLeft: 4 }}>{icon}</span>
+          <span style={{ fontSize: 10, opacity: 0.7, color: '#06046c' }}>{desc}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Nav = ({ style }) => {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || 'en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1300);
   const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 1300);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
@@ -121,7 +199,11 @@ const Nav = ({ style }) => {
         )}
       </nav>
       <div className={styles.headerRight}>
-        <img src={globus} alt="Globus" className={styles.globusIcon} />
+        {isMobile ? (
+          <WeatherBlock />
+        ) : (
+          <img src={globus} alt="Globus" className={styles.globusIcon} />
+        )}
         <select
           className={styles.langSelect}
           value={lang}
