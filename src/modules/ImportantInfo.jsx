@@ -260,7 +260,7 @@ export default function ImportantInfo() {
       
       <style>{`
         .info-block-inner {
-          height: 220px;
+          min-height: 280px;
         }
         @media (max-width: 900px) {
           .info-flex-row {
@@ -273,7 +273,7 @@ export default function ImportantInfo() {
           }
           .info-block-inner {
             height: auto;
-            min-height: 160px;
+            min-height: 300px;
           }
         }
       `}</style>
@@ -293,7 +293,7 @@ export default function ImportantInfo() {
         <div className="info-flex-col" style={{ flex: '1 1 50px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
           <PharmacyDutyBlock />
         </div>
-        <div className="info-flex-col" style={{ flex: '1 1 50px', minWidth: '220px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+        <div className="info-flex-col" style={{ flex: '1 1 50px', minWidth: '280px', maxWidth: 600, boxSizing: 'border-box', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
           <EmergencyCallsBlock />
         </div>
       </div>
