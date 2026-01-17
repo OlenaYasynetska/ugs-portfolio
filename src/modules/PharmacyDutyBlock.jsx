@@ -22,7 +22,7 @@ export default function PharmacyDutyBlock() {
   }
 
   return (
-    <div className="info-block-inner" style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+    <div className="info-block-inner" style={{ margin: '2vw auto', width: '100%', background: 'rgba(255,255,255,0.85)', borderRadius: '1vw', padding: '2vw', textAlign: 'left', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', minHeight: 280, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
       <h2 style={{ 
         color: '#1565c0', 
         fontSize: '1.5em', 
