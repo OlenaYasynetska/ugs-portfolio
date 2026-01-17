@@ -984,13 +984,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           borderRadius: 16,
           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
           padding: '2vw',
-          maxWidth: isSmallScreen ? 350 : 1200,
-          width: isSmallScreen ? '95%' : '90vw',
-          margin: isSmallScreen ? '0 auto 1vw auto' : '0 auto 1vw auto',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
+          margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
           alignItems: 'flex-start',
-          flexDirection: isSmallScreen ? 'column' : 'row'
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
         }}>
           {/* Картинка слева */}
           <div style={{ 
@@ -1034,13 +1036,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           borderRadius: 16,
           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
           padding: '2vw',
-          maxWidth: isSmallScreen ? 350 : 1200,
-          width: isSmallScreen ? '95%' : '90vw',
-          margin: isSmallScreen ? '0 auto 1vw auto' : '0 auto 1vw auto',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
+          margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
           alignItems: 'flex-start',
-          flexDirection: isSmallScreen ? 'column' : 'row'
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
         }}>
           {/* Картинка слева */}
           <div style={{ 
@@ -1257,13 +1261,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           borderRadius: 16,
           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
           padding: '2vw',
-          maxWidth: isSmallScreen ? 350 : 1200,
-          width: isSmallScreen ? '95%' : '90vw',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
           margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
           alignItems: 'flex-start',
-          flexDirection: isSmallScreen ? 'column' : 'row'
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
         }}>
           {/* Картинка слева */}
           <div className="ukrainian-language-post-image" style={{ 
@@ -1395,11 +1401,13 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
             padding: '2vw',
             maxWidth: 1200,
-          width: '90vw',
-              margin: '0 auto 1vw auto',
-          display: 'flex',
-          gap: '25px',
-          alignItems: 'flex-start'
+            width: '90vw',
+            minWidth: 320,
+            margin: '0 auto 1vw auto',
+            display: 'flex',
+            gap: '25px',
+            alignItems: 'flex-start',
+            boxSizing: 'border-box'
             }}>
           {/* Картинка слева */}
           <div className="rainbow-post-image" style={{ 
@@ -1445,10 +1453,12 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           padding: '2vw',
           maxWidth: 1200,
           width: '90vw',
+          minWidth: 320,
           margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          boxSizing: 'border-box'
         }}>
           {/* Картинка слева */}
           <div className="christmas-sweets-image" style={{
@@ -1495,8 +1505,10 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
             padding: '2vw',
             maxWidth: 1200,
-            width: '85%',
-            margin: '0 auto 1vw auto'
+            width: '90vw',
+            minWidth: 320,
+            margin: '0 auto 1vw auto',
+            boxSizing: 'border-box'
           }}
         >
           <img
@@ -1543,13 +1555,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               borderRadius: 16,
               boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
               padding: '2vw',
-              maxWidth: isSmallScreen ? 400 : 1200,
-              width: isSmallScreen ? '95%' : '85%',
+              maxWidth: 1200,
+              width: '90vw',
+              minWidth: 320,
               margin: '0 auto 1vw auto',
               textAlign: 'center',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              boxSizing: 'border-box'
             }}>
               <img 
                 src={turismImg} 
@@ -1600,14 +1614,16 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              borderRadius: 16,
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
-             maxWidth: 400,
-             width: '95%',
+             maxWidth: 1200,
+             width: '90vw',
+             minWidth: 320,
              margin: '0 auto 1vw auto',
              textAlign: 'center',
              display: 'flex',
              flexDirection: 'column',
              alignItems: 'center',
-              gap: '1rem'
+             gap: '1rem',
+             boxSizing: 'border-box'
             }}
           >
             <img 
@@ -1681,13 +1697,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
              maxWidth: 1200,
-             width: '85%',
-              margin: '0 auto 1vw auto',
-            textAlign: 'center',
-            display: 'flex',
-              flexDirection: 'row',
-            alignItems: 'center',
-              gap: '2rem'
+             width: '90vw',
+             minWidth: 320,
+             margin: '0 auto 1vw auto',
+             textAlign: 'center',
+             display: 'flex',
+             flexDirection: 'row',
+             alignItems: 'center',
+             gap: '2rem',
+             boxSizing: 'border-box'
           }}
         >
           <img 
@@ -1760,14 +1778,16 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             borderRadius: 16,
             boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
             padding: '2vw',
-            maxWidth: 800,
-            width: '90%',
+            maxWidth: 1200,
+            width: '90vw',
+            minWidth: 320,
             margin: '0 auto 1vw auto',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '1.5rem'
+            gap: '1.5rem',
+            boxSizing: 'border-box'
           }}
         >
           <img 
@@ -1842,13 +1862,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                borderRadius: 16,
                boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
                padding: '2vw',
-               maxWidth: 400,
-               width: '95%',
+               maxWidth: 1200,
+               width: '90vw',
+               minWidth: 320,
                margin: '0 auto 1vw auto',
                textAlign: 'center',
                display: 'flex',
                flexDirection: 'column',
                alignItems: 'center',
+               boxSizing: 'border-box'
              }}
            >
              <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
@@ -1877,16 +1899,16 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              style={{
                display: 'flex',
                flexDirection: 'column',
-               margin: '0 0 1vw 0',
+               margin: '0 auto 1vw auto',
                background: 'rgba(255,255,255,0.85)',
                borderRadius: 16,
                boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
                padding: '2vw',
                maxWidth: 1200,
                width: '90vw',
-               marginLeft: 'auto',
-               marginRight: 'auto',
+               minWidth: 320,
                textAlign: 'left',
+               boxSizing: 'border-box'
              }}
            >
              <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
@@ -1918,13 +1940,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              borderRadius: 16,
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
-             maxWidth: 400,
-             width: '95%',
+             maxWidth: 1200,
+             width: '90vw',
+             minWidth: 320,
              margin: '0 auto 1vw auto',
              textAlign: 'center',
              display: 'flex',
              flexDirection: 'column',
              alignItems: 'center',
+             boxSizing: 'border-box'
            }}>
              <img src={WienImg} alt="Wien Austria" style={{ 
                width: '100%', 
@@ -2004,16 +2028,16 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
            <div style={{
              display: 'flex',
              flexDirection: 'column',
-             margin: '0 0 1vw 0',
+             margin: '0 auto 1vw auto',
              background: 'rgba(255,255,255,0.85)',
              borderRadius: 16,
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
              maxWidth: 1200,
              width: '90vw',
-             marginLeft: 'auto',
-             marginRight: 'auto',
+             minWidth: 320,
              textAlign: 'left',
+             boxSizing: 'border-box'
            }}>
              <img src={WienImg} alt="Wien Austria" style={{ 
                width: '100%', 
@@ -2098,13 +2122,15 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              borderRadius: 16,
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
-             maxWidth: 400,
-             width: '95%',
+             maxWidth: 1200,
+             width: '90vw',
+             minWidth: 320,
              margin: '0 auto 1vw auto',
              textAlign: 'center',
              display: 'flex',
              flexDirection: 'column',
              alignItems: 'center',
+             boxSizing: 'border-box'
            }}>
              <img src={bergImg} alt="Austria Facts" style={{ 
                width: '100%', 
@@ -2184,16 +2210,16 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
            <div style={{
              display: 'flex',
              flexDirection: 'column',
-             margin: '0 0 1vw 0',
+             margin: '0 auto 1vw auto',
              background: 'rgba(255,255,255,0.85)',
              borderRadius: 16,
              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
              padding: '2vw',
              maxWidth: 1200,
              width: '90vw',
-             marginLeft: 'auto',
-             marginRight: 'auto',
+             minWidth: 320,
              textAlign: 'left',
+             boxSizing: 'border-box'
            }}>
              <img src={bergImg} alt="Austria Facts" style={{ 
                width: '100%', 
@@ -2275,10 +2301,12 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
            borderRadius: 16,
            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
            padding: '2vw',
-           maxWidth: isSmallScreen ? 400 : 1200,
-           width: isSmallScreen ? '95%' : '85%',
+           maxWidth: 1200,
+           width: '90vw',
+           minWidth: 320,
            margin: '0 auto 1vw auto',
            textAlign: 'left',
+           boxSizing: 'border-box'
          }}>
            <div style={{
              display: 'flex',
