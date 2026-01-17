@@ -7,6 +7,9 @@ export function usePostState() {
   const [showFullAustriaNationalDay, setShowFullAustriaNationalDay] = useState(false);
   const [showFullGregoryCalendar, setShowFullGregoryCalendar] = useState(false);
   const [showFullUkrainianLanguage, setShowFullUkrainianLanguage] = useState(false);
+  const [showFullAustriaFacts1, setShowFullAustriaFacts1] = useState(false);
+  const [showFullAustriaFacts2, setShowFullAustriaFacts2] = useState(false);
+  const [showFullEurovision, setShowFullEurovision] = useState(false);
   
   return {
     showFull,
@@ -20,6 +23,12 @@ export function usePostState() {
     showFullGregoryCalendar,
     setShowFullGregoryCalendar,
     showFullUkrainianLanguage,
-    setShowFullUkrainianLanguage
+    setShowFullUkrainianLanguage,
+    showFullAustriaFacts1,
+    setShowFullAustriaFacts1,
+    showFullAustriaFacts2,
+    setShowFullAustriaFacts2,
+    showFullEurovision,
+    setShowFullEurovision
   };
 }

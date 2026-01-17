@@ -946,24 +946,6 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
         </div>
       </div>
 
-      <div className="transport-marquee">
-        <div className="transport-marquee-track">
-          {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => {
-            const isClone = index >= transportMarqueePhrases.length;
-            return (
-              <Link
-                key={`transport-marquee-${index}`}
-                className="transport-marquee-link"
-                to={transportMarqueeHref}
-                aria-hidden={isClone}
-                tabIndex={isClone ? -1 : undefined}
-              >
-                {phrase}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
       <MainModulesContainer>
         {/* <Hero /> */}
         <NewsBlock />
@@ -1879,17 +1861,80 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                borderRadius: 12, 
                margin: '0 auto 16px auto', 
                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-               transform: isEurovisionImageVisible ? 'scale(1)' : 'scale(0.3)',
-               opacity: isEurovisionImageVisible ? 1 : 0,
-               transition: 'all 0.8s ease-out',
-               transformOrigin: 'center center'
+               display: 'block'
              }} id="eurovision-image" />
              <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%' }}>
                <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
                  🎶 {t('eurovision_title') || 'Відень готується до грандіозного святкування 70-річчя Євробачення'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.'}
+                 {(() => {
+                   const fullText = t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.';
+                   if (postState.showFullEurovision) {
+                     return fullText;
+                   }
+                   // Короткая версия до "Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році."
+                   const shortTextEnd = lang === 'ua' ? 'Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.' :
+                                        lang === 'de' ? 'Stadthalle — einer Arena mit 16.000 Plätzen, die bereits 2015 den Eurovision Song Contest ausgerichtet hat.' :
+                                        'Stadthalle — a 16,000-seat arena that has already hosted Eurovision in 2015.';
+                   const shortTextIndex = fullText.indexOf(shortTextEnd);
+                   if (shortTextIndex !== -1) {
+                     return fullText.substring(0, shortTextIndex + shortTextEnd.length);
+                   }
+                   return fullText;
+                 })()}
+                 {!postState.showFullEurovision && (
+                   <button
+                     onClick={() => postState.setShowFullEurovision(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullEurovision && (
+                   <button
+                     onClick={() => postState.setShowFullEurovision(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
@@ -1898,7 +1943,9 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              className="animated-card card-1"
              style={{
                display: 'flex',
-               flexDirection: 'column',
+               flexDirection: 'row',
+               alignItems: 'flex-start',
+               gap: '2vw',
                margin: '0 auto 1vw auto',
                background: 'rgba(255,255,255,0.85)',
                borderRadius: 16,
@@ -1912,22 +1959,86 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              }}
            >
              <img src={EurovisionImg} alt="Eurovision 2026 Vienna" style={{ 
-               width: '100%', 
+               width: '40%',
+               maxWidth: '40%',
                height: 'auto', 
                borderRadius: 12, 
-               marginBottom: '2vw', 
                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-               transform: isEurovisionImageVisible ? 'scale(1)' : 'scale(0.3)',
-               opacity: isEurovisionImageVisible ? 1 : 0,
-               transition: 'all 0.8s ease-out',
-               transformOrigin: 'center center'
+               flexShrink: 0
              }} id="eurovision-image" />
-             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line' }}>
+             <div style={{ 
+               flex: 1,
+               fontSize: 18, 
+               color: '#234', 
+               whiteSpace: 'pre-line' 
+             }}>
                <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
                  🎶 {t('eurovision_title') || 'Відень готується до грандіозного святкування 70-річчя Євробачення'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.'}
+                 {(() => {
+                   const fullText = t('eurovision_text') || 'Австрійська столиця перетвориться на головний центр пісенного шоу 2026 року. Ратушна площа (Rathausplatz) знову стане Eurovillage, де вболівальники зможуть безкоштовно дивитися півфінали й фінал конкурсу на великих екранах, а Євроклуб цього разу відкриють безпосередньо у стінах віденської ратуші. Головні концерти проходитимуть в Wiener Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.\n\nМер міста підтвердив, що Відень виділить 22,6 млн євро на організацію, попри діючу програму економії. Для порівняння: Ліверпуль витрачав 16 млн €, Мальме — 18 млн €, Турин — 30 млн €, а Базель планував 33,5 млн €. Повернення конкурсу до Відня пояснюють не лише символікою ювілейного шоу, а й зручністю міста — сучасні аеропорти, залізничні сполучення та великий вибір готелів роблять його ідеальним місцем для фанів з усієї Європи.';
+                   if (postState.showFullEurovision) {
+                     return fullText;
+                   }
+                   // Короткая версия до "Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році."
+                   const shortTextEnd = lang === 'ua' ? 'Stadthalle — арені на 16 тисяч місць, яка вже приймала Євробачення у 2015 році.' :
+                                        lang === 'de' ? 'Stadthalle — einer Arena mit 16.000 Plätzen, die bereits 2015 den Eurovision Song Contest ausgerichtet hat.' :
+                                        'Stadthalle — a 16,000-seat arena that has already hosted Eurovision in 2015.';
+                   const shortTextIndex = fullText.indexOf(shortTextEnd);
+                   if (shortTextIndex !== -1) {
+                     return fullText.substring(0, shortTextIndex + shortTextEnd.length);
+                   }
+                   return fullText;
+                 })()}
+                 {!postState.showFullEurovision && (
+                   <button
+                     onClick={() => postState.setShowFullEurovision(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullEurovision && (
+                   <button
+                     onClick={() => postState.setShowFullEurovision(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
@@ -1961,73 +2072,130 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                transition: 'all 0.8s ease-out',
                transformOrigin: 'center center'
              }} id="wien-image" />
-             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
-               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+             <div style={{ fontSize: 14, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
+               <div style={{ fontSize: 16, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
                  {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують' :
                   lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden' :
                   '🇦🇹 5 facts about Austria that will surprise you'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {oldNumberAnimations.map((anim, index) => (
-                   <React.Fragment key={anim.id}>
-                     <span style={{
-                       fontSize: 24,
-                       fontWeight: 900,
-                       color: '#1565c0',
-                       marginRight: 8,
-                       animation: anim.animation,
-                       display: 'inline-block'
-                     }}>{anim.id}.</span>
-                     {index === 0 && <>
-                       <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
-                                lang === 'de' ? 'Hier wurde der Walzer geboren' :
-                                'The Waltz was born here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
-                        lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
-                        'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
-                     </>}
-                     {index === 1 && <>
-                       <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
-                                lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
-                                'Austria is a country of castles and palaces'}</strong><br /><br />
-                       {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
-                        lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
-                        'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
-                     </>}
-                     {index === 2 && <>
-                       <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
-                                lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
-                                'Great musical geniuses were born here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
-                        lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
-                        'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
-                     </>}
-                     {index === 3 && <>
-                       <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
-                                lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
-                                'Viennese coffee is not a myth'}</strong><br /><br />
-                       {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
-                        lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
-                        'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
-                     </>}
-                     {index === 4 && <>
-                       <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
-                                lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
-                                'Austria is one of the greenest countries in Europe'}</strong><br /><br />
-                       {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
-                        lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
-                        'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
-                     </>}
-                     <br /><br />
-                   </React.Fragment>
-                 ))}
+                 {oldNumberAnimations.map((anim, index) => {
+                   if (!postState.showFullAustriaFacts1 && index > 1) return null;
+                   return (
+                     <React.Fragment key={anim.id}>
+                       <span style={{
+                         fontSize: 18,
+                         fontWeight: 900,
+                         color: '#1565c0',
+                         marginRight: 8,
+                         animation: anim.animation,
+                         display: 'inline-block'
+                       }}>{anim.id}.</span>
+                       {index === 0 && <>
+                         <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
+                                  lang === 'de' ? 'Hier wurde der Walzer geboren' :
+                                  'The Waltz was born here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
+                          lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
+                          'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
+                       </>}
+                       {index === 1 && <>
+                         <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
+                                  lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
+                                  'Austria is a country of castles and palaces'}</strong><br /><br />
+                         {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
+                          lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
+                          'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
+                       </>}
+                       {index === 2 && <>
+                         <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
+                                  lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
+                                  'Great musical geniuses were born here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
+                          lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
+                          'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
+                       </>}
+                       {index === 3 && <>
+                         <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
+                                  lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
+                                  'Viennese coffee is not a myth'}</strong><br /><br />
+                         {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
+                          lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
+                          'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
+                       </>}
+                       {index === 4 && <>
+                         <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
+                                  lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
+                                  'Austria is one of the greenest countries in Europe'}</strong><br /><br />
+                         {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
+                          lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
+                          'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
+                       </>}
+                       <br /><br />
+                     </React.Fragment>
+                   );
+                 })}
+                 {!postState.showFullAustriaFacts1 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts1(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullAustriaFacts1 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts1(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
          ) : (
            <div style={{
              display: 'flex',
-             flexDirection: 'column',
+             flexDirection: 'row',
+             alignItems: 'flex-start',
+             gap: '2vw',
              margin: '0 auto 1vw auto',
              background: 'rgba(255,255,255,0.85)',
              borderRadius: 16,
@@ -2040,76 +2208,134 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              boxSizing: 'border-box'
            }}>
              <img src={WienImg} alt="Wien Austria" style={{ 
-               width: '100%', 
+               width: '40%',
+               maxWidth: '40%',
                height: 'auto', 
                borderRadius: 12, 
-               marginBottom: '2vw', 
                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               flexShrink: 0,
                transform: isWienImageVisible ? 'scale(1)' : 'scale(0.3)',
                opacity: isWienImageVisible ? 1 : 0,
                transition: 'all 0.8s ease-out',
                transformOrigin: 'center center'
              }} id="wien-image" />
-             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', fontFamily: 'Inter, sans-serif' }}>
-               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
+             <div style={{ 
+               flex: 1,
+               fontSize: 14, 
+               color: '#234', 
+               whiteSpace: 'pre-line', 
+               fontFamily: 'Inter, sans-serif' 
+             }}>
+               <div style={{ fontSize: 16, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
                  {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують' :
                   lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden' :
                   '🇦🇹 5 facts about Austria that will surprise you'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {oldNumberAnimations.map((anim, index) => (
-                   <React.Fragment key={anim.id}>
-                     <span style={{
-                       fontSize: 24,
-                       fontWeight: 900,
-                       color: '#1565c0',
-                       marginRight: 8,
-                       animation: anim.animation,
-                       display: 'inline-block'
-                     }}>{anim.id}.</span>
-                     {index === 0 && <>
-                       <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
-                                lang === 'de' ? 'Hier wurde der Walzer geboren' :
-                                'The Waltz was born here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
-                        lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
-                        'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
-                     </>}
-                     {index === 1 && <>
-                       <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
-                                lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
-                                'Austria is a country of castles and palaces'}</strong><br /><br />
-                       {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
-                        lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
-                        'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
-                     </>}
-                     {index === 2 && <>
-                       <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
-                                lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
-                                'Great musical geniuses were born here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
-                        lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
-                        'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
-                     </>}
-                     {index === 3 && <>
-                       <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
-                                lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
-                                'Viennese coffee is not a myth'}</strong><br /><br />
-                       {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
-                        lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
-                        'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
-                     </>}
-                     {index === 4 && <>
-                       <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
-                                lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
-                                'Austria is one of the greenest countries in Europe'}</strong><br /><br />
-                       {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
-                        lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
-                        'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
-                     </>}
-                     <br /><br />
-                   </React.Fragment>
-                 ))}
+                 {oldNumberAnimations.map((anim, index) => {
+                   if (!postState.showFullAustriaFacts1 && index > 1) return null;
+                   return (
+                     <React.Fragment key={anim.id}>
+                       <span style={{
+                         fontSize: 18,
+                         fontWeight: 900,
+                         color: '#1565c0',
+                         marginRight: 8,
+                         animation: anim.animation,
+                         display: 'inline-block'
+                       }}>{anim.id}.</span>
+                       {index === 0 && <>
+                         <strong>{lang === 'ua' ? 'Тут народився ЦМОК (вальс)' :
+                                  lang === 'de' ? 'Hier wurde der Walzer geboren' :
+                                  'The Waltz was born here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Вальс як танець зародився у Відні у XVIII столітті. Віденський вальс досі вважається класикою світських балів, а віденський бал — мрія для всіх шанувальників елегантності.' :
+                          lang === 'de' ? 'Der Walzer als Tanz entstand im 18. Jahrhundert in Wien. Der Wiener Walzer gilt noch heute als Klassiker der Gesellschaftsbälle, und ein Wiener Ball ist der Traum aller Liebhaber der Eleganz.' :
+                          'The waltz as a dance originated in Vienna in the 18th century. The Viennese waltz is still considered a classic of social balls, and a Viennese ball is a dream for all lovers of elegance.'}
+                       </>}
+                       {index === 1 && <>
+                         <strong>{lang === 'ua' ? 'Австрія — країна замків і палаців' :
+                                  lang === 'de' ? 'Österreich ist ein Land der Schlösser und Paläste' :
+                                  'Austria is a country of castles and palaces'}</strong><br /><br />
+                         {lang === 'ua' ? 'Тут понад 2 000 замків і палаців! Шенбрунн і Гофбург у Відні, середньовічні фортеці в Зальцбурзі — справжній рай для любителів історії та архітектури.' :
+                          lang === 'de' ? 'Hier gibt es über 2.000 Schlösser und Paläste! Schönbrunn und Hofburg in Wien, mittelalterliche Festungen in Salzburg — ein wahres Paradies für Geschichts- und Architekturliebhaber.' :
+                          'There are over 2,000 castles and palaces! Schönbrunn and Hofburg in Vienna, medieval fortresses in Salzburg — a true paradise for history and architecture lovers.'}
+                       </>}
+                       {index === 2 && <>
+                         <strong>{lang === 'ua' ? 'Тут народилися великі генії музики' :
+                                  lang === 'de' ? 'Hier wurden große Musikgenies geboren' :
+                                  'Great musical geniuses were born here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Моцарт, Гайдн, Шуберт і навіть Бетховен більшу частину життя творив у Відні. Не дарма Австрію називають «музичною столицею світу».' :
+                          lang === 'de' ? 'Mozart, Haydn, Schubert und sogar Beethoven verbrachten den größten Teil ihres Lebens schaffend in Wien. Nicht umsonst wird Österreich die "musikalische Hauptstadt der Welt" genannt.' :
+                          'Mozart, Haydn, Schubert, and even Beethoven spent most of their lives creating in Vienna. It\'s no wonder Austria is called the "musical capital of the world."'}
+                       </>}
+                       {index === 3 && <>
+                         <strong>{lang === 'ua' ? 'Кава по-віденськи — це не міф' :
+                                  lang === 'de' ? 'Wiener Kaffee ist kein Mythos' :
+                                  'Viennese coffee is not a myth'}</strong><br /><br />
+                         {lang === 'ua' ? 'Віденські кав\'ярні — це окрема культура. Кажуть, традиція пішла ще від турків у XVII столітті. Сьогодні кав\'ярні Відня внесені до списку нематеріальної спадщини ЮНЕСКО!' :
+                          lang === 'de' ? 'Wiener Kaffeehäuser sind eine eigene Kultur. Man sagt, die Tradition geht auf die Türken im 17. Jahrhundert zurück. Heute sind Wiens Kaffeehäuser in die UNESCO-Liste des immateriellen Kulturerbes aufgenommen!' :
+                          'Viennese coffee houses are a separate culture. They say the tradition originated from the Turks in the 17th century. Today, Vienna\'s coffee houses are included in the UNESCO Intangible Cultural Heritage list!'}
+                       </>}
+                       {index === 4 && <>
+                         <strong>{lang === 'ua' ? 'Австрія — одна з найзеленіших країн Європи' :
+                                  lang === 'de' ? 'Österreich ist eines der grünsten Länder Europas' :
+                                  'Austria is one of the greenest countries in Europe'}</strong><br /><br />
+                         {lang === 'ua' ? 'Майже 60% території займають гори (Альпи), а близько третини — ліси. Це рай для тих, хто любить гірськолижний спорт, хайкінг і чисте повітря.' :
+                          lang === 'de' ? 'Fast 60% des Territoriums nehmen Berge (Alpen) ein, und etwa ein Drittel sind Wälder. Das ist ein Paradies für alle, die Skifahren, Wandern und saubere Luft lieben.' :
+                          'Almost 60% of the territory is mountains (Alps), and about a third is forests. This is a paradise for those who love skiing, hiking, and clean air.'}
+                       </>}
+                       <br /><br />
+                     </React.Fragment>
+                   );
+                 })}
+                 {!postState.showFullAustriaFacts1 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts1(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullAustriaFacts1 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts1(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
@@ -2143,73 +2369,130 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                transition: 'all 0.8s ease-out',
                transformOrigin: 'center center'
              }} id="berg-image" />
-             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
-               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
+             <div style={{ fontSize: 14, color: '#234', whiteSpace: 'pre-line', textAlign: 'left', width: '100%', fontFamily: 'Inter, sans-serif' }}>
+               <div style={{ fontSize: 16, fontWeight: 700, color: '#1565c0', marginBottom: 16, textAlign: 'center' }}>
                  {lang === 'ua' ? '🇦🇹 5 фактів про Австрію, які вас здивують (2 частина)' :
                   lang === 'de' ? '🇦🇹 5 Fakten über Österreich, die Sie überraschen werden (Teil 2)' :
                   '🇦🇹 5 facts about Austria that will surprise you (Part 2)'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {numberAnimations.map((anim, index) => (
-                   <React.Fragment key={anim.id}>
-                     <span style={{
-                       fontSize: 24,
-                       fontWeight: 900,
-                       color: '#1565c0',
-                       marginRight: 8,
-                       animation: anim.animation,
-                       display: 'inline-block'
-                     }}>{anim.id}.</span>
-                     {index === 0 && <>
-                       <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
-                                lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
-                                'Austria has its own "sea" landscape'}</strong><br /><br />
-                       {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
-                        lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
-                        'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
-                     </>}
-                     {index === 1 && <>
-                       <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
-                                lang === 'de' ? 'Der älteste Zoo der Welt' :
-                                'The oldest zoo in the world'}</strong><br /><br />
-                       {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
-                        lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
-                        'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
-                     </>}
-                     {index === 2 && <>
-                       <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
-                                lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
-                                'Lifts without doors? It\'s a reality!'}</strong><br /><br />
-                       {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
-                        lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
-                        'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
-                     </>}
-                     {index === 3 && <>
-                       <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
-                                lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
-                                'One of the best chocolates in the world is produced here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
-                        lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
-                        '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
-                     </>}
-                     {index === 4 && <>
-                       <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
-                                lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
-                                'The largest glacier in the Eastern Alps'}</strong><br /><br />
-                       {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
-                        lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
-                        'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
-                     </>}
-                     <br /><br />
-                   </React.Fragment>
-                 ))}
+                 {numberAnimations.map((anim, index) => {
+                   if (!postState.showFullAustriaFacts2 && index > 1) return null;
+                   return (
+                     <React.Fragment key={anim.id}>
+                       <span style={{
+                         fontSize: 18,
+                         fontWeight: 900,
+                         color: '#1565c0',
+                         marginRight: 8,
+                         animation: anim.animation,
+                         display: 'inline-block'
+                       }}>{anim.id}.</span>
+                       {index === 0 && <>
+                         <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
+                                  lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
+                                  'Austria has its own "sea" landscape'}</strong><br /><br />
+                         {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
+                          lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
+                          'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
+                       </>}
+                       {index === 1 && <>
+                         <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
+                                  lang === 'de' ? 'Der älteste Zoo der Welt' :
+                                  'The oldest zoo in the world'}</strong><br /><br />
+                         {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
+                          lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
+                          'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
+                       </>}
+                       {index === 2 && <>
+                         <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
+                                  lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
+                                  'Lifts without doors? It\'s a reality!'}</strong><br /><br />
+                         {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
+                          lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
+                          'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
+                       </>}
+                       {index === 3 && <>
+                         <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
+                                  lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
+                                  'One of the best chocolates in the world is produced here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
+                          lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
+                          '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
+                       </>}
+                       {index === 4 && <>
+                         <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
+                                  lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
+                                  'The largest glacier in the Eastern Alps'}</strong><br /><br />
+                         {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
+                          lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
+                          'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
+                       </>}
+                       <br /><br />
+                     </React.Fragment>
+                   );
+                 })}
+                 {!postState.showFullAustriaFacts2 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts2(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullAustriaFacts2 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts2(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw',
+                       display: 'block',
+                       margin: '1vw auto 0'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
          ) : (
            <div style={{
              display: 'flex',
-             flexDirection: 'column',
+             flexDirection: 'row',
+             alignItems: 'flex-start',
+             gap: '2vw',
              margin: '0 auto 1vw auto',
              background: 'rgba(255,255,255,0.85)',
              borderRadius: 16,
@@ -2222,74 +2505,132 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              boxSizing: 'border-box'
            }}>
              <img src={bergImg} alt="Austria Facts" style={{ 
-               width: '100%', 
+               width: '40%',
+               maxWidth: '40%',
                height: 'auto', 
                borderRadius: 12, 
-               marginBottom: '2vw', 
                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+               flexShrink: 0,
                transform: isBergImageVisible ? 'scale(1)' : 'scale(0.3)',
                opacity: isBergImageVisible ? 1 : 0,
                transition: 'all 0.8s ease-out',
                transformOrigin: 'center center'
              }} id="berg-image" />
-             <div style={{ fontSize: 18, color: '#234', whiteSpace: 'pre-line', fontFamily: 'Inter, sans-serif' }}>
-               <div style={{ fontSize: 20, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
+             <div style={{ 
+               flex: 1,
+               fontSize: 14, 
+               color: '#234', 
+               whiteSpace: 'pre-line', 
+               fontFamily: 'Inter, sans-serif' 
+             }}>
+               <div style={{ fontSize: 16, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>
                  {t('austria_facts_title') || '🇦🇹 5 фактів про Австрію, які вас здивують (2 частина)'}
                </div>
                <div style={{ marginBottom: 16 }}>
-                 {numberAnimations.map((anim, index) => (
-                   <React.Fragment key={anim.id}>
-                     <span style={{
-                       fontSize: 24,
-                       fontWeight: 900,
-                       color: '#1565c0',
-                       marginRight: 8,
-                       animation: anim.animation,
-                       display: 'inline-block'
-                     }}>{anim.id}.</span>
-                     {index === 0 && <>
-                       <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
-                                lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
-                                'Austria has its own "sea" landscape'}</strong><br /><br />
-                       {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
-                        lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
-                        'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
-                     </>}
-                     {index === 1 && <>
-                       <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
-                                lang === 'de' ? 'Der älteste Zoo der Welt' :
-                                'The oldest zoo in the world'}</strong><br /><br />
-                       {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
-                        lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
-                        'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
-                     </>}
-                     {index === 2 && <>
-                       <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
-                                lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
-                                'Lifts without doors? It\'s a reality!'}</strong><br /><br />
-                       {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
-                        lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
-                        'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
-                     </>}
-                     {index === 3 && <>
-                       <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
-                                lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
-                                'One of the best chocolates in the world is produced here'}</strong><br /><br />
-                       {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
-                        lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
-                        '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
-                     </>}
-                     {index === 4 && <>
-                       <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
-                                lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
-                                'The largest glacier in the Eastern Alps'}</strong><br /><br />
-                       {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
-                        lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
-                        'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
-                     </>}
-                     <br /><br />
-                   </React.Fragment>
-                 ))}
+                 {numberAnimations.map((anim, index) => {
+                   if (!postState.showFullAustriaFacts2 && index > 1) return null;
+                   return (
+                     <React.Fragment key={anim.id}>
+                       <span style={{
+                         fontSize: 18,
+                         fontWeight: 900,
+                         color: '#1565c0',
+                         marginRight: 8,
+                         animation: anim.animation,
+                         display: 'inline-block'
+                       }}>{anim.id}.</span>
+                       {index === 0 && <>
+                         <strong>{lang === 'ua' ? 'Австрія має власний «морський» пейзаж' :
+                                  lang === 'de' ? 'Österreich hat seine eigene "Meeres"-Landschaft' :
+                                  'Austria has its own "sea" landscape'}</strong><br /><br />
+                         {lang === 'ua' ? 'Попри те, що країна не має виходу до моря, тут є неймовірні озера — наприклад, Вольфгангзе та Вертерзе, де вода настільки прозора, що видно дно на кілька метрів.' :
+                          lang === 'de' ? 'Obwohl das Land keinen Zugang zum Meer hat, gibt es hier unglaubliche Seen — zum Beispiel Wolfgangsee und Wörthersee, wo das Wasser so klar ist, dass man den Grund mehrere Meter tief sehen kann.' :
+                          'Despite being landlocked, Austria has incredible lakes like Wolfgangsee and Wörthersee, where the water is so clear that the bottom is visible for several meters.'}
+                       </>}
+                       {index === 1 && <>
+                         <strong>{lang === 'ua' ? 'Найстаріший зоопарк у світі' :
+                                  lang === 'de' ? 'Der älteste Zoo der Welt' :
+                                  'The oldest zoo in the world'}</strong><br /><br />
+                         {lang === 'ua' ? 'Зоопарк Шенбрунн у Відні працює з 1752 року та є найстарішим діючим зоопарком на планеті. Тут мешкають рідкісні панди та інші екзотичні тварини.' :
+                          lang === 'de' ? 'Der Tiergarten Schönbrunn in Wien arbeitet seit 1752 und ist der älteste kontinuierlich betriebene Zoo der Welt. Hier leben seltene Pandas und andere exotische Tiere.' :
+                          'Schönbrunn Zoo in Vienna has been operating since 1752 and is the oldest continuously operating zoo on the planet. It is home to rare pandas and other exotic animals.'}
+                       </>}
+                       {index === 2 && <>
+                         <strong>{lang === 'ua' ? 'Ліфти без дверей? Це реальність!' :
+                                  lang === 'de' ? 'Aufzüge ohne Türen? Das ist Realität!' :
+                                  'Lifts without doors? It\'s a reality!'}</strong><br /><br />
+                         {lang === 'ua' ? 'У деяких старих віденських будівлях досі працюють ліфти типу «paternoster» — без дверей і з постійним рухом кабін. Унікальна знахідка для сміливців!' :
+                          lang === 'de' ? 'In einigen alten Wiener Gebäuden funktionieren noch immer Aufzüge vom Typ "Paternoster" — ohne Türen und mit kontinuierlicher Kabinenbewegung. Ein einzigartiger Fund für Mutige!' :
+                          'In some old Viennese buildings, "paternoster" type lifts are still in operation. These lifts have no doors and the cabins move continuously. It\'s a unique find for the brave!'}
+                       </>}
+                       {index === 3 && <>
+                         <strong>{lang === 'ua' ? 'Тут виробляють один із найкращих шоколадів у світі' :
+                                  lang === 'de' ? 'Hier wird eine der besten Schokoladen der Welt hergestellt' :
+                                  'One of the best chocolates in the world is produced here'}</strong><br /><br />
+                         {lang === 'ua' ? 'Шоколад «Mozartkugel» родом із Зальцбурга став гастрономічною легендою Австрії. Його досі роблять за традиційними рецептами понад 100 років.' :
+                          lang === 'de' ? 'Die Schokolade "Mozartkugel" aus Salzburg ist zu einer gastronomischen Legende Österreichs geworden. Sie wird seit über 100 Jahren nach traditionellen Rezepten hergestellt.' :
+                          '"Mozartkugel" chocolate, originating from Salzburg, has become a gastronomic legend of Austria. It has been made according to traditional recipes for over 100 years.'}
+                       </>}
+                       {index === 4 && <>
+                         <strong>{lang === 'ua' ? 'Найбільший льодовик у Східних Альпах' :
+                                  lang === 'de' ? 'Der größte Gletscher in den Ostalpen' :
+                                  'The largest glacier in the Eastern Alps'}</strong><br /><br />
+                         {lang === 'ua' ? 'Льодовик Пастерце біля гори Гросглокнер — це природне диво, яке щороку відвідують тисячі туристів. Його довжина понад 8 км!' :
+                          lang === 'de' ? 'Der Pasterze-Gletscher am Großglockner ist ein Naturwunder, das jährlich von Tausenden von Touristen besucht wird. Seine Länge beträgt über 8 km!' :
+                          'The Pasterze glacier near Grossglockner mountain is a natural wonder visited by thousands of tourists every year. Its length is over 8 km!'}
+                       </>}
+                       <br /><br />
+                     </React.Fragment>
+                   );
+                 })}
+                 {!postState.showFullAustriaFacts2 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts2(true)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('more_ellipsis') || 'далі...'}
+                   </button>
+                 )}
+                 {postState.showFullAustriaFacts2 && (
+                   <button
+                     onClick={() => postState.setShowFullAustriaFacts2(false)}
+                     style={{
+                       padding: '0.5vw 1.5vw',
+                       fontSize: '1em',
+                       fontWeight: 600,
+                       color: '#fff',
+                       background: '#1976d2',
+                       border: 'none',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       marginTop: '1vw'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.target.style.background = '#1565c0';
+                     }}
+                     onMouseLeave={(e) => {
+                       e.target.style.background = '#1976d2';
+                     }}
+                   >
+                     {t('hide_text') || 'Сховати'}
+                   </button>
+                 )}
                </div>
              </div>
            </div>
@@ -2410,6 +2751,26 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
              )}
            </div>
          </div>
+         </div>
+         
+         {/* Бегущая строка про перевозку мебели */}
+         <div className="transport-marquee">
+           <div className="transport-marquee-track">
+             {transportMarqueePhrases.concat(transportMarqueePhrases).map((phrase, index) => {
+               const isClone = index >= transportMarqueePhrases.length;
+               return (
+                 <Link
+                   key={`transport-marquee-${index}`}
+                   className="transport-marquee-link"
+                   to={transportMarqueeHref}
+                   aria-hidden={isClone}
+                   tabIndex={isClone ? -1 : undefined}
+                 >
+                   {phrase}
+                 </Link>
+               );
+             })}
+           </div>
          </div>
          
          {/* Події тижня */}
