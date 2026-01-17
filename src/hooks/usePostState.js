@@ -4,6 +4,8 @@ export function usePostState() {
   const [showFull, setShowFull] = useState(false);
   const [showFullKolschitzkyText, setShowFullKolschitzkyText] = useState(false);
   const [showFullDiplomaText, setShowFullDiplomaText] = useState(false);
+  const [showFullAustriaNationalDay, setShowFullAustriaNationalDay] = useState(false);
+  const [showFullGregoryCalendar, setShowFullGregoryCalendar] = useState(false);
   
   return {
     showFull,
@@ -11,6 +13,10 @@ export function usePostState() {
     showFullKolschitzkyText,
     setShowFullKolschitzkyText,
     showFullDiplomaText,
-    setShowFullDiplomaText
+    setShowFullDiplomaText,
+    showFullAustriaNationalDay,
+    setShowFullAustriaNationalDay,
+    showFullGregoryCalendar,
+    setShowFullGregoryCalendar
   };
 }

@@ -14,6 +14,7 @@ import EurovisionImg from '../../assets/Eurovision.png';
 import WienImg from '../../assets/Wien.png';
 import bergImg from '../../assets/berg.png';
 import nationalTadImg from '../../assets/NationalTad.png';
+import image2201 from '../../assets/Home/22_01.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
@@ -26,6 +27,7 @@ import { HOME_STYLES } from '../../constants/homeStyles';
 import busImg from '../../assets/bus_sonne.png';
 import regenbogenImg from '../../assets/regenbogen.jpg';
 import christmasImg from '../../assets/Christmas.png';
+import spracheImg from '../../assets/Home/spache.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -38,6 +40,40 @@ export default function Home() {
   // Получаем тексты из хуков
   const getKolschitzkyText = () => texts.getKolschitzkyText(postState.showFullKolschitzkyText);
   const getDiplomaText = () => texts.getDiplomaText(postState.showFullDiplomaText);
+  
+  // Функция для получения текста про Австрию
+  const getAustriaNationalDayText = () => {
+    const fullText = t('austria_national_day_description');
+    if (postState.showFullAustriaNationalDay) {
+      return fullText;
+    }
+    // Берем первые 2 абзаца
+    const paragraphs = fullText.split('\n\n');
+    if (paragraphs.length >= 2) {
+      return paragraphs[0] + '\n\n' + paragraphs[1];
+    }
+    return fullText;
+  };
+  
+  // Функция для получения текста про григорианский календарь
+  const getGregoryCalendarText = () => {
+    const fullText = lang === 'ua' ? 
+      '1582 рік — Папа Римський Григорій XIII запровадив григоріанський календар (звідси й назва).\nЙого одразу прийняли католицькі країни: Італія, Іспанія, Португалія, Польща.\nПісля 4 жовтня 1582 року одразу настав 15 жовтня 1582 року — пропущено 10 днів.\n\nПротестантські країни (Німеччина, Великобританія та ін.) перейшли пізніше — у XVII–XVIII століттях.\nНаприклад, Великобританія та її колонії — у 1752 році, пропустивши 11 днів.\n\nРосія (і, відповідно, Україна, Білорусь, Грузія та ін. у складі Російської імперії) —\nперейшла лише після Жовтневої революції, за декретом Ради народних комісарів від 24 січня 1918 року.\nПісля 31 січня 1918 року одразу настав 14 лютого 1918 року — пропущено 13 днів.\n\n🇺🇦 Україна:\n\nУкраїна перейшла на григоріанський календар разом із Радянською Росією —\n📅 у лютому 1918 року.\nДо цього на території України (у складі Російської імперії) діяв юліанський календар.\n\n⛪ Церковне використання:\n\nПравославна церква в Україні довго залишалася на юліанському календарі (старому стилі).\n\nПерехід ПЦУ (Православної Церкви України) на новоюліанський календар (сумісний з григоріанським до 2800 року) відбувся 1 вересня 2023 року.\nТепер більшість церковних свят відзначається за новим стилем, але Великдень все ще обчислюється за старим (юліанським) календарем.' :
+      lang === 'de' ?
+        '1582 — Papst Gregor XIII. führte den Gregorianischen Kalender ein (daher der Name).\nKatholische Länder nahmen ihn sofort an: Italien, Spanien, Portugal, Polen.\nNach dem 4. Oktober 1582 folgte sofort der 15. Oktober 1582 — 10 Tage wurden übersprungen.\n\nProtestantische Länder (Deutschland, Großbritannien usw.) wechselten später — im 17.–18. Jahrhundert.\nZum Beispiel Großbritannien und seine Kolonien — 1752, wobei 11 Tage übersprungen wurden.\n\nRussland (und entsprechend die Ukraine, Belarus, Georgien usw. als Teil des Russischen Reiches) —\nwechselte erst nach der Oktoberrevolution, durch Dekret des Rates der Volkskommissare vom 24. Januar 1918.\nNach dem 31. Januar 1918 folgte sofort der 14. Februar 1918 — 13 Tage wurden übersprungen.\n\n🇺🇦 Ukraine:\n\nDie Ukraine wechselte zusammen mit Sowjetrussland zum Gregorianischen Kalender —\n📅 im Februar 1918.\nDavor galt auf dem Gebiet der Ukraine (als Teil des Russischen Reiches) der Julianische Kalender.\n\n⛪ Kirchliche Nutzung:\n\nDie Orthodoxe Kirche in der Ukraine blieb lange beim Julianischen Kalender (alten Stil).\n\nDer Übergang der OKU (Orthodoxen Kirche der Ukraine) zum Neujulianischen Kalender (kompatibel mit dem Gregorianischen bis 2800) erfolgte am 1. September 2023.\nJetzt werden die meisten Kirchenfeiertage nach dem neuen Stil gefeiert, aber Ostern wird immer noch nach dem alten (Julianischen) Kalender berechnet.' :
+        '1582 — Pope Gregory XIII introduced the Gregorian calendar (hence the name).\nCatholic countries adopted it immediately: Italy, Spain, Portugal, Poland.\nAfter October 4, 1582, October 15, 1582 came immediately — 10 days were skipped.\n\nProtestant countries (Germany, Great Britain, etc.) switched later — in the 17th–18th centuries.\nFor example, Great Britain and its colonies — in 1752, skipping 11 days.\n\nRussia (and accordingly Ukraine, Belarus, Georgia, etc. as part of the Russian Empire) —\nswitched only after the October Revolution, by decree of the Council of People\'s Commissars of January 24, 1918.\nAfter January 31, 1918, February 14, 1918 came immediately — 13 days were skipped.\n\n🇺🇦 Ukraine:\n\nUkraine switched to the Gregorian calendar together with Soviet Russia —\n📅 in February 1918.\nBefore that, the Julian calendar was in effect on the territory of Ukraine (as part of the Russian Empire).\n\n⛪ Church use:\n\nThe Orthodox Church in Ukraine remained on the Julian calendar (old style) for a long time.\n\nThe transition of the OCU (Orthodox Church of Ukraine) to the New Julian calendar (compatible with the Gregorian until 2800) took place on September 1, 2023.\nNow most church holidays are celebrated according to the new style, but Easter is still calculated according to the old (Julian) calendar.';
+    
+    if (postState.showFullGregoryCalendar) {
+      return fullText;
+    }
+    
+    // Берем первые 2 абзаца
+    const paragraphs = fullText.split('\n\n');
+    if (paragraphs.length >= 2) {
+      return paragraphs[0] + '\n\n' + paragraphs[1];
+    }
+    return fullText;
+  };
   
   // Система анимации изображений:
   // - Eurovision: появляется сразу (delay: 0)
@@ -919,62 +955,157 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           textAlign: 'center',
         }}>{t('this_day_in_history') || 'Цей день в історії'}</div>
         
-        {/* Пост про Национальный день Австрии */}
-          <div style={{
-            background: 'rgba(255,255,255,0.85)',
-            borderRadius: 16,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-            padding: '2vw',
+        {/* Пост про День Соборності України */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
           maxWidth: isSmallScreen ? 350 : 1200,
           width: isSmallScreen ? '95%' : '90vw',
           margin: isSmallScreen ? '0 auto 1vw auto' : '0 auto 1vw auto',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
-          {/* Изображение на всю ширину */}
-          <img 
-            src={nationalTadImg} 
-            alt="Austria National Day" 
-            style={{ 
-              width: '80%', 
-              maxWidth: '80%',
-              height: 'auto', 
-              borderRadius: 12, 
-              
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)' 
-            }} 
-          />
-          
-          {/* Текст под изображением */}
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row'
+        }}>
+          {/* Картинка слева */}
           <div style={{ 
-            fontSize: isSmallScreen ? 18 : 20, 
-            color: '#234', 
-            whiteSpace: 'pre-line', 
-            textAlign: 'center', 
-            width: '100%' 
+            flex: '0 0 auto',
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
           }}>
-            <div style={{ 
-              fontSize: isSmallScreen ? 20 : 24, 
-              fontWeight: 700, 
-              color: '#1565c0', 
-              marginBottom: 16, 
-              textAlign: 'center' 
-            }}>
-              {t('austria_national_day_title') || '🇦🇹 26 жовтня — Національний день Австрії'}
-              </div>
-          <div style={{
-              fontSize: isSmallScreen ? 16 : 18, 
-              lineHeight: 1.5, 
-              color: '#333',
-            textAlign: 'left',
-              padding: '0 10px'
-            }}>
-              {t('austria_national_day_description') || 'Сьогодні Австрія відзначає один з найважливіших державних свят — Національний день.\n\n📖 Трохи історії:\nПісля закінчення Другої світової війни Австрія перебувала під окупацією союзних держав (СРСР, США, Великобританії та Франції). Лише в 1955 році було підписано Державний договір, який відновив незалежність країни.\n\nОднак однією з ключових умов стало зобов\'язання Австрії зберігати постійний нейтралітет. 26 жовтня 1955 року парламент прийняв закон, який закріпив цей статус. З тих пір Австрія не вступає до військових блоків і не розміщує на своїй території іноземні військові бази.\n\n🎉 Чому цей день важливий:\n\n• Символ незалежності та свободи країни.\n• Нагадування про цінність миру та нейтралітету.\n• День, коли по всій Австрії проходять військові паради, культурні заходи, екскурсії до державних установ.\n\n💡 Цікавий факт: хоча сам договір було підписано в травні 1955 року, саме 26 жовтня стало днем національного свята — адже саме тоді Австрія офіційно заявила світу: «Ми — нейтральна країна».'}
-              </div>
+            <img 
+              src={image2201} 
+              alt="22 January" 
+              style={{ 
+                width: '100%',
+                height: 'auto', 
+                borderRadius: 12, 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
+              }} 
+            />
+          </div>
+
+          {/* Текст справа */}
+          <div style={{ 
+            flex: '1 1 auto',
+            fontSize: '1.1em', 
+            lineHeight: '1.8', 
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('unity_day_title')}
+            </p>
+            
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('unity_day_text')}
             </div>
           </div>
+        </div>
+        
+        {/* Пост про Национальный день Австрии */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: isSmallScreen ? 350 : 1200,
+          width: isSmallScreen ? '95%' : '90vw',
+          margin: isSmallScreen ? '0 auto 1vw auto' : '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row'
+        }}>
+          {/* Картинка слева */}
+          <div style={{ 
+            flex: '0 0 auto',
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
+          }}>
+            <img 
+              src={nationalTadImg} 
+              alt="Austria National Day" 
+              style={{ 
+                width: '100%',
+                height: 'auto', 
+                borderRadius: 12, 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
+              }} 
+            />
+          </div>
+
+          {/* Текст справа */}
+          <div style={{ 
+            flex: '1 1 auto',
+            fontSize: '1.1em', 
+            lineHeight: '1.8', 
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('austria_national_day_title')}
+            </p>
+            
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {getAustriaNationalDayText()}
+            </div>
+            
+            {!postState.showFullAustriaNationalDay ? (
+              <button
+                onClick={() => postState.setShowFullAustriaNationalDay(true)}
+                style={{
+                  background: '#1976d2',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  marginTop: '1rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                }}
+              >
+                {t('more_ellipsis') || 'далі…'}
+              </button>
+            ) : (
+              <button
+                onClick={() => postState.setShowFullAustriaNationalDay(false)}
+                style={{
+                  background: '#1976d2',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  marginTop: '1rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                }}
+              >
+                {t('hide_text') || 'Сховати'}
+              </button>
+            )}
+          </div>
+        </div>
 
         {/* Заголовок "Это полезно знать" */}
         <div className="module-heading" style={{
@@ -1096,6 +1227,75 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           letterSpacing: '0.02em',
           textAlign: 'center',
         }}>{t('this_is_interesting') || 'Це цікаво'}</div>
+
+         {/* Пост про українську мову */}
+         <div className="ukrainian-language-post-card" style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '90vw',
+          margin: '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start'
+        }}>
+          {/* Картинка слева */}
+          <div className="ukrainian-language-post-image" style={{ 
+            flex: '0 0 auto',
+            minWidth: '300px',
+            maxWidth: '400px'
+          }}>
+            <img 
+              src={spracheImg} 
+              alt={t('ukrainian_language_image_alt')} 
+              style={{ 
+                width: '100%',
+                height: 'auto', 
+                borderRadius: '12px', 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)' 
+              }} 
+            />
+          </div>
+
+          {/* Текст справа */}
+          <div className="ukrainian-language-post-text" style={{ 
+            flex: '1 1 auto',
+            fontSize: '1.1em', 
+            lineHeight: '1.8', 
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('ukrainian_language_title')}
+            </p>
+            
+            <p style={{ marginBottom: '20px' }}>
+              <strong>{t('ukrainian_language_asymmetric')}</strong>
+            </p>
+
+            <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
+              {t('ukrainian_language_lexical')}
+            </p>
+
+            <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
+              {t('ukrainian_language_origin')}
+            </p>
+
+            <p style={{ marginBottom: '20px' }}>
+              <strong>{t('ukrainian_language_barriers')}</strong>
+            </p>
+
+            <p style={{ marginBottom: '20px' }}>
+              <strong>{t('ukrainian_language_psychological')}</strong>
+            </p>
+
+            <p style={{ marginTop: '20px', fontWeight: '600', color: '#1565c0', whiteSpace: 'pre-line' }}>
+              {t('ukrainian_language_conclusion')}
+            </p>
+          </div>
+        </div>
         
         {/* Пост про радугу */}
         <div className="rainbow-post-card" style={{
@@ -1240,6 +1440,8 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             </div>
           </div>
         </div>
+
+       
 
         {/* Пост про туристический рекорд Австрии */}
         {(() => {
@@ -2033,12 +2235,60 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
                lineHeight: '1.4',
                textAlign: 'left'
              }}>
-               {lang === 'ua' ? 
-                 '1582 рік — Папа Римський Григорій XIII запровадив григоріанський календар (звідси й назва).\nЙого одразу прийняли католицькі країни: Італія, Іспанія, Португалія, Польща.\nПісля 4 жовтня 1582 року одразу настав 15 жовтня 1582 року — пропущено 10 днів.\n\nПротестантські країни (Німеччина, Великобританія та ін.) перейшли пізніше — у XVII–XVIII століттях.\nНаприклад, Великобританія та її колонії — у 1752 році, пропустивши 11 днів.\n\nРосія (і, відповідно, Україна, Білорусь, Грузія та ін. у складі Російської імперії) —\nперейшла лише після Жовтневої революції, за декретом Ради народних комісарів від 24 січня 1918 року.\nПісля 31 січня 1918 року одразу настав 14 лютого 1918 року — пропущено 13 днів.\n\n🇺🇦 Україна:\n\nУкраїна перейшла на григоріанський календар разом із Радянською Росією —\n📅 у лютому 1918 року.\nДо цього на території України (у складі Російської імперії) діяв юліанський календар.\n\n⛪ Церковне використання:\n\nПравославна церква в Україні довго залишалася на юліанському календарі (старому стилі).\n\nПерехід ПЦУ (Православної Церкви України) на новоюліанський календар (сумісний з григоріанським до 2800 року) відбувся 1 вересня 2023 року.\nТепер більшість церковних свят відзначається за новим стилем, але Великдень все ще обчислюється за старим (юліанським) календарем.' :
-               lang === 'de' ?
-                 '1582 — Papst Gregor XIII. führte den Gregorianischen Kalender ein (daher der Name).\nKatholische Länder nahmen ihn sofort an: Italien, Spanien, Portugal, Polen.\nNach dem 4. Oktober 1582 folgte sofort der 15. Oktober 1582 — 10 Tage wurden übersprungen.\n\nProtestantische Länder (Deutschland, Großbritannien usw.) wechselten später — im 17.–18. Jahrhundert.\nZum Beispiel Großbritannien und seine Kolonien — 1752, wobei 11 Tage übersprungen wurden.\n\nRussland (und entsprechend die Ukraine, Belarus, Georgien usw. als Teil des Russischen Reiches) —\nwechselte erst nach der Oktoberrevolution, durch Dekret des Rates der Volkskommissare vom 24. Januar 1918.\nNach dem 31. Januar 1918 folgte sofort der 14. Februar 1918 — 13 Tage wurden übersprungen.\n\n🇺🇦 Ukraine:\n\nDie Ukraine wechselte zusammen mit Sowjetrussland zum Gregorianischen Kalender —\n📅 im Februar 1918.\nDavor galt auf dem Gebiet der Ukraine (als Teil des Russischen Reiches) der Julianische Kalender.\n\n⛪ Kirchliche Nutzung:\n\nDie Orthodoxe Kirche in der Ukraine blieb lange beim Julianischen Kalender (alten Stil).\n\nDer Übergang der OKU (Orthodoxen Kirche der Ukraine) zum Neujulianischen Kalender (kompatibel mit dem Gregorianischen bis 2800) erfolgte am 1. September 2023.\nJetzt werden die meisten Kirchenfeiertage nach dem neuen Stil gefeiert, aber Ostern wird immer noch nach dem alten (Julianischen) Kalender berechnet.' :
-                 '1582 — Pope Gregory XIII introduced the Gregorian calendar (hence the name).\nCatholic countries adopted it immediately: Italy, Spain, Portugal, Poland.\nAfter October 4, 1582, October 15, 1582 came immediately — 10 days were skipped.\n\nProtestant countries (Germany, Great Britain, etc.) switched later — in the 17th–18th centuries.\nFor example, Great Britain and its colonies — in 1752, skipping 11 days.\n\nRussia (and accordingly Ukraine, Belarus, Georgia, etc. as part of the Russian Empire) —\nswitched only after the October Revolution, by decree of the Council of People\'s Commissars of January 24, 1918.\nAfter January 31, 1918, February 14, 1918 came immediately — 13 days were skipped.\n\n🇺🇦 Ukraine:\n\nUkraine switched to the Gregorian calendar together with Soviet Russia —\n📅 in February 1918.\nBefore that, the Julian calendar was in effect on the territory of Ukraine (as part of the Russian Empire).\n\n⛪ Church use:\n\nThe Orthodox Church in Ukraine remained on the Julian calendar (old style) for a long time.\n\nThe transition of the OCU (Orthodox Church of Ukraine) to the New Julian calendar (compatible with the Gregorian until 2800) took place on September 1, 2023.\nNow most church holidays are celebrated according to the new style, but Easter is still calculated according to the old (Julian) calendar.'}
-               </div>
+               {getGregoryCalendarText()}
+             </div>
+             
+             {!postState.showFullGregoryCalendar ? (
+               <button
+                 onClick={() => postState.setShowFullGregoryCalendar(true)}
+                 style={{
+                   background: '#1976d2',
+                   color: '#fff',
+                   border: 'none',
+                   borderRadius: '8px',
+                   padding: '8px 16px',
+                   fontSize: '14px',
+                   fontWeight: '600',
+                   cursor: 'pointer',
+                   marginTop: '1rem',
+                   boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                   transition: 'all 0.3s ease'
+                 }}
+                 onMouseEnter={(e) => {
+                   e.target.style.background = '#1565c0';
+                 }}
+                 onMouseLeave={(e) => {
+                   e.target.style.background = '#1976d2';
+                 }}
+               >
+                 {t('more_ellipsis') || 'далі…'}
+               </button>
+             ) : (
+               <button
+                 onClick={() => postState.setShowFullGregoryCalendar(false)}
+                 style={{
+                   background: '#1976d2',
+                   color: '#fff',
+                   border: 'none',
+                   borderRadius: '8px',
+                   padding: '8px 16px',
+                   fontSize: '14px',
+                   fontWeight: '600',
+                   cursor: 'pointer',
+                   marginTop: '1rem',
+                   boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                   transition: 'all 0.3s ease'
+                 }}
+                 onMouseEnter={(e) => {
+                   e.target.style.background = '#1565c0';
+                 }}
+                 onMouseLeave={(e) => {
+                   e.target.style.background = '#1976d2';
+                 }}
+               >
+                 {t('hide_text') || 'Сховати'}
+               </button>
+             )}
            </div>
          </div>
          </div>
