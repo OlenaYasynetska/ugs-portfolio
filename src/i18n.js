@@ -425,7 +425,16 @@ i18n.use(initReactI18next).init({
         eu_protection_description: 'Der Rat der Europäischen Union hat eine Empfehlung für den schrittweisen Ausstieg aus dem temporären Schutzregime genehmigt, das derzeit für durch den Krieg vertriebene Ukrainer gilt und bis zum 4. März 2027 verlängert wurde.\n\nDie Empfehlungen umfassen:\n• Erteilung nationaler Aufenthaltsgenehmigungen an diejenigen, die arbeiten, studieren, in einer Familie leben oder andere festgelegte Bedingungen erfüllen.\n• Die Möglichkeit des Übergangs zu Status nach EU-Recht, insbesondere für hochqualifizierte Fachkräfte.\n• Die Organisation der freiwilligen Rückkehr in die Ukraine, wenn die Situation es zulässt, mit Unterstützung und koordinierten Bedingungen zwischen den Mitgliedstaaten.\n• Die Verpflichtung, vertriebene Personen über ihre aktuellen Rechte, die Änderung der Leistungen und das, was nach dem Ausstieg aus dem temporären Schutz passieren wird, zu informieren.\n\nIn der EU-Mitteilung wird betont, dass diese Initiative nicht darauf abzielt, die Beendigung des Schutzes zu beschleunigen, sondern vielmehr darauf, die Infrastruktur und den Rechtsrahmen vorzubereiten, um einen normativ korrekten, fairen und schrittweisen Übergang vom temporären Schutz zu dauerhafteren Bedingungen zu gewährleisten.',
         // InfoCenter translations
         info_center_title: 'Infozentrum',
-        info_center_subtitle: 'Alle notwendigen Informationen für Ukrainer in Österreich'
+        info_center_subtitle: 'Alle notwendigen Informationen für Ukrainer in Österreich',
+        // Ukrainian language understanding post
+        ukrainian_language_title: 'Warum Russen Ukrainisch nicht verstehen — kurz',
+        ukrainian_language_asymmetric: 'Asymmetrisches Verständnis: Ukrainer verstehen Russisch nicht wegen der "Sprachnähe", sondern aufgrund jahrelanger Russifizierung, Bildung und Medien. Russen haben jedoch Ukrainisch nicht gelernt und nicht massenhaft gehört.',
+        ukrainian_language_lexical: 'Lexikalischer Unterschied:\n\nukr + Belarussisch — ~84% gemeinsamer Wortschatz\nukr + Polnisch — ~70%\nukr + Russisch — nur ~62%\n→ Ukrainisch ist näher an westslawischen Sprachen als an Russisch.',
+        ukrainian_language_origin: 'Unterschiedliche Sprachursprünge:\n\nUkrainisch — kontinuierliche Entwicklung der lebendigen Sprache der Rus\';\nRussisch — gebildet unter starkem Einfluss des Kirchenslawischen, finno-ugrischer und türkischer Sprachen.',
+        ukrainian_language_barriers: 'Grammatische und phonetische Barrieren: Vokativ, andere Phonetik, andere Lautwechsel — all dies erschwert die auditive Wahrnehmung des Ukrainischen für Russen.',
+        ukrainian_language_psychological: 'Psychologischer Faktor: Die imperialistische Propaganda hat die ukrainische Sprache jahrzehntelang herabgewürdigt und eine Unwilligkeit geschaffen, sie wahrzunehmen und zu lernen.',
+        ukrainian_language_conclusion: 'Hauptschlussfolgerung: Ukrainisch ist kein Dialekt und kein "Abzweig", sondern eine eigenständige, vollwertige Sprache mit ihrem eigenen Entwicklungsweg. Das Missverständnis ist eine Folge der Kolonialpolitik, nicht der "Seltsamkeit" der Sprache.',
+        ukrainian_language_image_alt: 'Vergleich ukrainischer und russischer Sprache'
       },
     },
     ua: {
@@ -576,16 +585,7 @@ i18n.use(initReactI18next).init({
         athens_school_invitation: 'Join our school family!',
         athens_school_contacts: 'Contacts: +380667791944 — Viber, Telegram, WhatsApp',
         athens_school_website: '🌐 https://cdna.com.ua/',
-        athens_school_image_alt: 'Private School Athens',
-        // Ukrainian language understanding post
-        ukrainian_language_title: 'Warum Russen Ukrainisch nicht verstehen — kurz',
-        ukrainian_language_asymmetric: 'Asymmetrisches Verständnis: Ukrainer verstehen Russisch nicht wegen der "Sprachnähe", sondern aufgrund jahrelanger Russifizierung, Bildung und Medien. Russen haben jedoch Ukrainisch nicht gelernt und nicht massenhaft gehört.',
-        ukrainian_language_lexical: 'Lexikalischer Unterschied:\n\nukr + Belarussisch — ~84% gemeinsamer Wortschatz\nukr + Polnisch — ~70%\nukr + Russisch — nur ~62%\n→ Ukrainisch ist näher an westslawischen Sprachen als an Russisch.',
-        ukrainian_language_origin: 'Unterschiedliche Sprachursprünge:\n\nUkrainisch — kontinuierliche Entwicklung der lebendigen Sprache der Rus\';\nRussisch — gebildet unter starkem Einfluss des Kirchenslawischen, finno-ugrischer und türkischer Sprachen.',
-        ukrainian_language_barriers: 'Grammatische und phonetische Barrieren: Vokativ, andere Phonetik, andere Lautwechsel — all dies erschwert die auditive Wahrnehmung des Ukrainischen für Russen.',
-        ukrainian_language_psychological: 'Psychologischer Faktor: Die imperialistische Propaganda hat die ukrainische Sprache jahrzehntelang herabgewürdigt und eine Unwilligkeit geschaffen, sie wahrzunehmen und zu lernen.',
-        ukrainian_language_conclusion: 'Hauptschlussfolgerung: Ukrainisch ist kein Dialekt und kein "Abzweig", sondern eine eigenständige, vollwertige Sprache mit ihrem eigenen Entwicklungsweg. Das Missverständnis ist eine Folge der Kolonialpolitik, nicht der "Seltsamkeit" der Sprache.',
-        ukrainian_language_image_alt: 'Vergleich ukrainischer und russischer Sprache'
+        athens_school_image_alt: 'Private School Athens'
       }
     },
     ua: {
