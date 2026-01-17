@@ -75,6 +75,29 @@ export default function Home() {
     return fullText;
   };
   
+  // Функция для получения текста про украинский язык
+  const getUkrainianLanguageText = () => {
+    if (postState.showFullUkrainianLanguage) {
+      return {
+        asymmetric: t('ukrainian_language_asymmetric'),
+        lexical: t('ukrainian_language_lexical'),
+        origin: t('ukrainian_language_origin'),
+        barriers: t('ukrainian_language_barriers'),
+        psychological: t('ukrainian_language_psychological'),
+        conclusion: t('ukrainian_language_conclusion')
+      };
+    }
+    // Показываем только первые 2 абзаца
+    return {
+      asymmetric: t('ukrainian_language_asymmetric'),
+      lexical: t('ukrainian_language_lexical'),
+      origin: null,
+      barriers: null,
+      psychological: null,
+      conclusion: null
+    };
+  };
+  
   // Система анимации изображений:
   // - Eurovision: появляется сразу (delay: 0)
   // - Wien (старый пост): появляется через 200мс
@@ -1234,18 +1257,19 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           borderRadius: 16,
           boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
           padding: '2vw',
-          maxWidth: 1200,
-          width: '90vw',
+          maxWidth: isSmallScreen ? 350 : 1200,
+          width: isSmallScreen ? '95%' : '90vw',
           margin: '0 auto 1vw auto',
           display: 'flex',
           gap: '25px',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row'
         }}>
           {/* Картинка слева */}
           <div className="ukrainian-language-post-image" style={{ 
             flex: '0 0 auto',
-            minWidth: '300px',
-            maxWidth: '400px'
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
           }}>
             <img 
               src={spracheImg} 
@@ -1271,29 +1295,96 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               {t('ukrainian_language_title')}
             </p>
             
-            <p style={{ marginBottom: '20px' }}>
-              <strong>{t('ukrainian_language_asymmetric')}</strong>
-            </p>
+            {(() => {
+              const textParts = getUkrainianLanguageText();
+              return (
+                <>
+                  <p style={{ marginBottom: '20px' }}>
+                    <strong>{textParts.asymmetric}</strong>
+                  </p>
 
-            <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
-              {t('ukrainian_language_lexical')}
-            </p>
+                  <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
+                    {textParts.lexical}
+                  </p>
 
-            <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
-              {t('ukrainian_language_origin')}
-            </p>
+                  {textParts.origin && (
+                    <p style={{ marginBottom: '20px', whiteSpace: 'pre-line' }}>
+                      {textParts.origin}
+                    </p>
+                  )}
 
-            <p style={{ marginBottom: '20px' }}>
-              <strong>{t('ukrainian_language_barriers')}</strong>
-            </p>
+                  {textParts.barriers && (
+                    <p style={{ marginBottom: '20px' }}>
+                      <strong>{textParts.barriers}</strong>
+                    </p>
+                  )}
 
-            <p style={{ marginBottom: '20px' }}>
-              <strong>{t('ukrainian_language_psychological')}</strong>
-            </p>
+                  {textParts.psychological && (
+                    <p style={{ marginBottom: '20px' }}>
+                      <strong>{textParts.psychological}</strong>
+                    </p>
+                  )}
 
-            <p style={{ marginTop: '20px', fontWeight: '600', color: '#1565c0', whiteSpace: 'pre-line' }}>
-              {t('ukrainian_language_conclusion')}
-            </p>
+                  {textParts.conclusion && (
+                    <p style={{ marginTop: '20px', fontWeight: '600', color: '#1565c0', whiteSpace: 'pre-line' }}>
+                      {textParts.conclusion}
+                    </p>
+                  )}
+                </>
+              );
+            })()}
+            
+            {!postState.showFullUkrainianLanguage ? (
+              <button
+                onClick={() => postState.setShowFullUkrainianLanguage(true)}
+                style={{
+                  background: '#1976d2',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  marginTop: '1rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                }}
+              >
+                {t('more_ellipsis') || 'далі…'}
+              </button>
+            ) : (
+              <button
+                onClick={() => postState.setShowFullUkrainianLanguage(false)}
+                style={{
+                  background: '#1976d2',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  marginTop: '1rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                }}
+              >
+                {t('hide_text') || 'Сховати'}
+              </button>
+            )}
           </div>
         </div>
         

@@ -6,6 +6,7 @@ export function usePostState() {
   const [showFullDiplomaText, setShowFullDiplomaText] = useState(false);
   const [showFullAustriaNationalDay, setShowFullAustriaNationalDay] = useState(false);
   const [showFullGregoryCalendar, setShowFullGregoryCalendar] = useState(false);
+  const [showFullUkrainianLanguage, setShowFullUkrainianLanguage] = useState(false);
   
   return {
     showFull,
@@ -17,6 +18,8 @@ export function usePostState() {
     showFullAustriaNationalDay,
     setShowFullAustriaNationalDay,
     showFullGregoryCalendar,
-    setShowFullGregoryCalendar
+    setShowFullGregoryCalendar,
+    showFullUkrainianLanguage,
+    setShowFullUkrainianLanguage
   };
 }
