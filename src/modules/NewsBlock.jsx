@@ -339,18 +339,30 @@ export default function NewsBlock() {
   };
 
   return (
-    <div style={{ maxWidth: 1200, width: '90vw', minWidth: 320, margin: '32px auto 0', textAlign: 'left', background: 'rgba(255,255,255,0.85)', borderRadius: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2vw', boxSizing: 'border-box' }}>
-      <style>{`
-        @media (max-width: 600px) {
-          .news-article {
-            font-size: 8px !important;
+    <div style={{ 
+      padding: '12px', // Толстый внутренний слой светло-коричневого цвета
+      background: 'rgb(226, 197, 144)', // Светло-коричневая рамка
+      border: '3px solid rgb(100, 75, 35)', // Тонкая темно-коричневая внешняя граница
+      borderRadius: '20px', // Закругленные углы
+      boxShadow: '0 4px 16px rgba(0,0,0,0.3)', // Тень для эффекта поднятия
+      maxWidth: 1200,
+      width: '90vw',
+      minWidth: 320,
+      margin: '32px auto 0',
+      boxSizing: 'border-box'
+    }}>
+      <div style={{ maxWidth: 1200, width: '100%', minWidth: 320, textAlign: 'left', background: 'rgba(255,255,255,0.85)', borderRadius: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2vw', boxSizing: 'border-box' }}>
+        <style>{`
+          @media (max-width: 600px) {
+            .news-article {
+              font-size: 8px !important;
+            }
+            .news-title {
+              font-size: 16px !important;
+              font-weight: bold !important;
+            }
           }
-          .news-title {
-            font-size: 16px !important;
-            font-weight: bold !important;
-          }
-        }
-      `}</style>
+        `}</style>
       {/* <p style={{ marginBottom: 24, color: '#666', fontSize: 15 }}>
         ℹ️ Натисніть на заголовок, щоб прочитати новину
       </p> */}
@@ -400,6 +412,7 @@ export default function NewsBlock() {
             transition: 'background 0.2s',
           }}>{t('back') || 'Назад'}</button>
         )}
+      </div>
       </div>
     </div>
   );
