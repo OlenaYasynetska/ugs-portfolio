@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { news } from '../data/db';
 import kindsOchakovImg from '../assets/Kinds_Ochakov.png';
+import sonnikImg from '../assets/Home/Sonnik.png';
 
 const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
   const [open, setOpen] = useState(false);
@@ -68,6 +69,22 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
                   <img 
                     src={kindsOchakovImg} 
                     alt="Children from Ochakiv going to the Alps" 
+                    style={{ 
+                      maxWidth: '100%', 
+                      height: 'auto', 
+                      borderRadius: 12,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                      maxHeight: '300px'
+                    }} 
+                  />
+                </div>
+              )}
+              {/* Display image for news ID 64 (Northern lights over Vienna) */}
+              {newsId === 64 && (
+                <div style={{ textAlign: 'center', marginBottom: 16 }}>
+                  <img 
+                    src={sonnikImg} 
+                    alt="Nordlicht über Wien" 
                     style={{ 
                       maxWidth: '100%', 
                       height: 'auto', 

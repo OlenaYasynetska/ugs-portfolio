@@ -1477,57 +1477,6 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             </div>
           </div>
         </div>
-        
-        {/* Пост про лучший рождественский ярмарок */}
-        <div
-          className="christmas-market-card"
-          style={{
-            background: 'rgba(255,255,255,0.85)',
-            borderRadius: 16,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-            padding: '2vw',
-            maxWidth: 1200,
-            width: '90vw',
-            minWidth: 320,
-            margin: '0 auto 1vw auto',
-            boxSizing: 'border-box'
-          }}
-        >
-          <img
-            className="christmas-market-image"
-            src={marketImg}
-            alt={christmasMarketImageAlt}
-            style={{
-              height: 'auto'
-            }}
-          />
-          <div
-            className="christmas-market-content"
-          >
-            <div
-              style={{
-                fontSize: isSmallScreen ? 20 : 24,
-                fontWeight: 700,
-                color: '#1565c0'
-              }}
-            >
-              {christmasMarketTitle}
-            </div>
-            <div>
-              {shouldShowChristmasMarketLabel && christmasMarketSection.label && (
-                <div style={{ fontSize: isSmallScreen ? 18 : 20, fontWeight: 700, color: '#1565c0', marginBottom: '0.5rem' }}>
-                  {christmasMarketSection.label}
-                </div>
-              )}
-              <div style={{ whiteSpace: 'pre-line', lineHeight: 1.5 }}>
-                {christmasMarketSection.text}
-              </div>
-            </div>
-          </div>
-        </div>
-
-       
-
         {/* Пост про туристический рекорд Австрии */}
         {(() => {
           const news48 = news.find(n => n.id === 48);

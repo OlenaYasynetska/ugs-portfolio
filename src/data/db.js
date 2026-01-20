@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 64,
+    title: {
+      en: '✨ Northern lights observed over Vienna',
+      de: '✨ Nordlicht über Wien gesichtet',
+      ua: '✨Північне сяйво помітили над Віднем'
+    },
+    text: {
+      en: 'Residents of Vienna have witnessed a rare natural phenomenon – the northern lights were seen in the sky above the Austrian capital. The photos show pink‑violet and green shades shimmering in the night sky.\n\nAccording to experts, the event was caused by increased solar activity. Due to powerful solar flares, charged particles reached the Earth’s atmosphere and created an aurora that is usually visible much farther north. Specialists note that, if conditions remain favorable, this phenomenon may occur again in the coming nights.',
+      de: 'Die Bewohner:innen Wiens wurden Zeugen eines seltenen Naturphänomens – am Himmel über der österreichischen Hauptstadt war ein Nordlicht zu sehen. Auf den Aufnahmen sind rosa‑violette und grüne Farbtöne zu erkennen, die am Nachthimmel schimmerten.\n\nLaut Fachleuten wurde dieses Ereignis durch eine erhöhte Sonnenaktivität ausgelöst. Durch starke Sonneneruptionen gelangten geladene Teilchen in die Erdatmosphäre und verursachten ein Polarlicht, das normalerweise deutlich weiter im Norden beobachtet wird. Expert:innen betonen, dass sich dieses Phänomen bei günstigen Bedingungen in den kommenden Nächten wiederholen könnte.',
+      ua: 'Жителі Відня стали свідками рідкісного природного явища — північне сяйво було помічено в небі над столицею Австрії. На знімках видно рожево-фіолетові та зелені відтінки, які проявлялися в нічному небі.\n\nЗа словами фахівців, причиною явища стала підвищена сонячна активність. Через потужні спалахи на Сонці заряджені частинки досягли атмосфери Землі і викликали полярне сяйво, яке зазвичай спостерігається значно північніше. Експерти відзначають, що за сприятливих умов подібне явище може повторитися і в найближчі ночі.'
+    }
+  },
+  {
     id: 63,
     title: {
       en: '💶 Return of the Appliance Repair Bonus',
