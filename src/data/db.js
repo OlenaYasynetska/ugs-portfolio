@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 65,
+    title: {
+      en: '🇦🇹 Free German language courses in Austria',
+      de: '🇦🇹 Kostenlose Deutschkurse in Österreich',
+      ua: '🇦🇹 Безкоштовні курси німецької мови в Австрії'
+    },
+    text: {
+      en: 'A free German language course for adults is starting in Upper Austria.\nTraining takes place in small groups, at a comfortable pace and is suitable for different levels of preparation.\n\nIn the program:\n✔ reading and writing\n✔ improving German language\n✔ communication\n✔ preparation for work\n\n📍 Location: BFI Steyr, Upper Austria\n📅 Training period: 09.03.2026 – 07.07.2026\n💰 Cost: free\n\n🔔 Participation by prior registration and information meeting.\n\n<a href="/language-courses" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">📚 More information about language courses</a>',
+      de: 'In Oberösterreich startet ein kostenloser Deutschkurs für Erwachsene.\nDie Schulung erfolgt in kleinen Gruppen, in einem angenehmen Tempo und eignet sich für verschiedene Vorbereitungsniveaus.\n\nIm Programm:\n✔ Lesen und Schreiben\n✔ Verbesserung der deutschen Sprache\n✔ Kommunikation\n✔ Vorbereitung auf die Arbeit\n\n📍 Ort: BFI Steyr, Oberösterreich\n📅 Ausbildungszeitraum: 09.03.2026 – 07.07.2026\n💰 Kosten: kostenlos\n\n🔔 Teilnahme nach vorheriger Anmeldung und Informationsgespräch.\n\n<a href="/language-courses" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">📚 Weitere Informationen zu Sprachkursen</a>',
+      ua: 'У Верхній Австрії стартує безкоштовний курс німецької мови для дорослих.\nНавчання проходить у невеликих групах, у комфортному темпі та підходить для різних рівнів підготовки.\n\nВ програмі:\n✔ читання та письмо\n✔ покращення німецької мови\n✔ комунікація\n✔ підготовка до роботи\n\n📍 Місце: BFI Steyr, Верхня Австрія\n📅 Період навчання: 09.03.2026 – 07.07.2026\n💰 Вартість: безкоштовно\n\n🔔 Участь за попередньою реєстрацією та інформаційною зустріччю.\n\n<a href="/language-courses" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">📚 Детальніша інформація про мовні курси</a>'
+    }
+  },
+  {
     id: 64,
     title: {
       en: '✨ Northern lights observed over Vienna',
