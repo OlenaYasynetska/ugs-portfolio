@@ -1,16 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { news } from '../data/db';
 import kindsOchakovImg from '../assets/Kinds_Ochakov.png';
 import sonnikImg from '../assets/Home/Sonnik.png';
 
 const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [showPdfModal, setShowPdfModal] = useState(false);
   const intervalRef = useRef(null);
+  const textContainerRef = useRef(null);
   const text = typeof children === 'string' ? children : (children?.props?.children || '');
+  
+  // Обработка HTML для замены внутренних ссылок
+  const processHtmlLinks = (html) => {
+    if (!html) return html;
+    // Заменяем внутренние ссылки на элементы с data-атрибутами для обработки
+    return html.replace(/<a\s+href="(\/[^"]+)"([^>]*)>/gi, (match, href, attrs) => {
+      // Убираем target и другие атрибуты, которые могут мешать
+      const cleanAttrs = attrs.replace(/target="[^"]*"/gi, '').replace(/rel="[^"]*"/gi, '');
+      return `<a href="${href}" data-internal-link="true"${cleanAttrs}>`;
+    });
+  };
 
   useEffect(() => {
     if (open) {
@@ -33,6 +47,77 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
     return () => intervalRef.current && clearInterval(intervalRef.current);
     // eslint-disable-next-line
   }, [open, text]);
+
+  // Обработчик кликов по ссылкам внутри HTML контента
+  useEffect(() => {
+    if (open && textContainerRef.current) {
+      const handleLinkClick = (e) => {
+        // Проверяем, что клик произошел внутри нашего контейнера
+        if (!textContainerRef.current?.contains(e.target)) {
+          return;
+        }
+        
+        const link = e.target.closest('a');
+        if (link) {
+          // Проверяем data-атрибут или href
+          const isInternal = link.getAttribute('data-internal-link') === 'true';
+          const href = link.getAttribute('href');
+          
+          if (href && (isInternal || href.startsWith('/'))) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            // Небольшая задержка для надежности на мобильных устройствах
+            setTimeout(() => {
+              navigate(href);
+              // Если есть якорь, прокручиваем к нему после навигации
+              if (href.includes('#')) {
+                const hash = href.split('#')[1];
+                setTimeout(() => {
+                  const element = document.getElementById(hash);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 100);
+              }
+            }, 0);
+            return false;
+          }
+          
+          // Если это полный URL того же домена
+          if (href && !href.startsWith('/')) {
+            try {
+              const url = new URL(link.href);
+              if (url.origin === window.location.origin) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                setTimeout(() => {
+                  navigate(url.pathname);
+                }, 0);
+                return false;
+              }
+            } catch (err) {
+              // Игнорируем ошибки парсинга URL
+            }
+          }
+        }
+      };
+      
+      // Используем capture фазу для перехвата события до того, как оно достигнет ссылки
+      // Обрабатываем и click, и touchend для мобильных устройств
+      const container = textContainerRef.current;
+      container.addEventListener('click', handleLinkClick, true);
+      container.addEventListener('touchend', handleLinkClick, true);
+      
+      return () => {
+        if (container) {
+          container.removeEventListener('click', handleLinkClick, true);
+          container.removeEventListener('touchend', handleLinkClick, true);
+        }
+      };
+    }
+  }, [open, navigate, progress]);
 
   const handlePdfClick = (e) => {
     e.preventDefault();
@@ -95,7 +180,10 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
                   />
                 </div>
               )}
-              <div dangerouslySetInnerHTML={{ __html: text.slice(0, progress) }} />
+              <div 
+                ref={textContainerRef}
+                dangerouslySetInnerHTML={{ __html: processHtmlLinks(text.slice(0, progress)) }} 
+              />
               
               {/* Display PDF link if available */}
               {pdfLink && pdfUrl && (

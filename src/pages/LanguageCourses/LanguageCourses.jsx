@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Main from '../../components/Main/Main';
 import bfiImg from '../../assets/BFI.png';
 import kursImg from '../../assets/Sprachkurs/ChatGPT Image 23 янв. 2026 г., 15_56_06.png';
@@ -10,10 +10,28 @@ import { getStructuredData, GRAMMAR_HEADINGS, GRAMMAR_LEVELS } from '../../data/
 const LanguageCourses = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const currentLang = i18n.language?.split('-')[0] || 'uk';
   const grammarHeading = GRAMMAR_HEADINGS[currentLang] || GRAMMAR_HEADINGS.uk;
   const grammarLevels = GRAMMAR_LEVELS[currentLang] || GRAMMAR_LEVELS.uk;
   const [showFullKursInfo, setShowFullKursInfo] = useState(false);
+
+  // Обработка якорей при загрузке страницы
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.substring(1); // Убираем #
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Если это секция с курсом, автоматически открываем полный текст
+          if (hash === 'free-german-course') {
+            setShowFullKursInfo(true);
+          }
+        }
+      }, 300); // Небольшая задержка для загрузки контента
+    }
+  }, [location.hash]);
 
   // SEO настройки
   useSEO({
@@ -91,6 +109,7 @@ const LanguageCourses = () => {
 
         {/* Kurs Section */}
         <section
+          id="free-german-course"
           style={{
             background: '#fff',
             padding: '30px',
@@ -102,6 +121,7 @@ const LanguageCourses = () => {
             flexWrap: 'wrap',
             gap: '24px',
             alignItems: 'flex-start',
+            scrollMarginTop: '80px',
           }}
         >
           <img
