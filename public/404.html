@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGS Steyr</title>
+    <script>
+      // GitHub Pages SPA fallback
+      // Перенаправляем все запросы на index.html для поддержки SPA роутинга
+      var path = window.location.pathname;
+      var hash = window.location.hash;
+      var search = window.location.search;
+      
+      // Сохраняем оригинальный путь для React Router
+      sessionStorage.setItem('redirectPath', path + search + hash);
+      
+      // Перенаправляем на index.html
+      if (path === '/404.html' || path === '/404') {
+        window.location.replace('/');
+      } else {
+        window.location.replace('/' + (path.startsWith('/') ? path.substring(1) : path) + search + hash);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

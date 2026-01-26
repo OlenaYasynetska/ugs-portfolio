@@ -1,5 +1,18 @@
 export const news = [
   {
+    id: 66,
+    title: {
+      en: '📚 Over a hundred Ukrainian books donated to Austrian library',
+      de: '📚 Über hundert ukrainische Bücher an österreichische Bibliothek übergeben',
+      ua: '📚 У бібліотеку Австрії передали понад сотню українських книжок'
+    },
+    text: {
+      en: 'The Austrian National Library has <a href="https://www.facebook.com/100068535856109/posts/1190250643269453/?rdid=F3YPYAfNn6qOYkFO" target="_blank" rel="noopener noreferrer" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">expanded</a> its collections with more than a hundred copies of Ukrainian literature as part of the "Ukrainian Book Shelf" project.\n\n🗣️ As the embassy notes, the presence of Ukrainian books in the country\'s main library is an important step towards strengthening Ukraine\'s cultural presence in Austria and supporting the Ukrainian community abroad.',
+      de: 'Die Österreichische Nationalbibliothek hat ihre Bestände im Rahmen des Projekts „Ukrainisches Bücherregal“ <a href="https://www.facebook.com/100068535856109/posts/1190250643269453/?rdid=F3YPYAfNn6qOYkFO" target="_blank" rel="noopener noreferrer" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">um mehr als hundert Exemplare ukrainischer Literatur erweitert</a>.\n\n🗣️ Wie die Botschaft betont, ist die Präsenz ukrainischer Bücher in der Hauptbibliothek des Landes ein wichtiger Schritt zur Stärkung der kulturellen Präsenz der Ukraine in Österreich und zur Unterstützung der ukrainischen Gemeinschaft im Ausland.',
+      ua: 'Австрійська національна бібліотека <a href="https://www.facebook.com/100068535856109/posts/1190250643269453/?rdid=F3YPYAfNn6qOYkFO" target="_blank" rel="noopener noreferrer" style="color: #1976d2; text-decoration: underline; cursor: pointer; font-weight: 500;">поповнила</a> свої фонди більш ніж сотнею примірників української літератури у межах проєкту «Українська книжкова поличка».\n\n🗣️ Як зазначають у посольстві, поява українських книжок у головній бібліотеці країни є важливим кроком до посилення культурної присутності України в Австрії та підтримки української спільноти за кордоном.'
+    }
+  },
+  {
     id: 65,
     title: {
       en: '🇦🇹 Free German language courses in Austria',

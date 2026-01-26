@@ -69,16 +69,17 @@ const Article = ({ title, date, children, newsId, pdfLink, pdfUrl }) => {
             e.stopImmediatePropagation();
             // Небольшая задержка для надежности на мобильных устройствах
             setTimeout(() => {
-              navigate(href);
+              // Разделяем путь и хеш
+              const [path, hash] = href.split('#');
+              navigate(path + (hash ? `#${hash}` : ''));
               // Если есть якорь, прокручиваем к нему после навигации
-              if (href.includes('#')) {
-                const hash = href.split('#')[1];
+              if (hash) {
                 setTimeout(() => {
                   const element = document.getElementById(hash);
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
-                }, 100);
+                }, 500);
               }
             }, 0);
             return false;
