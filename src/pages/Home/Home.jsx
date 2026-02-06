@@ -29,6 +29,7 @@ import regenbogenImg from '../../assets/regenbogen.jpg';
 import christmasImg from '../../assets/Christmas.png';
 import spracheImg from '../../assets/Home/spache.png';
 import femilyImg from '../../assets/Home/FEMily.png';
+import integrationsBuroImg from '../../assets/Home/Integrations_Buro1.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -950,6 +951,54 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
       <MainModulesContainer>
         {/* <Hero /> */}
         <NewsBlock />
+
+        {/* Пост «Integrations Buro — безкоштовні вебінари в лютому» (картинка + текст; на мобільному пост під картинкою) */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
+          margin: '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{
+            flex: '0 0 auto',
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
+          }}>
+            <img
+              src={integrationsBuroImg}
+              alt={t('integrations_buro_title')}
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+            />
+          </div>
+          <div style={{
+            flex: '1 1 auto',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('integrations_buro_title')}
+            </p>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('integrations_buro_text')}
+            </div>
+          </div>
+        </div>
 
         {/* Пост «FEMily Exkursion: Projekt Ada & Florence, BFI OÖ» */}
         <div style={{
