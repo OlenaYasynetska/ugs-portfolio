@@ -31,6 +31,7 @@ import spracheImg from '../../assets/Home/spache.png';
 import femilyImg from '../../assets/Home/FEMily.png';
 import integrationsBuroImg from '../../assets/Home/Integrations_Buro1.png';
 import etiasImg from '../../assets/Home/ETIAS.png';
+import krutImg from '../../assets/Home/krut.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -1106,6 +1107,54 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           letterSpacing: '0.02em',
           textAlign: 'center',
         }}>{t('this_day_in_history') || 'Цей день в історії'}</div>
+
+        {/* Пост про День пам'яті героїв Крут */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
+          margin: '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{
+            flex: '0 0 auto',
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
+          }}>
+            <img
+              src={krutImg}
+              alt={t('kruty_title')}
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+            />
+          </div>
+          <div style={{
+            flex: '1 1 auto',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            color: '#333',
+            textAlign: 'left'
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('kruty_title')}
+            </p>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('kruty_text')}
+            </div>
+          </div>
+        </div>
         
         {/* Пост про День Соборності України */}
         <div style={{
