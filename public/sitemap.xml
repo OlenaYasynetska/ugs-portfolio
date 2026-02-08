@@ -5,7 +5,7 @@
   <!-- Головна сторінка -->
   <url>
     <loc>https://ugs-info.at/</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/" />
@@ -16,7 +16,7 @@
   <!-- Новини -->
   <url>
     <loc>https://ugs-info.at/news</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/news" />
@@ -27,7 +27,7 @@
   <!-- Події -->
   <url>
     <loc>https://ugs-info.at/events</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/events" />
@@ -38,7 +38,7 @@
   <!-- Важлива інформація -->
   <url>
     <loc>https://ugs-info.at/important-info</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/important-info" />
@@ -49,7 +49,7 @@
   <!-- Про нас -->
   <url>
     <loc>https://ugs-info.at/about</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/about" />
@@ -60,12 +60,34 @@
   <!-- Контакти -->
   <url>
     <loc>https://ugs-info.at/contact</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/contact" />
     <xhtml:link rel="alternate" hreflang="de-AT" href="https://ugs-info.at/de/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/contact" />
+  </url>
+  
+  <!-- Мовні курси -->
+  <url>
+    <loc>https://ugs-info.at/language-courses</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/language-courses" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://ugs-info.at/de/language-courses" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/language-courses" />
+  </url>
+  
+  <!-- Інфоцентр -->
+  <url>
+    <loc>https://ugs-info.at/infocenter</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://ugs-info.at/infocenter" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://ugs-info.at/de/infocenter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ugs-info.at/en/infocenter" />
   </url>
   
 </urlset> 

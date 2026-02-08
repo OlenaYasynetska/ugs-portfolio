@@ -142,6 +142,28 @@
     <link rel="canonical" href="https://ugs-info.at/" />
     
     <!-- ===== STRUCTURED DATA - SCHEMA.ORG ===== -->
+    <!-- WebSite schema — для sitelinks search box та кращого розуміння сайту -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Українська громада в Штайєрі",
+      "alternateName": "UGS Steyr",
+      "url": "https://ugs-info.at/",
+      "description": "Офіційний сайт української громади в Штайєрі, Австрія. Культурні події, новини, підтримка українців.",
+      "inLanguage": ["uk", "de", "en"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "UGS Steyr",
+        "logo": { "@type": "ImageObject", "url": "https://ugs-info.at/logo.svg" }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://ugs-info.at/?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     <!-- Основная информация об организации -->
     <script type="application/ld+json">
     {
@@ -153,6 +175,11 @@
       "url": "https://ugs-info.at/",
       "logo": "https://ugs-info.at/logo.svg",
       "image": "https://ugs-info.at/IMG_2150.jpg",
+      "sameAs": [
+        "https://www.facebook.com/ugssteyr",
+        "https://www.instagram.com/ugssteyr",
+        "https://t.me/ugssteyr"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Steyr",

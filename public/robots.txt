@@ -18,6 +18,3 @@ Disallow: /static/
 
 # Sitemap
 Sitemap: https://ugs-info.at/sitemap.xml
-
-# Crawl-delay для пошукових роботів
-Crawl-delay: 1 

@@ -20,6 +20,7 @@ import Notifications from '../../pages/Notifications/Notifications.tsx';
 import Messages from '../../pages/Messages/Messages.tsx';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.tsx';
 import Navbar from '../SnapVerse/Navbar.tsx';
+import SEO from '../SEO/SEO';
 // import Help from '../../pages/Help/Help';
 // import Blog from '../../pages/Blog/Blog';
 
@@ -35,6 +36,7 @@ function AppContent() {
 
   return (
     <>
+      <SEO />
       {/* Показываем либо обычную Nav, либо SnapVerse Navbar */}
       {isSnapVersePage ? <Navbar /> : <Nav />}
       
