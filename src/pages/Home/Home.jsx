@@ -32,7 +32,7 @@ import integrationsBuroImg from '../../assets/Home/Integrations_Buro1.png';
 import krutImg from '../../assets/Home/krut.png';
 import zeitungImg from '../../assets/Home/Zeitung.png';
 import plaztImg from '../../assets/Home/Plazt.png';
-import steyrFeb1934Img from '../../assets/Home/photo_2026-02-14_11-13-34.jpg';
+import steyrFeb1934Img from '../../assets/Home/12.2.png';
 import lesjaImg from '../../assets/Home/Lesja.png';
 
 export default function Home() {
