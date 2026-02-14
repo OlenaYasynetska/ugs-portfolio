@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import freeFlagsImg from '../../assets/free_flags.png';
 import diolomImg from '../../assets/diolom.png';
 import busImg from '../../assets/bus_sonne.png';
+import etiasImg from '../../assets/Home/ETIAS.png';
 import { useModalContent } from '../../hooks';
 import { news } from '../../data/db';
 
@@ -231,6 +232,55 @@ const InfoCenter = () => {
                        {t('back') || 'Назад'}
                      </button>
                    )}
+          </div>
+        </div>
+
+        {/* Пост ETIAS — нове правило для поїздок у Європу */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.9)',
+          borderRadius: '20px',
+          padding: '2rem',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(10px)',
+          marginBottom: '3rem',
+          display: 'flex',
+          alignItems: isMobile ? 'center' : 'flex-start',
+          gap: '2rem',
+          flexWrap: 'wrap',
+          flexDirection: isMobile ? 'column' : 'row'
+        }}>
+          <img
+            src={etiasImg}
+            alt={t('etias_title')}
+            style={{
+              maxWidth: 400,
+              width: '100%',
+              height: 'auto',
+              borderRadius: 12,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+              flex: isMobile ? 'none' : '0 0 300px',
+              alignSelf: isMobile ? 'center' : 'auto'
+            }}
+          />
+          <div style={{
+            flex: 1,
+            minWidth: '300px',
+            fontSize: '16px',
+            color: '#2c3e50',
+            lineHeight: '1.6'
+          }}>
+            <h2 style={{
+              fontSize: '1.8rem',
+              color: '#1565c0',
+              marginBottom: '1rem',
+              fontWeight: 'bold'
+            }}>
+              🇪🇺 {t('etias_title')}
+            </h2>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('etias_text')}
+            </div>
           </div>
         </div>
 
