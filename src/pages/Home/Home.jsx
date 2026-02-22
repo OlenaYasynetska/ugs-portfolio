@@ -18,7 +18,6 @@ import image2201 from '../../assets/Home/22_01.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
 import turismImg from '../../assets/Turism.png';
 import marketImg from '../../assets/market.png';
-import marketSteyrImg from '../../assets/market_steyr.png';
 import gregoryCalendarImg from '../../assets/Gregory_calendar.png';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useImageDrawAnimation, useNumberAnimation, useCardAnimation, useResponsiveStyles, usePostState, usePostTexts } from '../../hooks';
@@ -918,39 +917,6 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
       >
         {t('welcome')}
       </h1>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          marginBottom: isSmallScreen ? '4vw' : '2.5vw'
-        }}
-      >
-        <div
-          className="market-steyr-frame"
-          style={{
-            display: 'inline-block',
-            padding: isSmallScreen ? '3vw' : '2vw',
-            background: 'rgb(226, 197, 144)',
-            border: '0.6vw solid rgb(100, 75, 35)',
-            borderRadius: '2vw',
-            boxShadow: 'rgba(80, 60, 20, 0.25) 0px 8px 32px, rgb(226, 197, 144) 0px 0px 0px 1.2vw inset',
-            maxWidth: 1200,
-            width: '90vw',
-            boxSizing: 'border-box'
-          }}
-        >
-          <img
-            src={marketSteyrImg}
-            alt={t('central_market_image_alt') || 'Віденський різдвяний ярмарок у центрі подій'}
-            style={{
-              width: '100%',
-              height: 'auto',
-              borderRadius: '1.4vw'
-            }}
-          />
-          <div className="market-steyr-snow" aria-hidden="true" />
-        </div>
-      </div>
 
       <MainModulesContainer>
         {/* <Hero /> */}
