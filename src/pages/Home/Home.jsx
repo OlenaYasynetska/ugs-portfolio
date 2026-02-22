@@ -16,7 +16,6 @@ import bergImg from '../../assets/berg.png';
 import nationalTadImg from '../../assets/NationalTad.png';
 import image2201 from '../../assets/Home/22_01.png';
 import kolschitzkyImg from '../../assets/Kolschitzky.png';
-import diolomImg from '../../assets/diolom.png';
 import turismImg from '../../assets/Turism.png';
 import marketImg from '../../assets/market.png';
 import marketSteyrImg from '../../assets/market_steyr.png';
@@ -35,6 +34,7 @@ import plaztImg from '../../assets/Home/Plazt.png';
 import steyrFeb1934Img from '../../assets/Home/12.2.png';
 import lesjaImg from '../../assets/Home/Lesja.png';
 import maslenitsaImg from '../../assets/Home/Maslenitsa.png';
+import integrationImg from '../../assets/Home/Integration.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -46,7 +46,6 @@ export default function Home() {
   
   // Получаем тексты из хуков
   const getKolschitzkyText = () => texts.getKolschitzkyText(postState.showFullKolschitzkyText);
-  const getDiplomaText = () => texts.getDiplomaText(postState.showFullDiplomaText);
   
   // Функция для получения текста про Австрию
   const getAustriaNationalDayText = () => {
@@ -1396,105 +1395,53 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
           textAlign: 'center',
         }}>{t('this_is_useful_to_know') || 'Это полезно знать'}</div>
 
-        {/* Пост про дубликат диплома */}
-        {(() => {
-          const news45 = news.find(n => n.id === 45);
-          return (
+        {/* Пост про інтеграцію українців в Австрії */}
+        <div style={{
+          background: 'rgba(255,255,255,0.85)',
+          borderRadius: 16,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+          padding: '2vw',
+          maxWidth: 1200,
+          width: '90vw',
+          minWidth: 320,
+          margin: '0 auto 1vw auto',
+          display: 'flex',
+          gap: '25px',
+          alignItems: 'flex-start',
+          flexDirection: isSmallScreen ? 'column' : 'row',
+          boxSizing: 'border-box'
+        }}>
           <div style={{
-            background: 'rgba(255,255,255,0.85)',
-            borderRadius: 16,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-            padding: '2vw',
-            maxWidth: 1200,
-            width: '90vw',
-              margin: '0 auto 1vw auto',
+            flex: '0 0 auto',
+            minWidth: isSmallScreen ? '100%' : '300px',
+            maxWidth: isSmallScreen ? '100%' : '400px'
+          }}>
+            <img
+              src={integrationImg}
+              alt={t('integration_ukrainians_title')}
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+            />
+          </div>
+          <div style={{
+            flex: '1 1 auto',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            color: '#333',
             textAlign: 'left'
-            }}>
-              <img
-                src={diolomImg}
-                alt="Diploma Duplicate"
-                style={{
-                  width: '85%', 
-              height: 'auto', 
-              borderRadius: 12, 
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
-                  marginBottom: '1rem',
-                  display: 'block',
-            marginLeft: 'auto',
-                  marginRight: 'auto'
-                }}
-              />
-              <div style={{
-                fontSize: '16px',
-                color: '#2c3e50',
-                lineHeight: '1.6'
-              }}>
-                <h2 style={{
-                  fontSize: '1.8rem',
-                  color: '#1565c0',
-                  marginBottom: '1rem',
-                  fontWeight: 'bold'
-                }}>
-                  🎓 {news45?.title[lang] || 'Як отримати дублікат диплому в Україні: покрокова інструкція'}
-                </h2>
-                <div style={{ whiteSpace: 'pre-line' }}>
-                  {getDiplomaText()}
-              </div>
-                {!postState.showFullDiplomaText ? (
-                  <button
-                    onClick={() => postState.setShowFullDiplomaText(true)}
-                    style={{
-                      background: '#1976d2',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '8px 16px',
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      cursor: 'pointer',
-                      marginTop: '1rem',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = '#1565c0';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = '#1976d2';
-                    }}
-                  >
-                    {t('more_ellipsis') || 'далі…'}
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => postState.setShowFullDiplomaText(false)}
-                    style={{
-                      background: '#1976d2',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '8px 16px',
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      cursor: 'pointer',
-                      marginTop: '1rem',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = '#1565c0';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = '#1976d2';
-                    }}
-                  >
-                    {t('back') || 'Назад'}
-                  </button>
-                )}
-              </div>
+          }}>
+            <p style={{ marginBottom: '15px', fontSize: '1.2em', fontWeight: '600', color: '#1565c0' }}>
+              {t('integration_ukrainians_title')}
+            </p>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {t('integration_ukrainians_text')}
             </div>
-          );
-        })()}
+          </div>
+        </div>
 
          
         {/* Модуль "Это интересно" */}
