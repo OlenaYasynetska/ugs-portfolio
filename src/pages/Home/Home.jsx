@@ -1438,7 +1438,25 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
               {t('integration_ukrainians_title')}
             </p>
             <div style={{ whiteSpace: 'pre-line' }}>
-              {t('integration_ukrainians_text')}
+              {(() => {
+                const url = 'https://orf.at/stories/3420707/';
+                const parts = t('integration_ukrainians_text').split(`(${url})`);
+                return parts.map((part, i) => (
+                  <React.Fragment key={i}>
+                    {part}
+                    {i < parts.length - 1 && (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#1565c0', textDecoration: 'underline' }}
+                      >
+                        ({url})
+                      </a>
+                    )}
+                  </React.Fragment>
+                ));
+              })()}
             </div>
           </div>
         </div>
