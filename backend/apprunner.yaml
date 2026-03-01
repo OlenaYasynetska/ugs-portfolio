@@ -25,4 +25,4 @@ run:
     - name: JWT_SECRET
       value: "your-super-secret-jwt-key-change-this-in-production-snapverse-2024"
     - name: FRONTEND_URL
-      value: "https://ugs-portfolio.vercel.app"
+      value: "https://ugs-portfolio.vercel.app,https://www.ugs-info.at,https://ugs-info.at"

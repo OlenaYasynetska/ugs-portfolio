@@ -41,8 +41,11 @@ const apiRequest = async (
   } catch (error: any) {
     console.error('API Error:', error);
     if (error?.message === 'Failed to fetch' || error?.name === 'TypeError') {
+      const isProd = import.meta.env.PROD;
       throw new Error(
-        'Server is not reachable. Make sure the backend is running (cd backend → npm run dev, port 5000).'
+        isProd
+          ? 'Сервер тимчасово недоступний. Спробуйте пізніше.'
+          : 'Server is not reachable. Make sure the backend is running (cd backend → npm run dev, port 5000).'
       );
     }
     throw error;

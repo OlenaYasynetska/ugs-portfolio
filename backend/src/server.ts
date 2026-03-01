@@ -20,14 +20,17 @@ const app: Application = express();
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// CORS — localhost для разработки, FRONTEND_URL для продакшена
-const frontendUrl = process.env.FRONTEND_URL || '';
+// CORS — localhost для разработки, FRONTEND_URL для продакшена (несколько URL через запятую)
+const frontendUrls = (process.env.FRONTEND_URL || '')
+  .split(',')
+  .map((u) => u.trim().replace(/\/$/, ''))
+  .filter(Boolean);
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin) return callback(null, true); // Postman, server-to-server
       if (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) return callback(null, true);
-      if (frontendUrl && origin === frontendUrl.replace(/\/$/, '')) return callback(null, true);
+      if (frontendUrls.length && frontendUrls.includes(origin)) return callback(null, true);
       callback(null, false);
     },
     credentials: true,
