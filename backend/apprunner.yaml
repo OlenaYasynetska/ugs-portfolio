@@ -2,7 +2,7 @@
 # Документация: https://docs.aws.amazon.com/apprunner/latest/dg/service-source-code-nodejs.html
 
 version: 1.0
-runtime: nodejs18
+runtime: nodejs22
 
 build:
   commands:
