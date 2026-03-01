@@ -15,3 +15,10 @@ run:
   command: node dist/server.js
   network:
     port: 8080
+  env:
+    - name: MONGODB_URI
+      value: "mongodb+srv://ugsUser:h72DBgNZUJfQxhD3@cluster0.rckofb9.mongodb.net/ugs-db?retryWrites=true&w=majority"
+    - name: JWT_SECRET
+      value: "your-super-secret-jwt-key-change-this-in-production-snapverse-2024"
+    - name: FRONTEND_URL
+      value: "https://ugs-portfolio.vercel.app"
