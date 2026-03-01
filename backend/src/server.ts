@@ -30,7 +30,11 @@ app.use(
     origin: function (origin, callback) {
       if (!origin) return callback(null, true); // Postman, server-to-server
       if (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) return callback(null, true);
-      if (frontendUrls.length && frontendUrls.includes(origin)) return callback(null, true);
+      const originNormalized = origin.replace(/\/$/, '');
+      const allowed =
+        frontendUrls.length &&
+        frontendUrls.some((url) => url === originNormalized || url === origin);
+      if (allowed) return callback(null, true);
       callback(null, false);
     },
     credentials: true,
