@@ -18,6 +18,16 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(String(email).trim())) {
+      res.status(400).json({
+        success: false,
+        error: 'Please provide a valid email address',
+      });
+      return;
+    }
+
     // Validate password length
     if (password.length < 6) {
       res.status(400).json({

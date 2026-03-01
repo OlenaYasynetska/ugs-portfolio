@@ -148,7 +148,7 @@ const Search: FC = () => {
   // Если выбран пользователь, показываем его профиль
   if (selectedUser) {
     return (
-      <div className="min-h-screen py-8 pl-64" style={{ background: 'transparent' }}>
+      <div className="min-h-screen py-8 ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="mx-auto max-w-4xl space-y-6 px-4">
           {/* Кнопка назад */}
           <button
@@ -279,8 +279,8 @@ const Search: FC = () => {
 
   // Обычный вид поиска
   return (
-    <div className="min-h-screen py-8 pl-64" style={{ background: 'transparent' }}>
-      <div className="mx-auto max-w-2xl px-4">
+    <div className="min-h-screen py-8 ml-0 sm:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
+      <div className="w-full max-w-2xl px-4 mx-auto">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-slate-900" style={{ fontFamily: 'Brush Script MT, cursive' }}>
             ICHGRAM

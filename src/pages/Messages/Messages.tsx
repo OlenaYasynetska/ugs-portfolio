@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, type FC } from 'react';
-import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { messagesAPI, authAPI, usersAPI } from '../../api/client';
 import { Send, MessageCircle } from 'lucide-react';
+import logo from '../../assets/logo.svg';
 
 interface Conversation {
   userId: string;
@@ -219,7 +220,7 @@ const Messages: FC = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center pl-64" style={{ background: 'transparent' }}>
+      <div className="flex min-h-screen items-center justify-center ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="text-center">
           <div className="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-slate-200 border-t-sky-600"></div>
           <p className="text-slate-600">Loading messages...</p>
@@ -229,11 +230,29 @@ const Messages: FC = () => {
   }
 
   return (
-    <>
-    <div className="flex h-[calc(100vh-64px)] pl-64" style={{ background: 'transparent' }}>
+    <div className="h-screen ml-0 md:ml-20 lg:ml-64 flex flex-col overflow-hidden" style={{ background: 'transparent' }}>
+      <div className="flex flex-1 min-h-0" style={{ background: 'transparent' }}>
       {/* Left Panel - Conversations List */}
-      <div className="w-80 border-r border-slate-200 bg-white">
-        <div className="border-b border-slate-200 p-4 space-y-3">
+      <div className="w-48 sm:w-64 md:w-72 lg:w-80 border-r border-slate-200 bg-white flex flex-col min-h-0">
+        {/* Шапка: только иконка + ICHGRAM при экране < 768px */}
+        <div className="md:hidden border-b border-slate-200 p-3">
+          <div className="flex items-center justify-between gap-2">
+            <img src={logo} alt="" className="h-10 w-10 flex-shrink-0 object-contain" />
+            <Link
+              to="/feed"
+              className="text-xl font-bold italic whitespace-nowrap transition-opacity hover:opacity-90"
+              style={{
+                fontFamily: 'Brush Script MT, cursive',
+                color: '#1e3a5f',
+                textShadow: '0 1px 2px rgba(30, 58, 95, 0.2)',
+              }}
+            >
+              ICHGRAM
+            </Link>
+          </div>
+        </div>
+
+        <div className="border-b border-slate-200 p-4 space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">Messages</h2>
           <button
             onClick={() => {
@@ -247,7 +266,7 @@ const Messages: FC = () => {
           </button>
         </div>
         
-        <div className="overflow-y-auto" style={{ height: 'calc(100vh - 120px)' }}>
+        <div className="flex-1 overflow-y-auto scrollbar-hide">
           {conversations.length === 0 ? (
             <div className="p-8 text-center text-slate-500">
               <p>No conversations yet</p>
@@ -292,9 +311,9 @@ const Messages: FC = () => {
       </div>
 
       {/* Right Panel - Active Conversation */}
-      <div className="flex-1 flex flex-col bg-white">
+      <div className="flex-1 flex flex-col bg-white min-h-0">
         {selectedUserId && otherUser ? (
-          <>
+          <div className="flex flex-col min-h-0 flex-1">
             {/* Header */}
             <div className="border-b border-slate-200 p-4">
               <div className="flex items-center gap-3">
@@ -314,8 +333,8 @@ const Messages: FC = () => {
               </div>
             </div>
 
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            {/* Messages — прокрутка без видимой полосы */}
+            <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4 pb-20 sm:pb-4 scrollbar-hide">
               {messages.length === 0 ? (
                 <div className="flex h-full items-center justify-center text-slate-500">
                   <p>No messages yet. Start the conversation!</p>
@@ -352,7 +371,7 @@ const Messages: FC = () => {
             </div>
 
             {/* Input */}
-            <div className="border-t border-slate-200 p-4">
+            <div className="border-t border-slate-200 p-4 mb-16 sm:mb-0">
               <div className="flex items-center gap-2">
                 <input
                   type="text"
@@ -377,7 +396,7 @@ const Messages: FC = () => {
                 </button>
               </div>
             </div>
-          </>
+          </div>
         ) : (
           <div className="flex h-full items-center justify-center text-slate-500">
             <div className="text-center">
@@ -388,7 +407,7 @@ const Messages: FC = () => {
           </div>
         )}
       </div>
-    </div>
+      </div>
 
       {showNewMessageModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
@@ -416,7 +435,7 @@ const Messages: FC = () => {
               </button>
             </div>
 
-            <div className="mt-4 max-h-60 overflow-y-auto">
+            <div className="mt-4 max-h-60 overflow-y-auto scrollbar-hide">
               {searchResults.length === 0 ? (
                 <p className="py-6 text-center text-sm text-slate-500">
                   {searchQuery.trim()
@@ -459,7 +478,7 @@ const Messages: FC = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

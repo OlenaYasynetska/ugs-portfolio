@@ -26,13 +26,14 @@ import SEO from '../SEO/SEO';
 
 function AppContent() {
   const location = useLocation();
-  let scrollable = true;
-  if (location.pathname === '/about' || location.pathname === '/contact' || location.pathname.includes('404')) scrollable = false;
-  
   // Определяем, нужно ли показывать SnapVerse навигацию
   const isSnapVersePage = ['/feed', '/profile', '/search', '/notifications', '/messages'].some(path => 
     location.pathname.startsWith(path)
   );
+  // Скролл только на Feed (лента). Без скролла: about, contact, 404, messages, profile, search, notifications
+  let scrollable = true;
+  if (location.pathname === '/about' || location.pathname === '/contact' || location.pathname.includes('404')) scrollable = false;
+  if (isSnapVersePage && location.pathname !== '/feed') scrollable = false;
 
   return (
     <>
@@ -40,7 +41,7 @@ function AppContent() {
       {/* Показываем либо обычную Nav, либо SnapVerse Navbar */}
       {isSnapVersePage ? <Navbar /> : <Nav />}
       
-      <Main scrollable={scrollable}>
+      <Main scrollable={scrollable} compact={isSnapVersePage}>
         <Routes>
           {/* Публичные маршруты */}
           <Route path="/" element={<Home />} />

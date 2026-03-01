@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Main.module.css';
 import background from '../../assets/background.png';
 
-const Main = ({ children, scrollable = true }) => (
+const Main = ({ children, scrollable = true, compact = false }) => (
   <main
     className={styles.main}
     style={{
@@ -12,7 +12,8 @@ const Main = ({ children, scrollable = true }) => (
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       width: '100%',
-      minHeight: 'calc(100vh - 120px)',
+      minHeight: scrollable ? 'calc(100vh - 120px)' : '100vh',
+      ...(compact ? { padding: 0 } : {}),
       ...(scrollable ? { overflowY: 'auto' } : { overflow: 'hidden' }),
     }}
   >
@@ -23,6 +24,7 @@ const Main = ({ children, scrollable = true }) => (
 Main.propTypes = {
   children: PropTypes.node,
   scrollable: PropTypes.bool,
+  compact: PropTypes.bool,
 };
 
 export default Main; 

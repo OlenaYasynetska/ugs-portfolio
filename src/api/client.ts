@@ -31,7 +31,7 @@ const apiRequest = async (
 
   try {
     const response = await fetch(`${API_URL}${endpoint}`, config);
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
       throw new Error(data.error || 'API request failed');
@@ -40,6 +40,11 @@ const apiRequest = async (
     return data;
   } catch (error: any) {
     console.error('API Error:', error);
+    if (error?.message === 'Failed to fetch' || error?.name === 'TypeError') {
+      throw new Error(
+        'Server is not reachable. Make sure the backend is running (cd backend → npm run dev, port 5000).'
+      );
+    }
     throw error;
   }
 };

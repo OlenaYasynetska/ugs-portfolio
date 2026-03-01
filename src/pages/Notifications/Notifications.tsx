@@ -145,7 +145,7 @@ const Notifications: FC = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center pl-64" style={{ background: 'transparent' }}>
+      <div className="flex min-h-screen items-center justify-center ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="text-center">
           <div className="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-slate-200 border-t-sky-600"></div>
           <p className="text-slate-600">Loading notifications...</p>
@@ -155,7 +155,7 @@ const Notifications: FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-8 pl-64" style={{ background: 'transparent' }}>
+    <div className="min-h-screen py-8 ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
       <div className="mx-auto max-w-2xl px-4">
         {/* Header */}
         <div className="mb-6">

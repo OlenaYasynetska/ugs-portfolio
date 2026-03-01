@@ -175,7 +175,7 @@ const Feed: FC = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center pl-64" style={{ background: 'transparent' }}>
+      <div className="flex min-h-screen items-center justify-center ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="text-center">
           <div className="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-slate-200 border-t-sky-600"></div>
           <p className="text-slate-600">Loading posts...</p>
@@ -185,7 +185,10 @@ const Feed: FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-8 pl-64" style={{ background: 'transparent' }}>
+    <div
+      className="min-h-screen py-8 pb-24 ml-0 md:ml-20 lg:ml-64"
+      style={{ background: 'transparent' }}
+    >
       <div className="mx-auto px-4" style={{ width: '80%' }}>
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-slate-900" style={{ fontFamily: 'Brush Script MT, cursive' }}>
@@ -203,7 +206,7 @@ const Feed: FC = () => {
             <p className="text-slate-600">Be the first to share something!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map((post) => (
               <PostCard
                 key={post._id}

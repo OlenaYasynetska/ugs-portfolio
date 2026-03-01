@@ -144,11 +144,15 @@ const Nav = ({ style }) => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? styles.activeNavLink : undefined} end>{t('home')}</NavLink>
+            <NavLink to="/" className={({ isActive }) => isActive ? styles.activeNavLink : undefined} end>
+              {t('home')}
+            </NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('about')}</NavLink>
-          </li> */}
+          <li>
+            <NavLink to="/about" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>
+              {t('about')}
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/language-courses" className={({ isActive }) => isActive ? styles.activeNavLink : undefined}>{t('language_courses')}</NavLink>
           </li>
@@ -184,10 +188,51 @@ const Nav = ({ style }) => {
         </button>
         {mobileMenuOpen && (
           <div className={styles.mobileMenu}>
-            <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink} end>{t('home')}</NavLink>
-            {/* <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('about')}</NavLink> */}
-            <NavLink to="/language-courses" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('language_courses')}</NavLink>
-            <NavLink to="/infocenter" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('info_center_title')}</NavLink>
+            <NavLink
+              to="/"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                isActive
+                  ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink
+                  : styles.mobileMenuLink
+              }
+              end
+            >
+              {t('home')}
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                isActive
+                  ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink
+                  : styles.mobileMenuLink
+              }
+            >
+              {t('about')}
+            </NavLink>
+            <NavLink
+              to="/language-courses"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                isActive
+                  ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink
+                  : styles.mobileMenuLink
+              }
+            >
+              {t('language_courses')}
+            </NavLink>
+            <NavLink
+              to="/infocenter"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                isActive
+                  ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink
+                  : styles.mobileMenuLink
+              }
+            >
+              {t('info_center_title')}
+            </NavLink>
             {/* <NavLink to="/help" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('help')}</NavLink>
             <NavLink to="/blog" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('blog')}</NavLink> */}
             <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? styles.mobileMenuLinkActive + ' ' + styles.mobileMenuLink : styles.mobileMenuLink}>{t('contacts')}</NavLink>

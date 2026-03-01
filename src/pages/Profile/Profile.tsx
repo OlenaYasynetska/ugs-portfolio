@@ -1,5 +1,5 @@
 import { useState, useEffect, type FC } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { usersAPI, postsAPI, authAPI } from '../../api/client';
 import { EditProfile } from '../../components/SnapVerse/EditProfile';
 import { MyPosts } from '../../components/SnapVerse/MyPosts';
@@ -31,13 +31,16 @@ interface Post {
 
 const Profile: FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { username } = useParams<{ username?: string }>();
   const [user, setUser] = useState<User | null>(null);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [isCreatingPost, setIsCreatingPost] = useState(false);
+  const [isCreatingPost, setIsCreatingPost] = useState(
+    Boolean((location.state as any)?.openCreate)
+  );
 
   useEffect(() => {
     // Проверяем авторизацию
@@ -211,7 +214,7 @@ const Profile: FC = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center pl-64" style={{ background: 'transparent' }}>
+      <div className="flex min-h-screen items-center justify-center ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="text-center">
           <div className="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-slate-200 border-t-sky-600"></div>
           <p className="text-slate-600">Loading profile...</p>
@@ -222,7 +225,7 @@ const Profile: FC = () => {
 
   if (!user) {
     return (
-      <div className="flex min-h-screen items-center justify-center pl-64" style={{ background: 'transparent' }}>
+      <div className="flex min-h-screen items-center justify-center ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
         <div className="text-center">
           <h2 className="mb-2 text-2xl font-semibold text-slate-900">User not found</h2>
           <button
@@ -270,13 +273,23 @@ const Profile: FC = () => {
   );
 
   return (
-    <div className="min-h-screen py-8 pl-64" style={{ background: 'transparent' }}>
+    <div className="min-h-screen py-8 ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
       <div className="mx-auto max-w-4xl space-y-6 px-4">
         {isCreatingPost ? (
-          <CreatePost
-            onSave={handleCreatePost}
-            onCancel={() => setIsCreatingPost(false)}
-          />
+          <>
+            <div className="mb-6 text-center">
+              <h1
+                className="text-4xl font-bold text-slate-900"
+                style={{ fontFamily: 'Brush Script MT, cursive' }}
+              >
+                ICHGRAM
+              </h1>
+            </div>
+            <CreatePost
+              onSave={handleCreatePost}
+              onCancel={() => setIsCreatingPost(false)}
+            />
+          </>
         ) : isEditing ? (
           <EditProfile
             user={user}

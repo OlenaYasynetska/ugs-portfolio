@@ -138,12 +138,27 @@ const About: FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted', formData);
     
     try {
       if (!isLoginForm) {
+        // Sign Up — проверка email
+        if (!formData.email.trim()) {
+          setIsError(true);
+          setSuccessMessage('Please enter your email');
+          setShowSuccessModal(true);
+          return;
+        }
+        if (!isValidEmail(formData.email)) {
+          setIsError(true);
+          setSuccessMessage('Please enter a valid email address (e.g. name@example.com)');
+          setShowSuccessModal(true);
+          return;
+        }
         // Sign Up form - using REAL API
         const result = await authAPI.signup(
           formData.email,
@@ -182,7 +197,7 @@ const About: FC = () => {
     } catch (error: any) {
       console.log('❌ Error:', error.message);
       if (!isLoginForm) {
-        setShowSignUpError(true); // Show error state for signup
+        setShowSignUpError(true);
       }
       setIsError(true);
       setSuccessMessage(error.message || 'An error occurred');
