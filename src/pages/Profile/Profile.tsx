@@ -310,18 +310,7 @@ const Profile: FC = () => {
               <div className="flex items-start gap-6">
                 {/* Avatar */}
                 <div className="flex-shrink-0">
-                  {hasCustomAvatar ? (
-                    <img
-                      src={user.avatar}
-                      alt={user.username}
-                      className="h-32 w-32 rounded-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                      }}
-                    />
-                  ) : null}
-                  <div className={`flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white ${hasCustomAvatar ? 'hidden' : ''}`}>
+                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white">
                     {user.username.charAt(0).toUpperCase()}
                   </div>
                 </div>
