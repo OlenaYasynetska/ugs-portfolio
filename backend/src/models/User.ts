@@ -46,7 +46,7 @@ const UserSchema = new Schema<IUser>(
     },
     avatar: {
       type: String,
-      default: 'https://i.pravatar.cc/150?img=1',
+      default: '',
     },
     bio: {
       type: String,
