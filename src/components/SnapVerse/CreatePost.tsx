@@ -53,16 +53,6 @@ export const CreatePost: FC<CreatePostProps> = ({ onSave, onCancel }) => {
     }
   };
 
-  // Sample images for quick selection
-  const sampleImages = [
-    'https://picsum.photos/400/400?random=1',
-    'https://picsum.photos/400/400?random=2',
-    'https://picsum.photos/400/400?random=3',
-    'https://picsum.photos/400/400?random=4',
-    'https://picsum.photos/400/400?random=5',
-    'https://picsum.photos/400/400?random=6',
-  ];
-
   return (
     <div className="w-full rounded-xl border border-slate-200 bg-white shadow-sm">
       {/* Header */}
@@ -115,27 +105,6 @@ export const CreatePost: FC<CreatePostProps> = ({ onSave, onCancel }) => {
             placeholder="https://example.com/image.jpg"
             className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
           />
-        </div>
-
-        {/* Sample Images */}
-        <div className="mb-6">
-          <p className="mb-3 text-sm font-medium text-slate-700">Or choose a sample image:</p>
-          <div className="grid grid-cols-6 gap-2">
-            {sampleImages.map((url, index) => (
-              <button
-                key={index}
-                type="button"
-                onClick={() => setImageUrl(url)}
-                className="aspect-square overflow-hidden rounded-lg border-2 border-transparent transition hover:border-sky-500"
-              >
-                <img
-                  src={url}
-                  alt={`Sample ${index + 1}`}
-                  className="h-full w-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Image Preview */}
