@@ -26,7 +26,6 @@ export const EditProfile: FC<EditProfileProps> = ({ user, onSave, onCancel }) =>
   const maxChars = 130;
   const [showAvatarInput, setShowAvatarInput] = useState(false);
   const [uploadedFileName, setUploadedFileName] = useState<string>('');
-  const defaultAvatarUrl = 'https://i.pravatar.cc/150?img=1';
 
   const handleBioChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value;
@@ -89,7 +88,7 @@ export const EditProfile: FC<EditProfileProps> = ({ user, onSave, onCancel }) =>
         {/* Avatar Section */}
         <div className="mb-6 flex items-start gap-6">
           <div className="flex flex-col items-center gap-2">
-            {formData.avatar && formData.avatar !== defaultAvatarUrl ? (
+            {formData.avatar && !formData.avatar.startsWith('https://i.pravatar.cc/') ? (
               <img
                 src={formData.avatar}
                 alt={user.username}
@@ -100,7 +99,7 @@ export const EditProfile: FC<EditProfileProps> = ({ user, onSave, onCancel }) =>
                 }}
               />
             ) : null}
-            <div className={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 text-2xl font-semibold text-white ${formData.avatar && formData.avatar !== defaultAvatarUrl ? 'hidden' : ''}`}>
+            <div className={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 text-2xl font-semibold text-white ${formData.avatar && !formData.avatar.startsWith('https://i.pravatar.cc/') ? 'hidden' : ''}`}>
               {user.username.charAt(0).toUpperCase()}
             </div>
             <button

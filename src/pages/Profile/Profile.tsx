@@ -240,8 +240,10 @@ const Profile: FC = () => {
   }
 
   const isOwnProfile = currentUser?.username === user.username;
-  const defaultAvatarUrl = 'https://i.pravatar.cc/150?img=1';
-  const hasCustomAvatar = Boolean(user.avatar && user.avatar !== defaultAvatarUrl);
+  const hasCustomAvatar = Boolean(
+    user.avatar &&
+      !user.avatar.startsWith('https://i.pravatar.cc/')
+  );
 
   const renderPublicPosts = () => (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
