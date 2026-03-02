@@ -280,7 +280,7 @@ const Profile: FC = () => {
     <div className="min-h-screen py-8 ml-0 md:ml-20 lg:ml-64" style={{ background: 'transparent' }}>
       <div className="mx-auto max-w-4xl space-y-6 px-4">
         {isCreatingPost ? (
-          <>
+          <div className="max-h-[calc(100vh-160px)] overflow-y-auto pr-1">
             <div className="mb-6 text-center">
               <h1
                 className="text-4xl font-bold text-slate-900"
@@ -293,7 +293,7 @@ const Profile: FC = () => {
               onSave={handleCreatePost}
               onCancel={() => setIsCreatingPost(false)}
             />
-          </>
+          </div>
         ) : isEditing ? (
           <EditProfile
             user={user}
