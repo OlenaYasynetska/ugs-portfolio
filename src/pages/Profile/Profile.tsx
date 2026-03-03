@@ -134,7 +134,8 @@ const Profile: FC = () => {
       }
     } catch (error) {
       console.error('❌ Error loading profile:', error);
-      setUser(null);
+      // Если произошла ошибка (например, не загрузились посты),
+      // не сбрасываем уже найденного пользователя, чтобы не показывать "User not found"
       setPosts([]);
     } finally {
       setLoading(false);

@@ -190,17 +190,9 @@ const Navbar: FC = () => {
           {/* User Info & Logout */}
           <div className="border-t border-slate-200 p-4">
           <div className="mb-3 flex items-center gap-3 rounded-lg bg-slate-50 px-3 py-2">
-              {currentUser?.avatar ? (
-                <img
-                  src={currentUser.avatar}
-                  alt={currentUser.username}
-                  className="h-10 w-10 rounded-full object-cover"
-                />
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-sm font-semibold text-white">
-                  {currentUser?.username?.charAt(0).toUpperCase() || 'U'}
-                </div>
-              )}
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-sm font-semibold text-white">
+                {currentUser?.username?.charAt(0).toUpperCase() || 'U'}
+              </div>
               {!isCompact && (
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-slate-900">{currentUser?.username || 'User'}</p>
