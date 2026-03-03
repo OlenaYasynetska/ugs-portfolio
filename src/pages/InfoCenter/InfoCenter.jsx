@@ -5,6 +5,7 @@ import freeFlagsImg from '../../assets/free_flags.png';
 import diolomImg from '../../assets/diolom.png';
 import busImg from '../../assets/bus_sonne.png';
 import etiasImg from '../../assets/Home/ETIAS.png';
+import hmtImg from '../../assets/Info_Center/HMT.png';
 import { useModalContent } from '../../hooks';
 import { news } from '../../data/db';
 
@@ -52,6 +53,50 @@ const InfoCenter = () => {
     
     // Показываем только первые 500 символов
     return fullText.substring(0, 500) + '...';
+  };
+
+  const getNmtTitle = () => {
+    if (lang.startsWith('de')) {
+      return 'NMT‑2026: Prüfungszentren im Ausland';
+    }
+    if (lang.startsWith('en')) {
+      return 'NMT‑2026: Examination centres abroad';
+    }
+    return 'НМТ‑2026: екзаменаційні центри за кордоном';
+  };
+
+  const getNmtText = () => {
+    if (lang.startsWith('de')) {
+      return (
+        'NMT‑2026: Prüfungszentren im Ausland\n\n' +
+        'Das Ukrainische Zentrum für Bildungsqualitätsbewertung (УЦОЯО) hat die Liste der Länder veröffentlicht, in denen im Jahr 2026 temporäre Prüfungszentren für den Nationalen Multigegenstandstest (NMT) eingerichtet werden. Insgesamt haben bereits 30 Staaten zugestimmt, die Hauptsession des Tests durchzuführen – so können ukrainische Abiturientinnen und Abiturienten den NMT auch außerhalb der Ukraine ablegen.\n\n' +
+        'Damit junge Ukrainerinnen und Ukrainer, die sich derzeit im Ausland aufhalten, ihr Recht auf ein Studium an ukrainischen Hochschulen wahrnehmen können, wird der Nationale Multigegenstandstest im Jahr 2026 nicht nur in der Ukraine, sondern ebenfalls in ausgewählten Prüfungszentren im Ausland organisiert.\n\n' +
+        'Wichtige Termine für den NMT‑2026:\n' +
+        '• Hauptsession: 20. Mai – 25. Juni\n' +
+        '• Zusätzliche Session: 17. – 24. Juli\n' +
+        '• Registrierung: 5. März – 2. April bzw. 11. – 16. Mai'
+      );
+    }
+    if (lang.startsWith('en')) {
+      return (
+        'NMT‑2026: Examination centres abroad\n\n' +
+        'The Ukrainian Center for Educational Quality Assessment (UCEQA) has published the list of countries where temporary examination centres for the National Multi‑Subject Test (NMT) will operate in 2026. In total, 30 countries have already agreed to host the main NMT session, giving Ukrainian applicants abroad the chance to take the test without travelling back to Ukraine.\n\n' +
+        'To ensure that Ukrainian young people living outside the country can still apply to Ukrainian universities, the NMT‑2026 will be held not only in Ukraine but also in a network of examination centres abroad.\n\n' +
+        'Key dates for NMT‑2026:\n' +
+        '• Main session: 20 May – 25 June\n' +
+        '• Additional session: 17 – 24 July\n' +
+        '• Registration periods: 5 March – 2 April and 11 – 16 May'
+      );
+    }
+    return (
+      'НМТ‑2026: екзаменаційні центри за кордоном\n\n' +
+      'Український центр оцінювання якості освіти (УЦОЯО) оприлюднив перелік країн, де у 2026 році працюватимуть тимчасові екзаменаційні центри національного мультипредметного тесту (НМТ). Уже 30 держав підтвердили готовність прийняти основну сесію, тож абітурієнти, які перебувають за кордоном, зможуть скласти НМТ без повернення в Україну.\n\n' +
+      'Щоб українська молодь, яка нині живе поза межами України, могла реально скористатися правом вступу до українських університетів, НМТ‑2026 проводитиметься не лише в Україні, а й у закордонних екзаменаційних центрах.\n\n' +
+      'Важливі дати НМТ‑2026:\n' +
+      '• Основна сесія: 20 травня – 25 червня\n' +
+      '• Додаткова сесія: 17 – 24 липня\n' +
+      '• Реєстрація: 5 березня – 2 квітня та 11 – 16 травня'
+    );
   };
 
 
@@ -232,6 +277,88 @@ const InfoCenter = () => {
                        {t('back') || 'Назад'}
                      </button>
                    )}
+          </div>
+        </div>
+
+        {/* Пост про НМТ‑2026 за кордоном */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.9)',
+          borderRadius: '20px',
+          padding: '2rem',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(10px)',
+          marginBottom: '3rem',
+          display: 'flex',
+          alignItems: isMobile ? 'center' : 'flex-start',
+          gap: '2rem',
+          flexWrap: 'wrap',
+          flexDirection: isMobile ? 'column' : 'row'
+        }}>
+          <img
+            src={hmtImg}
+            alt="NMT‑2026 abroad"
+            style={{
+              maxWidth: 300,
+              width: '100%',
+              height: 'auto',
+              borderRadius: 12,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+              flex: isMobile ? 'none' : '0 0 300px',
+              alignSelf: isMobile ? 'center' : 'auto'
+            }}
+          />
+          <div style={{
+            flex: 1,
+            minWidth: '300px',
+            fontSize: '16px',
+            color: '#2c3e50',
+            lineHeight: '1.6',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem'
+          }}>
+            <h2 style={{
+              fontSize: '1.8rem',
+              color: '#1565c0',
+              marginBottom: '1rem',
+              fontWeight: 'bold'
+            }}>
+              🎓 {getNmtTitle()}
+            </h2>
+            <div style={{ whiteSpace: 'pre-line' }}>
+              {getNmtText()}
+            </div>
+            <div>
+              <a
+                href="https://testportal.gov.ua/nmt-2026-de-bude-stvoreno-tymchasovi-ekzamenatsijni-tsentry-za-kordonom/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '0.5rem',
+                  padding: '0.6rem 1.4rem',
+                  borderRadius: '999px',
+                  background: '#1976d2',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                  transition: 'background 0.2s ease, transform 0.1s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#1565c0';
+                  e.target.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#1976d2';
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                Mehr Informationen
+              </a>
+            </div>
           </div>
         </div>
 
