@@ -3,7 +3,16 @@
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
-const REQUEST_TIMEOUT_MS = 40000; // 40 секунд — даємо бекенду більше часу відповісти
+const REQUEST_TIMEOUT_MS = 60000; // базовий таймаут для більшості запитів
+
+// Для окремих ендпоінтів задаємо свій таймаут
+const getTimeoutForEndpoint = (endpoint: string): number => {
+  // Для ленти постів чекаем без обрыва на клиенте (0 = без таймаута)
+  if (endpoint.startsWith('/posts')) {
+    return 0;
+  }
+  return REQUEST_TIMEOUT_MS;
+};
 
 // Helper function to get auth token
 const getToken = (): string | null => {
@@ -27,7 +36,11 @@ const apiRequest = async (
   }
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const endpointTimeout = getTimeoutForEndpoint(endpoint);
+  const timeoutId =
+    endpointTimeout > 0
+      ? setTimeout(() => controller.abort(), endpointTimeout)
+      : null;
 
   const config: RequestInit = {
     ...options,
@@ -37,7 +50,9 @@ const apiRequest = async (
 
   try {
     const response = await fetch(`${API_URL}${endpoint}`, config);
-    clearTimeout(timeoutId);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
@@ -46,7 +61,9 @@ const apiRequest = async (
 
     return data;
   } catch (error: any) {
-    clearTimeout(timeoutId);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
     console.error('API Error:', error);
     const isProd = import.meta.env.PROD;
     const serverUnreachableMsg = isProd
