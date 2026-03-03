@@ -75,6 +75,24 @@ const Profile: FC = () => {
     }
   }, [location.search, location.state, isCreatingPost]);
 
+  // Для новых пользователей: если профиль свой, нет постов и почти нет данных,
+  // автоматически открываем форму редактирования профиля
+  useEffect(() => {
+    if (
+      !loading &&
+      user &&
+      currentUser &&
+      user.username === currentUser.username &&
+      !isCreatingPost &&
+      !isEditing &&
+      (!user.fullName || user.fullName.trim() === '') &&
+      (!user.bio || user.bio.trim() === '') &&
+      posts.length === 0
+    ) {
+      setIsEditing(true);
+    }
+  }, [loading, user, currentUser, posts.length, isCreatingPost, isEditing]);
+
   const loadProfile = async (profileUsername: string) => {
     try {
       setLoading(true);
@@ -324,19 +342,11 @@ const Profile: FC = () => {
             {/* Profile Card */}
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-start gap-6">
-                {/* Avatar */}
+                {/* Avatar — всегда цветной кружок с буквой */}
                 <div className="flex-shrink-0">
-                  {user.avatar ? (
-                    <img
-                      src={user.avatar}
-                      alt={user.username}
-                      className="h-32 w-32 rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white">
-                      {user.username.charAt(0).toUpperCase()}
-                    </div>
-                  )}
+                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white">
+                    {user.username.charAt(0).toUpperCase()}
+                  </div>
                 </div>
 
                 {/* Profile Info */}
