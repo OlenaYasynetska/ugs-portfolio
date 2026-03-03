@@ -3,7 +3,7 @@
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
-const REQUEST_TIMEOUT_MS = 25000; // 25 секунд — бекенд може довго "прокидатися"
+const REQUEST_TIMEOUT_MS = 40000; // 40 секунд — даємо бекенду більше часу відповісти
 
 // Helper function to get auth token
 const getToken = (): string | null => {
