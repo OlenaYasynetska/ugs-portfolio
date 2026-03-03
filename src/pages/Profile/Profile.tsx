@@ -38,9 +38,12 @@ const Profile: FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [isCreatingPost, setIsCreatingPost] = useState(
-    Boolean((location.state as any)?.openCreate)
-  );
+  const [isCreatingPost, setIsCreatingPost] = useState(() => {
+    const fromState = Boolean((location.state as any)?.openCreate);
+    const params = new URLSearchParams(location.search);
+    const fromQuery = params.get('create') === '1';
+    return fromState || fromQuery;
+  });
 
   useEffect(() => {
     // Проверяем авторизацию
@@ -192,6 +195,7 @@ const Profile: FC = () => {
       if (result.success) {
         await loadProfile(user?.username || currentUser?.username || '');
         setIsCreatingPost(false);
+        navigate('/profile', { replace: true });
       }
     } catch (error) {
       console.error('Error creating post:', error);
@@ -287,7 +291,10 @@ const Profile: FC = () => {
             </div>
             <CreatePost
               onSave={handleCreatePost}
-              onCancel={() => setIsCreatingPost(false)}
+              onCancel={() => {
+                setIsCreatingPost(false);
+                navigate('/profile', { replace: true });
+              }}
             />
           </div>
         ) : isEditing ? (
@@ -369,7 +376,10 @@ const Profile: FC = () => {
               <MyPosts
                 posts={posts}
                 onDeletePost={handleDeletePost}
-                onCreatePost={() => setIsCreatingPost(true)}
+                onCreatePost={() => {
+                  setIsCreatingPost(true);
+                  navigate('/profile?create=1');
+                }}
               />
             ) : (
               renderPublicPosts()

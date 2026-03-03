@@ -72,6 +72,10 @@ const Navbar: FC = () => {
   const isMobile = viewportWidth < 768;
   const isCompact = viewportWidth >= 768 && viewportWidth < 1024;
 
+  const searchParams = new URLSearchParams(location.search);
+  const isCreateRoute =
+    location.pathname === '/profile' && searchParams.get('create') === '1';
+
   const navLinkClass = (path: string) => `
     flex items-center gap-4 rounded-lg px-4 py-3 text-base font-medium transition-all duration-200
     ${isActive(path) 
@@ -155,10 +159,12 @@ const Navbar: FC = () => {
             </Link>
 
             <button
-              className={navButtonClass}
+              className={`${navButtonClass} ${
+                isCreateRoute ? 'bg-slate-100 text-slate-900 font-semibold' : ''
+              }`}
               onClick={() => {
                 if (currentUser?.username) {
-                  navigate('/profile', { state: { openCreate: true } });
+                  navigate('/profile?create=1');
                 } else {
                   navigate('/about');
                 }
@@ -168,7 +174,14 @@ const Navbar: FC = () => {
               {!isCompact && <span>Create</span>}
             </button>
 
-            <Link to="/profile" className={navLinkClass('/profile')}>
+            <Link
+              to="/profile"
+              className={`flex items-center gap-4 rounded-lg px-4 py-3 text-base font-medium transition-all duration-200 ${
+                location.pathname === '/profile' && !isCreateRoute
+                  ? 'bg-slate-100 text-slate-900 font-semibold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
               <User className="h-6 w-6" />
               {!isCompact && <span>Profile</span>}
             </Link>
@@ -236,12 +249,14 @@ const Navbar: FC = () => {
           <button
             onClick={() => {
               if (currentUser?.username) {
-                navigate('/profile', { state: { openCreate: true } });
+                navigate('/profile?create=1');
               } else {
                 navigate('/about');
               }
             }}
-            className="flex flex-col items-center text-xs text-slate-700"
+            className={`flex flex-col items-center text-xs ${
+              isCreateRoute ? 'text-sky-600 font-semibold' : 'text-slate-700'
+            }`}
           >
             <PlusSquare className="h-5 w-5" />
             <span>Create</span>
