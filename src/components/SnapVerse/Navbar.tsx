@@ -69,8 +69,8 @@ const Navbar: FC = () => {
     return location.pathname === path || location.pathname.startsWith(path);
   };
 
-  const isMobile = viewportWidth < 770;
-  const isCompact = viewportWidth >= 770 && viewportWidth < 1024;
+  const isMobile = viewportWidth < 768;
+  const isCompact = viewportWidth >= 768 && viewportWidth < 1024;
 
   const navLinkClass = (path: string) => `
     flex items-center gap-4 rounded-lg px-4 py-3 text-base font-medium transition-all duration-200
@@ -78,6 +78,10 @@ const Navbar: FC = () => {
       ? 'bg-slate-100 text-slate-900 font-semibold' 
       : 'text-slate-700 hover:bg-slate-50'
     }
+  `;
+
+  const navButtonClass = `
+    flex items-center gap-4 rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50
   `;
 
   return (
@@ -151,7 +155,7 @@ const Navbar: FC = () => {
             </Link>
 
             <button
-              className={navLinkClass('/profile')}
+              className={navButtonClass}
               onClick={() => {
                 if (currentUser?.username) {
                   navigate('/profile', { state: { openCreate: true } });
@@ -229,9 +233,7 @@ const Navbar: FC = () => {
                 navigate('/about');
               }
             }}
-            className={`flex flex-col items-center text-xs ${
-              isActive('/profile') ? 'text-sky-600 font-semibold' : 'text-slate-700'
-            }`}
+            className="flex flex-col items-center text-xs text-slate-700"
           >
             <PlusSquare className="h-5 w-5" />
             <span>Create</span>
