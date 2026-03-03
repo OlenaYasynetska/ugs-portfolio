@@ -63,6 +63,18 @@ const Profile: FC = () => {
     loadProfile(profileUsername);
   }, [username, navigate]);
 
+  // Синхронизируем режим Create с параметром ?create=1 и state.openCreate,
+  // чтобы кнопка Create внизу/слева всегда открывала форму создания поста.
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const fromQuery = params.get('create') === '1';
+    const fromState = Boolean((location.state as any)?.openCreate);
+    const shouldBeCreating = fromQuery || fromState;
+    if (shouldBeCreating !== isCreatingPost) {
+      setIsCreatingPost(shouldBeCreating);
+    }
+  }, [location.search, location.state, isCreatingPost]);
+
   const loadProfile = async (profileUsername: string) => {
     try {
       setLoading(true);

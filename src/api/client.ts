@@ -3,12 +3,14 @@
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
+const REQUEST_TIMEOUT_MS = 25000; // 25 секунд — бекенд може довго "прокидатися"
+
 // Helper function to get auth token
 const getToken = (): string | null => {
   return localStorage.getItem('auth_token');
 };
 
-// Helper function to make API requests
+// Helper function to make API requests (with timeout)
 const apiRequest = async (
   endpoint: string,
   options: RequestInit = {}
@@ -24,13 +26,18 @@ const apiRequest = async (
     headers['Authorization'] = `Bearer ${token}`;
   }
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
   const config: RequestInit = {
     ...options,
     headers,
+    signal: controller.signal,
   };
 
   try {
     const response = await fetch(`${API_URL}${endpoint}`, config);
+    clearTimeout(timeoutId);
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
@@ -39,14 +46,17 @@ const apiRequest = async (
 
     return data;
   } catch (error: any) {
+    clearTimeout(timeoutId);
     console.error('API Error:', error);
+    const isProd = import.meta.env.PROD;
+    const serverUnreachableMsg = isProd
+      ? 'Сервер тимчасово недоступний. Спробуйте пізніше або оновіть сторінку.'
+      : 'Server is not reachable. Make sure the backend is running (cd backend → npm run dev, port 5000).';
+    if (error?.name === 'AbortError') {
+      throw new Error(serverUnreachableMsg);
+    }
     if (error?.message === 'Failed to fetch' || error?.name === 'TypeError') {
-      const isProd = import.meta.env.PROD;
-      throw new Error(
-        isProd
-          ? 'Сервер тимчасово недоступний. Спробуйте пізніше.'
-          : 'Server is not reachable. Make sure the backend is running (cd backend → npm run dev, port 5000).'
-      );
+      throw new Error(serverUnreachableMsg);
     }
     throw error;
   }

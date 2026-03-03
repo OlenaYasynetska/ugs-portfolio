@@ -299,7 +299,9 @@ const Navbar: FC = () => {
           <Link
             to="/profile"
             className={`flex flex-col items-center text-xs ${
-              isActive('/profile') ? 'text-sky-600 font-semibold' : 'text-slate-700'
+              location.pathname === '/profile' && !isCreateRoute
+                ? 'text-sky-600 font-semibold'
+                : 'text-slate-700'
             }`}
           >
             <User className="h-5 w-5" />
