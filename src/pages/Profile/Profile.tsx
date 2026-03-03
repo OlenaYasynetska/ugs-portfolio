@@ -240,10 +240,6 @@ const Profile: FC = () => {
   }
 
   const isOwnProfile = currentUser?.username === user.username;
-  const hasCustomAvatar = Boolean(
-    user.avatar &&
-      !user.avatar.startsWith('https://i.pravatar.cc/')
-  );
 
   const renderPublicPosts = () => (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
@@ -310,9 +306,17 @@ const Profile: FC = () => {
               <div className="flex items-start gap-6">
                 {/* Avatar */}
                 <div className="flex-shrink-0">
-                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white">
-                    {user.username.charAt(0).toUpperCase()}
-                  </div>
+                  {user.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.username}
+                      className="h-32 w-32 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 text-5xl font-semibold text-white">
+                      {user.username.charAt(0).toUpperCase()}
+                    </div>
+                  )}
                 </div>
 
                 {/* Profile Info */}
