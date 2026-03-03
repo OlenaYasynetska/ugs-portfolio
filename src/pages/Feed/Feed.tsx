@@ -118,11 +118,11 @@ const Feed: FC = () => {
       setLoading(true);
       const result = await postsAPI.getAll();
       if (result.success) {
-        // Перемешиваем посты в случайном порядке
-        const shuffledPosts = (result.posts || []).sort(() => Math.random() - 0.5);
-        // Берем только первые 6 постов
-        const limitedPosts = shuffledPosts.slice(0, 6);
-        setPosts(limitedPosts);
+        // Перемешиваем посты в случайном порядке и показываем все
+        const shuffledPosts = (result.posts || []).sort(
+          () => Math.random() - 0.5
+        );
+        setPosts(shuffledPosts);
       }
     } catch (error) {
       console.error('Error loading posts:', error);
