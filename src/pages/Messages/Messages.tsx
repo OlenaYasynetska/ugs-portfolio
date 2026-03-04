@@ -64,6 +64,7 @@ const Messages: FC = () => {
   const [searchingUsers, setSearchingUsers] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const currentUserId = authAPI.getCurrentUser()?.id || '';
+  const pollingTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('auth_token');
@@ -87,15 +88,23 @@ const Messages: FC = () => {
   }, [searchParams, location.state, selectedUserId]);
 
   useEffect(() => {
-    if (selectedUserId) {
-      loadMessages(selectedUserId);
-      // Обновляем список чатов раз в 30 секунд; при смене чата/размонтировании — очищаем интервал
-      const interval = setInterval(() => {
-        loadConversations();
-        loadMessages(selectedUserId);
-      }, 30000);
-      return () => clearInterval(interval);
-    }
+    if (!selectedUserId) return;
+
+    const pollMessages = async () => {
+      try {
+        await Promise.all([loadConversations(), loadMessages(selectedUserId)]);
+      } finally {
+        pollingTimeoutRef.current = window.setTimeout(pollMessages, 30000);
+      }
+    };
+
+    pollMessages();
+
+    return () => {
+      if (pollingTimeoutRef.current !== null) {
+        clearTimeout(pollingTimeoutRef.current);
+      }
+    };
   }, [selectedUserId]);
 
   useEffect(() => {

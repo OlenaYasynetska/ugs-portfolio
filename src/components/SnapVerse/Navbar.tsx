@@ -1,4 +1,4 @@
-import { type FC, useState, useEffect } from 'react';
+import { type FC, useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authAPI, notificationsAPI, messagesAPI } from '../../api/client';
 import { Home, Search, MessageCircle, Bell, PlusSquare, User, LogOut } from 'lucide-react';
@@ -13,17 +13,20 @@ const Navbar: FC = () => {
   const [viewportWidth, setViewportWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 1024
   );
+  const pollingTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    loadUnreadCount();
-    loadUnreadMessagesCount();
+    const pollUnread = async () => {
+      try {
+        await Promise.all([loadUnreadCount(), loadUnreadMessagesCount()]);
+      } finally {
+        // следующий опрос только после завершения текущего
+        pollingTimeoutRef.current = window.setTimeout(pollUnread, 60000);
+      }
+    };
 
-    // Опрос раз в 60 секунд; при размонтировании интервал очищается
-    const interval = setInterval(() => {
-      loadUnreadCount();
-      loadUnreadMessagesCount();
-    }, 60000);
-    
+    pollUnread();
+
     const handleResize = () => {
       if (typeof window !== 'undefined') {
         setViewportWidth(window.innerWidth);
@@ -33,7 +36,9 @@ const Navbar: FC = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      clearInterval(interval);
+      if (pollingTimeoutRef.current !== null) {
+        clearTimeout(pollingTimeoutRef.current);
+      }
       window.removeEventListener('resize', handleResize);
     };
   }, []);

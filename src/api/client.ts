@@ -14,6 +14,32 @@ const getTimeoutForEndpoint = (endpoint: string): number => {
   return REQUEST_TIMEOUT_MS;
 };
 
+const sleep = (ms: number) =>
+  new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+// Обертка над fetch с небольшим количеством повторов
+const fetchWithRetry = async (
+  url: string,
+  config: RequestInit,
+  retries = 2,
+  delay = 500
+): Promise<Response> => {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await fetch(url, config);
+    } catch (error: any) {
+      const isNetworkError =
+        error?.message === 'Failed to fetch' || error?.name === 'TypeError';
+      if (!isNetworkError || attempt === retries) {
+        throw error;
+      }
+      await sleep(delay * Math.pow(2, attempt));
+    }
+  }
+  // теоретически недостижимо
+  throw new Error('Unexpected fetch retry error');
+};
+
 // Helper function to get auth token
 const getToken = (): string | null => {
   return localStorage.getItem('auth_token');
@@ -49,7 +75,7 @@ const apiRequest = async (
   };
 
   try {
-    const response = await fetch(`${API_URL}${endpoint}`, config);
+    const response = await fetchWithRetry(`${API_URL}${endpoint}`, config);
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
