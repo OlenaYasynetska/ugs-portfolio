@@ -89,11 +89,11 @@ const Messages: FC = () => {
   useEffect(() => {
     if (selectedUserId) {
       loadMessages(selectedUserId);
-      // Обновляем список чатов каждые 5 секунд
+      // Обновляем список чатов раз в 30 секунд; при смене чата/размонтировании — очищаем интервал
       const interval = setInterval(() => {
         loadConversations();
         loadMessages(selectedUserId);
-      }, 5000);
+      }, 30000);
       return () => clearInterval(interval);
     }
   }, [selectedUserId]);

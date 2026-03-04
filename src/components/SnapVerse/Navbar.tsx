@@ -17,12 +17,12 @@ const Navbar: FC = () => {
   useEffect(() => {
     loadUnreadCount();
     loadUnreadMessagesCount();
-    
-    // Обновляем счетчики каждые 30 секунд
+
+    // Опрос раз в 60 секунд; при размонтировании интервал очищается
     const interval = setInterval(() => {
       loadUnreadCount();
       loadUnreadMessagesCount();
-    }, 30000);
+    }, 60000);
     
     const handleResize = () => {
       if (typeof window !== 'undefined') {

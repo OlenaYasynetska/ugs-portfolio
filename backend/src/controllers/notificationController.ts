@@ -38,6 +38,7 @@ export const getUnreadCount = async (
   res: Response
 ): Promise<void> => {
   try {
+    console.log('unread-count called', new Date().toISOString());
     const count = await Notification.countDocuments({
       recipient: req.user!._id,
       read: false,
