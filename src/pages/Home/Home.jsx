@@ -34,6 +34,7 @@ import maslenitsaImg from '../../assets/Home/Maslenitsa.png';
 import krigImg from '../../assets/Home/Krig.png';
 import integrationImg from '../../assets/Home/Integration.png';
 
+
 export default function Home() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;

@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDatabase } from './config/database';
+import Post from './models/Post';
 
 // Load environment variables
 dotenv.config();
@@ -83,6 +84,14 @@ const startServer = async () => {
   try {
     // Connect to MongoDB
     await connectDatabase();
+
+    // Прогрев: один лёгкий запрос к коллекции posts, чтобы первая реальная загрузка ленты была быстрее
+    try {
+      await Post.findOne().lean();
+      console.log('✅ MongoDB warm-up done');
+    } catch (warmUpErr) {
+      console.warn('⚠️  Warm-up skip:', (warmUpErr as Error).message);
+    }
 
     // Start listening
     app.listen(PORT, () => {
