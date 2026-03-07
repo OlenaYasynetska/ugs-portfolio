@@ -1,5 +1,31 @@
 export const news = [
   {
+    id: 68,
+    title: {
+      en: 'Neues Leben – Neue Worte: meetings and German practice in Steyr',
+      de: 'Neues Leben – Neue Worte: Begegnungen und Deutschpraxis in Steyr',
+      ua: 'Neues Leben – Neue Worte: зустрічі та практика німецької у Штайрі'
+    },
+    text: {
+      en: 'Dear Ukrainian women,\n\nthe organisation Migrare invites you to a new space for meetings, support and German language practice in Steyr.\n\n«Neues Leben – Neue Worte» («New Life – New Words») is a space for women with experience of forced displacement. In small meetings we look together for «new words» for everyday challenges, talk about real-life situations and gradually build a support circle and new connections in the city.\n\nThese are free, friendly conversations where you can speak at your own pace, try new words and gradually feel more confident in everyday life.\n\nMeetings are held in a women-only format — in a calm and safe atmosphere where it is easy to get to know each other, share experiences and support one another. There are no grades or pressure — just live conversation and natural language practice.\n\n📅 First meeting: Monday, 9 March\n🕐 Time: 9:00–11:00\n📍 Venue: Evangelische Kirche premises near the station\nBahnhofstraße 20, 4400 Steyr\n\nParticipation is free, no registration required — just come.\n\nWe look forward to seeing you ❤️',
+      de: 'Liebe Ukrainerinnen,\n\ndie Organisation Migrare lädt Sie in einen neuen Raum für Begegnungen, Unterstützung und Deutschpraxis in Steyr ein.\n\n«Neues Leben – Neue Worte» ist ein Raum für Frauen mit Erfahrung von Flucht und Vertreibung. In kleinen Runden suchen wir gemeinsam «neue Worte» für den Alltag, sprechen über reale Lebenssituationen und knüpfen nach und nach ein Unterstützungsnetz und neue Kontakte in der Stadt.\n\nEs sind kostenlose, ungezwungene Gespräche, in denen Sie in Ihrem eigenen Tempo sprechen, neue Wörter ausprobieren und im Alltag nach und nach sicherer werden können.\n\nDie Treffen finden im Frauenformat statt — in ruhiger, sicherer Atmosphäre, in der man sich leicht kennenlernen, Erfahrungen teilen und gegenseitig unterstützen kann. Es gibt keine Bewertung oder Druck — nur lebendigen Austausch und natürliche Sprachpraxis.\n\n📅 Erstes Treffen: Montag, 9. März\n🕐 Uhrzeit: 9:00–11:00\n📍 Ort: Räumlichkeiten der Evangelischen Kirche beim Bahnhof\nBahnhofstraße 20, 4400 Steyr\n\nDie Teilnahme ist kostenlos, eine Anmeldung ist nicht nötig — kommen Sie einfach vorbei.\n\nWir freuen uns sehr auf Sie ❤️',
+      ua: 'Любі україночки,\n\nорганізація Migrare запрошує вас до нового простору для зустрічей, підтримки та практики німецької мови у Штайрі.\n\n«Neues Leben – Neue Worte» («Нове життя — нові слова») — це простір для жінок із досвідом вимушеного переселення. У невеликих зустрічах ми разом шукаємо «нові слова» для щоденних викликів, говоримо про реальні життєві ситуації та поступово створюємо коло підтримки й нові зв\'язки у місті.\n\nЦе безкоштовні дружні розмови, де можна говорити у власному темпі, пробувати нові слова й поступово відчувати більше впевненості у повсякденному житті.\n\nЗустрічі проходять у жіночому форматі — у спокійній та безпечній атмосфері, де легко знайомитися, ділитися досвідом і підтримувати одна одну. Тут немає оцінок чи тиску — лише живе спілкування та природна практика мови.\n\n📅 Перша зустріч: понеділок, 9 березня\n🕐 Час: 9:00–11:00\n📍 Місце: приміщення Evangelische Kirche біля вокзалу\nBahnhofstraße 20, 4400 Steyr\n\nУчасть безкоштовна, попередня реєстрація не потрібна — просто приходьте.\n\nМи будемо дуже раді бачити вас ❤️'
+    }
+  },
+  {
+    id: 67,
+    title: {
+      en: '🇺🇦 Austria to help rebuild Kyiv',
+      de: '🇺🇦 Österreich hilft beim Wiederaufbau von Kiew',
+      ua: '🇺🇦 Австрія допоможе відбудувати Київ'
+    },
+    text: {
+      en: '"Met with Austrian Federal Minister of Economy, Energy and Tourism Wolfgang Gattmannsdorfer. The minister noted that before the full-scale war his country was among the largest investors in Ukraine. And Austrian business is ready to cooperate. In particular, in contributing to the recovery of Kyiv and other Ukrainian cities. We agreed to identify and work on projects we can implement together. Including those related to energy," wrote Vitaliy Klitschko.',
+      de: '"Zusammengetroffen mit dem österreichischen Bundesminister für Wirtschaft, Energie und Tourismus Wolfgang Gattmannsdorfer. Der Minister betonte, dass sein Land vor dem Vollkrieg zu den größten Investoren in der Ukraine gehörte. Und die österreichische Wirtschaft ist zur Zusammenarbeit bereit. Insbesondere auch bei der Beteiligung am Wiederaufbau von Kiew und anderen ukrainischen Städten. Wir haben vereinbart, Projekte zu identifizieren und auszuarbeiten, die wir gemeinsam umsetzen können. Darunter auch solche im Bereich Energie", schrieb Vitaliy Klitschko.',
+      ua: '"Зустрівся з федеральним міністром економіки, енергетики й туризму Австрії Вольфгангом Гаттманнсдорфером. Міністр зазначив, що його країна до повномасштабної війни була в числі найбільших інвесторів в Україні. Й австрійський бізнес готовий до співпраці. Зокрема, й в долученні до відновлення Києва й інших українських міст. Домовилися визначити та опрацювати проекти, які можемо втілити спільно. В тому числі ті, що стосуються енергетики", - написав Віталій Кличко.'
+    }
+  },
+  {
     id: 66,
     title: {
       en: '📚 Over a hundred Ukrainian books donated to Austrian library',

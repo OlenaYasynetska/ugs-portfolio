@@ -33,6 +33,7 @@ import steyrFeb1934Img from '../../assets/Home/12.2.png';
 import maslenitsaImg from '../../assets/Home/Maslenitsa.png';
 import krigImg from '../../assets/Home/Krig.png';
 import integrationImg from '../../assets/Home/Integration.png';
+import treffenImg from '../../assets/Home/Treffen.png';
 
 
 export default function Home() {
@@ -922,6 +923,65 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
         {/* <Hero /> */}
         <NewsBlock />
 
+        {/* Neues Leben – Neue Worte / Migrare Steyr (id 68) + Treffen.png — перед "Цей день в історії" */}
+        {(() => {
+          const news68first = news.find(n => n.id === 68);
+          return news68first ? (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 1200,
+              width: '90vw',
+              minWidth: 320,
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              boxSizing: 'border-box'
+            }}>
+              <img
+                src={treffenImg}
+                alt="Neues Leben – Neue Worte"
+                style={{
+                  width: isSmallScreen ? '90%' : '70%',
+                  maxWidth: 600,
+                  height: 'auto',
+                  borderRadius: 12,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  marginBottom: '1rem'
+                }}
+              />
+              <div style={{
+                fontSize: isSmallScreen ? 18 : 20,
+                color: '#234',
+                whiteSpace: 'pre-line',
+                textAlign: 'center',
+                width: '100%'
+              }}>
+                <div style={{
+                  fontSize: '1.2em',
+                  fontWeight: 'bold',
+                  color: '#1565c0',
+                  marginBottom: '1rem'
+                }}>
+                  {news68first.title[lang]}
+                </div>
+                <div
+                  style={{
+                    fontSize: '1em',
+                    lineHeight: '1.5',
+                    textAlign: 'left'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: news68first.text[lang].replace(/\n/g, '<br />') }}
+                />
+              </div>
+            </div>
+          ) : null;
+        })()}
+
         {/* Пост TUKA — музично-поетичний вечір Леся Українка */}
         {/* Модуль "Цей день в історії" */}
         <div className="module-heading" style={{
@@ -1692,7 +1752,112 @@ Basel (Switzerland) and Strasbourg (France) also feature near the top of the ran
             </div>
           );
         })()}
-        
+
+        {/* 🇺🇦 Австрія допоможе відбудувати Київ (id 67) */}
+        {(() => {
+          const news67 = news.find(n => n.id === 67);
+          return news67 ? (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 1200,
+              width: '90vw',
+              minWidth: 320,
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              boxSizing: 'border-box'
+            }}>
+              <div style={{
+                fontSize: isSmallScreen ? 18 : 20,
+                color: '#234',
+                whiteSpace: 'pre-line',
+                textAlign: 'center',
+                width: '100%'
+              }}>
+                <div style={{
+                  fontSize: '1.2em',
+                  fontWeight: 'bold',
+                  color: '#1565c0',
+                  marginBottom: '1rem'
+                }}>
+                  {news67.title[lang]}
+                </div>
+                <div
+                  style={{
+                    fontSize: '1em',
+                    lineHeight: '1.4',
+                    textAlign: 'left'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: news67.text[lang] }}
+                />
+              </div>
+            </div>
+          ) : null;
+        })()}
+
+        {/* Neues Leben – Neue Worte / Migrare Steyr (id 68) + Treffen.png */}
+        {(() => {
+          const news68 = news.find(n => n.id === 68);
+          return news68 ? (
+            <div style={{
+              background: 'rgba(255,255,255,0.85)',
+              borderRadius: 16,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              padding: '2vw',
+              maxWidth: 1200,
+              width: '90vw',
+              minWidth: 320,
+              margin: '0 auto 1vw auto',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              boxSizing: 'border-box'
+            }}>
+              <img
+                src={treffenImg}
+                alt="Neues Leben – Neue Worte"
+                style={{
+                  width: isSmallScreen ? '90%' : '70%',
+                  maxWidth: 600,
+                  height: 'auto',
+                  borderRadius: 12,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  marginBottom: '1rem'
+                }}
+              />
+              <div style={{
+                fontSize: isSmallScreen ? 18 : 20,
+                color: '#234',
+                whiteSpace: 'pre-line',
+                textAlign: 'center',
+                width: '100%'
+              }}>
+                <div style={{
+                  fontSize: '1.2em',
+                  fontWeight: 'bold',
+                  color: '#1565c0',
+                  marginBottom: '1rem'
+                }}>
+                  {news68.title[lang]}
+                </div>
+                <div
+                  style={{
+                    fontSize: '1em',
+                    lineHeight: '1.5',
+                    textAlign: 'left'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: news68.text[lang].replace(/\n/g, '<br />') }}
+                />
+              </div>
+            </div>
+          ) : null;
+        })()}
 
         {/* Пост про Кульчицкого */}
          {isSmallScreen ? (
